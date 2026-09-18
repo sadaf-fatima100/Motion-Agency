@@ -63,8 +63,8 @@
       <h1 class="hero-title">Crafting <span class="accent">cinematic motion</span> &amp; bold visual stories that captivate the world</h1>
       <p class="hero-sub">Exchange ideas, share a treatment, and watch your brand come to life with a studio built for cinematic brand films and motion design.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Start a Project<span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        <button type="button" class="btn-ghost" onclick="openReel('T_qT_NWyPEU', 'Commercial Showreel · Company Intro', 'Featured Showreel')"><span class="pc"><svg viewBox="0 0 10 10"><path d="M1 0l8 5-8 5z"/></svg></span>How it Works</button>
+        <a href="#contact" class="btn-primary">Start a Project<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" style="width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.4;display:block;"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <button type="button" class="btn-ghost" onclick="openReel('T_qT_NWyPEU', 'Commercial Showreel · Company Intro', 'Featured Showreel')"><span class="pc"><svg width="10" height="10" viewBox="0 0 10 10" style="width:10px;height:10px;fill:#fff;display:block;"><path d="M1 0l8 5-8 5z"/></svg></span>How it Works</button>
       </div>
       <div class="trust-row">
         <div class="av-stack"><span class="av-1"></span><span class="av-2"></span><span class="av-3"></span></div>
@@ -706,16 +706,17 @@
     <!-- EDITORIAL MANIFESTO SECTION -->
     <section class="manifesto-section">
       <h2 class="manifesto-heading">
-        <span class="grad-word">Share</span> your creativity, bold vision, and extraordinary brand stories<br>
-        crafted with cinematic perfection in the world of <span class="grad-word">motion</span>
+        <span class="manifesto-line"><span class="grad-word">Share</span> your bold creativity and vision,</span>
+        <span class="manifesto-line">crafting extraordinary brand stories</span>
+        <span class="manifesto-line">in the cinematic world of <span class="grad-word">motion</span></span>
       </h2>
 
       <div class="manifesto-badge-wrap">
         <a href="#contact" class="manifesto-badge">
-          <span>GET STARTED</span>
-          <span class="manifesto-arrow">
-            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
-          </span>
+          <span>Get Started</span>
+          <svg class="manifesto-arrow-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
+          </svg>
         </a>
       </div>
 
@@ -1105,9 +1106,25 @@
             Bring Ideas to Life with <span class="about-accent">Custom Animation Services</span> That Inspire
           </h2>
 
-          <p class="about-lead">
-            At Video Animation Agency, we specialize in creating high-impact animations designed to engage, educate, and entertain. Our team of skilled animators and storytellers transforms complex concepts into simple, compelling visuals that capture attention and boost brand growth.
-          </p>
+          <!-- Featured Video Preview below heading -->
+          <div class="about-video-wrap" id="aboutVideoWrap">
+            <div class="about-video-thumb" id="aboutVideoThumb" onclick="aboutPlayVideo()">
+              <img
+                src="https://i.ytimg.com/vi/T_qT_NWyPEU/maxresdefault.jpg"
+                onerror="this.src='https://i.ytimg.com/vi/T_qT_NWyPEU/hqdefault.jpg'"
+                alt="Flagship Studio Showreel"
+                class="about-video-img"
+              />
+              <div class="about-video-overlay"></div>
+              <div class="about-video-play-btn" aria-label="Play Showreel">
+                <svg viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+              </div>
+              <div class="about-video-label">✦ Watch Our Flagship Showreel</div>
+            </div>
+            <div id="aboutIframeSlot" style="display:none;position:absolute;inset:0;width:100%;height:100%;border-radius:20px;overflow:hidden;background:#000;"></div>
+          </div>
+
+
 
           <p class="about-sublead">
             Stand Out with Powerful Animations – Start Your Journey Today and Turn Your Ideas into Stunning Visual Stories!
@@ -1424,7 +1441,7 @@
     <div class="cta-band">
       <h2>Ready to bring your <span class="accent">vision to the screen</span> with our studio?</h2>
       <p>Tell us what you are building and our directors will prepare a bespoke cinematic treatment within three business days.</p>
-      <a href="#contact" class="btn-primary">Book a Consultation<span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a href="#contact" class="btn-primary">Book a Consultation<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" style="width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.4;display:block;"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
 
     <footer class="site-footer" id="siteFooter">
