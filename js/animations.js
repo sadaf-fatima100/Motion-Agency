@@ -219,9 +219,10 @@ if(!rm){
     opacity: 0,
     y: 50,
     scale: 0.93,
-    stagger: 0.16,
+    stagger: 0,
     duration: 0.95,
     ease: "power4.out",
+    clearProps: "transform",
     scrollTrigger: {
       trigger: ".anim-solutions-grid",
       start: "top 86%"
@@ -302,9 +303,10 @@ if(!rm){
     opacity: 0,
     y: 48,
     scale: 0.95,
-    stagger: 0.11,
+    stagger: 0,
     duration: 0.95,
     ease: "power4.out",
+    clearProps: "transform",
     scrollTrigger: { trigger: ".why-bento-grid", start: "top 86%" }
   });
   gsap.from(".why-phones-visual .why-phone", {
@@ -347,9 +349,10 @@ if(!rm){
     opacity: 0,
     y: 48,
     scale: 0.93,
-    stagger: 0.16,
+    stagger: 0,
     duration: 0.95,
     ease: "back.out(1.3)",
+    clearProps: "transform",
     scrollTrigger: { trigger: ".services-grid", start: "top 86%" }
   });
 
@@ -382,11 +385,12 @@ if(!rm){
   });
   gsap.from(".about-slide-card", {
     opacity: 0,
-    x: 80,
+    y: 40,
     scale: 0.93,
-    stagger: 0.14,
+    stagger: 0,
     duration: 0.95,
     ease: "power4.out",
+    clearProps: "transform",
     scrollTrigger: { trigger: ".about-cards-stack", start: "top 88%" }
   });
 
@@ -413,9 +417,10 @@ if(!rm){
     opacity: 0,
     y: 55,
     scale: 0.92,
-    stagger: 0.16,
+    stagger: 0,
     duration: 0.95,
     ease: "power3.out",
+    clearProps: "transform",
     scrollTrigger: { trigger: ".pricing-grid", start: "top 86%" }
   });
   gsap.from(".pricing-popular-badge", {

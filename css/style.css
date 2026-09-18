@@ -1002,6 +1002,7 @@ h1.hero-title .accent {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+  align-items: start;
 }
 .anim-solution-card {
   position: relative;
@@ -1057,7 +1058,7 @@ h1.hero-title .accent {
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
 }
 .anim-solution-card:hover .anim-icon-box {
-  transform: scale(1.08) rotate(-2deg);
+  transform: scale(1.08);
   box-shadow: 0 14px 32px -6px rgba(120, 80, 220, 0.28);
 }
 .live-anim-svg {
@@ -1370,32 +1371,7 @@ h1.hero-title .accent {
 .process-main-title .accent-text{background:linear-gradient(135deg,#7448ee 0%,#a56ff5 45%,#f69cb8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:450!important;display:inline!important;}
 .process-sub-text{font-size:16px;color:var(--ink-1);line-height:1.68;max-width:720px;text-align:left;}
 
-.services-grid{margin-top:0;margin-bottom:120px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:flex-start;}
-
-/* DIAGONAL STEPPED CARDS (Step 01 -> Step 02 -> Step 03) */
-@media (min-width: 1024px) {
-  .services-grid {
-    padding-bottom: 60px;
-  }
-  .services-grid .service-card:nth-child(1) {
-    transform: translateY(0);
-  }
-  .services-grid .service-card:nth-child(2) {
-    transform: translateY(28px);
-  }
-  .services-grid .service-card:nth-child(3) {
-    transform: translateY(56px);
-  }
-  .services-grid .service-card:nth-child(1):hover {
-    transform: translateY(-8px);
-  }
-  .services-grid .service-card:nth-child(2):hover {
-    transform: translateY(20px);
-  }
-  .services-grid .service-card:nth-child(3):hover {
-    transform: translateY(48px);
-  }
-}
+.services-grid{margin-top:0;margin-bottom:90px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;}
 .service-card{padding:34px 28px;border-radius:24px;background:var(--surface);box-shadow:0 10px 30px -10px rgba(100,70,180,.08);border:1.5px solid var(--line);transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease,border-color .35s ease;position:relative;display:flex;flex-direction:column;overflow:hidden;}
 .service-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px -12px rgba(100,60,200,.18);border-color:rgba(169,140,255,.45);}
 .service-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
@@ -1403,7 +1379,7 @@ h1.hero-title .accent {
 .service-card:hover .step-badge{background:linear-gradient(135deg,#7c5cff,#ff8fce);color:#ffffff;border-color:transparent;box-shadow:0 4px 12px rgba(124,92,255,.35);transform:translateY(-1px);}
 
 .process-icon-box{width:72px;height:72px;border-radius:20px;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(245,240,255,.7));border:1.5px solid rgba(169,140,255,.3);box-shadow:0 8px 24px -6px rgba(120,80,220,.16);display:flex;align-items:center;justify-content:center;position:relative;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease;flex-shrink:0;}
-.service-card:hover .process-icon-box{transform:scale(1.08) rotate(-3deg);box-shadow:0 14px 30px -6px rgba(120,80,220,.28);}
+.service-card:hover .process-icon-box{transform:scale(1.08);box-shadow:0 14px 30px -6px rgba(120,80,220,.28);}
 .process-animated-svg{width:58px;height:58px;display:block;}
 
 .service-card h3{font-family:var(--font)!important;font-size:20px;font-weight:450!important;margin-bottom:10px;letter-spacing:-.01em;color:var(--ink-0);}
@@ -1461,7 +1437,7 @@ h1.hero-title .accent {
 .pricing-features li::before{content:"";width:5px;height:5px;border-radius:50%;background:#392f58;flex-shrink:0;}
 
 .pricing-watermark{position:absolute;right:-8px;bottom:84px;width:170px;height:170px;pointer-events:none;z-index:1;opacity:.32;transition:transform .6s cubic-bezier(.25,1,.5,1),opacity .4s ease;}
-.pricing-card:hover .pricing-watermark{transform:scale(1.08) rotate(6deg);opacity:.48;}
+.pricing-card:hover .pricing-watermark{transform:scale(1.08);opacity:.48;}
 
 .pricing-footer{margin-top:26px;display:flex;align-items:flex-end;justify-content:space-between;position:relative;z-index:3;}
 .pricing-price-box{display:flex;flex-direction:column;max-width:calc(100% - 145px);}
@@ -1486,7 +1462,7 @@ h1.hero-title .accent {
 
 /* WHY CHOOSE US - BENTO GRID SECTION (MATCHING REFERENCE DESIGN) */
 .why-us-section {
-  margin: 120px 0 100px;
+  margin: 72px 0 100px;
   position: relative;
 }
 .why-us-header {
@@ -1576,7 +1552,7 @@ h1.hero-title .accent {
   border: 1.5px solid rgba(240, 184, 126, 0.55);
   font-size: 13px;
   padding: 9px 20px;
-  transform: rotate(-4deg);
+  transform: none;
   box-shadow: 0 8px 24px -4px rgba(240, 184, 126, 0.35);
   animation: floatBadge1 4.5s ease-in-out infinite alternate;
 }
@@ -1592,8 +1568,8 @@ h1.hero-title .accent {
   border: 1.5px solid rgba(124, 92, 255, 0.28);
   font-size: 13px;
   padding: 9px 20px;
-  transform: rotate(3deg);
-  margin-right: 18px;
+  transform: none;
+  margin-right: 0;
   box-shadow: 0 8px 22px -4px rgba(120, 80, 220, 0.16);
   animation: floatBadge2 5s ease-in-out infinite alternate;
 }
@@ -1606,12 +1582,12 @@ h1.hero-title .accent {
 }
 
 @keyframes floatBadge1 {
-  0% { transform: rotate(-4deg) translateY(0); }
-  100% { transform: rotate(-3deg) translateY(-5px); }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
 }
 @keyframes floatBadge2 {
-  0% { transform: rotate(3deg) translateY(0); }
-  100% { transform: rotate(4deg) translateY(-4px); }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
 }
 
 /* Bento Grid */
@@ -1619,7 +1595,7 @@ h1.hero-title .accent {
   display: grid;
   grid-template-columns: 1.12fr 1fr 1fr;
   grid-auto-rows: auto;
-  gap: 16px;
+  gap: 10px;
   position: relative;
 }
 
@@ -1700,7 +1676,7 @@ h1.hero-title .accent {
 
 .why-card:hover {
   /* 3D lift with subtle perspective tilt */
-  transform: translateY(-14px) rotateX(2deg) scale(1.012);
+  transform: translateY(-8px);
   box-shadow:
     0 32px 64px -16px rgba(100, 60, 200, 0.22),
     0 8px 24px -8px rgba(168, 100, 255, 0.18),
@@ -1787,7 +1763,7 @@ h1.hero-title .accent {
   text-transform: uppercase;
   padding: 4px 12px;
   border-radius: 100px;
-  transform: rotate(5deg);
+  transform: none;
   box-shadow: 0 4px 14px rgba(124, 92, 255, 0.4);
 }
 .why-tools-grid {
@@ -1896,7 +1872,7 @@ h1.hero-title .accent {
 }
 .phone-1 {
   left: 20px;
-  transform: rotate(-7deg);
+  transform: none;
   z-index: 2;
   animation: floatPhone1 4.5s ease-in-out infinite alternate;
 }
@@ -1904,17 +1880,17 @@ h1.hero-title .accent {
   right: 20px;
   background: #f7f3ff;
   border-color: #cbbeee;
-  transform: rotate(7deg);
+  transform: none;
   z-index: 3;
   animation: floatPhone2 5s ease-in-out infinite alternate;
 }
 @keyframes floatPhone1 {
-  0% { transform: rotate(-7deg) translateY(0); }
-  100% { transform: rotate(-5deg) translateY(-8px); }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
 }
 @keyframes floatPhone2 {
-  0% { transform: rotate(7deg) translateY(0); }
-  100% { transform: rotate(9deg) translateY(-6px); }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
 }
 
 .phone-cam-notch {
@@ -2199,7 +2175,7 @@ h1.hero-title .accent {
   100% { border-color: rgba(255, 255, 255, 0.38); }
 }
 .why-card-cta:hover {
-  transform: translateY(-14px) rotateX(2deg) scale(1.012);
+  transform: translateY(-8px);
   box-shadow:
     0 36px 70px -16px rgba(120, 83, 246, 0.7),
     0 8px 24px -8px rgba(180, 90, 255, 0.4),
@@ -2342,18 +2318,20 @@ h1.hero-title .accent {
 .about-agency-section {
   margin: 120px 0 100px;
   position: relative;
+  overflow: hidden;
 }
 .about-agency-grid {
   display: grid;
-  grid-template-columns: 1.05fr 1.15fr;
-  gap: 36px;
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
 }
 
 /* Left Column */
 .about-agency-left {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 .about-eyebrow {
   display: inline-flex;
@@ -3028,7 +3006,7 @@ h1.hero-title .accent {
   cursor: pointer;
 }
 .about-slide-card:hover {
-  transform: translateX(-10px) translateY(-3px);
+  transform: translateY(-5px);
   box-shadow: 0 20px 45px -10px rgba(100, 60, 200, 0.22);
 }
 
@@ -3119,7 +3097,7 @@ h1.hero-title .accent {
   transition: transform 0.5s ease, opacity 0.5s;
 }
 .about-slide-card:hover .card-deco-shape {
-  transform: scale(1.1) rotate(6deg);
+  transform: scale(1.1);
   opacity: 0.22;
 }
 .slide-card-1 .card-deco-shape { color: #7c5cff; }
@@ -3374,7 +3352,7 @@ h1.hero-title .accent {
   transition: all 0.35s ease;
 }
 .footer-brand-logo:hover .footer-brand-icon {
-  transform: scale(1.08) rotate(8deg);
+  transform: scale(1.08);
   box-shadow: 0 8px 26px rgba(124, 92, 255, 0.65);
 }
 .footer-brand-icon svg {
