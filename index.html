@@ -67,7 +67,11 @@
         <button type="button" class="btn-ghost" onclick="openReel('T_qT_NWyPEU', 'Commercial Showreel · Company Intro', 'Featured Showreel')"><span class="pc"><svg width="10" height="10" viewBox="0 0 10 10" style="width:10px;height:10px;fill:#fff;display:block;"><path d="M1 0l8 5-8 5z"/></svg></span>How it Works</button>
       </div>
       <div class="trust-row">
-        <div class="av-stack"><span class="av-1"></span><span class="av-2"></span><span class="av-3"></span></div>
+        <div class="av-stack">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Client Avatar 1" class="av-img" />
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Client Avatar 2" class="av-img" />
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Client Avatar 3" class="av-img" />
+        </div>
         <div class="trust-text"><b>120+ brands</b> trust us with their story</div>
       </div>
     </div>
@@ -81,9 +85,6 @@
       <div class="hero-video-card hero-panel" id="heroPanel">
         <div class="hero-video-container" id="heroVideoContainer" onclick="playHeroInlineVideo(event)">
           <img src="https://i.ytimg.com/vi/T_qT_NWyPEU/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/T_qT_NWyPEU/sddefault.jpg'" alt="Commercial Showreel" class="hero-video-preview" id="heroVideoImg" />
-          
-          <!-- Cinematic Soft Vignette Overlay -->
-          <div class="hero-video-vignette"></div>
 
           <!-- Bold Left Title: IDEAS INTO MOVEMENT -->
           <div class="hero-card-brand-title">
@@ -122,56 +123,56 @@
         </div>
       </div>
 
-      <!-- Horizontal Feature Dock Directly Below Video Card -->
-      <div class="hero-feature-dock">
-        <div class="dock-item">
-          <div class="dock-icon icon-purple">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="9"/>
-              <circle cx="12" cy="12" r="3"/>
+      <!-- Hero Video Stats Dock (Matching User Reference Image) -->
+      <div class="hero-stats-dock">
+        <!-- Stat 1: 500+ Projects Delivered -->
+        <div class="hero-stat-item">
+          <div class="stat-icon-circle icon-star">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="#8b5cf6">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
             </svg>
           </div>
-          <div class="dock-info">
-            <h4 class="dock-title">Commercials</h4>
-            <p class="dock-desc">For brands that lead</p>
+          <div class="stat-meta">
+            <span class="stat-value">500+</span>
+            <span class="stat-label">Projects Delivered</span>
           </div>
         </div>
 
-        <div class="dock-item">
-          <div class="dock-icon icon-mint">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
+        <!-- Divider -->
+        <div class="stat-dock-divider" aria-hidden="true"></div>
+
+        <!-- Stat 2: 98% Client Satisfaction -->
+        <div class="hero-stat-item">
+          <div class="stat-icon-circle icon-heart">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <defs>
+                <linearGradient id="heroHeartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#9333ea"/>
+                  <stop offset="100%" stop-color="#ec4899"/>
+                </linearGradient>
+              </defs>
+              <path fill="url(#heroHeartGrad)" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
             </svg>
           </div>
-          <div class="dock-info">
-            <h4 class="dock-title">Explainer Videos</h4>
-            <p class="dock-desc">Simple. Clear. Powerful.</p>
+          <div class="stat-meta">
+            <span class="stat-value">98%</span>
+            <span class="stat-label">Client Satisfaction</span>
           </div>
         </div>
 
-        <div class="dock-item">
-          <div class="dock-icon icon-violet">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <path d="M3 9h18M9 21V9"/>
-            </svg>
-          </div>
-          <div class="dock-info">
-            <h4 class="dock-title">Product Demos</h4>
-            <p class="dock-desc">Show. Don't tell.</p>
-          </div>
-        </div>
+        <!-- Divider -->
+        <div class="stat-dock-divider" aria-hidden="true"></div>
 
-        <div class="dock-item">
-          <div class="dock-icon icon-rose">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-              <path d="M12 0 C12 6.6 6.6 12 0 12 C6.6 12 12 17.4 12 24 C12 17.4 17.4 12 24 12 C17.4 12 12 6.6 12 0 Z"/>
+        <!-- Stat 3: 8+ Years of Experience -->
+        <div class="hero-stat-item">
+          <div class="stat-icon-circle icon-bolt">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="#7c5cff">
+              <path d="M13 2L4 13.5h6.5L9 22l11-12.5h-7L13 2z"/>
             </svg>
           </div>
-          <div class="dock-info">
-            <h4 class="dock-title">Social Content</h4>
-            <p class="dock-desc">Built for engagement.</p>
+          <div class="stat-meta">
+            <span class="stat-value">8+</span>
+            <span class="stat-label">Years of Experience</span>
           </div>
         </div>
       </div>
@@ -1444,17 +1445,21 @@
       <a href="#contact" class="btn-primary">Book a Consultation<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" style="width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.4;display:block;"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
 
-    <footer class="site-footer" id="siteFooter">
-      <!-- Interactive Mosaic Pixel Grid Canvas (Reactive generative grid) -->
-      <div class="footer-mosaic-backdrop" aria-hidden="true">
-        <canvas id="footerMosaicCanvas" class="footer-mosaic-canvas"></canvas>
-        <div class="footer-mosaic-vignette"></div>
-      </div>
+  </div> <!-- .wrap closes here, allowing full-width footer -->
 
-      <div class="ambient-glow-footer"></div>
+  <!-- ============================================================
+       FULL-WIDTH NUVIO-STYLE LUXURY FOOTER (EDGE-TO-EDGE CANVAS)
+       ============================================================ -->
+  <footer class="site-footer" id="siteFooter">
+    <!-- Interactive Mosaic Pixel Grid Canvas (Reactive generative grid spans 100vw) -->
+    <div class="footer-mosaic-backdrop" aria-hidden="true">
+      <canvas id="footerMosaicCanvas" class="footer-mosaic-canvas"></canvas>
+      <div class="footer-mosaic-vignette"></div>
+    </div>
 
-      <div class="footer-inner">
-        <div class="footer-grid">
+    <!-- Centered Box Content Container (1440px aligned) -->
+    <div class="footer-container">
+      <div class="footer-grid">
           
           <!-- Brand Column -->
           <div class="footer-col footer-brand-col">
@@ -1545,12 +1550,13 @@
         </div>
 
         <!-- Floating Bottom Copyright Pill -->
-        <div class="footer-bottom-pill">
+
+      <div class="footer-bottom-pill">
           <p>Copyright &copy; 2026 KINETIX Motion Studio. All Rights Reserved. Designed &amp; Developed by <span class="highlight-brand">Hywiz Technologies</span>.</p>
         </div>
       </div>
-    </footer>
-  </div>
+  </footer>
+
 </main>
 
 <div class="reel-modal" id="reelModal" aria-hidden="true">
