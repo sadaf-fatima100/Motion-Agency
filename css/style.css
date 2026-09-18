@@ -2555,6 +2555,7 @@ h1.hero-title .accent {
   position: relative;
   min-width: 0;
   width: 100%;
+  align-self: end;
 }
 .about-slide-card {
   border-radius: 20px;
@@ -2726,6 +2727,9 @@ h1.hero-title .accent {
   .about-agency-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+  .about-cards-stack {
+    align-self: auto;
   }
 }
 @media(max-width: 640px) {
