@@ -72,35 +72,108 @@
       </div>
     </div>
 
-    <!-- HERO RIGHT VIDEO BOX: Clean, unified, high-end rounded card ready for video -->
-    <div class="hero-panel" id="heroPanel">
-      <!-- Video Container: Interactive Flagship Showreel Preview -->
-      <div class="hero-video-container" id="heroVideoContainer" onclick="playHeroInlineVideo(event)">
-        <img src="https://i.ytimg.com/vi/T_qT_NWyPEU/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/T_qT_NWyPEU/sddefault.jpg'" alt="Commercial Showreel" class="hero-video-preview" id="heroVideoImg" />
-        <div class="video-overlay" id="heroVideoOverlay"></div>
-        <div class="hero-play-overlay" id="heroPlayOverlay">
-          <div class="hero-play-button" aria-label="Play Commercial Showreel">
-            <svg viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+    <!-- HERO RIGHT VIDEO STAGE: Proportional Landscape Height, Ambient Gradient Aura & Feature Dock -->
+    <div class="hero-stage">
+      <!-- Ambient Fluid Gradient Aura Behind Video -->
+      <div class="hero-gradient-aura" aria-hidden="true"></div>
+
+      <!-- Main Video Card (16:9 Landscape Aspect Ratio ~390px height matching reference) -->
+      <div class="hero-video-card hero-panel" id="heroPanel">
+        <div class="hero-video-container" id="heroVideoContainer" onclick="playHeroInlineVideo(event)">
+          <img src="https://i.ytimg.com/vi/T_qT_NWyPEU/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/T_qT_NWyPEU/sddefault.jpg'" alt="Commercial Showreel" class="hero-video-preview" id="heroVideoImg" />
+          
+          <!-- Cinematic Soft Vignette Overlay -->
+          <div class="hero-video-vignette"></div>
+
+          <!-- Bold Left Title: IDEAS INTO MOVEMENT -->
+          <div class="hero-card-brand-title">
+            <span>IDEAS</span>
+            <span>INTO</span>
+            <span>MOVEMENT</span>
           </div>
-          <span class="hero-play-label">✦ Watch Flagship Showreel</span>
+
+          <!-- Centered Frosted Play Button -->
+          <div class="hero-play-overlay" id="heroPlayOverlay">
+            <div class="hero-card-play-btn" aria-label="Play Commercial Showreel">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff">
+                <polygon points="8 5 19 12 8 19 8 5"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Top-Right Floating Pill Badge: COMMERCIAL VIDEO / From concept to screen -->
+          <div class="hero-card-top-badge" onclick="event.stopPropagation(); openReel('T_qT_NWyPEU', 'Commercial Showreel · Company Intro', 'Featured Showreel')">
+            <div class="hctb-icon">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="#ffffff">
+                <polygon points="8 5 19 12 8 19 8 5"/>
+              </svg>
+            </div>
+            <div class="hctb-text">
+              <span class="hctb-sub">COMMERCIAL VIDEO</span>
+              <span class="hctb-title">From concept to screen</span>
+            </div>
+          </div>
+
+          <!-- Bottom-Right Duration Pill: 02:48 -->
+          <div class="hero-card-duration">02:48</div>
+
+          <!-- Inline Iframe Slot -->
+          <div id="heroIframeSlot" style="display:none;position:absolute;inset:0;width:100%;height:100%;z-index:15;border-radius:28px;overflow:hidden;background:#000000;"></div>
         </div>
-        <div id="heroIframeSlot" style="display:none;position:absolute;inset:0;width:100%;height:100%;z-index:15;border-radius:40px;overflow:hidden;background:#000000;"></div>
       </div>
 
-      <!-- Floating Pill Badge (Top-Right of Video Card) -->
-      <button class="float-card" data-depth="8" onclick="openReel('T_qT_NWyPEU', 'Commercial Showreel · Company Intro', 'Featured Showreel')">
-        <div class="fc-thumb"><svg viewBox="0 0 10 10"><path d="M1 0l8 5-8 5z"/></svg></div>
-        <div><div class="fc-label">New Reel</div><div class="fc-title">The process of creating our showreel</div></div>
-      </button>
-
-      <!-- Floating Discovery Pill (Bottom of Video Card) -->
-      <div class="float-pill">
-        <div class="fp-av"></div>
-        <div class="fp-txt">
-          <div class="fp-title">Discover Inspiring Creations</div>
-          <div class="fp-sub">Fresh cuts from the studio, added every week.</div>
+      <!-- Horizontal Feature Dock Directly Below Video Card -->
+      <div class="hero-feature-dock">
+        <div class="dock-item">
+          <div class="dock-icon icon-purple">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <div class="dock-info">
+            <h4 class="dock-title">Commercials</h4>
+            <p class="dock-desc">For brands that lead</p>
+          </div>
         </div>
-        <div class="fp-go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+
+        <div class="dock-item">
+          <div class="dock-icon icon-mint">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+          </div>
+          <div class="dock-info">
+            <h4 class="dock-title">Explainer Videos</h4>
+            <p class="dock-desc">Simple. Clear. Powerful.</p>
+          </div>
+        </div>
+
+        <div class="dock-item">
+          <div class="dock-icon icon-violet">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M3 9h18M9 21V9"/>
+            </svg>
+          </div>
+          <div class="dock-info">
+            <h4 class="dock-title">Product Demos</h4>
+            <p class="dock-desc">Show. Don't tell.</p>
+          </div>
+        </div>
+
+        <div class="dock-item">
+          <div class="dock-icon icon-rose">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M12 0 C12 6.6 6.6 12 0 12 C6.6 12 12 17.4 12 24 C12 17.4 17.4 12 24 12 C17.4 12 12 6.6 12 0 Z"/>
+            </svg>
+          </div>
+          <div class="dock-info">
+            <h4 class="dock-title">Social Content</h4>
+            <p class="dock-desc">Built for engagement.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -633,22 +706,21 @@
     <!-- EDITORIAL MANIFESTO SECTION -->
     <section class="manifesto-section">
       <h2 class="manifesto-heading">
-        <span class="grad-word">share</span> your creativity<br>
-        and vision<br>
-        in the world of <span class="grad-word">motion</span>
+        <span class="grad-word">Share</span> your creativity, bold vision, and extraordinary brand stories<br>
+        crafted with cinematic perfection in the world of <span class="grad-word">motion</span>
       </h2>
 
       <div class="manifesto-badge-wrap">
-        <div class="manifesto-badge">
+        <a href="#contact" class="manifesto-badge">
           <span>GET STARTED</span>
           <span class="manifesto-arrow">
             <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
           </span>
-        </div>
+        </a>
       </div>
 
       <p class="manifesto-note">
-        Join our thriving creative collective and bring bold cinematic films and motion to life together.
+        Join our thriving creative collective to craft bold commercial showreels, high-impact explainer videos, and unforgettable visual stories.
       </p>
     </section>
 
