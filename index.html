@@ -192,14 +192,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--v1);outline-offset:
 }
 
 @media(max-width: 1100px) {
+  .nav-wrapper, .hero, .wrap { padding-left: 28px !important; padding-right: 28px !important; }
   .nav-links-menu { gap: 14px; justify-content: space-evenly; }
   .nav-item { font-size: 13px; }
-  .site-header { padding: 12px 20px; }
+  .site-header { padding: 12px 0; }
 }
 @media(max-width: 860px) {
+  .nav-wrapper, .hero, .wrap { padding-left: 20px !important; padding-right: 20px !important; }
   .nav-links-menu { display: none; }
   .nav-main-capsule { max-width: fit-content; }
-  .site-header { padding: 12px 16px; }
+  .site-header { padding: 12px 0; }
   .btn-get-started { padding: 9px 18px; font-size: 13px; }
 }
 
@@ -213,8 +215,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--v1);outline-offset:
   min-height: calc(100vh - 84px);
   position: relative;
   align-items: center;
-  padding: 24px 20px 48px 36px; /* 20px space on right edge */
+  padding: 24px 40px 48px 40px;
   gap: 40px;
+  box-sizing: border-box;
+  width: 100%;
 }
 .hero-copy {
   display: flex;
@@ -545,7 +549,7 @@ h1.hero-title .accent {
 .fp-go svg { width: 11px; height: 11px; stroke: #fff; fill: none; stroke-width: 2.4; }
 
 @media(max-width: 1024px) {
-  .hero { grid-template-columns: 1fr; min-height: auto; padding: 20px 20px 40px; gap: 32px; }
+  .hero { grid-template-columns: 1fr; min-height: auto; padding: 20px 28px 40px; gap: 32px; }
   .hero-copy { padding: 16px 0; }
   .hero-panel { min-height: 520px; height: 520px; }
 }
@@ -2744,6 +2748,85 @@ h1.hero-title .accent {
   .work-card{flex:0 0 270px!important;width:270px!important;min-width:270px!important;}
   .cta-band{padding:44px 24px;border-radius:var(--r-xl);}
 }
+
+
+/* PRICING FULL-WIDTH INLINE CARD VIDEOS */
+.pricing-card-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: 210px;
+  background: #15102a;
+  overflow: hidden;
+  cursor: pointer;
+  margin-top: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.45);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
+  display: block;
+}
+.pricing-card-video img.pricing-video-thumb {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.3s;
+}
+.pricing-card-video:hover img.pricing-video-thumb {
+  transform: scale(1.04);
+  filter: brightness(0.94);
+}
+.pricing-card-video .play-btn-circle {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.86) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 2px solid rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 8px 24px rgba(20, 10, 50, 0.35) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+  z-index: 5 !important;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s, box-shadow 0.3s !important;
+}
+.pricing-card-video .play-btn-circle svg {
+  width: 22px !important;
+  height: 22px !important;
+  max-width: 22px !important;
+  max-height: 22px !important;
+  margin-left: 3px !important;
+  fill: #7c5cff !important;
+  display: block !important;
+  transition: fill 0.3s, transform 0.3s;
+}
+.pricing-card-video:hover .play-btn-circle {
+  transform: translate(-50%, -50%) scale(1.12) !important;
+  background: #ffffff !important;
+  box-shadow: 0 14px 34px rgba(124, 92, 255, 0.5) !important;
+}
+.pricing-card-video:hover .play-btn-circle svg {
+  fill: #683cd4 !important;
+  transform: scale(1.08);
+}
+.pricing-card-video.is-playing .play-btn-circle,
+.pricing-card-video.is-playing img {
+  display: none !important;
+}
+.pricing-card-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
 </style>
 </head>
 <body>
@@ -2794,7 +2877,7 @@ h1.hero-title .accent {
       <h1 class="hero-title">Crafting <span class="accent">cinematic motion</span> &amp; bold visual stories that captivate the world</h1>
       <p class="hero-sub">Exchange ideas, share a treatment, and watch your brand come to life with a studio built for cinematic brand films and motion design.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Join the Wave<span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#contact" class="btn-primary">Start a Project<span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
         <button type="button" class="btn-ghost" onclick="openReel('T_qT_NWyPEU', 'Commercial Showreel · Company Intro', 'Featured Showreel')"><span class="pc"><svg viewBox="0 0 10 10"><path d="M1 0l8 5-8 5z"/></svg></span>How it Works</button>
       </div>
       <div class="trust-row">
@@ -3696,10 +3779,10 @@ h1.hero-title .accent {
           </div>
 
                     <!-- Full-Width Video Player with Live TryShort Overlay & YouTube Link -->
-          <div class="pricing-card-video" onclick="playPricingVideo(this, 'https://www.youtube.com/embed/sUYgEgjqi1M?autoplay=1&rel=0')" title="Click to play Whiteboard Video">
-            <img src="assets/pricing-whiteboard.jpg" onerror="this.src='https://animationagency3.tryshort.com/wp-content/uploads/2025/03/Animation-Videos-Image-Portfolio-Overlay-1.jpg'" alt="Whiteboard Animation Video" loading="lazy">
-            <div class="play-btn-circle" aria-label="Play video">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <div class="pricing-card-video" onclick="playPricingVideo(this, 'https://www.youtube.com/embed/sUYgEgjqi1M?autoplay=1&rel=0')" title="Click to play Whiteboard Video" style="position:relative;width:100%;height:210px;margin-top:60px;background:#15102a;overflow:hidden;cursor:pointer;">
+            <img src="assets/pricing-whiteboard.jpg" onerror="this.src='https://animationagency3.tryshort.com/wp-content/uploads/2025/03/Animation-Videos-Image-Portfolio-Overlay-1.jpg'" alt="Whiteboard Video" class="pricing-video-thumb" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <div class="play-btn-circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,0.95);box-shadow:0 8px 24px rgba(20,10,50,0.35);display:flex;align-items:center;justify-content:center;z-index:5;pointer-events:none;">
+              <svg width="22" height="22" viewBox="0 0 24 24" style="width:22px;height:22px;margin-left:3px;fill:#7c5cff;display:block;"><path d="M8 5v14l11-7z"/></svg>
             </div>
           </div>
 
@@ -3752,10 +3835,10 @@ h1.hero-title .accent {
           </div>
 
                     <!-- Full-Width Video Player with Live TryShort Overlay & YouTube Link -->
-          <div class="pricing-card-video" onclick="playPricingVideo(this, 'https://www.youtube.com/embed/ez8UKLwe2qw?autoplay=1&rel=0')" title="Click to play Explainer Video">
-            <img src="assets/pricing-explainer.jpg" onerror="this.src='https://animationagency3.tryshort.com/wp-content/uploads/2025/03/Animation-Videos-Image-Portfolio-Overlay-6.jpg'" alt="Explainer Animation Video" loading="lazy">
-            <div class="play-btn-circle" aria-label="Play video">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <div class="pricing-card-video" onclick="playPricingVideo(this, 'https://www.youtube.com/embed/ez8UKLwe2qw?autoplay=1&rel=0')" title="Click to play Explainer Video" style="position:relative;width:100%;height:210px;margin-top:60px;background:#15102a;overflow:hidden;cursor:pointer;">
+            <img src="assets/pricing-explainer.jpg" onerror="this.src='https://animationagency3.tryshort.com/wp-content/uploads/2025/03/Animation-Videos-Image-Portfolio-Overlay-6.jpg'" alt="Explainer Video" class="pricing-video-thumb" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <div class="play-btn-circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,0.95);box-shadow:0 8px 24px rgba(20,10,50,0.35);display:flex;align-items:center;justify-content:center;z-index:5;pointer-events:none;">
+              <svg width="22" height="22" viewBox="0 0 24 24" style="width:22px;height:22px;margin-left:3px;fill:#7c5cff;display:block;"><path d="M8 5v14l11-7z"/></svg>
             </div>
           </div>
 
@@ -3809,10 +3892,10 @@ h1.hero-title .accent {
           </div>
 
                     <!-- Full-Width Video Player with Live TryShort Overlay & YouTube Link -->
-          <div class="pricing-card-video" onclick="playPricingVideo(this, 'https://www.youtube.com/embed/FiQ_KsLjoq4?autoplay=1&rel=0')" title="Click to play Premium Video">
-            <img src="assets/pricing-premium.jpg" onerror="this.src='https://animationagency3.tryshort.com/wp-content/uploads/2025/03/Animation-Videos-Image-Overlay-7.jpg'" alt="Premium 3D Animation Video" loading="lazy">
-            <div class="play-btn-circle" aria-label="Play video">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <div class="pricing-card-video" onclick="playPricingVideo(this, 'https://www.youtube.com/embed/FiQ_KsLjoq4?autoplay=1&rel=0')" title="Click to play Premium Video" style="position:relative;width:100%;height:210px;margin-top:60px;background:#15102a;overflow:hidden;cursor:pointer;">
+            <img src="assets/pricing-premium.jpg" onerror="this.src='https://animationagency3.tryshort.com/wp-content/uploads/2025/03/Animation-Videos-Image-Overlay-7.jpg'" alt="Premium Video" class="pricing-video-thumb" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <div class="play-btn-circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,0.95);box-shadow:0 8px 24px rgba(20,10,50,0.35);display:flex;align-items:center;justify-content:center;z-index:5;pointer-events:none;">
+              <svg width="22" height="22" viewBox="0 0 24 24" style="width:22px;height:22px;margin-left:3px;fill:#7c5cff;display:block;"><path d="M8 5v14l11-7z"/></svg>
             </div>
           </div>
 
@@ -3881,7 +3964,7 @@ h1.hero-title .accent {
           
           <!-- Brand Column -->
           <div class="footer-col footer-brand-col">
-            <a href="#home" class="footer-brand-logo" aria-label="Animations Agency Homepage">
+            <a href="#home" class="footer-brand-logo" aria-label="KINETIX Homepage">
               <div class="footer-brand-icon">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 1v6M12 17v6M4.2 4.2l4.2 4.2M15.6 15.6l4.2 4.2M1 12h6M17 12h6M4.2 19.8l4.2-4.2M15.6 8.4l4.2-4.2"
@@ -3889,7 +3972,7 @@ h1.hero-title .accent {
                 </svg>
               </div>
               <div class="footer-brand-text">
-                <span class="footer-brand-name">ANIMATIONS AGENCY</span>
+                <span class="footer-brand-name">KINETIX MOTION STUDIO</span>
                 <span class="footer-brand-tagline">Bringing Stories to Life.</span>
               </div>
             </a>
@@ -3969,7 +4052,7 @@ h1.hero-title .accent {
 
         <!-- Floating Bottom Copyright Pill -->
         <div class="footer-bottom-pill">
-          <p>Copyright &copy; 2026 Animations Agency. All Rights Reserved. Designed &amp; Developed by <span class="highlight-brand">Hywiz Technologies</span>.</p>
+          <p>Copyright &copy; 2026 KINETIX Motion Studio. All Rights Reserved. Designed &amp; Developed by <span class="highlight-brand">Hywiz Technologies</span>.</p>
         </div>
       </div>
     </footer>
@@ -4025,10 +4108,16 @@ function closeReel() {
 reelModal.addEventListener("click", e => { if (e.target === reelModal) closeReel(); });
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeReel(); });
 
-// Work Filter Tabs Functionality
+// Work Filter Tabs & Horizontal Carousel Functionality
 document.addEventListener("DOMContentLoaded", () => {
   const filterTabs = document.querySelectorAll(".filter-tab");
   const workCards = document.querySelectorAll(".work-card[data-category]");
+  const workGrid = document.querySelector(".work-grid");
+  const workPrevBtn = document.getElementById("workPrevBtn");
+  const workNextBtn = document.getElementById("workNextBtn");
+  const workProgPills = document.querySelectorAll("#workProgList .prog-pill");
+
+  // Filter Tabs
   filterTabs.forEach(tab => {
     tab.addEventListener("click", () => {
       filterTabs.forEach(t => t.classList.remove("active"));
@@ -4045,8 +4134,105 @@ document.addEventListener("DOMContentLoaded", () => {
           card.classList.add("is-hidden");
         }
       });
+      if (workGrid) {
+        workGrid.scrollTo({ left: 0, behavior: "smooth" });
+      }
     });
   });
+
+  // Carousel Arrow Controls
+  if (workGrid) {
+    const getScrollStep = () => {
+      const firstCard = workGrid.querySelector(".work-card:not(.is-hidden)");
+      return firstCard ? firstCard.offsetWidth + 24 : 344;
+    };
+
+    if (workPrevBtn) {
+      workPrevBtn.addEventListener("click", () => {
+        workGrid.scrollBy({ left: -getScrollStep(), behavior: "smooth" });
+      });
+    }
+
+    if (workNextBtn) {
+      workNextBtn.addEventListener("click", () => {
+        workGrid.scrollBy({ left: getScrollStep(), behavior: "smooth" });
+      });
+    }
+
+    // Interactive Progress Pills Click
+    workProgPills.forEach((pill, idx) => {
+      pill.style.cursor = "pointer";
+      pill.addEventListener("click", () => {
+        const maxScroll = workGrid.scrollWidth - workGrid.clientWidth;
+        if (maxScroll > 0) {
+          const target = (idx / (workProgPills.length - 1)) * maxScroll;
+          workGrid.scrollTo({ left: target, behavior: "smooth" });
+        }
+      });
+    });
+
+    // Update Progress Pills on Scroll
+    const updatePills = () => {
+      const maxScroll = workGrid.scrollWidth - workGrid.clientWidth;
+      if (maxScroll > 5 && workProgPills.length > 0) {
+        const ratio = workGrid.scrollLeft / maxScroll;
+        const activeIdx = Math.min(workProgPills.length - 1, Math.max(0, Math.round(ratio * (workProgPills.length - 1))));
+        workProgPills.forEach((pill, idx) => {
+          pill.classList.toggle("active", idx === activeIdx);
+        });
+      }
+    };
+    workGrid.addEventListener("scroll", updatePills, { passive: true });
+
+    // Drag-to-Scroll (Mouse)
+    let isDown = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let hasDragged = false;
+
+    workGrid.addEventListener("mousedown", (e) => {
+      if (e.target.closest("button") || e.target.closest("a")) return;
+      isDown = true;
+      hasDragged = false;
+      workGrid.style.cursor = "grabbing";
+      startX = e.pageX - workGrid.offsetLeft;
+      startScrollLeft = workGrid.scrollLeft;
+    });
+
+    window.addEventListener("mouseup", () => {
+      if (isDown) {
+        isDown = false;
+        workGrid.style.cursor = "grab";
+      }
+    });
+
+    workGrid.addEventListener("mouseleave", () => {
+      if (isDown) {
+        isDown = false;
+        workGrid.style.cursor = "grab";
+      }
+    });
+
+    workGrid.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - workGrid.offsetLeft;
+      const walk = (x - startX) * 1.35;
+      if (Math.abs(walk) > 6) {
+        hasDragged = true;
+      }
+      workGrid.scrollLeft = startScrollLeft - walk;
+    });
+
+    // Prevent openReel click if user was dragging
+    workGrid.addEventListener("click", (e) => {
+      if (hasDragged) {
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        hasDragged = false;
+      }
+    }, true);
+  }
 });
 </script>
 
