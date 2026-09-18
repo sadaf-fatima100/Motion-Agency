@@ -600,7 +600,7 @@ if(!rm){
       x: -9999,
       y: -9999,
       active: false,
-      radius: 200
+      radius: 170
     };
 
     function lerp(a, b, t) {
@@ -772,18 +772,21 @@ if(!rm){
         let strokeColor = null;
 
         if (combinedHeat > 0.01) {
-          // Hover color animation: Radiant shimmering electric violet (#7c12ff) & rose pink (#ff8fce)
-          const animR = Math.round(124 + Math.sin(time * 3 + cell.u * 5) * 45);
-          const animG = Math.round(75 + Math.cos(time * 2.5 + cell.v * 5) * 35);
-          const animB = 255;
+          // Hover color animation: Soft, luminous pastel lilac & studio lavender violet
+          // Keeps the exact signature violet shade while keeping luminance high for crystal-clear text readability
+          const animR = Math.round(208 + Math.sin(time * 3 + cell.u * 5) * 14);
+          const animG = Math.round(194 + Math.cos(time * 2.5 + cell.v * 5) * 12);
+          const animB = 254;
 
-          r = Math.round(lerp(baseR, animR, combinedHeat));
-          g = Math.round(lerp(baseG, animG, combinedHeat));
-          b = Math.round(lerp(baseB, animB, combinedHeat));
-          a = Math.min(1.0, baseA + combinedHeat * 0.22);
+          const heatBlend = Math.min(0.68, combinedHeat * 0.68);
 
-          const strokeAlpha = (0.2 + combinedHeat * 0.7).toFixed(3);
-          strokeColor = `rgba(124, 92, 255, ${strokeAlpha})`;
+          r = Math.round(lerp(baseR, animR, heatBlend));
+          g = Math.round(lerp(baseG, animG, heatBlend));
+          b = Math.round(lerp(baseB, animB, heatBlend));
+          a = Math.min(0.95, baseA + combinedHeat * 0.15);
+
+          const strokeAlpha = (0.18 + combinedHeat * 0.28).toFixed(3);
+          strokeColor = `rgba(138, 102, 255, ${strokeAlpha})`;
         } else {
           r = Math.max(0, Math.min(255, baseR));
           g = Math.max(0, Math.min(255, baseG));
