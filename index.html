@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lumen Reel &mdash; Motion &amp; Film Studio</title>
+<title>KINETIX &mdash; Cinematic Motion &amp; Animation Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@ button{font-family:var(--font);cursor:pointer;border:none;background:none;}
 ::selection{background:var(--v1);color:#fff;}
 a:focus-visible,button:focus-visible{outline:2px solid var(--v1);outline-offset:3px;border-radius:6px;}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;}}
-.wrap { max-width: 1440px; margin: 0 auto; padding: 0 36px; box-sizing: border-box; position: relative; width: 100%; }.wrap-inner{padding-top:40px;}
+.wrap { max-width: 1440px; margin: 0 auto; padding: 0 40px; box-sizing: border-box; position: relative; width: 100%; }.wrap-inner{padding-top:40px;}
 
 /* NAV (STRETCHED CAPSULE WITH BALANCED NAVLINKS & GET STARTED BUTTON) */
 .site-header {
@@ -41,16 +41,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--v1);outline-offset:
   background: rgba(245, 243, 251, 0.92);
   backdrop-filter: blur(16px) saturate(1.4);
   -webkit-backdrop-filter: blur(16px) saturate(1.4);
-  padding: 14px 36px;
+  padding: 14px 0;
   border-bottom: 1px solid rgba(235, 228, 248, 0.8);
+  width: 100%;
 }
 .nav-wrapper {
   max-width: 1440px;
   margin: 0 auto;
+  padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 /* Main Unified Capsule: Stretched width across the left side */
@@ -569,11 +573,17 @@ h1.hero-title .accent {
 .section-head h2{font-family:var(--font)!important;font-size:clamp(20px,2.4vw,28px);font-weight:350!important;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-0);}
 .section-head p{margin-top:10px;font-size:14px;color:var(--ink-2);line-height:1.6;max-width:680px;}
 
-/* WORK GRID & 3D CARDS */
-.work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;}
-.work-card{position:relative;border-radius:30px;aspect-ratio:1/1.08;overflow:hidden;background:#ffffff;box-shadow:0 10px 30px -10px rgba(100,70,180,.14);transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .4s;cursor:pointer;}
+/* WORK HORIZONTAL SCROLL CAROUSEL */
+.work-grid{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory;scroll-behavior:smooth;gap:24px;position:relative;padding:12px 6px 28px 6px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(124,92,255,0.45) rgba(235,228,250,0.5);cursor:grab;}
+.work-grid:active{cursor:grabbing;}
+.work-grid::-webkit-scrollbar{height:8px;}
+.work-grid::-webkit-scrollbar-track{background:rgba(235,228,250,0.6);border-radius:100px;}
+.work-grid::-webkit-scrollbar-thumb{background:linear-gradient(90deg,#7c12ff,#ff8fce);border-radius:100px;box-shadow:0 2px 6px rgba(124,18,255,0.25);}
+.work-grid::-webkit-scrollbar-thumb:hover{background:linear-gradient(90deg,#6700e6,#ff70bd);}
+
+.work-card{position:relative;flex:0 0 320px!important;width:320px!important;min-width:320px!important;aspect-ratio:1/1.08;border-radius:30px;overflow:hidden;background:#ffffff;box-shadow:0 10px 30px -10px rgba(100,70,180,.14);transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .4s;cursor:pointer;scroll-snap-align:start;user-select:none;}
 .work-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px -12px rgba(90,60,180,.22);}
-.card-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.25,1,.5,1);}
+.card-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.25,1,.5,1);pointer-events:none;}
 .work-card:hover .card-art{transform:scale(1.05);}
 
 /* 3-DOTS BUTTON */
@@ -607,16 +617,23 @@ h1.hero-title .accent {
 .notch-tl{top:-1px;left:-1px;border-bottom-right-radius:24px;}
 .notch-tl::before{content:"";position:absolute;bottom:-16px;left:0;width:16px;height:16px;background:transparent;border-top-left-radius:16px;box-shadow:-5px -5px 0 5px var(--bg);}
 .notch-tl::after{content:"";position:absolute;top:0;right:-16px;width:16px;height:16px;background:transparent;border-top-left-radius:16px;box-shadow:-5px -5px 0 5px var(--bg);}
+.notch-tl::after{content:"";position:absolute;top:0;right:-16px;width:16px;height:16px;background:transparent;border-top-left-radius:16px;box-shadow:5px -5px 0 5px var(--bg);}
 
 .card-arrow{width:38px;height:38px;border-radius:50%;background:#ffffff;border:1px solid rgba(165,145,225,.3);box-shadow:0 4px 14px -2px rgba(100,70,180,.16);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s;}
 .work-card:hover .card-arrow{transform:scale(1.1) rotate(45deg);box-shadow:0 8px 20px -2px rgba(100,70,180,.28);}
 .card-arrow svg{width:13px;height:13px;stroke:var(--ink-0);fill:none;stroke-width:2.4;}
 
-/* CAROUSEL BAR */
-.carousel-bar{margin-top:28px;display:flex;align-items:center;gap:20px;}
+/* CAROUSEL BAR WITH NAVIGATION ARROWS */
+.carousel-bar{margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.carousel-nav-group{display:flex;align-items:center;gap:12px;}
+.carousel-arrow-btn{width:42px;height:42px;border-radius:50%;background:#ffffff;border:1.5px solid rgba(220,210,245,0.85);box-shadow:0 4px 14px rgba(100,70,180,.08);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s ease;}
+.carousel-arrow-btn:hover{background:#7c12ff;border-color:#7c12ff;transform:translateY(-2px);box-shadow:0 8px 20px rgba(124,18,255,.3);}
+.carousel-arrow-btn svg{width:16px;height:16px;stroke:#160c33;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s;}
+.carousel-arrow-btn:hover svg{stroke:#ffffff;}
 .progress-list{display:flex;align-items:center;gap:6px;}
-.prog-pill{height:5px;border-radius:10px;background:#e2dded;width:24px;transition:all .3s;}
-.prog-pill.active{width:48px;background:linear-gradient(90deg,#7c54eb 0%,#f69cb8 100%);}
+.prog-pill{height:6px;border-radius:10px;background:#e2dded;width:24px;transition:all .3s;}
+.prog-pill.active{width:54px;background:linear-gradient(90deg,#7c54eb 0%,#ff8fce 100%);}
+.carousel-hint{font-size:13px;font-weight:600;color:var(--ink-2);display:inline-flex;align-items:center;gap:6px;}
 .see-all-btn{font-size:13px;font-weight:600;color:var(--ink-2);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:color .2s,transform .2s;}
 .see-all-btn:hover{color:#7c5cff;transform:translateX(4px);}
 
@@ -699,7 +716,7 @@ h1.hero-title .accent {
 .pricing-card-title{font-family:var(--font)!important;font-size:20px;font-weight:450!important;letter-spacing:-.02em;color:#161226;white-space:nowrap;}
 .pricing-pill{display:inline-flex;align-items:center;justify-content:center;border:1.5px solid #201a33;border-radius:100px;padding:2px 12px;font-size:13px;font-weight:700;color:#201a33;background:transparent;letter-spacing:-.01em;}
 
-.pricing-content{position:relative;z-index:2;padding:76px 28px 24px 28px;display:flex;flex-direction:column;flex-grow:1;}
+.pricing-content{position:relative;z-index:2;padding:22px 28px 24px 28px;display:flex;flex-direction:column;flex-grow:1;}
 .pricing-intro{font-size:13.5px;color:rgba(30,24,52,.78);line-height:1.55;margin-bottom:20px;max-width:320px;}
 .pricing-features{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;flex-grow:1;position:relative;z-index:3;}
 .pricing-features li{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:500;color:#1f1832;line-height:1.4;}
@@ -2693,7 +2710,6 @@ h1.hero-title .accent {
 .card-cat-badge{position:absolute;top:14px;left:14px;z-index:10;font-family:var(--font)!important;font-size:10.5px;font-weight:750;letter-spacing:0.06em;text-transform:uppercase;color:#ffffff;background:rgba(15,10,30,0.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.3);padding:4px 11px;border-radius:100px;}
 .card-center-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.9);width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,0.25);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,0.85);display:flex;align-items:center;justify-content:center;color:#ffffff;z-index:9;opacity:0.85;box-shadow:0 8px 24px rgba(0,0,0,0.25);transition:all .35s cubic-bezier(0.16,1,0.3,1);pointer-events:none;}
 .card-center-play svg{width:20px;height:20px;margin-left:2px;fill:#ffffff;}
-.work-card:hover .card-center-play{opacity:1;transform:translate(-50%,-50%) scale(1.08);background:linear-gradient(135deg,#7c12ff 0%,#ff8fce 100%);border-color:rgba(255,255,255,0.95);box-shadow:0 12px 32px rgba(124,18,255,0.5);}
 .play-pulse-ring{position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.5);opacity:0;animation:playPulse 2.4s infinite;}
 @keyframes playPulse{0%{transform:scale(0.85);opacity:0.8;}100%{transform:scale(1.4);opacity:0;}}
 .work-card.is-hidden{display:none!important;}
@@ -2707,7 +2723,6 @@ h1.hero-title .accent {
 .hero-play-overlay:hover .hero-play-button{transform:scale(1.1);box-shadow:0 18px 50px -4px rgba(124,18,255,0.8), 0 0 0 10px rgba(255,255,255,0.25);}
 .hero-play-label{margin-top:12px;font-family:var(--font)!important;font-size:12px;font-weight:750;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff;background:rgba(18,12,38,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:5px 14px;border-radius:100px;border:1px solid rgba(255,255,255,0.25);box-shadow:0 4px 16px rgba(0,0,0,0.2);}
 
-
 /* RESPONSIVE */
 @media(max-width:1024px){
   .wrap{padding:0 24px;}
@@ -2719,30 +2734,31 @@ h1.hero-title .accent {
   .stats-left{flex-wrap:wrap;justify-content:center;gap:20px;}
   .stats-badge-anchor{position:static;transform:none;}
   .stats-right{white-space:normal;}
-  .work-grid{grid-template-columns:repeat(2,1fr);}
+  .work-card{flex:0 0 290px!important;width:290px!important;min-width:290px!important;}
   .services-grid{grid-template-columns:1fr;}
 }
 @media(max-width:640px){
   .wrap{padding:0 20px;}nav{padding:0 20px;}
   .hero-copy{padding:40px 20px;}
   .stats-left{flex-direction:column;gap:12px;}
-  .work-grid{grid-template-columns:1fr;}
+  .work-card{flex:0 0 270px!important;width:270px!important;min-width:270px!important;}
   .cta-band{padding:44px 24px;border-radius:var(--r-xl);}
 }
-
-
 </style>
 </head>
 <body>
+
 <header class="site-header">
   <div class="nav-wrapper">
     <!-- Main Unified Capsule: Purple Logo + White Navlinks -->
     <div class="nav-main-capsule">
-      <a href="#top" class="nav-logo-box">
-        <svg class="nav-star-icon" viewBox="0 0 24 24">
-          <path d="M12 2l2.4 6.8 7.2.5-5.5 4.6 1.7 7.1-5.8-3.6-5.8 3.6 1.7-7.1-5.5-4.6 7.2-.5z"/>
+      <a href="#top" class="nav-logo-box" aria-label="KINETIX Homepage">
+        <svg class="nav-motion-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 12C4 7.58172 7.58172 4 12 4C15.0688 4 17.7346 5.72754 19.071 8.25" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M20 12C20 16.4183 16.4183 20 12 20C8.9312 20 6.26543 18.2725 4.92896 15.75" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="3" fill="#ffffff"/>
         </svg>
-        <span class="nav-logo-text">SKILLWAVE</span>
+        <span class="nav-logo-text">KINETIX</span>
       </a>
 
       <div class="nav-links-segment">
@@ -2870,197 +2886,260 @@ h1.hero-title .accent {
 
     <div id="work"></div>
     <div class="section-head">
-      <h2>INSPIRING WORKS AND EXPERT LESSONS</h2>
-      <p>You'll find a curated collection of outstanding works and expertly designed tutorials to enhance your design skills.</p>
+      <div class="eyebrow" style="margin-bottom: 8px;"><span class="eyebrow-dot"></span>Portfolio &amp; Showcase</div>
+      <h2>INSPIRING WORKS &amp; ANIMATION SHOWCASE</h2>
+      <p>Explore our curated portfolio of commercial showreels, 3D CGI spectacles, whiteboard explainers, and high-impact brand stories.</p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="work-filter-bar">
+      <button type="button" class="filter-tab active" data-filter="all">All Projects (9)</button>
+      <button type="button" class="filter-tab" data-filter="3d">3D CGI &amp; VFX</button>
+      <button type="button" class="filter-tab" data-filter="explainer">Explainer Videos</button>
+      <button type="button" class="filter-tab" data-filter="whiteboard">Whiteboard</button>
+      <button type="button" class="filter-tab" data-filter="commercial">Commercial &amp; Brand</button>
     </div>
 
     <div class="work-grid">
-      <!-- Card 1: Notch BR, Pill Bottom-Left, Dots TL -->
-      <div class="work-card">
-        <svg class="card-art" viewBox="0 0 300 324" preserveAspectRatio="none">
-          <defs>
-            <radialGradient id="art1-bg" cx="50%" cy="38%" r="65%">
-              <stop offset="0%" stop-color="#b6c9fb"/>
-              <stop offset="60%" stop-color="#93a2e6"/>
-              <stop offset="100%" stop-color="#6977be"/>
-            </radialGradient>
-            <linearGradient id="art1-ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#f0f3ff"/>
-              <stop offset="35%" stop-color="#a875f5"/>
-              <stop offset="70%" stop-color="#6c3ce8"/>
-              <stop offset="100%" stop-color="#3c1e95"/>
-            </linearGradient>
-            <linearGradient id="art1-sheen" x1="20%" y1="0%" x2="80%" y2="100%">
-              <stop offset="0%" stop-color="#ffffff"/>
-              <stop offset="50%" stop-color="#fed5df"/>
-              <stop offset="100%" stop-color="#a48ae8"/>
-            </linearGradient>
-          </defs>
-          <rect width="300" height="324" fill="url(#art1-bg)"/>
-          <ellipse cx="140" cy="80" rx="18" ry="36" fill="#24cfdf" opacity="0.6" transform="rotate(-15 140 80)"/>
-          <path d="M150 40 C190 90 205 160 175 270 C145 250 115 220 120 170 C125 110 135 65 150 40 Z" fill="url(#art1-ribbon)"/>
-          <path d="M95 105 C115 85 138 105 140 190 C105 225 72 205 80 150 Z" fill="url(#art1-sheen)" opacity="0.95"/>
-          <circle cx="148" cy="100" r="28" fill="#fdebe6"/>
-          <circle cx="152" cy="98" r="24" fill="#f7d0c4"/>
-        </svg>
-
-        <div class="card-dots" style="top: 14px; left: 14px;" aria-label="More">
-          <span></span><span></span><span></span>
+      <!-- Card 1: 3D CGI & VFX Showcase (ez8UKLwe2qw) -->
+      <div class="work-card" data-category="3d" onclick="openReel('ez8UKLwe2qw', '3D CGI &amp; VFX Showcase', '3D &amp; CGI')">
+        <div class="card-thumb-wrap">
+          <img src="https://i.ytimg.com/vi/ez8UKLwe2qw/hqdefault.jpg" alt="3D CGI &amp; VFX Showcase" class="card-art" loading="lazy" />
+          <div class="card-art-overlay"></div>
+          <div class="card-center-play" aria-hidden="true">
+            <div class="play-pulse-ring"></div>
+            <svg viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+          </div>
         </div>
-
-        <div class="card-pill pill-bottom-left">
-          Joe Lenst: Color Balance in...
-        </div>
-
-        <div class="card-notch notch-br">
-          <button class="card-arrow" aria-label="View lesson">
-            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
-          </button>
-        </div>
-      </div>
-
-      <!-- Card 2: Notch TR, Pill Top-Left, Dots BL -->
-      <div class="work-card">
-        <svg class="card-art" viewBox="0 0 300 324" preserveAspectRatio="none">
-          <defs>
-            <radialGradient id="art2-bg" cx="50%" cy="50%" r="65%">
-              <stop offset="0%" stop-color="#e3e0ee"/>
-              <stop offset="65%" stop-color="#c8c4d8"/>
-              <stop offset="100%" stop-color="#aca7be"/>
-            </radialGradient>
-            <linearGradient id="art2-glass" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#3fe2f7" stop-opacity="0.85"/>
-              <stop offset="45%" stop-color="#6785f7" stop-opacity="0.75"/>
-              <stop offset="100%" stop-color="#ff6ec7" stop-opacity="0.95"/>
-            </linearGradient>
-            <linearGradient id="art2-core" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#49ecff"/>
-              <stop offset="100%" stop-color="#5577ff"/>
-            </linearGradient>
-          </defs>
-          <rect width="300" height="324" fill="url(#art2-bg)"/>
-          <g stroke="#ffffff" stroke-width="0.85" opacity="0.55">
-            <path d="M40 280 Q150 200 260 280 M50 295 Q150 220 250 295 M60 310 Q150 240 240 310"/>
-            <path d="M40 280 L150 210 L260 280 M70 295 L150 210 L230 295 M100 310 L150 210 L200 310"/>
-            <path d="M50 240 L250 310 M50 310 L250 240"/>
-          </g>
-          <g transform="translate(150, 165)">
-            <ellipse cx="0" cy="0" rx="65" ry="42" fill="url(#art2-glass)" transform="rotate(0)"/>
-            <ellipse cx="0" cy="0" rx="65" ry="42" fill="url(#art2-glass)" transform="rotate(45)"/>
-            <ellipse cx="0" cy="0" rx="65" ry="42" fill="url(#art2-glass)" transform="rotate(90)"/>
-            <ellipse cx="0" cy="0" rx="65" ry="42" fill="url(#art2-glass)" transform="rotate(135)"/>
-            <circle cx="0" cy="0" r="16" fill="url(#art2-core)"/>
-            <circle cx="-3" cy="-3" r="5" fill="#ffffff" opacity="0.8"/>
-          </g>
-        </svg>
-
-        <div class="card-dots" style="bottom: 14px; left: 14px;" aria-label="More">
-          <span></span><span></span><span></span>
-        </div>
-
-        <div class="card-pill pill-top-left">
-          Lindsey Lomis: Biomorphic V...
-        </div>
-
-        <div class="card-notch notch-tr">
-          <button class="card-arrow" aria-label="View lesson">
-            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
-          </button>
-        </div>
-      </div>
-
-      <!-- Card 3: Notch BL, Pill Bottom-Right, Dots TR -->
-      <div class="work-card">
-        <svg class="card-art" viewBox="0 0 300 324" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="art3-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#ebe7f7"/>
-              <stop offset="100%" stop-color="#d4cee8"/>
-            </linearGradient>
-          </defs>
-          <rect width="300" height="324" fill="url(#art3-bg)"/>
-          <rect x="65" y="70" width="76" height="115" rx="38" fill="#7518eb"/>
-          <circle cx="103" cy="108" r="25" fill="#ded7f2"/>
-          <rect x="145" y="60" width="105" height="160" fill="#ded7f2" opacity="0.65"/>
-          <g stroke="#ffffff" stroke-width="1.2" opacity="0.65">
-            <line x1="166" y1="60" x2="166" y2="220"/>
-            <line x1="187" y1="60" x2="187" y2="220"/>
-            <line x1="208" y1="60" x2="208" y2="220"/>
-            <line x1="229" y1="60" x2="229" y2="220"/>
-            <line x1="145" y1="82" x2="250" y2="82"/>
-            <line x1="145" y1="104" x2="250" y2="104"/>
-            <line x1="145" y1="126" x2="250" y2="126"/>
-            <line x1="145" y1="148" x2="250" y2="148"/>
-            <line x1="145" y1="170" x2="250" y2="170"/>
-          </g>
-          <path d="M40 230 A110 110 0 0 1 260 230 Z" fill="#e7e2f5" opacity="0.85"/>
-        </svg>
-
+        <div class="card-cat-badge">3D &amp; CGI</div>
         <div class="card-dots" style="top: 14px; right: 14px;" aria-label="More">
           <span></span><span></span><span></span>
         </div>
-
-        <div class="card-pill pill-bottom-right">
-          Stan Goetz: Texture in Design...
+        <div class="card-pill pill-bottom-left">
+          3D CGI &amp; VFX Showcase
         </div>
-
-        <div class="card-notch notch-bl">
-          <button class="card-arrow" aria-label="View lesson">
+        <div class="card-notch notch-br">
+          <button class="card-arrow" aria-label="Play 3D CGI video">
             <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
           </button>
         </div>
       </div>
 
-      <!-- Card 4: Notch TL, Pill Top-Right, Dots BL -->
-      <div class="work-card">
-        <svg class="card-art" viewBox="0 0 300 324" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="art4-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#9193b2"/>
-              <stop offset="50%" stop-color="#696a8a"/>
-              <stop offset="100%" stop-color="#464663"/>
-            </linearGradient>
-            <linearGradient id="art4-tube" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#d1e2fc" stop-opacity="0.8"/>
-              <stop offset="50%" stop-color="#f2b8f0" stop-opacity="0.6"/>
-              <stop offset="100%" stop-color="#90b1fc" stop-opacity="0.85"/>
-            </linearGradient>
-          </defs>
-          <rect width="300" height="324" fill="url(#art4-bg)"/>
-          <rect x="135" y="95" width="105" height="150" rx="52" fill="none" stroke="url(#art4-tube)" stroke-width="26"/>
-          <rect x="75" y="115" width="44" height="44" rx="10" fill="#e4ebf7" transform="rotate(-18 97 137)" opacity="0.9"/>
-          <circle cx="188" cy="100" r="16" fill="#ff74bf"/>
-          <circle cx="188" cy="100" r="7" fill="#361f70"/>
-          <circle cx="215" cy="255" r="24" fill="#c3d5f5" opacity="0.75"/>
-          <circle cx="210" cy="250" r="8" fill="#ffffff" opacity="0.5"/>
-        </svg>
-
+      <!-- Card 2: Explainer Video Production (V1gTR9Nd1h0) -->
+      <div class="work-card" data-category="explainer" onclick="openReel('V1gTR9Nd1h0', 'Explainer Video Production', 'Explainer Video')">
+        <div class="card-thumb-wrap">
+          <img src="https://i.ytimg.com/vi/V1gTR9Nd1h0/hqdefault.jpg" alt="Explainer Video Production" class="card-art" loading="lazy" />
+          <div class="card-art-overlay"></div>
+          <div class="card-center-play" aria-hidden="true">
+            <div class="play-pulse-ring"></div>
+            <svg viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+          </div>
+        </div>
+        <div class="card-cat-badge">Explainer</div>
         <div class="card-dots" style="bottom: 14px; left: 14px;" aria-label="More">
           <span></span><span></span><span></span>
         </div>
-
-        <div class="card-pill pill-top-right">
-          Ron Edwards: Creative ...
+        <div class="card-pill pill-top-left">
+          Explainer Video Production
         </div>
+        <div class="card-notch notch-tr">
+          <button class="card-arrow" aria-label="Play Explainer Video">
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </button>
+        </div>
+      </div>
 
+      <!-- Card 3: Whiteboard Strategy Animation (sUYgEgjqi1M) -->
+      <div class="work-card" data-category="whiteboard" onclick="openReel('sUYgEgjqi1M', 'Whiteboard Strategy Animation', 'Whiteboard Animation')">
+        <div class="card-thumb-wrap">
+          <img src="https://i.ytimg.com/vi/sUYgEgjqi1M/hqdefault.jpg" alt="Whiteboard Strategy Animation" class="card-art" loading="lazy" />
+          <div class="card-art-overlay"></div>
+          <div class="card-center-play" aria-hidden="true">
+            <div class="play-pulse-ring"></div>
+            <svg viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+          </div>
+        </div>
+        <div class="card-cat-badge">Whiteboard</div>
+        <div class="card-dots" style="top: 14px; right: 14px;" aria-label="More">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="card-pill pill-bottom-right">
+          Whiteboard Strategy Animation
+        </div>
+        <div class="card-notch notch-bl">
+          <button class="card-arrow" aria-label="Play Whiteboard video">
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 4: SaaS Character Animation (u0sxesfLTdA) -->
+      <div class="work-card" data-category="explainer" onclick="openReel('u0sxesfLTdA', 'SaaS Character Animation', '2D &amp; SaaS')">
+        <div class="card-thumb-wrap">
+          <img src="https://i.ytimg.com/vi/u0sxesfLTdA/hqdefault.jpg" alt="SaaS Character Animation" class="card-art" loading="lazy" />
+          <div class="card-art-overlay"></div>
+          <div class="card-center-play" aria-hidden="true">
+            <div class="play-pulse-ring"></div>
+            <svg viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+          </div>
+        </div>
+        <div class="card-cat-badge">2D &amp; SaaS</div>
+        <div class="card-dots" style="bottom: 14px; left: 14px;" aria-label="More">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="card-pill pill-top-right">
+          SaaS Character Animation
+        </div>
         <div class="card-notch notch-tl">
-          <button class="card-arrow" aria-label="View lesson">
+          <button class="card-arrow" aria-label="Play SaaS Character animation">
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 5: Commercial Showreel (T_qT_NWyPEU) -->
+      <div class="work-card" data-category="commercial" onclick="openReel('T_qT_NWyPEU', 'Commercial Showreel · Company Intro', 'Showreel')">
+        <div class="card-thumb-wrap">
+          <img src="https://i.ytimg.com/vi/T_qT_NWyPEU/hqdefault.jpg" alt="Commercial Showreel" class="card-art" loading="lazy" />
+          <div class="card-art-overlay"></div>
+          <div class="card-center-play" aria-hidden="true">
+            <div class="play-pulse-ring"></div>
+            <svg viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+          </div>
+        </div>
+        <div class="card-cat-badge">Showreel</div>
+        <div class="card-dots" style="top: 14px; right: 14px;" aria-label="More">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="card-pill pill-bottom-left">
+          Commercial Showreel
+        </div>
+        <div class="card-notch notch-br">
+          <button class="card-arrow" aria-label="Play Commercial Showreel">
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 6: Corporate Motion Graphics (DjNLgHpFXkY) -->
+      <div class="work-card" data-category="explainer" onclick="openReel('DjNLgHpFXkY', 'Corporate Motion Graphics', 'Corporate Motion')">
+        <div class="card-thumb-wrap">
+          <img src="https://i.ytimg.com/vi/DjNLgHpFXkY/hqdefault.jpg" alt="Corporate Motion Graphics" class="card-art" loading="lazy" />
+          <div class="card-art-overlay"></div>
+          <div class="card-center-play" aria-hidden="true">
+            <div class="play-pulse-ring"></div>
+            <svg viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+          </div>
+        </div>
+        <div class="card-cat-badge">Corporate</div>
+        <div class="card-dots" style="bottom: 14px; right: 14px;" aria-label="More">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="card-pill pill-top-left">
+          Corporate Motion Graphics
+        </div>
+        <div class="card-notch notch-tr">
+          <button class="card-arrow" aria-label="Play Corporate Motion video">
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 7: Product Launch Storyboard (XiVTU4-7WcM) -->
+      <div class="work-card" data-category="whiteboard" onclick="openReel('XiVTU4-7WcM', 'Product Launch Storyboard', 'Storyboard')">
+        <div class="card-thumb-wrap">
+          <img src="https://i.ytimg.com/vi/XiVTU4-7WcM/hqdefault.jpg" alt="Product Launch Storyboard" class="card-art" loading="lazy" />
+          <div class="card-art-overlay"></div>
+          <div class="card-center-play" aria-hidden="true">
+            <div class="play-pulse-ring"></div>
+            <svg viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+          </div>
+        </div>
+        <div class="card-cat-badge">Launch Story</div>
+        <div class="card-dots" style="top: 14px; left: 14px;" aria-label="More">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="card-pill pill-bottom-right">
+          Product Launch Storyboard
+        </div>
+        <div class="card-notch notch-bl">
+          <button class="card-arrow" aria-label="Play Launch Storyboard video">
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 8: Commercial Narrative Animation (FiQ_KsLjoq4) -->
+      <div class="work-card" data-category="commercial" onclick="openReel('FiQ_KsLjoq4', 'Commercial Narrative Animation', 'Commercial Film')">
+        <div class="card-thumb-wrap">
+          <img src="https://i.ytimg.com/vi/FiQ_KsLjoq4/hqdefault.jpg" alt="Commercial Narrative Animation" class="card-art" loading="lazy" />
+          <div class="card-art-overlay"></div>
+          <div class="card-center-play" aria-hidden="true">
+            <div class="play-pulse-ring"></div>
+            <svg viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+          </div>
+        </div>
+        <div class="card-cat-badge">Commercial</div>
+        <div class="card-dots" style="bottom: 14px; right: 14px;" aria-label="More">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="card-pill pill-top-right">
+          Commercial Narrative Animation
+        </div>
+        <div class="card-notch notch-tl">
+          <button class="card-arrow" aria-label="Play Commercial Narrative video">
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 9: Brand Storytelling Video (J_e-hDqWpYI) -->
+      <div class="work-card" data-category="commercial" onclick="openReel('J_e-hDqWpYI', 'Brand Storytelling Video', 'Brand Film')">
+        <div class="card-thumb-wrap">
+          <img src="https://i.ytimg.com/vi/FiQ_KsLjoq4/hqdefault.jpg" alt="Brand Storytelling Video" class="card-art" loading="lazy" />
+          <div class="card-art-overlay"></div>
+          <div class="card-center-play" aria-hidden="true">
+            <div class="play-pulse-ring"></div>
+            <svg viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+          </div>
+        </div>
+        <div class="card-cat-badge">Brand Story</div>
+        <div class="card-dots" style="top: 14px; right: 14px;" aria-label="More">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="card-pill pill-bottom-left">
+          Brand Storytelling Video
+        </div>
+        <div class="card-notch notch-br">
+          <button class="card-arrow" aria-label="Play Brand Storytelling video">
             <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
           </button>
         </div>
       </div>
     </div>
 
-    <!-- Carousel pagination & see all -->
+    <!-- Carousel navigation & progress -->
     <div class="carousel-bar">
-      <div class="progress-list">
+      <div class="carousel-nav-group">
+        <button type="button" class="carousel-arrow-btn" id="workPrevBtn" aria-label="Previous work card">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button type="button" class="carousel-arrow-btn" id="workNextBtn" aria-label="Next work card">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+
+      <div class="progress-list" id="workProgList">
         <span class="prog-pill active"></span>
         <span class="prog-pill"></span>
         <span class="prog-pill"></span>
         <span class="prog-pill"></span>
         <span class="prog-pill"></span>
       </div>
-      <a href="#work" class="see-all-btn">See all &rarr;</a>
+
+      <div class="carousel-hint">
+        <span>Scroll / drag horizontally &rarr;</span>
+      </div>
     </div>
 
     <!-- EDITORIAL MANIFESTO SECTION -->
@@ -3616,6 +3695,14 @@ h1.hero-title .accent {
             <span class="pricing-pill">30s</span>
           </div>
 
+                    <!-- Full-Width Video Player with Live TryShort Overlay & YouTube Link -->
+          <div class="pricing-card-video" onclick="playPricingVideo(this, 'https://www.youtube.com/embed/sUYgEgjqi1M?autoplay=1&rel=0')" title="Click to play Whiteboard Video">
+            <img src="assets/pricing-whiteboard.jpg" onerror="this.src='https://animationagency3.tryshort.com/wp-content/uploads/2025/03/Animation-Videos-Image-Portfolio-Overlay-1.jpg'" alt="Whiteboard Animation Video" loading="lazy">
+            <div class="play-btn-circle" aria-label="Play video">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+
           <div class="pricing-content">
             <p class="pricing-intro">High-converting whiteboard animation crafted to explain, educate, and convert audiences.</p>
             <ul class="pricing-features">
@@ -3662,6 +3749,14 @@ h1.hero-title .accent {
           <div class="pricing-notch-tl">
             <h3 class="pricing-card-title">Explainer Video</h3>
             <span class="pricing-pill">30s</span>
+          </div>
+
+                    <!-- Full-Width Video Player with Live TryShort Overlay & YouTube Link -->
+          <div class="pricing-card-video" onclick="playPricingVideo(this, 'https://www.youtube.com/embed/ez8UKLwe2qw?autoplay=1&rel=0')" title="Click to play Explainer Video">
+            <img src="assets/pricing-explainer.jpg" onerror="this.src='https://animationagency3.tryshort.com/wp-content/uploads/2025/03/Animation-Videos-Image-Portfolio-Overlay-6.jpg'" alt="Explainer Animation Video" loading="lazy">
+            <div class="play-btn-circle" aria-label="Play video">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
           </div>
 
           <div class="pricing-content">
@@ -3711,6 +3806,14 @@ h1.hero-title .accent {
           <div class="pricing-notch-tl">
             <h3 class="pricing-card-title">Premium Video</h3>
             <span class="pricing-pill">30s</span>
+          </div>
+
+                    <!-- Full-Width Video Player with Live TryShort Overlay & YouTube Link -->
+          <div class="pricing-card-video" onclick="playPricingVideo(this, 'https://www.youtube.com/embed/FiQ_KsLjoq4?autoplay=1&rel=0')" title="Click to play Premium Video">
+            <img src="assets/pricing-premium.jpg" onerror="this.src='https://animationagency3.tryshort.com/wp-content/uploads/2025/03/Animation-Videos-Image-Overlay-7.jpg'" alt="Premium 3D Animation Video" loading="lazy">
+            <div class="play-btn-circle" aria-label="Play video">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
           </div>
 
           <div class="pricing-content">
