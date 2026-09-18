@@ -5,13 +5,126 @@ html{overflow-x:clip;}:root{--bg:#f5f3fb;--surface:#ffffff;--ink-0:#0e0b1a;--ink
   --grad:linear-gradient(145deg,#6b47d0 0%,#9966e0 22%,#c97bc8 46%,#e2939a 66%,#f0b87e 86%,#f8d89a 100%);
   --grad-btn:linear-gradient(120deg,#7c5cff,#ff8fce);}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:var(--font);background:var(--bg);color:var(--ink-0);overflow-x:hidden;
-  background-image:radial-gradient(900px 500px at 100% 0%,rgba(150,110,255,.09),transparent 55%),radial-gradient(600px 400px at 0% 60%,rgba(255,130,200,.07),transparent 50%);}
+html{scroll-behavior:smooth;scroll-padding-top:84px;}
+body{font-family:var(--font);background:var(--bg);color:var(--ink-0);overflow-x:hidden;}
 a{color:inherit;text-decoration:none;}img,svg{display:block;}
-/* FINAL EDITORIAL TYPOGRAPHY LOCK - DO NOT CHANGE OR REVERT */
-h1, h2, h3, h4, .hero-title, .manifesto-heading, .why-us-main-title, .process-main-title, .pricing-main-title {
+/* ============================================================
+   PRODUCTION DESIGN SYSTEM TYPOGRAPHY & HEADING HIERARCHY LOCK
+   ============================================================ */
+h1, h2, h3, h4, h5, h6,
+.hero-title, .section-head h2, .anim-solutions-title, .manifesto-heading, 
+.why-us-main-title, .process-main-title, .about-main-title, .pricing-main-title, .cta-band h2 {
   font-family: var(--font) !important;
+}
+
+/* 1. HERO MAIN TITLE (H1) */
+.hero-title {
+  font-family: var(--font) !important;
+  font-size: clamp(36px, 4.4vw, 58px) !important;
+  font-weight: 350 !important;
+  line-height: 1.14 !important;
+  letter-spacing: -0.025em !important;
+  text-transform: none !important;
+  color: var(--ink-0);
+  max-width: 600px;
+}
+
+/* 2. UNIFIED SECTION HEADINGS (H2) - Consistent across every section */
+.section-head h2,
+.anim-solutions-title,
+.manifesto-heading,
+.why-us-main-title,
+.process-main-title,
+.about-main-title,
+.pricing-main-title,
+.cta-band h2 {
+  font-family: var(--font) !important;
+  font-size: clamp(28px, 3.4vw, 42px) !important;
+  font-weight: 350 !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: none !important;
+  color: var(--ink-0) !important;
+}
+
+/* 3. UNIFIED CARD & COMPONENT HEADINGS (H3) - Consistent across every section */
+h3,
+.anim-card-title,
+.why-card-title,
+.service-card h3,
+.service-card-title,
+.card-slide-title,
+.pricing-card-title,
+.card-pill,
+.footer-heading,
+.reel-modal-title {
+  font-family: var(--font) !important;
+  font-size: clamp(18px, 1.4vw, 22px) !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.01em !important;
+  text-transform: none !important;
+}
+
+/* 4. UNIFIED EYEBROW PILLS - Consistent across every section (Sentence Case) */
+.hero-eyebrow,
+.anim-solutions-eyebrow,
+.eyebrow,
+.why-us-eyebrow,
+.process-eyebrow,
+.about-eyebrow,
+.pricing-eyebrow,
+.reel-modal-cat {
+  font-family: var(--font) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  color: #7448ee !important;
+  background: rgba(124, 92, 255, 0.08) !important;
+  border: 1.2px solid rgba(124, 92, 255, 0.22) !important;
+  border-radius: 100px !important;
+  padding: 6px 16px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  box-shadow: 0 2px 10px rgba(124, 92, 255, 0.08) !important;
+  width: fit-content;
+}
+
+/* 5. UNIFIED GRADIENT ACCENT TEXT - Cross-browser, vibrant, always 100% visible */
+.accent,
+.accent-text,
+.gradient-accent,
+.about-accent,
+.why-script,
+.highlight-brand,
+.grad-word,
+.hero-title .accent,
+.anim-solutions-title .accent-text,
+.manifesto-heading .gradient-accent,
+.manifesto-heading .highlight-brand,
+.why-us-main-title .accent-text,
+.process-main-title .accent-text,
+.about-main-title .about-accent,
+.pricing-main-title .accent-text,
+.cta-band h2 .accent,
+.fm-word.accent,
+.fm-word.accent-text,
+.fm-word.gradient-accent,
+.fm-word.about-accent,
+.fm-word.why-script,
+.fm-word.highlight-brand,
+.fm-word.grad-word {
+  background: linear-gradient(135deg, #7448ee 0%, #a56ff5 45%, #f69cb8 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  display: inline-block !important;
+  font-weight: 450 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 button{font-family:var(--font);cursor:pointer;border:none;background:none;}
 ::selection{background:var(--v1);color:#fff;}
@@ -19,17 +132,25 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--v1);outline-offset:
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;}}
 .wrap { max-width: 1440px; margin: 0 auto; padding: 0 40px; box-sizing: border-box; position: relative; width: 100%; }.wrap-inner{padding-top:40px;}
 
-/* NAV (STRETCHED CAPSULE WITH BALANCED NAVLINKS & GET STARTED BUTTON) */
+/* NAV (FIXED FLOATING HEADER - VISIBLE ON ALL SECTIONS) */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 70;
-  background: rgba(245, 243, 251, 0.92);
-  backdrop-filter: blur(16px) saturate(1.4);
-  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(245, 243, 251, 0.94);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
   padding: 14px 0;
-  border-bottom: 1px solid rgba(235, 228, 248, 0.8);
+  border-bottom: 1px solid rgba(235, 228, 248, 0.85);
   width: 100%;
+  transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.site-header.scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 8px 28px -6px rgba(100, 60, 200, 0.12);
+  border-bottom-color: rgba(220, 210, 245, 0.9);
 }
 .nav-wrapper {
   max-width: 1440px;
@@ -203,7 +324,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--v1);outline-offset:
   margin: 0 auto;
   position: relative;
   align-items: center;
-  padding: 32px 36px 40px 36px;
+  padding: 104px 36px 40px 36px;
   gap: 44px;
   box-sizing: border-box;
   width: 100%;
@@ -626,19 +747,19 @@ h1.hero-title .accent {
 .hero-stats-dock {
   position: relative;
   z-index: 2;
-  background: #ffffff;
-  border: 1.5px solid rgba(230, 222, 250, 0.95);
-  border-radius: 22px;
-  padding: 14px 28px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 8px 4px;
+  margin-top: 2px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  box-shadow: 0 16px 36px -8px rgba(110, 80, 200, 0.1), 0 2px 8px rgba(110, 80, 200, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none;
 }
 .hero-stats-dock:hover {
-  box-shadow: 0 20px 42px -8px rgba(110, 80, 200, 0.15), 0 4px 12px rgba(110, 80, 200, 0.06);
+  box-shadow: none;
 }
 
 .hero-stat-item {
@@ -712,7 +833,7 @@ h1.hero-title .accent {
 
 @media(max-width: 1200px) {
   .hero-stats-dock {
-    padding: 12px 18px;
+    padding: 6px 0;
     gap: 10px;
   }
   .stat-value {
@@ -734,7 +855,7 @@ h1.hero-title .accent {
   .hero {
     grid-template-columns: 1fr;
     gap: 36px;
-    padding: 24px 24px 40px;
+    padding: 92px 24px 40px;
   }
   .hero-video-card {
     min-height: 280px;
@@ -744,8 +865,7 @@ h1.hero-title .accent {
   .hero-stats-dock {
     flex-direction: column;
     gap: 12px;
-    padding: 16px 18px;
-    border-radius: 20px;
+    padding: 10px 0;
   }
   .hero-stat-item {
     width: 100%;
@@ -754,6 +874,7 @@ h1.hero-title .accent {
   .stat-dock-divider {
     width: 100%;
     height: 1px;
+    background: rgba(228, 220, 248, 0.6);
   }
   .hero-card-brand-title span {
     font-size: 17px;
@@ -1125,7 +1246,7 @@ h1.hero-title .accent {
 
 /* SECTION HEAD */
 .section-head{margin:96px 0 32px;}
-.section-head h2{font-family:var(--font)!important;font-size:clamp(20px,2.4vw,28px);font-weight:350!important;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-0);}
+.section-head h2{font-family:var(--font)!important;font-size:clamp(28px,3.4vw,42px)!important;font-weight:350!important;line-height:1.22!important;letter-spacing:-.02em!important;text-transform:none!important;color:var(--ink-0);}
 .section-head p{margin-top:10px;font-size:14px;color:var(--ink-2);line-height:1.6;max-width:680px;}
 
 /* WORK HORIZONTAL SCROLL CAROUSEL */
@@ -1147,7 +1268,7 @@ h1.hero-title .accent {
 .card-dots span{width:3px;height:3px;border-radius:50%;background:#ffffff;}
 
 /* FROSTED TITLE PILL */
-.card-pill{position:absolute;z-index:10;height:38px;display:flex;align-items:center;padding:0 16px;border-radius:100px;background:rgba(255,255,255,.38);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.65);box-shadow:0 4px 18px rgba(20,10,40,.08);font-size:11px;font-weight:700;letter-spacing:.03em;color:#ffffff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:uppercase;transition:background .3s;}
+.card-pill{position:absolute;z-index:10;height:38px;display:flex;align-items:center;padding:0 16px;border-radius:100px;background:rgba(255,255,255,.38);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.65);box-shadow:0 4px 18px rgba(20,10,40,.08);font-size:12px;font-weight:600;letter-spacing:.01em;color:#ffffff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:none;transition:background .3s;}
 .work-card:hover .card-pill{background:rgba(255,255,255,.5);}
 
 .pill-bottom-left{bottom:12px;left:12px;right:64px;}
@@ -3611,4 +3732,19 @@ h1.hero-title .accent {
   height: 100%;
   border: none;
   display: block;
+}
+
+/* ============================================================
+   FRAMER MOTION SIGNATURE UTILITIES
+   ============================================================ */
+.fm-word {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+.fm-float-subtle {
+  animation: fmFloatSubtle 4s ease-in-out infinite;
+}
+@keyframes fmFloatSubtle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
 }

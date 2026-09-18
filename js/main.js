@@ -208,4 +208,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, true);
   }
+
+  // Floating Sticky/Fixed Header Scroll State
+  const siteHeader = document.querySelector(".site-header");
+  if (siteHeader) {
+    const handleScroll = () => {
+      if (window.scrollY > 15) {
+        siteHeader.classList.add("scrolled");
+      } else {
+        siteHeader.classList.remove("scrolled");
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+  }
 });

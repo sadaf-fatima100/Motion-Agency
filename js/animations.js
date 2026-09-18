@@ -1,35 +1,519 @@
 gsap.registerPlugin(ScrollTrigger);
 const rm=window.matchMedia("(prefers-reduced-motion:reduce)").matches;
 if(!rm){
-  const tl=gsap.timeline({defaults:{ease:"power3.out"}});
-  tl.from(".hero-eyebrow",{opacity:0,y:16,duration:.7})
-    .from(".hero-title",{opacity:0,y:28,duration:.85},"-=.5")
-    .from(".hero-sub",{opacity:0,y:20,duration:.7},"-=.5")
-    .from(".hero-actions > *",{opacity:0,y:16,stagger:.1,duration:.6},"-=.45")
-    .from(".trust-row",{opacity:0,y:12,duration:.5},"-=.3")
-    .from(".hero-panel",{opacity:0,duration:.9},"-=1")
-    .from(".float-card",{opacity:0,x:18,duration:.6},"-=.45")
-    .from(".float-pill",{opacity:0,y:18,duration:.6},"-=.45")
-    .from(".stats-bar",{opacity:0,y:24,duration:.7},"-=.3");
-  const hp=document.getElementById("heroPanel");
-  const pels=gsap.utils.toArray("[data-depth]");
-  if(hp&&window.matchMedia("(hover:hover)").matches){
-    hp.addEventListener("mousemove",e=>{
-      const r=hp.getBoundingClientRect();
-      const px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
-      pels.forEach(el=>{const d=parseFloat(el.dataset.depth)||10;gsap.to(el,{x:px*d,y:py*d,duration:.85,ease:"power2.out",overwrite:"auto"});});
-    });
-    hp.addEventListener("mouseleave",()=>{pels.forEach(el=>gsap.to(el,{x:0,y:0,duration:1.1,ease:"power3.out",overwrite:"auto"}));});
+  // ============================================================
+  // FRAMER MOTION TYPOGRAPHY ENGINE (SAFE WORD-BY-WORD REVEALS)
+  // ============================================================
+  function splitWordsSafely(element) {
+    if (!element || element.getAttribute('data-fm-split') === 'true') return;
+    element.setAttribute('data-fm-split', 'true');
+
+    function isAccentElement(el) {
+      if (!el || !el.classList) return false;
+      return (
+        el.classList.contains('accent') ||
+        el.classList.contains('accent-text') ||
+        el.classList.contains('gradient-accent') ||
+        el.classList.contains('about-accent') ||
+        el.classList.contains('why-script') ||
+        el.classList.contains('highlight-brand') ||
+        el.classList.contains('grad-word')
+      );
+    }
+
+    function walk(node) {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const parent = node.parentElement;
+        if (isAccentElement(parent)) {
+          parent.classList.add('fm-word');
+          return;
+        }
+
+        const text = node.nodeValue;
+        if (text && text.trim().length > 0) {
+          const frag = document.createDocumentFragment();
+          const tokens = text.split(/(\s+)/);
+          tokens.forEach(token => {
+            if (/^\s+$/.test(token)) {
+              frag.appendChild(document.createTextNode(token));
+            } else if (token.length > 0) {
+              const span = document.createElement('span');
+              span.className = 'fm-word';
+              span.textContent = token;
+              frag.appendChild(span);
+            }
+          });
+          node.parentNode.replaceChild(frag, node);
+        }
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        if (['SVG', 'SCRIPT', 'STYLE'].includes(node.tagName)) return;
+        if (isAccentElement(node)) {
+          node.classList.add('fm-word');
+          return;
+        }
+        Array.from(node.childNodes).forEach(walk);
+      }
+    }
+
+    Array.from(element.childNodes).forEach(walk);
   }
-  gsap.utils.toArray(".work-card").forEach((c,i)=>{gsap.from(c,{opacity:0,y:36,duration:.7,ease:"power2.out",scrollTrigger:{trigger:c,start:"top 88%"},delay:i*.06});});
-  gsap.utils.toArray(".why-card").forEach((c,i)=>{gsap.from(c,{opacity:0,y:32,duration:.7,ease:"power2.out",scrollTrigger:{trigger:c,start:"top 88%"},delay:(i % 3) * .07});});
-  gsap.from(".why-pill",{opacity:0,scale:.8,duration:.6,stagger:.12,ease:"back.out(1.7)",scrollTrigger:{trigger:".why-us-header",start:"top 88%"}});
-  gsap.utils.toArray(".service-card").forEach((c,i)=>{gsap.from(c,{opacity:0,y:26,duration:.65,ease:"power2.out",scrollTrigger:{trigger:c,start:"top 90%"},delay:i*.06});});
-  gsap.utils.toArray(".section-head").forEach((sh)=>{gsap.from(sh,{opacity:0,y:20,duration:.6,ease:"power2.out",scrollTrigger:{trigger:sh,start:"top 90%"}});});
-  gsap.from(".manifesto-section",{opacity:0,y:28,duration:.8,ease:"power2.out",scrollTrigger:{trigger:".manifesto-section",start:"top 90%"}});
-  gsap.from(".about-agency-left",{opacity:0,y:30,duration:.8,ease:"power2.out",scrollTrigger:{trigger:".about-agency-left",start:"top 88%"}});
-  gsap.utils.toArray(".about-slide-card").forEach((c,i)=>{gsap.from(c,{opacity:0,x:75,duration:.8,ease:"power2.out",scrollTrigger:{trigger:c,start:"top 90%"},delay:i*.12});});
-  gsap.from(".cta-band",{opacity:0,y:30,duration:.75,ease:"power2.out",scrollTrigger:{trigger:".cta-band",start:"top 92%"}});
+
+  function animateFramerHeading(selector, trigger = null, delay = 0) {
+    const headings = gsap.utils.toArray(selector);
+    headings.forEach(h => {
+      splitWordsSafely(h);
+      const words = h.querySelectorAll('.fm-word');
+      if (words.length > 0) {
+        gsap.from(words, {
+          y: 38,
+          opacity: 0,
+          filter: "blur(8px)",
+          duration: 0.95,
+          ease: "power4.out",
+          stagger: 0.032,
+          delay: delay,
+          scrollTrigger: {
+            trigger: (trigger && typeof trigger === 'string') ? (h.closest(trigger) || trigger) : (trigger || h),
+            start: "top 88%",
+            toggleActions: "play none none none"
+          }
+        });
+      }
+    });
+  }
+
+  // ============================================================
+  // 1. HERO SECTION (FRAMER MOTION SEQUENTIAL ENTRANCE)
+  // ============================================================
+  const heroTl = gsap.timeline({ defaults: { ease: "power4.out" } });
+
+  const heroTitle = document.querySelector(".hero-title");
+  if (heroTitle) {
+    splitWordsSafely(heroTitle);
+  }
+
+  heroTl
+    .from(".hero-eyebrow", {
+      opacity: 0,
+      y: 18,
+      scale: 0.92,
+      duration: 0.8,
+      ease: "power3.out"
+    })
+    .from(".hero-title .fm-word", {
+      opacity: 0,
+      y: 40,
+      filter: "blur(10px)",
+      stagger: 0.038,
+      duration: 1.0,
+      ease: "power4.out"
+    }, "-=0.55")
+    .from(".hero-sub", {
+      opacity: 0,
+      y: 22,
+      duration: 0.85,
+      ease: "power3.out"
+    }, "-=0.6")
+    .from(".hero-actions > *", {
+      opacity: 0,
+      y: 20,
+      scale: 0.94,
+      stagger: 0.12,
+      duration: 0.75,
+      ease: "back.out(1.4)"
+    }, "-=0.5")
+    .from(".trust-row", {
+      opacity: 0,
+      y: 16,
+      duration: 0.7,
+      ease: "power3.out"
+    }, "-=0.4")
+    .from(".hero-stage", {
+      opacity: 0,
+      y: 32,
+      scale: 0.95,
+      duration: 1.1,
+      ease: "power4.out"
+    }, "-=0.9")
+    .from(".hero-card-brand-title span", {
+      opacity: 0,
+      x: -24,
+      stagger: 0.08,
+      duration: 0.8,
+      ease: "power3.out"
+    }, "-=0.6")
+    .from(".hero-card-top-badge", {
+      opacity: 0,
+      y: -18,
+      scale: 0.85,
+      duration: 0.75,
+      ease: "back.out(1.6)"
+    }, "-=0.6")
+    .from(".hero-card-play-btn", {
+      scale: 0.6,
+      opacity: 0,
+      duration: 0.85,
+      ease: "back.out(2)"
+    }, "-=0.6")
+    .from(".hero-stats-dock .hero-stat-item", {
+      opacity: 0,
+      y: 22,
+      scale: 0.9,
+      stagger: 0.12,
+      duration: 0.8,
+      ease: "back.out(1.4)"
+    }, "-=0.4")
+    .from(".stat-dock-divider", {
+      scaleY: 0,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.1,
+      ease: "power2.out"
+    }, "-=0.6");
+
+  // ============================================================
+  // 2. STATS BAR SECTION
+  // ============================================================
+  gsap.from(".stats-bar", {
+    opacity: 0,
+    y: 36,
+    scale: 0.97,
+    duration: 0.95,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".stats-bar",
+      start: "top 90%"
+    }
+  });
+  gsap.from(".stat-unit", {
+    opacity: 0,
+    y: 24,
+    stagger: 0.15,
+    duration: 0.85,
+    ease: "back.out(1.3)",
+    scrollTrigger: {
+      trigger: ".stats-bar",
+      start: "top 90%"
+    }
+  });
+  gsap.from(".stats-badge-anchor", {
+    scale: 0.6,
+    opacity: 0,
+    rotate: -30,
+    duration: 1.0,
+    ease: "back.out(1.8)",
+    scrollTrigger: {
+      trigger: ".stats-bar",
+      start: "top 90%"
+    }
+  });
+
+  // ============================================================
+  // 3. CORE ANIMATION CAPABILITIES SECTION (#capabilities)
+  // ============================================================
+  gsap.from(".anim-solutions-eyebrow", {
+    opacity: 0,
+    y: 16,
+    scale: 0.94,
+    duration: 0.75,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".anim-solutions-head", start: "top 88%" }
+  });
+  animateFramerHeading(".anim-solutions-title", ".anim-solutions-head");
+  gsap.from(".anim-solutions-subtitle", {
+    opacity: 0,
+    y: 20,
+    duration: 0.85,
+    ease: "power3.out",
+    delay: 0.2,
+    scrollTrigger: { trigger: ".anim-solutions-head", start: "top 88%" }
+  });
+  gsap.from(".anim-solution-card", {
+    opacity: 0,
+    y: 50,
+    scale: 0.93,
+    stagger: 0.16,
+    duration: 0.95,
+    ease: "power4.out",
+    scrollTrigger: {
+      trigger: ".anim-solutions-grid",
+      start: "top 86%"
+    }
+  });
+
+  // ============================================================
+  // 4. PORTFOLIO & SHOWCASE SECTION (#work)
+  // ============================================================
+  gsap.from(".section-head .eyebrow", {
+    opacity: 0,
+    y: 16,
+    duration: 0.75,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".section-head", start: "top 88%" }
+  });
+  animateFramerHeading(".section-head h2", ".section-head");
+  gsap.from(".section-head p", {
+    opacity: 0,
+    y: 20,
+    duration: 0.85,
+    ease: "power3.out",
+    delay: 0.18,
+    scrollTrigger: { trigger: ".section-head", start: "top 88%" }
+  });
+  gsap.from(".filter-tab", {
+    opacity: 0,
+    y: 18,
+    scale: 0.92,
+    stagger: 0.06,
+    duration: 0.7,
+    ease: "back.out(1.4)",
+    scrollTrigger: { trigger: ".work-filter-bar", start: "top 90%" }
+  });
+  gsap.from(".work-card", {
+    opacity: 0,
+    y: 46,
+    scale: 0.94,
+    stagger: 0.08,
+    duration: 0.9,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".work-grid", start: "top 88%" }
+  });
+
+  // ============================================================
+  // 5. EDITORIAL MANIFESTO SECTION
+  // ============================================================
+  animateFramerHeading(".manifesto-heading", ".manifesto-section");
+  gsap.from(".manifesto-badge", {
+    scale: 0,
+    rotate: -45,
+    opacity: 0,
+    duration: 1.1,
+    ease: "back.out(2)",
+    scrollTrigger: { trigger: ".manifesto-section", start: "top 85%" }
+  });
+  gsap.from(".manifesto-note", {
+    opacity: 0,
+    y: 20,
+    duration: 0.85,
+    ease: "power3.out",
+    delay: 0.25,
+    scrollTrigger: { trigger: ".manifesto-section", start: "top 85%" }
+  });
+
+  // ============================================================
+  // 6. WHY BUSINESSES PREFER US SECTION (#why-us)
+  // ============================================================
+  gsap.from(".why-us-eyebrow", {
+    opacity: 0,
+    y: 16,
+    duration: 0.75,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".why-us-header", start: "top 88%" }
+  });
+  animateFramerHeading(".why-us-main-title", ".why-us-header");
+  gsap.from(".why-pill", {
+    opacity: 0,
+    scale: 0.75,
+    y: -16,
+    duration: 0.75,
+    stagger: 0.14,
+    ease: "back.out(1.8)",
+    scrollTrigger: { trigger: ".why-us-header", start: "top 88%" }
+  });
+  gsap.from(".why-bento-grid .why-card", {
+    opacity: 0,
+    y: 48,
+    scale: 0.95,
+    stagger: 0.11,
+    duration: 0.95,
+    ease: "power4.out",
+    scrollTrigger: { trigger: ".why-bento-grid", start: "top 86%" }
+  });
+  gsap.from(".why-phones-visual .why-phone", {
+    x: 45,
+    opacity: 0,
+    stagger: 0.15,
+    duration: 1.0,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".why-card-wide", start: "top 85%" }
+  });
+  gsap.from(".why-tool-item", {
+    scale: 0.8,
+    opacity: 0,
+    stagger: 0.08,
+    duration: 0.7,
+    ease: "back.out(1.5)",
+    scrollTrigger: { trigger: ".why-tools-box", start: "top 90%" }
+  });
+
+  // ============================================================
+  // 7. OUR WORKING PROCESS SECTION (#process)
+  // ============================================================
+  gsap.from(".process-eyebrow", {
+    opacity: 0,
+    y: 16,
+    duration: 0.75,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".process-head", start: "top 88%" }
+  });
+  animateFramerHeading(".process-main-title", ".process-head");
+  gsap.from(".process-sub-text", {
+    opacity: 0,
+    y: 20,
+    duration: 0.85,
+    ease: "power3.out",
+    delay: 0.2,
+    scrollTrigger: { trigger: ".process-head", start: "top 88%" }
+  });
+  gsap.from(".services-grid .service-card", {
+    opacity: 0,
+    y: 48,
+    scale: 0.93,
+    stagger: 0.16,
+    duration: 0.95,
+    ease: "back.out(1.3)",
+    scrollTrigger: { trigger: ".services-grid", start: "top 86%" }
+  });
+
+  // ============================================================
+  // 8. ABOUT AGENCY SECTION (#about)
+  // ============================================================
+  gsap.from(".about-eyebrow", {
+    opacity: 0,
+    y: 16,
+    duration: 0.75,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".about-agency-left", start: "top 88%" }
+  });
+  animateFramerHeading(".about-main-title", ".about-agency-left");
+  gsap.from(".about-video-wrap", {
+    opacity: 0,
+    y: 28,
+    scale: 0.94,
+    duration: 0.9,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".about-agency-left", start: "top 86%" }
+  });
+  gsap.from(".about-sublead, .about-actions-row", {
+    opacity: 0,
+    y: 22,
+    stagger: 0.12,
+    duration: 0.8,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".about-actions-row", start: "top 90%" }
+  });
+  gsap.from(".about-slide-card", {
+    opacity: 0,
+    x: 80,
+    scale: 0.93,
+    stagger: 0.14,
+    duration: 0.95,
+    ease: "power4.out",
+    scrollTrigger: { trigger: ".about-cards-stack", start: "top 88%" }
+  });
+
+  // ============================================================
+  // 9. PRICING PLANS SECTION (#pricing)
+  // ============================================================
+  gsap.from(".pricing-eyebrow", {
+    opacity: 0,
+    y: 16,
+    duration: 0.75,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".pricing-head", start: "top 88%" }
+  });
+  animateFramerHeading(".pricing-main-title", ".pricing-head");
+  gsap.from(".pricing-sub-text", {
+    opacity: 0,
+    y: 20,
+    duration: 0.85,
+    ease: "power3.out",
+    delay: 0.2,
+    scrollTrigger: { trigger: ".pricing-head", start: "top 88%" }
+  });
+  gsap.from(".pricing-card", {
+    opacity: 0,
+    y: 55,
+    scale: 0.92,
+    stagger: 0.16,
+    duration: 0.95,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".pricing-grid", start: "top 86%" }
+  });
+  gsap.from(".pricing-popular-badge", {
+    scale: 0,
+    opacity: 0,
+    duration: 0.75,
+    ease: "back.out(2)",
+    delay: 0.4,
+    scrollTrigger: { trigger: ".pricing-grid", start: "top 86%" }
+  });
+
+  // ============================================================
+  // 10. CTA BAND (#contact)
+  // ============================================================
+  gsap.from(".cta-band", {
+    opacity: 0,
+    scale: 0.94,
+    y: 42,
+    duration: 1.0,
+    ease: "power4.out",
+    scrollTrigger: { trigger: ".cta-band", start: "top 88%" }
+  });
+  animateFramerHeading(".cta-band h2", ".cta-band");
+  gsap.from(".cta-band p, .cta-band .btn-primary", {
+    opacity: 0,
+    y: 22,
+    stagger: 0.12,
+    duration: 0.85,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".cta-band", start: "top 88%" }
+  });
+
+  // ============================================================
+  // 11. FOOTER REVEAL
+  // ============================================================
+  gsap.from(".footer-col", {
+    opacity: 0,
+    y: 35,
+    stagger: 0.1,
+    duration: 0.9,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".site-footer", start: "top 90%" }
+  });
+  gsap.from(".footer-bottom-pill", {
+    opacity: 0,
+    y: 20,
+    duration: 0.85,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".footer-bottom-pill", start: "top 96%" }
+  });
+
+  // ============================================================
+  // 12. CONTINUOUS FRAMER MOTION FLOATING MICRO-ANIMATIONS
+  // ============================================================
+  gsap.to(".why-pill-reviews", {
+    y: -7,
+    duration: 3.2,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut"
+  });
+  gsap.to(".why-pill-satisfaction", {
+    y: 7,
+    duration: 3.6,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+    delay: 0.5
+  });
+  gsap.to(".hctb-icon", {
+    scale: 1.08,
+    duration: 2.2,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut"
+  });
 
   // ============================================================
   // GSAP SCROLLTRIGGER EDGE REVEAL PARTICLES ANIMATION
