@@ -1596,123 +1596,451 @@ h1.hero-title .accent {
   font-size: 14px;
 }
 
-/* Live Animated Motion Studio Graphic (Replaces Static Girl) */
-.about-studio-canvas {
+/* High-End Live Motion Studio Stage (Replaces Static Girl) */
+.about-studio-card {
   position: relative;
   width: 100%;
-  max-width: 460px;
-  height: 175px;
-  background: linear-gradient(145deg, rgba(255,255,255,0.92) 0%, rgba(246,241,255,0.85) 100%);
-  border: 1.5px solid #ded6f6;
-  border-radius: 24px;
-  box-shadow: 0 14px 36px -10px rgba(100, 60, 200, 0.12);
-  padding: 20px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  max-width: 520px;
+  background: #0e0922;
+  border: 1.5px solid rgba(169, 140, 255, 0.35);
+  border-radius: 22px;
+  box-shadow: 0 18px 45px -10px rgba(116, 72, 238, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
   overflow: hidden;
   margin-top: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-.about-lens-visual {
-  position: relative;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #2a1b54 0%, #110924 70%, #080312 100%);
-  border: 3px solid rgba(169, 140, 255, 0.5);
-  box-shadow: 0 0 25px rgba(124, 92, 255, 0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+.about-studio-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(169, 140, 255, 0.6);
+  box-shadow: 0 24px 55px -12px rgba(116, 72, 238, 0.4);
 }
-.lens-ring-outer {
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 1px dashed rgba(169, 140, 255, 0.45);
-  animation: animOrbit 14s linear infinite;
-}
-.lens-iris {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #7c5cff 0%, #4c28a8 70%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: irisBreathe 4s ease-in-out infinite alternate;
-}
-@keyframes irisBreathe {
-  0% { transform: scale(0.9); filter: brightness(1); }
-  100% { transform: scale(1.08); filter: brightness(1.25); }
-}
-.lens-center-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 0 0 14px #ffffff, 0 0 22px #ff8fce;
-}
-.about-studio-timeline {
-  flex: 1;
-  margin-left: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.timeline-track-box {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1.5px solid #ded5f7;
-  border-radius: 12px;
-  padding: 8px 12px;
+
+/* Studio Window Header */
+.studio-card-header {
+  background: rgba(22, 14, 46, 0.95);
+  border-bottom: 1px solid rgba(169, 140, 255, 0.18);
+  padding: 10px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
 }
-.track-label {
-  font-size: 11px;
-  font-weight: 800;
-  color: #7448ee;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-.track-keyframes {
+.studio-mac-dots {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
-.kf-diamond {
+.s-dot {
   width: 9px;
   height: 9px;
-  background: linear-gradient(135deg, #7c5cff, #ff8fce);
-  transform: rotate(45deg);
-  border-radius: 1.5px;
-  animation: pulseDot 2s ease-in-out infinite;
+  border-radius: 50%;
+  display: inline-block;
 }
-.kf-diamond:nth-child(2) { animation-delay: 0.4s; }
-.kf-diamond:nth-child(3) { animation-delay: 0.8s; }
+.s-dot-red { background: #ff5f56; }
+.s-dot-yellow { background: #ffbd2e; }
+.s-dot-green { background: #27c93f; }
 
-.about-studio-status {
+.studio-file-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ede5fc;
+  letter-spacing: 0.02em;
+}
+.studio-file-tag svg {
+  width: 13px;
+  height: 13px;
+  stroke: #ff8fce;
+  stroke-width: 2;
+}
+
+.studio-live-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: #0e0b1a;
-  color: #ffffff;
-  padding: 6px 14px;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34d399;
+  padding: 3px 9px;
   border-radius: 100px;
-  font-size: 10.5px;
-  font-weight: 700;
-  width: fit-content;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
 }
-.status-emerald-dot {
+.live-beacon {
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: #10b981;
   box-shadow: 0 0 8px #10b981;
-  animation: pulseDot 1.6s infinite;
+  animation: beaconPulse 1.4s ease-in-out infinite;
+}
+@keyframes beaconPulse {
+  0% { transform: scale(0.9); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+  100% { transform: scale(0.9); opacity: 1; }
+}
+
+/* Studio Animation Stage Viewport */
+.studio-card-viewport {
+  position: relative;
+  height: 155px;
+  background: radial-gradient(ellipse at 50% 45%, rgba(124, 92, 255, 0.28) 0%, #0d081f 75%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.viewport-mesh-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(169, 140, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(169, 140, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+.viewport-glow-halo {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255, 143, 206, 0.25) 0%, rgba(124, 92, 255, 0.15) 50%, transparent 80%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+/* Kinetic Motion Centerpiece Rig */
+.kinetic-motion-rig {
+  position: relative;
+  width: 100%;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 3D Gyroscope Rings */
+.gyro-ring-outer {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(169, 140, 255, 0.5);
+  box-shadow: 0 0 16px rgba(124, 92, 255, 0.35);
+  transform: rotateX(70deg) rotateZ(0deg);
+  animation: gyroSpinOuter 9s linear infinite;
+}
+.gyro-ring-middle {
+  position: absolute;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 143, 206, 0.65);
+  transform: rotateX(45deg) rotateY(-35deg) rotateZ(0deg);
+  animation: gyroSpinMiddle 6s linear infinite reverse;
+}
+.gyro-ring-inner {
+  position: absolute;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(124, 92, 255, 0.85);
+  transform: rotateX(60deg) rotateY(60deg) rotateZ(0deg);
+  animation: gyroSpinInner 4.5s linear infinite;
+}
+@keyframes gyroSpinOuter {
+  0% { transform: rotateX(70deg) rotateZ(0deg); }
+  100% { transform: rotateX(70deg) rotateZ(360deg); }
+}
+@keyframes gyroSpinMiddle {
+  0% { transform: rotateX(45deg) rotateY(-35deg) rotateZ(0deg); }
+  100% { transform: rotateX(45deg) rotateY(-35deg) rotateZ(-360deg); }
+}
+@keyframes gyroSpinInner {
+  0% { transform: rotateX(60deg) rotateY(60deg) rotateZ(0deg); }
+  100% { transform: rotateX(60deg) rotateY(60deg) rotateZ(360deg); }
+}
+
+/* Glowing Kinetic Core Orb */
+.kinetic-core-orb {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffffff 0%, #ff8fce 25%, #7c5cff 65%, #2a1166 100%);
+  box-shadow: 0 0 25px rgba(124, 92, 255, 0.8), 0 0 45px rgba(255, 143, 206, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  animation: coreFloatPulse 2.8s ease-in-out infinite alternate;
+}
+.orb-pulse-wave {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 143, 206, 0.6);
+  animation: orbShockwave 2.2s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+}
+@keyframes orbShockwave {
+  0% { transform: scale(0.85); opacity: 0.9; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+@keyframes coreFloatPulse {
+  0% { transform: scale(0.92) translateY(2px); filter: brightness(1); }
+  100% { transform: scale(1.08) translateY(-2px); filter: brightness(1.25); }
+}
+.orb-play-glyph {
+  width: 14px;
+  height: 14px;
+  color: #ffffff;
+  margin-left: 2px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+/* Kinetic Floating Particles */
+.kinetic-particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.kp-1 {
+  width: 6px;
+  height: 6px;
+  background: #ff8fce;
+  box-shadow: 0 0 10px #ff8fce;
+  top: 25px;
+  left: 28%;
+  animation: particleDrift1 4s ease-in-out infinite alternate;
+}
+.kp-2 {
+  width: 5px;
+  height: 5px;
+  background: #a98cff;
+  box-shadow: 0 0 10px #a98cff;
+  bottom: 22px;
+  right: 28%;
+  animation: particleDrift2 3.5s ease-in-out infinite alternate;
+}
+.kp-3 {
+  width: 4px;
+  height: 4px;
+  background: #ffffff;
+  box-shadow: 0 0 8px #ffffff;
+  top: 40px;
+  right: 32%;
+  animation: particleDrift1 5s ease-in-out infinite alternate;
+}
+.kp-4 {
+  width: 7px;
+  height: 7px;
+  background: #7c5cff;
+  box-shadow: 0 0 12px #7c5cff;
+  bottom: 30px;
+  left: 32%;
+  animation: particleDrift2 4.2s ease-in-out infinite alternate;
+}
+@keyframes particleDrift1 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-12px, -10px); }
+}
+@keyframes particleDrift2 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(12px, 8px); }
+}
+
+/* Animated SVG Bezier Motion Path */
+.kinetic-bezier-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.bezier-glow-path {
+  stroke-dasharray: 260;
+  stroke-dashoffset: 520;
+  animation: bezierFlow 3.8s linear infinite;
+}
+@keyframes bezierFlow {
+  0% { stroke-dashoffset: 520; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* Floating Studio Overlay Badges */
+.studio-badge-floating {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(14, 9, 34, 0.82);
+  border: 1px solid rgba(169, 140, 255, 0.3);
+  backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #ede5fc;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  animation: floatBadgeSlow 3.6s ease-in-out infinite alternate;
+  z-index: 4;
+}
+.badge-tl {
+  top: 12px;
+  left: 14px;
+}
+.badge-br {
+  bottom: 12px;
+  right: 14px;
+  animation-delay: 1.8s;
+}
+.sb-star {
+  color: #ff8fce;
+  font-size: 11px;
+}
+.sb-render-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 6px #34d399;
+}
+@keyframes floatBadgeSlow {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
+}
+
+/* Studio Bottom Dock (Equalizer + Timeline Scrubber) */
+.studio-bottom-dock {
+  background: rgba(14, 9, 32, 0.96);
+  border-top: 1px solid rgba(169, 140, 255, 0.18);
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  z-index: 5;
+}
+.dock-play-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dock-play-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7c12ff 0%, #ff8fce 100%);
+  border: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(124, 92, 255, 0.5);
+  transition: transform 0.2s ease;
+}
+.dock-play-btn:hover {
+  transform: scale(1.1);
+}
+.dock-play-btn svg {
+  width: 10px;
+  height: 10px;
+  margin-left: 1px;
+}
+.dock-timecode {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #c7bceb;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+/* Dancing Audio Equalizer */
+.dock-equalizer {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 16px;
+  padding: 0 2px;
+}
+.eq-col {
+  width: 2.5px;
+  border-radius: 2px;
+  background: linear-gradient(to top, #7c5cff, #ff8fce);
+  animation: eqDance 0.8s ease-in-out infinite alternate;
+}
+.eq-col-1 { height: 6px; animation-duration: 0.55s; }
+.eq-col-2 { height: 12px; animation-duration: 0.72s; }
+.eq-col-3 { height: 8px; animation-duration: 0.48s; }
+.eq-col-4 { height: 15px; animation-duration: 0.65s; }
+.eq-col-5 { height: 10px; animation-duration: 0.58s; }
+.eq-col-6 { height: 14px; animation-duration: 0.76s; }
+.eq-col-7 { height: 7px; animation-duration: 0.52s; }
+.eq-col-8 { height: 13px; animation-duration: 0.68s; }
+.eq-col-9 { height: 9px; animation-duration: 0.61s; }
+.eq-col-10 { height: 16px; animation-duration: 0.82s; }
+.eq-col-11 { height: 11px; animation-duration: 0.59s; }
+.eq-col-12 { height: 5px; animation-duration: 0.71s; }
+
+@keyframes eqDance {
+  0% { height: 3px; }
+  50% { height: 16px; }
+  100% { height: 6px; }
+}
+
+/* Scrub Timeline Track */
+.dock-timeline-track {
+  flex: 1;
+  height: 4px;
+  background: rgba(169, 140, 255, 0.2);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.dock-timeline-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #7c5cff 0%, #ff8fce 100%);
+  border-radius: 10px;
+  animation: timelineScrub 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.dock-playhead-dot {
+  position: absolute;
+  right: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 8px #ff8fce;
+}
+@keyframes timelineScrub {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.dock-format-badge {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #a98cff;
+  background: rgba(124, 92, 255, 0.15);
+  border: 1px solid rgba(169, 140, 255, 0.25);
+  padding: 2px 7px;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
 /* Right Column (Sliding Stacked Cards) */
@@ -1772,6 +2100,63 @@ h1.hero-title .accent {
   padding: 3px 10px;
   border-radius: 100px;
 }
+
+.card-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  position: relative;
+  z-index: 2;
+}
+.card-btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 100px;
+  transition: transform 0.25s ease, background-color 0.25s;
+}
+.card-btn-pill svg {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  fill: none;
+  transition: transform 0.25s ease;
+}
+.about-slide-card:hover .card-btn-pill svg {
+  transform: translateX(3px);
+}
+
+.slide-card-1 .card-btn-pill { background: #1a1030; color: #ffffff; }
+.slide-card-2 .card-btn-pill { background: #26164a; color: #ffffff; }
+.slide-card-3 .card-btn-pill { background: #120728; color: #ffffff; }
+.slide-card-4 .card-btn-pill { background: #ffffff; color: #7853f6; font-weight: 800; }
+
+.card-deco-shape {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  width: 130px;
+  height: 130px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.12;
+  transition: transform 0.5s ease, opacity 0.5s;
+}
+.about-slide-card:hover .card-deco-shape {
+  transform: scale(1.1) rotate(6deg);
+  opacity: 0.22;
+}
+.slide-card-1 .card-deco-shape { color: #7c5cff; }
+.slide-card-2 .card-deco-shape { color: #7c5cff; }
+.slide-card-3 .card-deco-shape { color: #ffffff; opacity: 0.2; }
+.slide-card-4 .card-deco-shape { color: #ffffff; opacity: 0.18; }
 
 /* 4 Cascading Gradient Tones */
 .slide-card-1 {
@@ -1856,21 +2241,23 @@ h1.hero-title .accent {
     grid-template-columns: 1fr;
     gap: 44px;
   }
-  .about-studio-canvas {
+  .about-studio-card {
     max-width: 100%;
   }
 }
 @media(max-width: 640px) {
-  .about-studio-canvas {
-    flex-direction: column;
-    height: auto;
-    gap: 16px;
-    align-items: flex-start;
-    padding: 20px;
+  .about-studio-card {
+    max-width: 100%;
   }
-  .about-studio-timeline {
-    margin-left: 0;
-    width: 100%;
+  .studio-card-viewport {
+    height: 145px;
+  }
+  .studio-bottom-dock {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+  .dock-equalizer {
+    display: none;
   }
   .about-slide-card {
     padding: 20px;
@@ -1883,9 +2270,334 @@ h1.hero-title .accent {
 .cta-band h2 .accent{background:var(--grad-btn);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:400!important;}
 .cta-band p{margin:16px auto 32px;max-width:440px;color:var(--ink-1);font-size:14.5px;line-height:1.7;}
 
-/* FOOTER */
-footer{border-top:1px solid var(--line);padding:34px 0;display:flex;justify-content:space-between;align-items:center;color:var(--ink-2);font-size:13px;flex-wrap:wrap;gap:14px;}
-.foot-links{display:flex;gap:22px;}.foot-links a{transition:color .2s;}.foot-links a:hover{color:var(--ink-0);}
+/* ============================================================
+   PREMIUM GRADIENT THEME FOOTER
+   ============================================================ */
+.site-footer {
+  margin-top: 100px;
+  position: relative;
+  background: linear-gradient(165deg, #0e0722 0%, #160c35 40%, #220f4c 100%);
+  border-radius: 44px;
+  padding: 72px 64px 36px;
+  color: #f1edfc;
+  box-shadow: 0 32px 80px -20px rgba(16, 8, 38, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  border: 1.5px solid rgba(165, 135, 255, 0.22);
+  overflow: hidden;
+}
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  left: 20%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.25) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+.site-footer::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  right: 10%;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 143, 206, 0.18) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.footer-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* Grid Columns */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.15fr 1.35fr;
+  gap: 48px;
+  margin-bottom: 56px;
+}
+
+/* Brand Column */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+}
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+.footer-logo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #7853f6 0%, #916cf9 100%);
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-weight: 800;
+  font-size: 13.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 16px rgba(120, 83, 246, 0.45);
+}
+.footer-star {
+  width: 17px;
+  height: 17px;
+  fill: #ffffff;
+}
+.footer-bio {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #b8afcf;
+  margin-bottom: 28px;
+  max-width: 360px;
+}
+
+/* Social Buttons */
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.footer-social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.2px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f1edfc;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.footer-social-btn svg {
+  width: 17px;
+  height: 17px;
+  transition: transform 0.3s ease;
+}
+.footer-social-btn:hover {
+  background: linear-gradient(135deg, #7c5cff 0%, #ff8fce 100%);
+  border-color: transparent;
+  color: #ffffff;
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 8px 24px rgba(124, 92, 255, 0.5);
+}
+.footer-social-btn:hover svg {
+  transform: scale(1.1);
+}
+
+/* Column Headings */
+.footer-col-title {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-col-title::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, #7c5cff, #ff8fce);
+  border-radius: 2px;
+}
+
+/* Column Links */
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-link-item a {
+  font-size: 14px;
+  color: #b8afcf;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+.footer-link-item a svg {
+  width: 12px;
+  height: 12px;
+  opacity: 0;
+  transform: translateX(-6px);
+  stroke: #ff8fce;
+  transition: all 0.25s ease;
+}
+.footer-link-item a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+.footer-link-item a:hover svg {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Contact Info Column */
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: #b8afcf;
+  line-height: 1.5;
+}
+.contact-icon-pill {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: rgba(124, 92, 255, 0.15);
+  border: 1px solid rgba(124, 92, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a98cff;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.contact-icon-pill svg {
+  width: 15px;
+  height: 15px;
+}
+.contact-entry a {
+  color: #f1edfc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.contact-entry a:hover {
+  color: #ff8fce;
+}
+
+/* WhatsApp CTA Button in Contact Info */
+.footer-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #ffffff;
+  padding: 9px 18px;
+  border-radius: 100px;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+  margin-top: 6px;
+  width: fit-content;
+  transition: all 0.25s ease;
+}
+.footer-whatsapp-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+}
+.footer-whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
+  color: #ffffff;
+}
+
+/* Bottom Divider & Copyright Bar */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(165, 135, 255, 0.35) 35%, rgba(255, 143, 206, 0.35) 70%, transparent 100%);
+  margin-bottom: 28px;
+}
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 13.5px;
+  color: #9d93b5;
+  flex-wrap: wrap;
+}
+.footer-copyright {
+  line-height: 1.5;
+}
+.footer-credits a {
+  background: linear-gradient(120deg, #a98cff, #ff8fce);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.footer-credits a:hover {
+  opacity: 0.85;
+}
+
+.footer-top-scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #f1edfc;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.footer-top-scroll:hover {
+  background: linear-gradient(135deg, #7c5cff, #ff8fce);
+  color: #ffffff;
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+@media(max-width: 1080px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+  .site-footer {
+    padding: 56px 36px 30px;
+  }
+}
+@media(max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .site-footer {
+    padding: 44px 24px 24px;
+    border-radius: 28px;
+  }
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
 
 /* MODAL */
 .reel-modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(12,8,22,.74);backdrop-filter:blur(8px);}
@@ -2671,28 +3383,113 @@ footer{border-top:1px solid var(--line);padding:34px 0;display:flex;justify-cont
             </div>
           </div>
 
-          <!-- Live 3D Motion Studio Animation (Replaces Static Girl) -->
-          <div class="about-studio-canvas">
-            <div class="about-lens-visual">
-              <div class="lens-ring-outer"></div>
-              <div class="lens-iris">
-                <div class="lens-center-dot"></div>
+          <!-- Live High-End Motion Studio Stage (Replaces Static Girl) -->
+          <div class="about-studio-card">
+            <!-- Studio Window Header -->
+            <div class="studio-card-header">
+              <div class="studio-mac-dots">
+                <span class="s-dot s-dot-red"></span>
+                <span class="s-dot s-dot-yellow"></span>
+                <span class="s-dot s-dot-green"></span>
+              </div>
+              <div class="studio-file-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                <span>kinetic_brand_reel_4k.ae</span>
+              </div>
+              <div class="studio-live-pill">
+                <span class="live-beacon"></span>
+                <span>60 FPS REALTIME</span>
               </div>
             </div>
 
-            <div class="about-studio-timeline">
-              <div class="timeline-track-box">
-                <span class="track-label">Studio Motion Pipeline</span>
-                <div class="track-keyframes">
-                  <span class="kf-diamond"></span>
-                  <span class="kf-diamond"></span>
-                  <span class="kf-diamond"></span>
+            <!-- Studio Animation Stage Viewport -->
+            <div class="studio-card-viewport">
+              <!-- Dark Space Canvas Background -->
+              <div class="viewport-mesh-grid"></div>
+              <div class="viewport-glow-halo"></div>
+
+              <!-- Animated Kinetic Motion Centerpiece -->
+              <div class="kinetic-motion-rig">
+                <!-- 3D Gyroscope Orbital Rings -->
+                <div class="gyro-ring-outer"></div>
+                <div class="gyro-ring-middle"></div>
+                <div class="gyro-ring-inner"></div>
+
+                <!-- Luminous Central 3D Core with Motion Pulses -->
+                <div class="kinetic-core-orb">
+                  <div class="orb-specular"></div>
+                  <div class="orb-pulse-wave"></div>
+                  <svg class="orb-play-glyph" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="8 5 19 12 8 19 8 5"/>
+                  </svg>
+                </div>
+
+                <!-- Floating Dynamic Kinetic Particles -->
+                <span class="kinetic-particle kp-1"></span>
+                <span class="kinetic-particle kp-2"></span>
+                <span class="kinetic-particle kp-3"></span>
+                <span class="kinetic-particle kp-4"></span>
+
+                <!-- Animated SVG Bezier Motion Curve & Travelling Keyframe Path -->
+                <svg class="kinetic-bezier-svg" viewBox="0 0 360 110" fill="none" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="neonPathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#7c5cff" stop-opacity="0.3"/>
+                      <stop offset="45%" stop-color="#ff8fce" stop-opacity="0.95"/>
+                      <stop offset="70%" stop-color="#a98cff" stop-opacity="1"/>
+                      <stop offset="100%" stop-color="#7c5cff" stop-opacity="0.4"/>
+                    </linearGradient>
+                  </defs>
+                  <path class="bezier-guide-track" d="M 15 90 C 90 10, 160 100, 240 25 C 290 -10, 320 80, 350 40" stroke="rgba(169, 140, 255, 0.2)" stroke-width="2" stroke-dasharray="4 4"/>
+                  <path class="bezier-glow-path" d="M 15 90 C 90 10, 160 100, 240 25 C 290 -10, 320 80, 350 40" stroke="url(#neonPathGrad)" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+
+                <!-- Floating Studio Overlay Badges -->
+                <div class="studio-badge-floating badge-tl">
+                  <span class="sb-star">✦</span>
+                  <span>Cinema 4D &bull; Spline 3D</span>
+                </div>
+
+                <div class="studio-badge-floating badge-br">
+                  <span class="sb-render-dot"></span>
+                  <span>Render Cache: 100%</span>
                 </div>
               </div>
 
-              <div class="about-studio-status">
-                <span class="status-emerald-dot"></span>
-                <span>Active 4K 60FPS Pipeline</span>
+              <!-- Interactive Timeline & Audio Equalizer Bar -->
+              <div class="studio-bottom-dock">
+                <!-- Play Button & Timecode -->
+                <div class="dock-play-group">
+                  <button class="dock-play-btn" type="button" aria-label="Play Motion Reel">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+                  </button>
+                  <span class="dock-timecode">00:09:24</span>
+                </div>
+
+                <!-- Animated Live Equalizer (Dancing Audio Bars) -->
+                <div class="dock-equalizer" title="Live Audio Motion Sync">
+                  <span class="eq-col eq-col-1"></span>
+                  <span class="eq-col eq-col-2"></span>
+                  <span class="eq-col eq-col-3"></span>
+                  <span class="eq-col eq-col-4"></span>
+                  <span class="eq-col eq-col-5"></span>
+                  <span class="eq-col eq-col-6"></span>
+                  <span class="eq-col eq-col-7"></span>
+                  <span class="eq-col eq-col-8"></span>
+                  <span class="eq-col eq-col-9"></span>
+                  <span class="eq-col eq-col-10"></span>
+                  <span class="eq-col eq-col-11"></span>
+                  <span class="eq-col eq-col-12"></span>
+                </div>
+
+                <!-- Continuous Looping Scrubber Bar -->
+                <div class="dock-timeline-track">
+                  <div class="dock-timeline-progress">
+                    <span class="dock-playhead-dot"></span>
+                  </div>
+                </div>
+
+                <span class="dock-format-badge">ProRes 4K</span>
               </div>
             </div>
           </div>
@@ -2708,11 +3505,16 @@ footer{border-top:1px solid var(--line);padding:34px 0;display:flex;justify-cont
               <span class="card-slide-badge">99% Retention</span>
             </div>
             <p class="card-slide-desc">Engage your audience with emotionally resonant motion design, strategic visual hooks, and magnetic brand storytelling.</p>
-            <div class="card-tags-list">
-              <span class="card-slide-tag">#AudienceHook</span>
-              <span class="card-slide-tag">#ViewerRetention</span>
-              <span class="card-slide-tag">#EmotionalConnect</span>
+            <div class="card-action-row">
+              <span class="card-btn-pill">Explore Feature <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="card-tags-list">
+                <span class="card-slide-tag">#AudienceHook</span>
+                <span class="card-slide-tag">#ViewerRetention</span>
+              </div>
             </div>
+            <svg class="card-deco-shape" viewBox="0 0 100 100" fill="none">
+              <path d="M20 0C50 30 80 10 100 40V100H0V20C10 10 15 5 20 0Z" fill="currentColor"/>
+            </svg>
           </div>
 
           <!-- Card 2: Soft Lavender -->
@@ -2722,11 +3524,16 @@ footer{border-top:1px solid var(--line);padding:34px 0;display:flex;justify-cont
               <span class="card-slide-badge">Clarity First</span>
             </div>
             <p class="card-slide-desc">Translate intricate workflows, product mechanics, and dense data into effortless, crystal-clear visual explanations.</p>
-            <div class="card-tags-list">
-              <span class="card-slide-tag">#ExplainerVideos</span>
-              <span class="card-slide-tag">#SaaSClarity</span>
-              <span class="card-slide-tag">#Simplification</span>
+            <div class="card-action-row">
+              <span class="card-btn-pill">Explore Feature <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="card-tags-list">
+                <span class="card-slide-tag">#ExplainerVideos</span>
+                <span class="card-slide-tag">#SaaSClarity</span>
+              </div>
             </div>
+            <svg class="card-deco-shape" viewBox="0 0 100 100" fill="none">
+              <path d="M30 0C60 25 75 15 100 35V100H0V15C15 5 20 0 30 0Z" fill="currentColor"/>
+            </svg>
           </div>
 
           <!-- Card 3: Medium Violet -->
@@ -2736,11 +3543,16 @@ footer{border-top:1px solid var(--line);padding:34px 0;display:flex;justify-cont
               <span class="card-slide-badge">Next-Gen 3D</span>
             </div>
             <p class="card-slide-desc">Pioneering visual artistry combining bespoke 2D vector styling, 3D CGI lighting, and fluid kinetic typography.</p>
-            <div class="card-tags-list">
-              <span class="card-slide-tag">#3DMotion</span>
-              <span class="card-slide-tag">#KineticDesign</span>
-              <span class="card-slide-tag">#BespokeArt</span>
+            <div class="card-action-row">
+              <span class="card-btn-pill">Explore Feature <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="card-tags-list">
+                <span class="card-slide-tag">#3DMotion</span>
+                <span class="card-slide-tag">#KineticDesign</span>
+              </div>
             </div>
+            <svg class="card-deco-shape" viewBox="0 0 100 100" fill="none">
+              <path d="M10 20C40 0 80 40 100 20V100H0V40C0 30 5 25 10 20Z" fill="currentColor"/>
+            </svg>
           </div>
 
           <!-- Card 4: Signature Royal Studio Violet -->
@@ -2750,11 +3562,16 @@ footer{border-top:1px solid var(--line);padding:34px 0;display:flex;justify-cont
               <span class="card-slide-badge">High ROI</span>
             </div>
             <p class="card-slide-desc">Turn passive viewers into active champions with high-conversion animations engineered to build lasting trust and boost sales.</p>
-            <div class="card-tags-list">
-              <span class="card-slide-tag">#ConversionLift</span>
-              <span class="card-slide-tag">#BrandLoyalty</span>
-              <span class="card-slide-tag">#GlobalImpact</span>
+            <div class="card-action-row">
+              <span class="card-btn-pill">Explore Feature <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <div class="card-tags-list">
+                <span class="card-slide-tag">#ConversionLift</span>
+                <span class="card-slide-tag">#BrandLoyalty</span>
+              </div>
             </div>
+            <svg class="card-deco-shape" viewBox="0 0 100 100" fill="none">
+              <path d="M25 0C55 20 85 5 100 30V100H0V15C10 5 18 0 25 0Z" fill="currentColor"/>
+            </svg>
           </div>
 
         </div>
@@ -2929,9 +3746,111 @@ footer{border-top:1px solid var(--line);padding:34px 0;display:flex;justify-cont
       <a href="#contact" class="btn-primary">Book a Consultation<span class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
 
-    <footer id="about">
-      <div>&copy; 2026 Lumen Reel Studio</div>
-      <div class="foot-links"><a href="#work">Work</a><a href="#why-us">Why Us</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div>
+        <!-- STYLISH GRADIENT FOOTER -->
+    <footer id="about" class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <!-- Column 1: Brand & Mission -->
+          <div class="footer-brand">
+            <a href="#top" class="footer-logo">
+              <span class="footer-logo-badge">
+                <svg class="footer-star" viewBox="0 0 24 24"><path d="M12 2l2.4 6.8 7.2.5-5.5 4.6 1.7 7.1-5.8-3.6-5.8 3.6 1.7-7.1-5.5-4.6 7.2-.5z"/></svg>
+                ANIMATIONS AGENCY
+              </span>
+            </a>
+            <p class="footer-bio">We are a team of passionate storytellers and creative minds, dedicated to producing mesmerizing animated videos that captivate audiences and skyrocket brands to new heights of success.</p>
+            <div class="footer-socials">
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="X (Twitter)">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Company -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Company</h4>
+            <ul class="footer-links-list">
+              <li class="footer-link-item"><a href="https://animationagency3.tryshort.com/"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Home</a></li>
+              <li class="footer-link-item"><a href="https://animationagency3.tryshort.com/#portfolio"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Portfolio</a></li>
+              <li class="footer-link-item"><a href="https://animationagency3.tryshort.com/#pricing"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Pricing</a></li>
+              <li class="footer-link-item"><a href="https://animationagency3.tryshort.com/about-us/"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>About Us</a></li>
+              <li class="footer-link-item"><a href="https://animationagency3.tryshort.com/blog/"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Blog</a></li>
+              <li class="footer-link-item"><a href="https://animationagency3.tryshort.com/contact-us/"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Services -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Services</h4>
+            <ul class="footer-links-list">
+              <li class="footer-link-item"><a href="https://animationagency3.tryshort.com/#pricing"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Whiteboard Animations</a></li>
+              <li class="footer-link-item"><a href="https://animationagency3.tryshort.com/#pricing"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Explainer Video</a></li>
+              <li class="footer-link-item"><a href="https://animationagency3.tryshort.com/#pricing"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Premium Video</a></li>
+              <li class="footer-link-item"><a href="https://animationagency3.tryshort.com/#pricing"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>2D Animation</a></li>
+              <li class="footer-link-item"><a href="https://animationagency3.tryshort.com/#pricing"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>3D Animation</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact Info -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Contact Info</h4>
+            <div class="footer-contact-list">
+              <div class="contact-entry">
+                <div class="contact-icon-pill">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <span>House #11, New Model Town &ndash; Phase 3, Burewala</span>
+              </div>
+              <div class="contact-entry">
+                <div class="contact-icon-pill">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <a href="tel:+923143110259">+92 314 3110259</a>
+              </div>
+              <div class="contact-entry">
+                <a href="https://wa.me/923143110259?text=" target="_blank" rel="noopener noreferrer" class="footer-whatsapp-btn">
+                  <svg viewBox="0 0 24 24"><path d="M12.031 0C5.394 0 .01 5.385.01 12.023c0 2.12.553 4.186 1.605 6.012L0 24l6.143-1.613a11.96 11.96 0 0 0 5.888 1.54h.005c6.634 0 12.02-5.385 12.02-12.023 0-3.212-1.25-6.23-3.52-8.503C18.266 1.25 15.246 0 12.031 0zm-.005 21.99a9.96 9.96 0 0 1-5.074-1.39l-.364-.216-3.77.99.99-3.673-.238-.378a9.96 9.96 0 0 1-1.528-5.3c0-5.503 4.478-9.98 9.984-9.98 2.665 0 5.172 1.038 7.058 2.924a9.94 9.94 0 0 1 2.92 7.056c0 5.503-4.478 9.98-9.978 9.98zm5.468-7.464c-.3-.15-1.776-.876-2.052-.976-.275-.1-.475-.15-.675.15-.2.3-.775.976-.95 1.176-.175.2-.35.225-.65.075-.3-.15-1.267-.467-2.413-1.49-.892-.796-1.493-1.78-1.668-2.08-.175-.3-.018-.462.132-.611.135-.134.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525s-.675-1.625-.925-2.225c-.244-.585-.493-.505-.675-.515-.175-.008-.375-.01-.575-.01s-.525.075-.8.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.115 3.23 5.125 4.53.716.31 1.275.495 1.71.634.72.228 1.375.196 1.892.119.578-.086 1.776-.726 2.026-1.426.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z"/></svg>
+                  <span>Live WhatsApp Chat</span>
+                </a>
+              </div>
+              <div class="contact-entry">
+                <div class="contact-icon-pill">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <a href="mailto:hello@hywiz.com">hello@hywiz.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <!-- Bottom Copyright & Credits -->
+        <div class="footer-bottom-bar">
+          <div class="footer-copyright">
+            Copyright &copy; 2025 Animations Agency. All Rights Reserved.
+          </div>
+          <div class="footer-credits">
+            Designed &amp; Developed by <a href="https://hywiz.com/" target="_blank" rel="noopener noreferrer">Hywiz Technologies</a>
+          </div>
+          <a href="#top" class="footer-top-scroll">
+            <span>Back to top</span>
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 15l-6-6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
     </footer>
   </div>
 </main>
