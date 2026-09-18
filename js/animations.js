@@ -61,24 +61,18 @@ if(!rm){
   function animateFramerHeading(selector, trigger = null, delay = 0) {
     const headings = gsap.utils.toArray(selector);
     headings.forEach(h => {
-      splitWordsSafely(h);
-      const words = h.querySelectorAll('.fm-word');
-      if (words.length > 0) {
-        gsap.from(words, {
-          y: 38,
-          opacity: 0,
-          filter: "blur(8px)",
-          duration: 0.95,
-          ease: "power4.out",
-          stagger: 0.032,
-          delay: delay,
-          scrollTrigger: {
-            trigger: (trigger && typeof trigger === 'string') ? (h.closest(trigger) || trigger) : (trigger || h),
-            start: "top 88%",
-            toggleActions: "play none none none"
-          }
-        });
-      }
+      gsap.from(h, {
+        y: 28,
+        opacity: 0,
+        duration: 0.85,
+        ease: "power3.out",
+        delay: delay,
+        scrollTrigger: {
+          trigger: (trigger && typeof trigger === 'string') ? (h.closest(trigger) || trigger) : (trigger || h),
+          start: "top 88%",
+          toggleActions: "play none none none"
+        }
+      });
     });
   }
 
@@ -86,11 +80,6 @@ if(!rm){
   // 1. HERO SECTION (FRAMER MOTION SEQUENTIAL ENTRANCE)
   // ============================================================
   const heroTl = gsap.timeline({ defaults: { ease: "power4.out" } });
-
-  const heroTitle = document.querySelector(".hero-title");
-  if (heroTitle) {
-    splitWordsSafely(heroTitle);
-  }
 
   heroTl
     .from(".hero-eyebrow", {
@@ -100,12 +89,10 @@ if(!rm){
       duration: 0.8,
       ease: "power3.out"
     })
-    .from(".hero-title .fm-word", {
+    .from(".hero-title", {
       opacity: 0,
-      y: 40,
-      filter: "blur(10px)",
-      stagger: 0.038,
-      duration: 1.0,
+      y: 28,
+      duration: 0.9,
       ease: "power4.out"
     }, "-=0.55")
     .from(".hero-sub", {
@@ -260,23 +247,14 @@ if(!rm){
     delay: 0.18,
     scrollTrigger: { trigger: ".section-head", start: "top 88%" }
   });
-  gsap.from(".filter-tab", {
-    opacity: 0,
-    y: 18,
-    scale: 0.92,
-    stagger: 0.06,
-    duration: 0.7,
-    ease: "back.out(1.4)",
-    scrollTrigger: { trigger: ".work-filter-bar", start: "top 90%" }
-  });
   gsap.from(".work-card", {
     opacity: 0,
-    y: 46,
-    scale: 0.94,
-    stagger: 0.08,
-    duration: 0.9,
+    y: 28,
+    duration: 0.75,
+    stagger: 0,
     ease: "power3.out",
-    scrollTrigger: { trigger: ".work-grid", start: "top 88%" }
+    clearProps: "transform",
+    scrollTrigger: { trigger: ".work-grid", start: "top 90%" }
   });
 
   // ============================================================
