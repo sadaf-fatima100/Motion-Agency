@@ -31,7 +31,7 @@ button{font-family:var(--font);cursor:pointer;border:none;background:none;}
 ::selection{background:var(--v1);color:#fff;}
 a:focus-visible,button:focus-visible{outline:2px solid var(--v1);outline-offset:3px;border-radius:6px;}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;}}
-.wrap { max-width: 1320px; margin: 0 auto; padding: 0 40px; box-sizing: border-box; position: relative; width: 100%; }.wrap-inner{padding-top:40px;}
+.wrap { max-width: 1440px; margin: 0 auto; padding: 0 36px; box-sizing: border-box; position: relative; width: 100%; }.wrap-inner{padding-top:40px;}
 
 /* NAV (STRETCHED CAPSULE WITH BALANCED NAVLINKS & GET STARTED BUTTON) */
 .site-header {
@@ -724,7 +724,8 @@ h1.hero-title .accent {
 .pricing-btn:hover .pricing-btn-arrow{transform:translate(2px,-2px);background:rgba(255,255,255,.32);}
 .pricing-btn-arrow svg{width:13px;height:13px;stroke:#ffffff;fill:none;stroke-width:2.4;}
 
-@media(max-width:1024px){.pricing-grid{grid-template-columns:1fr;gap:32px;}}
+@media(max-width:1024px){
+  .wrap{padding:0 24px;}.pricing-grid{grid-template-columns:1fr;gap:32px;}}
 @media(max-width:640px){.pricing-content{padding:74px 18px 22px 18px;}.pricing-card-title{font-size:17.5px;}}
 
 /* WHY CHOOSE US - BENTO GRID SECTION (MATCHING REFERENCE DESIGN) */
@@ -2708,6 +2709,7 @@ h1.hero-title .accent {
 
 /* RESPONSIVE */
 @media(max-width:1024px){
+  .wrap{padding:0 24px;}
   .nav-links{display:none;}
   .hero{grid-template-columns:1fr;min-height:auto;}
   .hero-copy{padding:56px 28px;}
@@ -3265,17 +3267,17 @@ h1.hero-title .accent {
             <h3 class="why-card-title" style="font-size: 22px;">Crafted for Maximum Impact</h3>
             <p class="why-card-desc" style="color: #4b4168;">At Video Animation Agency, we create custom animations that engage, inspire, and deliver results. Every frame is designed to communicate with clarity and drive decisive action.</p>
             <div class="banner-tag-container why-banner-tags">
-              <span class="why-banner-tag">#ExplainerVideos</span>
-              <span class="why-banner-tag">#2DMotion</span>
-              <span class="why-banner-tag">#3DVisuals</span>
-              <span class="why-banner-tag">#BrandStories</span>
+              <span class="why-banner-tag" style="cursor:pointer;" onclick="openReel('V1gTR9Nd1h0', 'Explainer Video Production', 'Explainer')">▶ #ExplainerVideos</span>
+              <span class="why-banner-tag" style="cursor:pointer;" onclick="openReel('u0sxesfLTdA', 'SaaS Character Animation', '2D Motion')">▶ #2DMotion</span>
+              <span class="why-banner-tag" style="cursor:pointer;" onclick="openReel('ez8UKLwe2qw', '3D CGI &amp; VFX Showcase', '3D Visuals')">▶ #3DVisuals</span>
+              <span class="why-banner-tag" style="cursor:pointer;" onclick="openReel('J_e-hDqWpYI', 'Brand Storytelling Video', 'Brand Stories')">▶ #BrandStories</span>
             </div>
           </div>
 
           <!-- Animator & Clipboard Storyboard Visual -->
           <div class="why-animator-visual">
             <span class="why-floating-capsule capsule-1">✦ Concept</span>
-            <span class="why-floating-capsule capsule-2">✦ Storyboard</span>
+            <span class="why-floating-capsule capsule-2" style="cursor:pointer;" onclick="openReel('XiVTU4-7WcM', 'Product Launch Storyboard', 'Storyboard')">✦ Watch Storyboard</span>
             <span class="why-floating-capsule capsule-3">✦ 4K Render</span>
 
             <div class="why-clipboard-board">
@@ -3521,7 +3523,7 @@ h1.hero-title .accent {
             </div>
             <p class="card-slide-desc">Engage your audience with emotionally resonant motion design, strategic visual hooks, and magnetic brand storytelling.</p>
             <div class="card-action-row">
-              <span class="card-btn-pill">Explore Feature <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <span class="card-btn-pill" style="cursor:pointer;" onclick="openReel('J_e-hDqWpYI', 'Brand Storytelling Video', 'Brand Story')">Watch Video <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
               <div class="card-tags-list">
                 <span class="card-slide-tag">#AudienceHook</span>
                 <span class="card-slide-tag">#ViewerRetention</span>
@@ -3540,7 +3542,7 @@ h1.hero-title .accent {
             </div>
             <p class="card-slide-desc">Translate intricate workflows, product mechanics, and dense data into effortless, crystal-clear visual explanations.</p>
             <div class="card-action-row">
-              <span class="card-btn-pill">Explore Feature <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <span class="card-btn-pill" style="cursor:pointer;" onclick="openReel('V1gTR9Nd1h0', 'Explainer Video Production', 'Explainer Video')">Watch Video <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
               <div class="card-tags-list">
                 <span class="card-slide-tag">#ExplainerVideos</span>
                 <span class="card-slide-tag">#SaaSClarity</span>
@@ -3559,7 +3561,7 @@ h1.hero-title .accent {
             </div>
             <p class="card-slide-desc">Pioneering visual artistry combining bespoke 2D vector styling, 3D CGI lighting, and fluid kinetic typography.</p>
             <div class="card-action-row">
-              <span class="card-btn-pill">Explore Feature <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <span class="card-btn-pill" style="cursor:pointer;" onclick="openReel('ez8UKLwe2qw', '3D CGI &amp; VFX Showcase', '3D &amp; CGI')">Watch Video <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
               <div class="card-tags-list">
                 <span class="card-slide-tag">#3DMotion</span>
                 <span class="card-slide-tag">#KineticDesign</span>
@@ -3578,7 +3580,7 @@ h1.hero-title .accent {
             </div>
             <p class="card-slide-desc">Turn passive viewers into active champions with high-conversion animations engineered to build lasting trust and boost sales.</p>
             <div class="card-action-row">
-              <span class="card-btn-pill">Explore Feature <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <span class="card-btn-pill" style="cursor:pointer;" onclick="openReel('FiQ_KsLjoq4', 'Commercial Narrative Animation', 'Commercial Film')">Watch Video <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
               <div class="card-tags-list">
                 <span class="card-slide-tag">#ConversionLift</span>
                 <span class="card-slide-tag">#BrandLoyalty</span>
