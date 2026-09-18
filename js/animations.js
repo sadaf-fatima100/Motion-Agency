@@ -290,15 +290,60 @@ if(!rm){
     scrollTrigger: { trigger: ".why-us-header", start: "top 88%" }
   });
   animateFramerHeading(".why-us-main-title", ".why-us-header");
-  gsap.from(".why-pill", {
-    opacity: 0,
-    scale: 0.75,
-    y: -16,
-    duration: 0.75,
-    stagger: 0.14,
-    ease: "back.out(1.8)",
-    scrollTrigger: { trigger: ".why-us-header", start: "top 88%" }
+  // Framer Motion Smooth Drop for Why-Us Badges (Random / Non-straight angles)
+  const pillTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".why-us-header",
+      start: "top 85%",
+      toggleActions: "play none none none"
+    }
   });
+
+  pillTl
+    .fromTo(".why-pill-reviews", 
+      { opacity: 0, y: -80, rotation: -14, scale: 0.75 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        rotation: -4, 
+        scale: 1, 
+        duration: 0.95, 
+        ease: "back.out(1.85)",
+        onComplete: () => {
+          gsap.to(".why-pill-reviews", {
+            y: -5,
+            rotation: -2.8,
+            duration: 2.4,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+          });
+        }
+      }
+    )
+    .fromTo(".why-pill-satisfaction",
+      { opacity: 0, y: -90, rotation: 14, scale: 0.75 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        rotation: 3.5, 
+        scale: 1, 
+        duration: 1.0, 
+        ease: "back.out(1.95)",
+        onComplete: () => {
+          gsap.to(".why-pill-satisfaction", {
+            y: -5,
+            rotation: 4.6,
+            duration: 2.7,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+            delay: 0.35
+          });
+        }
+      },
+      "-=0.75"
+    );
   gsap.from(".why-bento-grid .why-card", {
     opacity: 0,
     y: 48,
