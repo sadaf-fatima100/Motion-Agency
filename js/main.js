@@ -66,6 +66,18 @@ function playHeroInlineVideo(e) {
   }
 }
 
+function aboutPlayVideo() {
+  const thumb = document.getElementById("aboutVideoThumb");
+  const slot  = document.getElementById("aboutIframeSlot");
+  if (!slot) return;
+  slot.innerHTML = '<iframe src="https://www.youtube.com/embed/T_qT_NWyPEU?autoplay=1&rel=0&modestbranding=1" title="Studio Showreel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:none;border-radius:20px;"></iframe>';
+  slot.style.display = "block";
+  if (thumb) thumb.style.display = "none";
+  const wrap = document.getElementById("aboutVideoWrap");
+  if (wrap) wrap.removeAttribute("onclick");
+}
+
+
 if (reelModal) {
   reelModal.addEventListener("click", e => { if (e.target === reelModal) closeReel(); });
 }
