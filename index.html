@@ -21,10 +21,9 @@
     <!-- Main Unified Capsule: Purple Logo + White Navlinks -->
     <div class="nav-main-capsule">
       <a href="#top" class="nav-logo-box" aria-label="KINETIX Homepage">
-        <svg class="nav-motion-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 12C4 7.58172 7.58172 4 12 4C15.0688 4 17.7346 5.72754 19.071 8.25" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
-          <path d="M20 12C20 16.4183 16.4183 20 12 20C8.9312 20 6.26543 18.2725 4.92896 15.75" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
-          <circle cx="12" cy="12" r="3" fill="#ffffff"/>
+        <svg class="nav-motion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2v5M12 17v5M2 12h5M17 12h5M4.93 4.93l3.54 3.54M15.54 15.54l3.53 3.53M4.93 19.07l3.54-3.54M15.54 8.46l3.53-3.53" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="2.5" fill="#ffffff"/>
         </svg>
         <span class="nav-logo-text">KINETIX</span>
       </a>
@@ -1115,45 +1114,17 @@
 
 
 
-          <p class="about-sublead">
-            Stand Out with Powerful Animations – Start Your Journey Today and Turn Your Ideas into Stunning Visual Stories!
-          </p>
-
           <div class="about-actions-row">
             <a href="https://animationagency3.tryshort.com/#pricing" target="_blank" rel="noopener" class="about-cta-btn">
               <span>Get Started</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </a>
 
             <div class="about-trust-pill" title="5 Star Rated on Trustpilot">
               <span class="trust-stars">★ ★ ★ ★ ★</span>
               <span>Trustpilot Reviews</span>
-            </div>
-          </div>
-
-          <!-- Live 3D Motion Studio Animation (Replaces Static Girl) -->
-          <div class="about-studio-canvas">
-            <div class="about-lens-visual">
-              <div class="lens-ring-outer"></div>
-              <div class="lens-iris">
-                <div class="lens-center-dot"></div>
-              </div>
-            </div>
-
-            <div class="about-studio-timeline">
-              <div class="timeline-track-box">
-                <span class="track-label">Studio Motion Pipeline</span>
-                <div class="track-keyframes">
-                  <span class="kf-diamond"></span>
-                  <span class="kf-diamond"></span>
-                  <span class="kf-diamond"></span>
-                </div>
-              </div>
-
-              <div class="about-studio-status">
-                <span class="status-emerald-dot"></span>
-                <span>Active 4K 60FPS Pipeline</span>
-              </div>
             </div>
           </div>
         </div>
@@ -1548,13 +1519,19 @@
 </main>
 
 <div class="reel-modal" id="reelModal" aria-hidden="true">
-  <div class="reel-box">
+  <button type="button" class="reel-backdrop-close" onclick="closeReel()" aria-label="Close modal overlay"></button>
+  <button type="button" class="reel-close-floating" onclick="closeReel()" aria-label="Close video" title="Close Video (Esc)">
+    <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <div class="reel-box" onclick="event.stopPropagation()">
     <div class="reel-modal-header">
       <div class="reel-modal-info">
         <span class="reel-modal-cat" id="reelModalCat">Featured showcase</span>
         <h3 class="reel-modal-title" id="reelModalTitle">Commercial showreel</h3>
       </div>
-      <button class="reel-close" onclick="closeReel()" aria-label="Close video"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <button type="button" class="reel-close" onclick="closeReel()" aria-label="Close video" title="Close Video (Esc)">
+        <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
     </div>
     <div class="reel-frame-wrap"><iframe id="reelFrame" src="" title="Video Showcase" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
   </div>

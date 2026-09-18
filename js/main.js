@@ -24,31 +24,49 @@ function extractYouTubeId(urlOrId) {
 }
 
 function openReel(targetVideo, title, category) {
-  if (!reelFrame || !reelModal) return;
+  const modal = document.getElementById("reelModal");
+  const frame = document.getElementById("reelFrame");
+  if (!modal || !frame) return;
   const vidId = extractYouTubeId(targetVideo || DEFAULT_REEL_ID);
-  reelFrame.src = "https://www.youtube.com/embed/" + vidId + "?autoplay=1&rel=0";
-  if (reelModalTitle) reelModalTitle.textContent = title || "Motion & Film Showcase";
-  if (reelModalCat) reelModalCat.textContent = category || "Featured Video";
-  reelModal.classList.add("open");
-  reelModal.setAttribute("aria-hidden", "false");
+  frame.src = "https://www.youtube.com/embed/" + vidId + "?autoplay=1&rel=0";
+  const titleEl = document.getElementById("reelModalTitle");
+  const catEl = document.getElementById("reelModalCat");
+  if (titleEl) titleEl.textContent = title || "Motion & Film Showcase";
+  if (catEl) catEl.textContent = category || "Featured Video";
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
 }
 
 function closeReel() {
-  if (!reelModal || !reelFrame) return;
-  reelModal.classList.remove("open");
-  reelModal.setAttribute("aria-hidden", "true");
-  reelFrame.src = "";
+  const modal = document.getElementById("reelModal");
+  const frame = document.getElementById("reelFrame");
+  if (!modal) return;
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
+  if (frame) frame.src = "";
   document.body.style.overflow = "";
 }
 
-// In-Card Video Playback for Pricing Cards
+// In-Card Video Playback for Pricing Cards with Close Button
 function playPricingVideo(container, embedUrl) {
   if (!container || container.classList.contains("is-playing")) return;
+  if (!container._originalHTML) {
+    container._originalHTML = container.innerHTML;
+  }
   container.classList.add("is-playing");
-  container.innerHTML = '<iframe src="' + embedUrl + '" title="Pricing Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;display:block;"></iframe>';
+  container.innerHTML = '<button type="button" class="inline-video-close-btn" onclick="event.stopPropagation(); closePricingVideo(this.parentElement)" aria-label="Close video" title="Close Video"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button><iframe src="' + embedUrl + '" title="Pricing Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;display:block;"></iframe>';
 }
 
+function closePricingVideo(container) {
+  if (!container) return;
+  container.classList.remove("is-playing");
+  if (container._originalHTML) {
+    container.innerHTML = container._originalHTML;
+  }
+}
+
+// Hero Inline Video Play & Close
 function playHeroInlineVideo(e) {
   if (e) e.stopPropagation();
   const slot = document.getElementById("heroIframeSlot");
@@ -56,32 +74,74 @@ function playHeroInlineVideo(e) {
   const videoOverlay = document.getElementById("heroVideoOverlay");
   const videoImg = document.getElementById("heroVideoImg");
   if (slot) {
-    slot.innerHTML = '<iframe src="https://www.youtube.com/embed/T_qT_NWyPEU?autoplay=1&rel=0&modestbranding=1" title="Commercial Showreel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:none;border-radius:40px;"></iframe>';
+    slot.innerHTML = '<button type="button" class="inline-video-close-btn" onclick="closeHeroInlineVideo(event)" aria-label="Close video" title="Close Video"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button><iframe src="https://www.youtube.com/embed/T_qT_NWyPEU?autoplay=1&rel=0&modestbranding=1" title="Commercial Showreel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:none;border-radius:28px;"></iframe>';
     slot.style.display = "block";
     if (playOverlay) playOverlay.style.display = "none";
     if (videoOverlay) videoOverlay.style.display = "none";
     if (videoImg) videoImg.style.display = "none";
-    const container = document.getElementById("heroVideoContainer");
-    if (container) container.removeAttribute("onclick");
   }
 }
 
+function closeHeroInlineVideo(e) {
+  if (e) e.stopPropagation();
+  const slot = document.getElementById("heroIframeSlot");
+  const playOverlay = document.getElementById("heroPlayOverlay");
+  const videoOverlay = document.getElementById("heroVideoOverlay");
+  const videoImg = document.getElementById("heroVideoImg");
+  if (slot) {
+    slot.innerHTML = "";
+    slot.style.display = "none";
+  }
+  if (playOverlay) playOverlay.style.display = "";
+  if (videoOverlay) videoOverlay.style.display = "";
+  if (videoImg) videoImg.style.display = "";
+}
+
+// About Inline Video Play & Close
 function aboutPlayVideo() {
   const thumb = document.getElementById("aboutVideoThumb");
   const slot  = document.getElementById("aboutIframeSlot");
   if (!slot) return;
-  slot.innerHTML = '<iframe src="https://www.youtube.com/embed/T_qT_NWyPEU?autoplay=1&rel=0&modestbranding=1" title="Studio Showreel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:none;border-radius:20px;"></iframe>';
+  slot.innerHTML = '<button type="button" class="inline-video-close-btn" onclick="closeAboutInlineVideo(event)" aria-label="Close video" title="Close Video"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button><iframe src="https://www.youtube.com/embed/T_qT_NWyPEU?autoplay=1&rel=0&modestbranding=1" title="Studio Showreel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:none;border-radius:20px;"></iframe>';
   slot.style.display = "block";
   if (thumb) thumb.style.display = "none";
-  const wrap = document.getElementById("aboutVideoWrap");
-  if (wrap) wrap.removeAttribute("onclick");
 }
 
-
-if (reelModal) {
-  reelModal.addEventListener("click", e => { if (e.target === reelModal) closeReel(); });
+function closeAboutInlineVideo(e) {
+  if (e) e.stopPropagation();
+  const thumb = document.getElementById("aboutVideoThumb");
+  const slot  = document.getElementById("aboutIframeSlot");
+  if (slot) {
+    slot.innerHTML = "";
+    slot.style.display = "none";
+  }
+  if (thumb) thumb.style.display = "";
 }
-document.addEventListener("keydown", e => { if (e.key === "Escape") closeReel(); });
+
+// Global Export
+window.openReel = openReel;
+window.closeReel = closeReel;
+window.playPricingVideo = playPricingVideo;
+window.closePricingVideo = closePricingVideo;
+window.playHeroInlineVideo = playHeroInlineVideo;
+window.closeHeroInlineVideo = closeHeroInlineVideo;
+window.aboutPlayVideo = aboutPlayVideo;
+window.closeAboutInlineVideo = closeAboutInlineVideo;
+
+// Event Listeners for Closing
+document.addEventListener("click", e => {
+  if (e.target.closest(".reel-close") || e.target.closest(".reel-close-floating") || e.target.closest(".reel-backdrop-close")) {
+    e.preventDefault();
+    closeReel();
+  }
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") {
+    closeReel();
+    closeHeroInlineVideo();
+    closeAboutInlineVideo();
+  }
+});
 
 // Work Filter Tabs & Horizontal Carousel Functionality
 document.addEventListener("DOMContentLoaded", () => {
