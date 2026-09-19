@@ -4028,17 +4028,23 @@ h1.hero-title .accent {
   width: 100%;
   overflow: hidden;
   padding: 16px 4px 24px;
+  box-sizing: border-box;
 }
 
 .testi-slider-track {
   display: flex;
+  width: 100%;
   gap: 24px;
+  box-sizing: border-box;
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
 }
 
 .testi-card-box {
   flex: 0 0 calc((100% - 48px) / 3);
+  width: calc((100% - 48px) / 3);
+  min-width: calc((100% - 48px) / 3);
+  max-width: calc((100% - 48px) / 3);
   background: #ffffff;
   border: 1.5px solid rgba(124, 92, 255, 0.14);
   border-radius: 24px;
@@ -4144,18 +4150,30 @@ h1.hero-title .accent {
   justify-content: center;
   gap: 16px;
   margin-top: 34px;
+  position: relative;
+  z-index: 10;
 }
 
 .testi-nav-arrow {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
   outline: none;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  box-sizing: border-box;
+}
+
+.testi-nav-arrow svg {
+  display: block;
+  pointer-events: none;
 }
 
 .testi-nav-arrow.btn-prev {
@@ -4187,12 +4205,18 @@ h1.hero-title .accent {
 @media (max-width: 1024px) {
   .testi-card-box {
     flex: 0 0 calc((100% - 24px) / 2);
+    width: calc((100% - 24px) / 2);
+    min-width: calc((100% - 24px) / 2);
+    max-width: calc((100% - 24px) / 2);
   }
 }
 
 @media (max-width: 680px) {
   .testi-card-box {
     flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
     padding: 26px 20px 22px;
   }
   .testi-card-quote {

@@ -558,7 +558,7 @@ if(!rm){
     clearProps: "opacity,transform",
     scrollTrigger: { trigger: ".testimonials-section", start: "top 88%" }
   });
-  gsap.from(".testi-stage-container", {
+  gsap.from(".testi-slider-wrapper, .testi-stage-container", {
     opacity: 0,
     y: 28,
     duration: 0.9,

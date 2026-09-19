@@ -307,6 +307,11 @@ document.addEventListener("DOMContentLoaded", () => {
   window.nextTestimonial = nextTestimonial;
   window.prevTestimonial = prevTestimonial;
 
+  const prevBtn = document.querySelector(".testi-nav-arrow.btn-prev");
+  const nextBtn = document.querySelector(".testi-nav-arrow.btn-next");
+  if (prevBtn) prevBtn.addEventListener("click", prevTestimonial);
+  if (nextBtn) nextBtn.addEventListener("click", nextTestimonial);
+
   if (viewport) {
     let touchStartX = 0;
     let touchEndX = 0;
@@ -331,8 +336,12 @@ document.addEventListener("DOMContentLoaded", () => {
       updateTestimonialSlider();
     });
 
-    // Initial render
-    setTimeout(updateTestimonialSlider, 100);
+    // Initial renders across load stages
+    updateTestimonialSlider();
+    requestAnimationFrame(updateTestimonialSlider);
+    setTimeout(updateTestimonialSlider, 80);
+    setTimeout(updateTestimonialSlider, 300);
+    window.addEventListener("load", updateTestimonialSlider);
     startTestiTimer();
   }
 });

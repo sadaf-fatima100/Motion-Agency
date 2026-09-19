@@ -68,31 +68,39 @@
   filter: drop-shadow(0 0 14px rgba(167, 126, 255, 0.45));
 }
 
-/* 2. NAVBAR & CAPSULE (JET BLACK FROSTED GLASS) */
+/* 2. NAVBAR & CAPSULE (SEAMLESS AT TOP, FROSTED ON SCROLL) */
 [data-theme="dark"] .site-header {
-  background: rgba(0, 0, 0, 0.82) !important;
-  border-bottom: 1px solid rgba(139, 109, 255, 0.16) !important;
+  background: transparent !important;
+  border-bottom: 1px solid transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-theme="dark"] .site-header.scrolled {
+  background: rgba(5, 2, 12, 0.88) !important;
+  border-bottom: 1px solid rgba(139, 109, 255, 0.2) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.85), 0 0 24px rgba(124, 92, 255, 0.12) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
 }
 
-[data-theme="dark"] .site-header.scrolled {
-  background: rgba(0, 0, 0, 0.94) !important;
-  border-bottom-color: rgba(139, 109, 255, 0.3) !important;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.85), 0 0 24px rgba(124, 92, 255, 0.15) !important;
-}
-
 [data-theme="dark"] .nav-main-capsule {
-  background: rgba(10, 8, 18, 0.9) !important;
-  border: 1.5px solid rgba(139, 109, 255, 0.3) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08) inset, 0 0 20px rgba(124, 92, 255, 0.12) !important;
+  background: rgba(12, 8, 24, 0.85) !important;
+  border: 1.5px solid transparent !important;
+  background-image: linear-gradient(rgba(12, 8, 24, 0.92), rgba(12, 8, 24, 0.92)), linear-gradient(135deg, rgba(124, 92, 255, 0.65) 0%, rgba(255, 143, 206, 0.4) 100%) !important;
+  background-origin: border-box !important;
+  background-clip: padding-box, border-box !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(124, 92, 255, 0.15) !important;
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
 }
 
 [data-theme="dark"] .nav-links-segment {
-  background: rgba(16, 12, 28, 0.75) !important;
-  border-color: rgba(139, 109, 255, 0.22) !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 [data-theme="dark"] .nav-item {
@@ -176,41 +184,42 @@
   display: none;
 }
 
-/* 3. HERO & VIDEO CARD ILLUMINATION */
-[data-theme="dark"] .hero-section {
-  background: transparent !important;
+/* 3. HERO & VIDEO STAGE ILLUMINATION (DEEP OBSIDIAN & NEON CYBER-VIOLET MESH) */
+/* HIDE the light-mode SVG aurora that causes the muddy gray blotch on dark mode */
+[data-theme="dark"] .hero-aurora-backdrop {
+  display: none !important;
 }
 
-[data-theme="dark"] .hero-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 100vw;
-  height: 100%;
-  transform: translateX(-50%);
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(ellipse 80% 55% at 50% -10%, rgba(139, 109, 255, 0.28) 0%, rgba(0, 0, 0, 0) 65%),
-    radial-gradient(ellipse 60% 45% at 85% 75%, rgba(255, 160, 216, 0.12) 0%, rgba(0, 0, 0, 0) 60%),
-    radial-gradient(ellipse 50% 40% at 15% 85%, rgba(124, 92, 255, 0.14) 0%, rgba(0, 0, 0, 0) 55%),
-    #000000 !important;
+[data-theme="dark"] .hero {
+  background-color: #04020a !important;
+  position: relative;
+  overflow: hidden;
+  background:
+    /* 1. Luminous neon cyber-violet glow behind left headline & buttons */
+    radial-gradient(ellipse 70% 55% at 20% 30%, rgba(124, 92, 255, 0.22) 0%, rgba(90, 50, 210, 0.08) 50%, transparent 75%),
+    /* 2. Vibrant neon magenta / rose halo directly behind video card */
+    radial-gradient(ellipse 65% 55% at 78% 42%, rgba(220, 80, 180, 0.18) 0%, rgba(124, 92, 255, 0.12) 45%, transparent 75%),
+    /* 3. Deep electric purple atmospheric floor glow */
+    radial-gradient(circle 600px at 50% 95%, rgba(80, 40, 180, 0.14) 0%, transparent 70%),
+    /* 4. Top seamless dark horizon blend */
+    radial-gradient(ellipse 100% 45% at 50% 0%, rgba(124, 92, 255, 0.10) 0%, transparent 60%),
+    #04020a !important;
 }
 
-[data-theme="dark"] .hero-section-title {
+[data-theme="dark"] .hero-copy,
+[data-theme="dark"] .hero-stage {
+  position: relative;
+  z-index: 2;
+}
+
+[data-theme="dark"] .hero-title {
   color: #ffffff !important;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9), 0 0 40px rgba(124, 92, 255, 0.15) !important;
 }
 
-[data-theme="dark"] .hero-section-sub {
-  color: #b8b1d0 !important;
-}
-
-[data-theme="dark"] .hero-section-badge {
-  background: rgba(139, 109, 255, 0.12) !important;
-  border-color: rgba(139, 109, 255, 0.35) !important;
-  color: #c4b0ff !important;
-  box-shadow: 0 0 16px rgba(124, 92, 255, 0.2) !important;
+[data-theme="dark"] .hero-sub {
+  color: #c4b8df !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8) !important;
 }
 
 /* HERO CTA BUTTONS — HIGH-CONTRAST LUXURY AGENCY UPGRADE */
@@ -241,18 +250,18 @@
 
 /* Secondary Ghost Button: Frosted Obsidian Glass replacing blinding white pill */
 [data-theme="dark"] .btn-ghost {
-  background: rgba(255, 255, 255, 0.05) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
   color: #ffffff !important;
-  border: 1.5px solid rgba(169, 140, 255, 0.35) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  border: 1.5px solid rgba(169, 140, 255, 0.38) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
 [data-theme="dark"] .btn-ghost:hover {
-  background: rgba(139, 109, 255, 0.14) !important;
+  background: rgba(139, 109, 255, 0.16) !important;
   border-color: rgba(255, 160, 216, 0.65) !important;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(139, 109, 255, 0.25) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 22px rgba(139, 109, 255, 0.3) !important;
   color: #ffffff !important;
   transform: translateY(-2px);
 }
@@ -262,37 +271,57 @@
   box-shadow: 0 0 12px rgba(124, 92, 255, 0.45) !important;
 }
 
-/* HERO STATS DOCK — UNBOXED CLEAN EDITORIAL METRICS */
-[data-theme="dark"] .hero-section-stats-dock {
+/* Trust Badge Row */
+[data-theme="dark"] .trust-text {
+  color: #b8b0cf !important;
+}
+[data-theme="dark"] .trust-text b {
+  color: #ffffff !important;
+}
+
+/* HERO VIDEO CARD & DISPLAY STAGE */
+[data-theme="dark"] .hero-video-card {
+  background: #090614 !important;
+  border: 1.5px solid rgba(169, 140, 255, 0.35) !important;
+  box-shadow: 0 25px 70px -15px rgba(0, 0, 0, 0.95), 0 0 45px rgba(124, 92, 255, 0.32), 0 0 25px rgba(255, 143, 206, 0.22) !important;
+}
+
+[data-theme="dark"] .hero-card-brand-title span {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-theme="dark"] .hero-card-play-btn {
+  background: rgba(14, 10, 26, 0.92) !important;
+  border: 1.5px solid rgba(169, 140, 255, 0.55) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8), 0 0 22px rgba(124, 92, 255, 0.45) !important;
+}
+
+/* HERO STATS DOCK (UNBOXED SLEEK METRICS ROW) */
+[data-theme="dark"] .hero-stats-dock {
+  background: rgba(14, 10, 26, 0.85) !important;
+  border: 1.5px solid rgba(139, 109, 255, 0.3) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.8), 0 0 22px rgba(124, 92, 255, 0.14) !important;
+  border-radius: 20px !important;
+}
+
+[data-theme="dark"] .hero-stat-item {
   background: transparent !important;
   border: none !important;
-  box-shadow: none !important;
-  padding: 16px 0 6px !important;
 }
 
-/* Remove separate rectangular boxes around metrics */
-[data-theme="dark"] .hero-section-stat-item {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 4px 6px !important;
-}
-
-[data-theme="dark"] .hero-section-stat-item:hover {
-  transform: translateY(-2px);
-}
-
-/* Obsidian Glass Icon Circle — Replaces blinding solid white circle */
 [data-theme="dark"] .stat-icon-circle {
-  background: rgba(139, 109, 255, 0.12) !important;
-  border: 1.5px solid rgba(169, 140, 255, 0.38) !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 14px rgba(124, 92, 255, 0.2) !important;
+  background: rgba(22, 16, 42, 0.9) !important;
+  border: 1.5px solid rgba(169, 140, 255, 0.4) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), 0 0 14px rgba(124, 92, 255, 0.22) !important;
 }
 
-[data-theme="dark"] .hero-section-stat-item:hover .stat-icon-circle {
-  background: rgba(139, 109, 255, 0.22) !important;
+[data-theme="dark"] .hero-stat-item:hover .stat-icon-circle {
+  background: rgba(30, 22, 58, 0.95) !important;
   border-color: rgba(255, 160, 216, 0.65) !important;
-  box-shadow: 0 0 20px rgba(139, 109, 255, 0.45) !important;
+  box-shadow: 0 0 20px rgba(139, 109, 255, 0.5) !important;
 }
 
 [data-theme="dark"] .stat-icon-circle.icon-star svg {
@@ -300,7 +329,11 @@
 }
 
 [data-theme="dark"] .stat-icon-circle.icon-gem svg {
-  stroke: #bca6ff !important;
+  stroke: #ffa0d8 !important;
+}
+
+[data-theme="dark"] .stat-icon-circle.icon-bolt svg {
+  fill: #bca6ff !important;
 }
 
 [data-theme="dark"] .stat-value {
@@ -310,65 +343,65 @@
 }
 
 [data-theme="dark"] .stat-label {
-  color: #b8b1d0 !important;
+  color: #b8b0cf !important;
 }
 
 [data-theme="dark"] .stat-dock-divider {
-  background: rgba(139, 109, 255, 0.22) !important;
-  height: 28px !important;
+  background: rgba(139, 109, 255, 0.25) !important;
 }
 
-[data-theme="dark"] .hero-section-video-card {
-  background: #08060f !important;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 35px rgba(124, 92, 255, 0.28) !important;
+/* 3B. STATS BAR CAPSULE (FROSTED OBSIDIAN GLASS WITH VIBRANT NEON BORDER) */
+[data-theme="dark"] .stats-section {
+  background: transparent !important;
+  position: relative;
 }
 
-[data-theme="dark"] .hero-section-card-play-btn {
-  background: rgba(14, 10, 26, 0.95) !important;
-  border-color: rgba(169, 140, 255, 0.55) !important;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(124, 92, 255, 0.4) !important;
-}
-
-/* 3B. STATS BAR CAPSULE (FROSTED OBSIDIAN GLASS) */
 [data-theme="dark"] .stats-bar {
-  background: rgba(12, 9, 22, 0.88) !important;
+  background: rgba(12, 8, 24, 0.85) !important;
+  border: 1.5px solid transparent !important;
+  background-image: linear-gradient(rgba(12, 8, 24, 0.92), rgba(8, 5, 18, 0.95)), linear-gradient(135deg, rgba(124, 92, 255, 0.75) 0%, rgba(255, 143, 206, 0.45) 50%, rgba(124, 92, 255, 0.55) 100%) !important;
+  background-origin: border-box !important;
+  background-clip: padding-box, border-box !important;
+  box-shadow: 0 16px 45px -10px rgba(0, 0, 0, 0.9), 0 0 35px rgba(124, 92, 255, 0.16) !important;
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
-  border: 1.5px solid rgba(139, 109, 255, 0.3) !important;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9), 0 0 24px rgba(124, 92, 255, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
 }
 
 [data-theme="dark"] .stats-bar:hover {
-  border-color: rgba(185, 160, 255, 0.5) !important;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95), 0 0 35px rgba(124, 92, 255, 0.22) !important;
+  background-image: linear-gradient(rgba(14, 9, 28, 0.94), rgba(10, 6, 22, 0.97)), linear-gradient(135deg, rgba(139, 109, 255, 0.95) 0%, rgba(255, 160, 216, 0.7) 50%, rgba(139, 109, 255, 0.85) 100%) !important;
+  box-shadow: 0 20px 55px -10px rgba(0, 0, 0, 0.95), 0 0 50px rgba(124, 92, 255, 0.32) !important;
 }
 
 [data-theme="dark"] .stat-num {
   color: #ffffff !important;
   font-weight: 800 !important;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8), 0 0 20px rgba(169, 140, 255, 0.3) !important;
 }
 
 [data-theme="dark"] .stat-lbl {
-  color: #b8b1d0 !important;
+  color: #b8b0cf !important;
+  font-weight: 500 !important;
 }
 
 [data-theme="dark"] .stats-badge {
-  background: linear-gradient(135deg, #7c5cff 0%, #a87aff 50%, #ff8fce 100%) !important;
-  border: 2px solid rgba(255, 255, 255, 0.35) !important;
-  box-shadow: 0 8px 30px rgba(124, 92, 255, 0.6), 0 0 22px rgba(255, 143, 206, 0.4) !important;
+  background: linear-gradient(135deg, #7c5cff 0%, #a87aff 45%, #ff8fce 100%) !important;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 8px 30px rgba(124, 92, 255, 0.65), 0 0 25px rgba(255, 143, 206, 0.45) !important;
 }
 
 [data-theme="dark"] .stats-badge:hover {
-  box-shadow: 0 12px 36px rgba(124, 92, 255, 0.8), 0 0 30px rgba(255, 143, 206, 0.6) !important;
+  transform: scale(1.1);
+  box-shadow: 0 12px 40px rgba(124, 92, 255, 0.85), 0 0 35px rgba(255, 143, 206, 0.65) !important;
 }
 
 [data-theme="dark"] .stats-badge-text {
   fill: #ffffff !important;
 }
 
-[data-theme="dark"] .stats-right {
-  color: #b8b1d0 !important;
+[data-theme="dark"] .stats-badge-icon svg path,
+[data-theme="dark"] .stats-badge-icon svg circle {
+  stroke: #ffffff !important;
+  fill: #ffffff !important;
 }
 
 /* 4. CORE SOLUTIONS (3D, WHITEBOARD, EXPLAINER) — JET BLACK CARDS */
@@ -1300,6 +1333,20 @@
 }
 
 /* 10. CLIENT TESTIMONIALS MULTI-CARD SLIDER (DARK THEME) */
+[data-theme="dark"] .testi-head .eyebrow {
+  background: rgba(139, 109, 255, 0.12) !important;
+  border-color: rgba(139, 109, 255, 0.35) !important;
+  color: #c4b0ff !important;
+}
+
+[data-theme="dark"] .testimonials-title {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .testi-head p {
+  color: #b8b1d0 !important;
+}
+
 [data-theme="dark"] .testi-card-box {
   background: linear-gradient(155deg, rgba(22, 16, 42, 0.88) 0%, rgba(12, 8, 24, 0.95) 100%) !important;
   backdrop-filter: blur(20px) !important;
