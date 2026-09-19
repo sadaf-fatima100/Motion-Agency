@@ -110,13 +110,13 @@ if(!rm){
     }, "-=0.6")
     .from(".hero-actions > *", {
       opacity: 0,
-      y: 20,
-      scale: 0.94,
-      stagger: 0.12,
-      duration: 0.75,
-      ease: "power3.out",
+      scale: 0,
+      rotate: -45,
+      stagger: 0.15,
+      duration: 1.05,
+      ease: "back.out(2)",
       clearProps: "all"
-    }, "-=0.5")
+    }, "-=0.45")
     .from(".trust-row", {
       opacity: 0,
       y: 16,
@@ -369,11 +369,10 @@ if(!rm){
     );
   gsap.from(".why-bento-grid .why-card", {
     opacity: 0,
-    y: 45,
-    scale: 0.94,
-    stagger: 0.12,
-    duration: 1.0,
-    ease: "back.out(1.4)",
+    y: 26,
+    stagger: 0.08,
+    duration: 0.85,
+    ease: "power2.out",
     clearProps: "transform,opacity",
     scrollTrigger: { trigger: ".why-bento-grid", start: "top 86%" }
   });
@@ -533,21 +532,30 @@ if(!rm){
   // ============================================================
   // 9.5 TESTIMONIALS SECTION (#testimonials)
   // ============================================================
-  animateFramerHeading(".testimonials-title", ".testimonials-section");
-  gsap.from(".testimonials-section .section-head p", {
+  gsap.from(".testimonials-title", {
     opacity: 0,
-    y: 20,
+    y: 22,
     duration: 0.85,
     ease: "power3.out",
-    scrollTrigger: { trigger: ".testimonials-section", start: "top 85%" }
+    clearProps: "opacity,transform",
+    scrollTrigger: { trigger: ".testimonials-section", start: "top 88%" }
+  });
+  gsap.from(".testimonials-section .testi-head p", {
+    opacity: 0,
+    y: 18,
+    duration: 0.85,
+    ease: "power3.out",
+    delay: 0.1,
+    clearProps: "opacity,transform",
+    scrollTrigger: { trigger: ".testimonials-section", start: "top 88%" }
   });
   gsap.from(".testi-stage-container", {
     opacity: 0,
-    y: 40,
-    scale: 0.96,
-    duration: 1.0,
+    y: 28,
+    duration: 0.9,
     ease: "power3.out",
-    scrollTrigger: { trigger: ".testi-stage-container", start: "top 82%" }
+    clearProps: "opacity,transform",
+    scrollTrigger: { trigger: ".testimonials-section", start: "top 85%" }
   });
 
   // ============================================================
@@ -647,6 +655,21 @@ if(!rm){
       }
     });
   });
+
+  // ============================================================
+  // ABOUT PAGE HERO BUTTON FLIP ANIMATION
+  // ============================================================
+  if (document.querySelector(".about-hero-action")) {
+    gsap.from(".about-hero-action > *", {
+      opacity: 0,
+      scale: 0,
+      rotate: -45,
+      duration: 1.05,
+      ease: "back.out(2)",
+      clearProps: "all",
+      delay: 0.35
+    });
+  }
 
   // ============================================================
   // ABOUT PAGE CARDS FRAMER MOTION (UPRIGHT STATE PRESERVED, NO SHRINKING)
