@@ -1231,13 +1231,13 @@
   stroke: rgba(255, 160, 216, 0.5) !important;
 }
 
-[data-theme="dark"] .pricing-notch {
-  background: #000000 !important;
+[data-theme="dark"] .pricing-notch-tl {
+  background: var(--bg) !important;
 }
 
-[data-theme="dark"] .pricing-notch-tl::after,
-[data-theme="dark"] .pricing-notch-br::after {
-  box-shadow: 5px 5px 0 5px #000000 !important;
+[data-theme="dark"] .pricing-notch-tl::before,
+[data-theme="dark"] .pricing-notch-tl::after {
+  box-shadow: -5px -5px 0 5px var(--bg) !important;
 }
 
 /* 10. CLIENT TESTIMONIALS STAGE */
