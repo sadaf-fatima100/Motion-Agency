@@ -315,4 +315,74 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
   }
+
+  // ============================================================
+  // TESTIMONIALS SLIDER INTERACTION
+  // ============================================================
+  let currentTestiIdx = 0;
+  let testiAutoTimer = null;
+
+  function showTestimonial(index) {
+    const slides = document.querySelectorAll(".testi-slide");
+    const dots = document.querySelectorAll(".testi-dot");
+    if (!slides.length) return;
+
+    if (index >= slides.length) currentTestiIdx = 0;
+    else if (index < 0) currentTestiIdx = slides.length - 1;
+    else currentTestiIdx = index;
+
+    slides.forEach((slide, i) => {
+      if (i === currentTestiIdx) {
+        slide.classList.add("active");
+      } else {
+        slide.classList.remove("active");
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      if (i === currentTestiIdx) {
+        dot.classList.add("active");
+      } else {
+        dot.classList.remove("active");
+      }
+    });
+  }
+
+  function nextTestimonial() {
+    showTestimonial(currentTestiIdx + 1);
+    resetTestiTimer();
+  }
+
+  function prevTestimonial() {
+    showTestimonial(currentTestiIdx - 1);
+    resetTestiTimer();
+  }
+
+  function goToTestimonial(idx) {
+    showTestimonial(idx);
+    resetTestiTimer();
+  }
+
+  function startTestiTimer() {
+    clearInterval(testiAutoTimer);
+    testiAutoTimer = setInterval(() => {
+      showTestimonial(currentTestiIdx + 1);
+    }, 6500);
+  }
+
+  function resetTestiTimer() {
+    clearInterval(testiAutoTimer);
+    startTestiTimer();
+  }
+
+  window.nextTestimonial = nextTestimonial;
+  window.prevTestimonial = prevTestimonial;
+  window.goToTestimonial = goToTestimonial;
+
+  const testiContainer = document.querySelector(".testi-stage-container");
+  if (testiContainer) {
+    startTestiTimer();
+    testiContainer.addEventListener("mouseenter", () => clearInterval(testiAutoTimer));
+    testiContainer.addEventListener("mouseleave", () => startTestiTimer());
+  }
 });

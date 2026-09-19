@@ -531,6 +531,26 @@ if(!rm){
   });
 
   // ============================================================
+  // 9.5 TESTIMONIALS SECTION (#testimonials)
+  // ============================================================
+  animateFramerHeading(".testimonials-title", ".testimonials-section");
+  gsap.from(".testimonials-section .section-head p", {
+    opacity: 0,
+    y: 20,
+    duration: 0.85,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".testimonials-section", start: "top 85%" }
+  });
+  gsap.from(".testi-stage-container", {
+    opacity: 0,
+    y: 40,
+    scale: 0.96,
+    duration: 1.0,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".testi-stage-container", start: "top 82%" }
+  });
+
+  // ============================================================
   // 10. CTA BAND (#contact)
   // ============================================================
   gsap.from(".cta-band", {
@@ -693,28 +713,6 @@ if(!rm){
     );
   }
 
-  if (document.querySelector(".team-grid")) {
-    const teamCards = gsap.utils.toArray(".team-grid .team-member-card");
-    
-    gsap.fromTo(teamCards, 
-      {
-        opacity: 0,
-        filter: "blur(10px)"
-      },
-      {
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 0.85,
-        stagger: 0.08,
-        ease: "power2.out",
-        clearProps: "all",
-        scrollTrigger: {
-          trigger: ".team-grid",
-          start: "top 88%"
-        }
-      }
-    );
-  }
 
   // ============================================================
   // NUVIO-STYLE INTERACTIVE GENERATIVE MOSAIC PIXEL CANVAS
