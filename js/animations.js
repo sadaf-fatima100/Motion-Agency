@@ -435,20 +435,17 @@ if(!rm){
     ease: "power3.out",
     scrollTrigger: { trigger: ".about-actions-row", start: "top 90%" }
   });
-  // 8. ABOUT AGENCY SECTION: RIGHT STACKED CARDS (FRAMER MOTION STAGGERED SLIDE-IN ONE BY ONE)
+  // 8. ABOUT AGENCY SECTION: RIGHT STACKED CARDS (SILKY SMOOTH FLAT SLIDE-IN ONE BY ONE)
   gsap.from(".about-slide-card", {
     opacity: 0,
-    x: 95,
-    y: 15,
-    rotation: 2,
-    scale: 0.94,
-    stagger: 0.22,
-    duration: 1.0,
-    ease: "back.out(1.2)",
-    clearProps: "transform,opacity",
+    x: 70,
+    stagger: 0.16,
+    duration: 0.85,
+    ease: "power3.out",
+    clearProps: "all",
     scrollTrigger: {
       trigger: ".about-cards-stack",
-      start: "top 84%",
+      start: "top 85%",
       toggleActions: "play none none none"
     }
   });
