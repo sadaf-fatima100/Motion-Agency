@@ -1299,169 +1299,77 @@
   box-shadow: -5px -5px 0 5px var(--bg) !important;
 }
 
-/* 10. CLIENT TESTIMONIALS STAGE */
-[data-theme="dark"] .testimonials-section {
-  margin: 70px auto 35px !important;
-  padding: 10px 0 10px !important;
-  background: transparent !important;
-  border-radius: 0 !important;
-}
-
-[data-theme="dark"] .testimonials-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 100vw;
-  height: 100%;
-  transform: translateX(-50%);
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(ellipse 65% 50% at 50% 25%, rgba(139, 109, 255, 0.16) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%) !important;
-}
-
-[data-theme="dark"] .testi-eyebrow {
-  background: rgba(139, 109, 255, 0.12) !important;
-  border-color: rgba(139, 109, 255, 0.35) !important;
-  color: #c4b0ff !important;
-}
-
-[data-theme="dark"] .testi-main-title,
-[data-theme="dark"] .testimonials-title {
-  color: #ffffff !important;
-}
-
-[data-theme="dark"] .testi-sub-text,
-[data-theme="dark"] .testi-head p {
-  color: #b8b1d0 !important;
-}
-
-/* Outer Stage Container (Obsidian Glass Stage) */
-[data-theme="dark"] .testi-stage-container {
-  padding: 34px 20px 32px !important;
-  background: 
-    radial-gradient(ellipse 100% 70% at 50% 0%, rgba(139, 109, 255, 0.18) 0%, transparent 65%),
-    linear-gradient(145deg, #0e0a1a 0%, #080612 100%) !important;
-  border: 1.5px solid rgba(139, 109, 255, 0.32) !important;
-  box-shadow: 
-    0 24px 70px rgba(0, 0, 0, 0.95),
-    0 0 35px rgba(124, 92, 255, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Watermark Decorative Quotes */
-[data-theme="dark"] .testi-watermark-quote {
-  color: rgba(139, 109, 255, 0.12) !important;
-  text-shadow: 0 0 25px rgba(124, 92, 255, 0.2) !important;
-}
-
-/* Central Vertical Theme Gradient Stripe — Tamed to Translucent Frosted Aurora (Resolves harsh magenta slab) */
-[data-theme="dark"] .testi-gradient-pillar {
-  background: linear-gradient(180deg, rgba(124, 92, 255, 0.22) 0%, rgba(188, 140, 255, 0.12) 50%, rgba(255, 143, 206, 0.18) 100%) !important;
-  border-left: 1px solid rgba(139, 109, 255, 0.22) !important;
-  border-right: 1px solid rgba(139, 109, 255, 0.22) !important;
-  box-shadow: 0 0 35px rgba(124, 92, 255, 0.15) !important;
-}
-
-/* Avatar Box — Replaces stark solid white circle with glowing obsidian glass rim */
-[data-theme="dark"] .testi-avatar-box {
-  border: 3px solid rgba(188, 166, 255, 0.75) !important;
-  background: #110d22 !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.85), 0 0 16px rgba(139, 109, 255, 0.4) !important;
-}
-
-/* Central Testimonial Card — Premium Frosted Obsidian Card */
-[data-theme="dark"] .testi-card {
-  padding: 44px 26px 18px !important;
-  background: linear-gradient(155deg, rgba(18, 13, 34, 0.97) 0%, rgba(10, 7, 20, 0.97) 100%) !important;
+/* 10. CLIENT TESTIMONIALS MULTI-CARD SLIDER (DARK THEME) */
+[data-theme="dark"] .testi-card-box {
+  background: linear-gradient(155deg, rgba(22, 16, 42, 0.88) 0%, rgba(12, 8, 24, 0.95) 100%) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
-  border: 1.5px solid rgba(169, 140, 255, 0.38) !important;
-  box-shadow: 
-    0 20px 50px rgba(0, 0, 0, 0.92),
-    0 0 28px rgba(124, 92, 255, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
+  border: 1.5px solid rgba(169, 140, 255, 0.22) !important;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
 }
 
-/* 5-Star Rating Row — Replaces white/yellowish capsule with luxury amber-gold dark glass */
-[data-theme="dark"] .testi-rating-row {
-  background: rgba(255, 185, 0, 0.08) !important;
-  border: 1px solid rgba(255, 185, 0, 0.38) !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+[data-theme="dark"] .testi-card-box:hover,
+[data-theme="dark"] .testi-card-box.featured {
+  background: linear-gradient(155deg, rgba(32, 22, 60, 0.92) 0%, rgba(16, 11, 32, 0.98) 100%) !important;
+  border-color: rgba(188, 166, 255, 0.55) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9), 0 0 28px rgba(124, 92, 255, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
+  transform: translateY(-5px);
 }
 
-[data-theme="dark"] .testi-star {
-  color: #ffb703 !important;
-  text-shadow: 0 0 8px rgba(255, 183, 3, 0.5) !important;
+[data-theme="dark"] .testi-card-quote {
+  color: #ece7f8 !important;
 }
 
-[data-theme="dark"] .testi-rating-badge {
-  color: #ffd15c !important;
-  background: transparent !important;
-  border: none !important;
-  font-weight: 750 !important;
+[data-theme="dark"] .testi-card-footer {
+  border-top: 1px solid rgba(169, 140, 255, 0.14) !important;
 }
 
-/* Review Quote Text */
-[data-theme="dark"] .testi-quote-text {
-  color: #f1edff !important;
-  line-height: 1.65 !important;
-  font-weight: 450 !important;
+[data-theme="dark"] .testi-card-avatar {
+  border-color: rgba(188, 166, 255, 0.4) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.8) !important;
 }
 
-/* Author Identity */
-[data-theme="dark"] .testi-author-info {
-  margin-top: 11px !important;
-}
-
-[data-theme="dark"] .testi-author-name {
+[data-theme="dark"] .testi-card-name {
   color: #ffffff !important;
-  font-weight: 750 !important;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
 }
 
-[data-theme="dark"] .testi-author-role {
+[data-theme="dark"] .testi-card-role {
   color: #c98eff !important;
-  font-weight: 550 !important;
 }
 
-/* Side Navigation Arrow Buttons */
-[data-theme="dark"] .testi-nav-btn {
-  background: rgba(18, 13, 34, 0.95) !important;
-  border: 1.5px solid rgba(188, 166, 255, 0.45) !important;
+[data-theme="dark"] .testi-card-stars {
+  color: #ffd15c !important;
+  text-shadow: 0 0 10px rgba(255, 209, 92, 0.6) !important;
+}
+
+[data-theme="dark"] .testi-nav-arrow.btn-prev {
+  background: rgba(18, 13, 34, 0.92) !important;
+  border-color: rgba(188, 166, 255, 0.35) !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.75), 0 0 12px rgba(139, 109, 255, 0.2) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6) !important;
 }
 
-[data-theme="dark"] .testi-nav-btn:hover {
-  background: linear-gradient(135deg, #8b6dff, #ffa0d8) !important;
-  border-color: #ffffff !important;
-  box-shadow: 0 0 20px rgba(139, 109, 255, 0.65), 0 0 14px rgba(255, 160, 216, 0.45) !important;
+[data-theme="dark"] .testi-nav-arrow.btn-prev:hover {
+  background: rgba(30, 22, 54, 1) !important;
+  border-color: rgba(188, 166, 255, 0.7) !important;
+  box-shadow: 0 0 18px rgba(139, 109, 255, 0.4) !important;
 }
 
-/* Pagination Dots */
-[data-theme="dark"] .testi-dots {
-  margin-top: 8px !important;
+[data-theme="dark"] .testi-nav-arrow.btn-next {
+  background: linear-gradient(135deg, #8b6dff 0%, #ba6eff 100%) !important;
+  border-color: #ba6eff !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 24px rgba(139, 109, 255, 0.6) !important;
 }
 
-[data-theme="dark"] .testi-dot {
-  background: rgba(255, 255, 255, 0.25) !important;
-}
-
-[data-theme="dark"] .testi-dot:hover {
-  background: rgba(255, 255, 255, 0.6) !important;
-}
-
-[data-theme="dark"] .testi-dot.active {
-  background: linear-gradient(90deg, #8b6dff, #ffa0d8) !important;
-  box-shadow: 0 0 10px rgba(139, 109, 255, 0.7) !important;
+[data-theme="dark"] .testi-nav-arrow.btn-next:hover {
+  box-shadow: 0 0 32px rgba(139, 109, 255, 0.85) !important;
+  filter: brightness(1.15) !important;
 }
 
 /* 11. INFINITE SCROLLING TICKER BAR */
 [data-theme="dark"] .about-ticker-bar {
-  margin: 10px 0 30px !important;
+  margin: 0 !important;
   background: #000000 !important;
   border-top: 1px solid rgba(139, 109, 255, 0.28) !important;
   border-bottom: 1px solid rgba(139, 109, 255, 0.28) !important;

@@ -225,57 +225,78 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ============================================================
-  // TESTIMONIALS SLIDER INTERACTION
+  // TESTIMONIALS MULTI-CARD CAROUSEL SLIDER
   // ============================================================
-  let currentTestiIdx = 0;
+  let currentTestiSlide = 0;
   let testiAutoTimer = null;
+  const track = document.getElementById("testiSliderTrack");
+  const viewport = document.getElementById("testiViewport");
 
-  function showTestimonial(index) {
-    const slides = document.querySelectorAll(".testi-slide");
-    const dots = document.querySelectorAll(".testi-dot");
-    if (!slides.length) return;
+  function getCardsPerView() {
+    if (window.innerWidth <= 680) return 1;
+    if (window.innerWidth <= 1024) return 2;
+    return 3;
+  }
 
-    if (index >= slides.length) currentTestiIdx = 0;
-    else if (index < 0) currentTestiIdx = slides.length - 1;
-    else currentTestiIdx = index;
+  function updateTestimonialSlider() {
+    if (!track) return;
+    const cards = track.querySelectorAll(".testi-card-box");
+    if (!cards.length) return;
+    const perView = getCardsPerView();
+    const maxSlide = Math.max(0, cards.length - perView);
 
-    slides.forEach((slide, i) => {
-      if (i === currentTestiIdx) {
-        slide.classList.add("active");
+    if (currentTestiSlide > maxSlide) currentTestiSlide = 0;
+    if (currentTestiSlide < 0) currentTestiSlide = maxSlide;
+
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const gap = 24;
+    const shift = currentTestiSlide * (cardWidth + gap);
+
+    track.style.transform = "translateX(-" + shift + "px)";
+
+    cards.forEach((c, idx) => {
+      const highlightIdx = perView === 3 ? currentTestiSlide + 1 : currentTestiSlide;
+      if (idx === highlightIdx) {
+        c.classList.add("featured");
       } else {
-        slide.classList.remove("active");
-      }
-    });
-
-    dots.forEach((dot, i) => {
-      if (i === currentTestiIdx) {
-        dot.classList.add("active");
-      } else {
-        dot.classList.remove("active");
+        c.classList.remove("featured");
       }
     });
   }
 
   function nextTestimonial() {
-    showTestimonial(currentTestiIdx + 1);
+    if (!track) return;
+    const cards = track.querySelectorAll(".testi-card-box");
+    const perView = getCardsPerView();
+    const maxSlide = Math.max(0, cards.length - perView);
+    if (currentTestiSlide >= maxSlide) {
+      currentTestiSlide = 0;
+    } else {
+      currentTestiSlide++;
+    }
+    updateTestimonialSlider();
     resetTestiTimer();
   }
 
   function prevTestimonial() {
-    showTestimonial(currentTestiIdx - 1);
-    resetTestiTimer();
-  }
-
-  function goToTestimonial(idx) {
-    showTestimonial(idx);
+    if (!track) return;
+    const cards = track.querySelectorAll(".testi-card-box");
+    const perView = getCardsPerView();
+    const maxSlide = Math.max(0, cards.length - perView);
+    if (currentTestiSlide <= 0) {
+      currentTestiSlide = maxSlide;
+    } else {
+      currentTestiSlide--;
+    }
+    updateTestimonialSlider();
     resetTestiTimer();
   }
 
   function startTestiTimer() {
     clearInterval(testiAutoTimer);
     testiAutoTimer = setInterval(() => {
-      showTestimonial(currentTestiIdx + 1);
-    }, 6500);
+      nextTestimonial();
+    }, 6000);
   }
 
   function resetTestiTimer() {
@@ -285,12 +306,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.nextTestimonial = nextTestimonial;
   window.prevTestimonial = prevTestimonial;
-  window.goToTestimonial = goToTestimonial;
 
-  const testiContainer = document.querySelector(".testi-stage-container");
-  if (testiContainer) {
+  if (viewport) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    viewport.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    viewport.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) {
+        nextTestimonial();
+      } else if (touchEndX - touchStartX > 50) {
+        prevTestimonial();
+      }
+    }, { passive: true });
+
+    viewport.addEventListener("mouseenter", () => clearInterval(testiAutoTimer));
+    viewport.addEventListener("mouseleave", () => startTestiTimer());
+
+    window.addEventListener("resize", () => {
+      updateTestimonialSlider();
+    });
+
+    // Initial render
+    setTimeout(updateTestimonialSlider, 100);
     startTestiTimer();
-    testiContainer.addEventListener("mouseenter", () => clearInterval(testiAutoTimer));
-    testiContainer.addEventListener("mouseleave", () => startTestiTimer());
   }
 });
