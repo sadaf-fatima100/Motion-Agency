@@ -3120,7 +3120,7 @@ h1.hero-title .accent {
 
 .slide-card-1 .card-btn-pill { background: #1a1030; color: #ffffff; }
 .slide-card-2 .card-btn-pill { background: #26164a; color: #ffffff; }
-.slide-card-3 .card-btn-pill { background: #ffffff; color: #7853f6; font-weight: 800; }
+.slide-card-3 .card-btn-pill { background: #26164a; color: #ffffff; }
 
 .card-deco-shape {
   position: absolute;
@@ -3139,7 +3139,7 @@ h1.hero-title .accent {
 }
 .slide-card-1 .card-deco-shape { color: #7c5cff; }
 .slide-card-2 .card-deco-shape { color: #7c5cff; }
-.slide-card-3 .card-deco-shape { color: #ffffff; opacity: 0.2; }
+.slide-card-3 .card-deco-shape { color: #7c5cff; }
 
 /* 3 Cascading Gradient Tones */
 .slide-card-1 {
@@ -3177,21 +3177,22 @@ h1.hero-title .accent {
 }
 
 .slide-card-3 {
-  background: linear-gradient(135deg, #7853f6 0%, #8c24ff 50%, #b23be7 100%);
-  border: 1.5px solid rgba(255, 255, 255, 0.32);
-  color: #ffffff;
-  box-shadow: 0 14px 38px -8px rgba(120, 83, 246, 0.42);
+  background: linear-gradient(135deg, #f2e9fc 0%, #e7d8f9 100%);
+  border: 1.5px solid #d8c6f4;
+  color: #1a1030;
+  box-shadow: 0 4px 20px -4px rgba(120, 80, 220, 0.08);
 }
-.slide-card-3 .card-slide-title { color: #ffffff; }
-.slide-card-3 .card-slide-desc { color: rgba(255, 255, 255, 0.92); }
+.slide-card-3 .card-slide-title { color: #160c2c; }
+.slide-card-3 .card-slide-desc { color: #43385e; }
 .slide-card-3 .card-slide-badge {
   background: #ffffff;
-  color: #7853f6;
-  font-weight: 800;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #6c3ce8;
+  border: 1px solid rgba(108, 60, 232, 0.22);
+  box-shadow: 0 2px 8px rgba(108, 60, 232, 0.1);
+  font-weight: 750;
 }
 .slide-card-3 .card-meta-tags {
-  color: rgba(255, 255, 255, 0.9);
+  color: #582ab8;
 }
 
 /* Responsive */
@@ -3217,7 +3218,7 @@ h1.hero-title .accent {
   width: 100%;
   overflow: hidden;
   position: relative;
-  margin: 20px 0 30px;
+  margin: 10px 0 30px;
   padding: 16px 0;
   background: linear-gradient(90deg, rgba(124, 92, 255, 0.03) 0%, rgba(255, 143, 206, 0.05) 50%, rgba(124, 92, 255, 0.03) 100%);
   border-top: 1px solid rgba(124, 92, 255, 0.12);
@@ -3949,8 +3950,8 @@ h1.hero-title .accent {
    CLIENT TESTIMONIALS SECTION (MATCHING REFERENCE DESIGN WITH THEME GRADIENT)
    ============================================================ */
 .testimonials-section {
-  margin: 140px auto 130px;
-  padding: 24px 0;
+  margin: 70px auto 25px;
+  padding: 10px 0 0;
   position: relative;
 }
 .testi-head {
@@ -3978,7 +3979,7 @@ h1.hero-title .accent {
   position: relative;
   max-width: 780px;
   margin: 0 auto;
-  padding: 32px 20px 26px;
+  padding: 34px 20px 16px;
   background: #ffffff;
   border: 1.5px solid rgba(226, 218, 250, 0.85);
   border-radius: 28px;
@@ -4083,7 +4084,7 @@ h1.hero-title .accent {
 .testi-card {
   background: #ffffff;
   border-radius: 20px;
-  padding: 44px 26px 20px;
+  padding: 44px 26px 18px;
   box-shadow: 0 12px 34px -6px rgba(25, 12, 60, 0.12), 0 1px 3px rgba(0, 0, 0, 0.04);
   border: 1.5px solid rgba(228, 220, 250, 0.85);
   position: relative;
@@ -4133,7 +4134,7 @@ h1.hero-title .accent {
 /* Author Identity on Bottom of Gradient Pillar */
 .testi-author-info {
   text-align: center;
-  margin-top: 14px;
+  margin-top: 11px;
   position: relative;
   z-index: 4;
 }
@@ -4197,7 +4198,7 @@ h1.hero-title .accent {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  margin-top: 10px;
+  margin-top: 8px;
   position: relative;
   z-index: 4;
 }
