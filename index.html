@@ -35,7 +35,7 @@
           <a href="#work" class="nav-item">Portfolio</a>
           <a href="#why-us" class="nav-item">Why Us</a>
           <a href="#pricing" class="nav-item">Pricing</a>
-          <a href="#about" class="nav-item">About Us</a>
+          <a href="about.html" class="nav-item">About Us</a>
           <a href="#contact" class="nav-item">Contact Us</a>
         </nav>
       </div>
@@ -56,8 +56,103 @@
 <main>
 
   <section class="hero" id="top">
+    <!-- HERO FLUID KINETIC RIBBON & MOTION PATH BACKDROP -->
+    <div class="hero-ribbon-backdrop" aria-hidden="true">
+      <svg class="hero-ribbon-svg" viewBox="0 0 1440 820" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+        <defs>
+          <!-- Soft Deep Ambient Glow -->
+          <filter id="ribbonGlowBlur" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="36" result="blur" />
+          </filter>
+          <filter id="ribbonSoftBlur" x="-10%" y="-10%" width="120%" height="120%">
+            <feGaussianBlur stdDeviation="12" result="blur" />
+          </filter>
+
+          <!-- Gradient: Main Fluid Silk Ribbon -->
+          <linearGradient id="heroRibbonGrad1" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#7c5cff" stop-opacity="0.32" />
+            <stop offset="30%" stop-color="#9966ff" stop-opacity="0.26" />
+            <stop offset="65%" stop-color="#ff8fce" stop-opacity="0.35" />
+            <stop offset="90%" stop-color="#ffc4e4" stop-opacity="0.18" />
+            <stop offset="100%" stop-color="#a98cff" stop-opacity="0.05" />
+          </linearGradient>
+
+          <!-- Gradient: 3D Ribbon Fold (Creates Depth & Twist) -->
+          <linearGradient id="heroRibbonGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6438ee" stop-opacity="0.22" />
+            <stop offset="45%" stop-color="#8c52ff" stop-opacity="0.18" />
+            <stop offset="75%" stop-color="#f472b6" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0.0" />
+          </linearGradient>
+
+          <!-- Gradient: Ambient Under-Glow -->
+          <linearGradient id="heroRibbonGlow" x1="20%" y1="80%" x2="80%" y2="20%">
+            <stop offset="0%" stop-color="#7c5cff" stop-opacity="0.35" />
+            <stop offset="55%" stop-color="#ff8fce" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#a98cff" stop-opacity="0" />
+          </linearGradient>
+
+          <!-- Gradient: Crest Ridge Highlight Stroke -->
+          <linearGradient id="ribbonRidgeStroke" x1="0%" y1="50%" x2="100%" y2="50%">
+            <stop offset="0%" stop-color="#7c5cff" stop-opacity="0.1" />
+            <stop offset="25%" stop-color="#a98cff" stop-opacity="0.65" />
+            <stop offset="55%" stop-color="#ffffff" stop-opacity="0.95" />
+            <stop offset="78%" stop-color="#ff8fce" stop-opacity="0.8" />
+            <stop offset="100%" stop-color="#ffb3da" stop-opacity="0.1" />
+          </linearGradient>
+
+          <!-- Motion Path Timeline Gradient -->
+          <linearGradient id="motionPathGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#7c5cff" stop-opacity="0.45" />
+            <stop offset="50%" stop-color="#ff8fce" stop-opacity="0.55" />
+            <stop offset="100%" stop-color="#7c5cff" stop-opacity="0.15" />
+          </linearGradient>
+        </defs>
+
+        <!-- 1. Ambient Background Glow Aura (Diffused) -->
+        <ellipse cx="480" cy="680" rx="360" ry="140" fill="url(#heroRibbonGlow)" filter="url(#ribbonGlowBlur)" />
+        <ellipse cx="880" cy="660" rx="420" ry="160" fill="url(#heroRibbonGlow)" filter="url(#ribbonGlowBlur)" />
+
+        <!-- 2. Lower Soft Ribbon Layer -->
+        <path class="ribbon-flow-layer-1" d="M-80 780 C180 740 320 620 520 640 C720 660 860 550 1100 610 C1280 655 1420 590 1520 630 L1520 840 L-80 840 Z" fill="url(#heroRibbonGrad1)" filter="url(#ribbonSoftBlur)" />
+
+        <!-- 3. Main Crisp 3D Ribbon Wave Body -->
+        <path class="ribbon-flow-layer-2" d="M-60 740 C140 700 300 580 490 600 C680 620 790 510 1020 560 C1220 605 1380 540 1500 590 L1500 780 C1360 720 1200 770 1000 710 C780 650 670 760 480 720 C290 680 140 810 -60 830 Z" fill="url(#heroRibbonGrad1)" />
+
+        <!-- 4. Front Twisted Fold Layer (Adds Silky 3D Dimension) -->
+        <path class="ribbon-flow-layer-3" d="M420 670 C540 590 660 550 780 575 C900 600 1060 560 1240 600 C1080 660 920 640 800 620 C680 600 560 690 420 670 Z" fill="url(#heroRibbonGrad2)" />
+
+        <!-- 5. Luminous Crest Ridge Line (Shimmering Light Edge) -->
+        <path class="ribbon-ridge-line" d="M-60 740 C140 700 300 580 490 600 C680 620 790 510 1020 560 C1220 605 1380 540 1500 590" stroke="url(#ribbonRidgeStroke)" stroke-width="2.2" stroke-linecap="round" fill="none" />
+
+        <!-- 6. Secondary Delicate Crest Line -->
+        <path class="ribbon-ridge-line-sub" d="M-40 770 C160 725 320 615 510 635 C700 655 810 545 1040 595 C1240 640 1380 580 1500 620" stroke="url(#ribbonRidgeStroke)" stroke-width="1.2" stroke-opacity="0.6" stroke-linecap="round" fill="none" />
+
+        <!-- 7. Kinetic Motion Path Lines with Keyframe Nodes (Cinematic Animation Cue) -->
+        <g class="hero-motion-timeline">
+          <!-- Timeline curved dashed trajectory -->
+          <path d="M 390 650 C 470 580, 560 590, 640 530" stroke="url(#motionPathGrad)" stroke-width="1.6" stroke-dasharray="4 6" fill="none" />
+          
+          <!-- Keyframe Diamonds & Dots -->
+          <rect x="386" y="646" width="7" height="7" rx="1.5" transform="rotate(45 389.5 649.5)" fill="#7c5cff" stroke="#ffffff" stroke-width="1.2" />
+          <circle cx="510" cy="582" r="3" fill="#ff8fce" stroke="#ffffff" stroke-width="1" />
+          <rect x="636" y="526" width="7" height="7" rx="1.5" transform="rotate(45 639.5 529.5)" fill="#7c5cff" stroke="#ffffff" stroke-width="1.2" />
+        </g>
+      </svg>
+
+      <!-- Floating Frosted Motion Play Emblem (Positioned in Empty Center Space) -->
+      <div class="hero-floating-play-emblem" aria-hidden="true">
+        <div class="emblem-frosted-circle">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="#7c5cff">
+            <polygon points="7 4 20 12 7 20 7 4"/>
+          </svg>
+        </div>
+        <div class="emblem-spark emblem-spark-1">+</div>
+        <div class="emblem-spark emblem-spark-2">&#10022;</div>
+      </div>
+    </div>
+
     <div class="hero-copy">
-      <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span>Motion &amp; film studio</div>
       <!-- FINAL HERO HEADLINE - LOCKED (DO NOT REVERT TO OLD TEXT) -->
       <h1 class="hero-title">Crafting <span class="accent">cinematic motion</span><br>&amp; bold visual stories that captivate the world</h1>
       <p class="hero-sub">Exchange ideas, share a treatment, and watch your brand come to life with a studio built for cinematic brand films and motion design.</p>
@@ -115,7 +210,7 @@
           <div class="hero-card-duration">02:48</div>
 
           <!-- Inline Iframe Slot -->
-          <div id="heroIframeSlot" style="display:none;position:absolute;inset:0;width:100%;height:100%;z-index:15;border-radius:28px;overflow:hidden;background:#000000;"></div>
+          <div id="heroIframeSlot" style="display:none;position:absolute;inset:0;width:100%;height:100%;z-index:15;border-radius:29px;overflow:hidden;background:#000000;"></div>
         </div>
       </div>
 
@@ -1381,7 +1476,7 @@
 
     <div id="contact"></div>
     <div class="cta-band">
-      <h2>Ready to bring your <span class="accent">vision to the screen</span> with our studio?</h2>
+      <h2>Ready to bring your <span class="accent-purple">vision to the</span> <span class="accent-pink">screen</span> with our studio?</h2>
       <p>Tell us what you are building and our directors will prepare a bespoke cinematic treatment within three business days.</p>
       <a href="#contact" class="btn-primary">Book a Consultation<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" style="width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.4;display:block;"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>

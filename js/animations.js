@@ -12,6 +12,8 @@ if(!rm){
       if (!el || !el.classList) return false;
       return (
         el.classList.contains('accent') ||
+        el.classList.contains('accent-purple') ||
+        el.classList.contains('accent-pink') ||
         el.classList.contains('accent-text') ||
         el.classList.contains('gradient-accent') ||
         el.classList.contains('about-accent') ||
@@ -81,20 +83,23 @@ if(!rm){
   // ============================================================
   const heroTl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-  heroTl
-    .from(".hero-eyebrow", {
+  if (document.querySelector(".hero-eyebrow")) {
+    heroTl.from(".hero-eyebrow", {
       opacity: 0,
       y: 18,
       scale: 0.92,
       duration: 0.8,
       ease: "power3.out"
-    })
+    });
+  }
+
+  heroTl
     .from(".hero-title", {
       opacity: 0,
       y: 28,
       duration: 0.9,
       ease: "power4.out"
-    }, "-=0.55")
+    }, document.querySelector(".hero-eyebrow") ? "-=0.55" : "+=0")
     .from(".hero-sub", {
       opacity: 0,
       y: 22,
@@ -360,6 +365,7 @@ if(!rm){
     stagger: 0.15,
     duration: 1.0,
     ease: "power3.out",
+    clearProps: "transform",
     scrollTrigger: { trigger: ".why-card-wide", start: "top 85%" }
   });
   gsap.from(".why-tool-item", {
@@ -368,6 +374,7 @@ if(!rm){
     stagger: 0.08,
     duration: 0.7,
     ease: "back.out(1.5)",
+    clearProps: "transform",
     scrollTrigger: { trigger: ".why-tools-box", start: "top 90%" }
   });
 
