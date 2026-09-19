@@ -1058,7 +1058,8 @@ h1.hero-title .accent {
 
 /* ANIMATION SOLUTIONS / CORE CAPABILITIES */
 .anim-solutions-section {
-  margin: 120px 0 100px;
+  margin: 150px 0 130px;
+  padding: 24px 0;
   position: relative;
 }
 .anim-solutions-head {
@@ -1398,12 +1399,12 @@ h1.hero-title .accent {
 }
 
 /* SECTION HEAD */
-.section-head{margin:120px 0 24px;}
+.section-head{margin:150px 0 32px;padding-top:16px;}
 .section-head h2{font-family:var(--font)!important;font-size:clamp(28px,3.4vw,42px)!important;font-weight:350!important;line-height:1.22!important;letter-spacing:-.02em!important;text-transform:none!important;color:var(--ink-0);}
 .section-head p{margin-top:8px;font-size:14px;color:var(--ink-2);line-height:1.6;max-width:680px;}
 
 /* WORK HORIZONTAL SCROLL CAROUSEL */
-.work-grid{display:flex!important;flex-wrap:nowrap!important;align-items:flex-start!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory;scroll-behavior:smooth;gap:20px;position:relative;padding:14px 6px 36px 6px!important;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(124,92,255,0.45) rgba(235,228,250,0.5);cursor:grab;}
+.work-grid{display:flex!important;flex-wrap:nowrap!important;align-items:flex-start!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory;scroll-behavior:smooth;gap:20px;position:relative;padding:18px 6px 44px 6px!important;margin-bottom:50px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(124,92,255,0.45) rgba(235,228,250,0.5);cursor:grab;}
 .work-grid:active{cursor:grabbing;}
 .work-grid::-webkit-scrollbar{height:7px;}
 .work-grid::-webkit-scrollbar-track{background:rgba(235,228,250,0.5);border-radius:100px;}
@@ -1496,7 +1497,7 @@ h1.hero-title .accent {
 .see-all-btn:hover{color:#7c5cff;transform:translateX(4px);}
 
 /* EDITORIAL MANIFESTO SECTION */
-.manifesto-section{margin:130px auto 110px;max-width:1440px;text-align:center;padding:0 24px;position:relative;overflow:visible;}
+.manifesto-section{margin:160px auto 140px;max-width:1440px;text-align:center;padding:32px 24px;position:relative;overflow:visible;}
 .manifesto-heading{font-family:var(--font)!important;font-size:clamp(32px,4.4vw,56px);font-weight:300!important;line-height:1.24;letter-spacing:-.025em;color:var(--ink-0);margin:0 auto;max-width:920px;text-wrap:balance;position:relative;z-index:2;}
 .manifesto-line{display:block;}
 .grad-word{background:linear-gradient(135deg,#7448ee 0%,#a56ff5 45%,#f69cb8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;font-weight:300!important;}
@@ -1884,9 +1885,9 @@ h1.hero-title .accent {
   overflow: hidden;
   /* Hardware-accelerated smooth transition */
   transition:
-    transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow 0.45s ease,
-    border-color 0.45s ease;
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
   will-change: transform, box-shadow;
   transform-style: preserve-3d;
 }
@@ -3733,39 +3734,39 @@ h1.hero-title .accent {
    CLIENT TESTIMONIALS SECTION (MATCHING REFERENCE DESIGN WITH THEME GRADIENT)
    ============================================================ */
 .testimonials-section {
-  margin: 120px auto 100px;
+  margin: 70px auto 65px;
   position: relative;
 }
-.testimonials-section .section-head {
+.testi-head {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 28px;
 }
-.testimonials-section .section-head h2 {
+.testi-head h2 {
   font-family: var(--font) !important;
-  font-size: clamp(28px, 3.4vw, 42px) !important;
+  font-size: clamp(26px, 3vw, 38px) !important;
   font-weight: 350 !important;
-  line-height: 1.22 !important;
+  line-height: 1.2 !important;
   letter-spacing: -0.02em !important;
   color: var(--ink-0);
-  margin-top: 10px;
+  margin-top: 8px;
 }
-.testimonials-section .section-head p {
-  margin: 12px auto 0;
-  max-width: 580px;
-  font-size: 16px;
-  line-height: 1.6;
+.testi-head p {
+  margin: 8px auto 0;
+  max-width: 540px;
+  font-size: 15px;
+  line-height: 1.55;
   color: var(--ink-2);
 }
 
 .testi-stage-container {
   position: relative;
-  max-width: 940px;
+  max-width: 780px;
   margin: 0 auto;
-  padding: 50px 32px 60px;
+  padding: 32px 20px 26px;
   background: #ffffff;
   border: 1.5px solid rgba(226, 218, 250, 0.85);
-  border-radius: 36px;
-  box-shadow: 0 24px 64px -12px rgba(100, 60, 200, 0.08);
+  border-radius: 28px;
+  box-shadow: 0 18px 48px -10px rgba(100, 60, 200, 0.07);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -3776,21 +3777,21 @@ h1.hero-title .accent {
 .testi-watermark-quote {
   position: absolute;
   font-family: "Georgia", "Times New Roman", serif;
-  font-size: 190px;
+  font-size: 140px;
   font-weight: 900;
   line-height: 1;
-  color: rgba(140, 110, 220, 0.12);
+  color: rgba(140, 110, 220, 0.11);
   pointer-events: none;
   user-select: none;
   z-index: 1;
 }
 .quote-left {
-  top: 20px;
-  left: 36px;
+  top: 14px;
+  left: 20px;
 }
 .quote-right {
-  bottom: 20px;
-  right: 36px;
+  bottom: 14px;
+  right: 20px;
 }
 
 /* Central Vertical Theme Gradient Stripe (Matching reference layout, replaced blue with theme gradient) */
@@ -3800,11 +3801,11 @@ h1.hero-title .accent {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 330px;
-  max-width: 80%;
+  width: 250px;
+  max-width: 76%;
   background: linear-gradient(145deg, #7c5cff 0%, #9e64fc 45%, #ff8fce 100%);
   z-index: 1;
-  box-shadow: 0 0 50px rgba(124, 92, 255, 0.28);
+  box-shadow: 0 0 40px rgba(124, 92, 255, 0.22);
 }
 
 /* Carousel Frame */
@@ -3812,14 +3813,14 @@ h1.hero-title .accent {
   position: relative;
   z-index: 3;
   width: 100%;
-  max-width: 720px;
-  margin-top: 18px;
+  max-width: 560px;
+  margin-top: 10px;
 }
 
 .testi-track {
   position: relative;
   width: 100%;
-  min-height: 360px;
+  min-height: 215px;
 }
 
 .testi-slide {
@@ -3827,8 +3828,8 @@ h1.hero-title .accent {
   inset: 0;
   opacity: 0;
   visibility: hidden;
-  transform: scale(0.96) translateY(14px);
-  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.45s;
+  transform: scale(0.97) translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
   pointer-events: none;
   display: flex;
   flex-direction: column;
@@ -3844,12 +3845,12 @@ h1.hero-title .accent {
 
 /* Avatar Box Overlapping Top of White Card */
 .testi-avatar-box {
-  width: 96px;
-  height: 96px;
+  width: 74px;
+  height: 74px;
   border-radius: 50%;
-  border: 4.5px solid #ffffff;
-  box-shadow: 0 10px 28px rgba(16, 10, 36, 0.22);
-  margin: 0 auto -48px auto;
+  border: 3.5px solid #ffffff;
+  box-shadow: 0 8px 22px rgba(16, 10, 36, 0.2);
+  margin: 0 auto -37px auto;
   position: relative;
   z-index: 5;
   background: #ffffff;
@@ -3865,9 +3866,9 @@ h1.hero-title .accent {
 /* Central White Testimonial Card */
 .testi-card {
   background: #ffffff;
-  border-radius: 28px;
-  padding: 64px 44px 34px;
-  box-shadow: 0 18px 45px -8px rgba(25, 12, 60, 0.15), 0 1px 3px rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+  padding: 44px 26px 20px;
+  box-shadow: 0 12px 34px -6px rgba(25, 12, 60, 0.12), 0 1px 3px rgba(0, 0, 0, 0.04);
   border: 1.5px solid rgba(228, 220, 250, 0.85);
   position: relative;
   text-align: center;
@@ -3881,22 +3882,22 @@ h1.hero-title .accent {
   align-items: center;
   justify-content: center;
   gap: 3px;
-  margin-bottom: 18px;
-  padding: 4px 14px;
+  margin-bottom: 10px;
+  padding: 2px 10px;
   background: #fffdf7;
   border: 1px solid rgba(255, 185, 0, 0.3);
   border-radius: 100px;
 }
 .testi-star {
   color: #ffaa00;
-  font-size: 17px;
+  font-size: 13px;
   line-height: 1;
-  text-shadow: 0 1px 6px rgba(255, 170, 0, 0.35);
+  text-shadow: 0 1px 4px rgba(255, 170, 0, 0.3);
 }
 .testi-rating-badge {
-  margin-left: 8px;
+  margin-left: 6px;
   font-family: var(--font) !important;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 750;
   color: #7c5cff;
   letter-spacing: 0.02em;
@@ -3905,10 +3906,10 @@ h1.hero-title .accent {
 /* Review Quote Text */
 .testi-quote-text {
   font-family: var(--font) !important;
-  font-size: clamp(15px, 1.4vw, 17px);
+  font-size: 14px;
   font-weight: 450;
-  line-height: 1.75;
-  color: #241c38;
+  line-height: 1.55;
+  color: #2b233e;
   margin: 0;
   font-style: normal;
 }
@@ -3916,39 +3917,39 @@ h1.hero-title .accent {
 /* Author Identity on Bottom of Gradient Pillar */
 .testi-author-info {
   text-align: center;
-  margin-top: 22px;
+  margin-top: 14px;
   position: relative;
   z-index: 4;
 }
 .testi-author-name {
   font-family: var(--font) !important;
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 16px;
+  font-weight: 750;
   color: #ffffff;
   margin: 0;
   letter-spacing: -0.01em;
-  text-shadow: 0 2px 10px rgba(10, 5, 25, 0.25);
+  text-shadow: 0 2px 8px rgba(10, 5, 25, 0.25);
 }
 .testi-author-role {
   font-family: var(--font) !important;
-  font-size: 13.5px;
+  font-size: 12px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.92);
-  margin-top: 4px;
+  margin-top: 2px;
   margin-bottom: 0;
 }
 
 /* Side Navigation Arrow Buttons */
 .testi-nav-btn {
   position: absolute;
-  top: calc(50% + 14px);
+  top: calc(50% + 8px);
   transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: linear-gradient(135deg, #7c5cff, #ff8fce);
   border: 2px solid #ffffff;
-  box-shadow: 0 6px 18px rgba(124, 92, 255, 0.45);
+  box-shadow: 0 4px 14px rgba(124, 92, 255, 0.4);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -3960,14 +3961,14 @@ h1.hero-title .accent {
   padding: 0;
 }
 .testi-prev-btn {
-  left: -22px;
+  left: -18px;
 }
 .testi-next-btn {
-  right: -22px;
+  right: -18px;
 }
 .testi-nav-btn:hover {
-  transform: translateY(-50%) scale(1.14);
-  box-shadow: 0 10px 26px rgba(124, 92, 255, 0.65);
+  transform: translateY(-50%) scale(1.12);
+  box-shadow: 0 8px 20px rgba(124, 92, 255, 0.6);
   filter: brightness(1.06);
 }
 .testi-nav-btn svg {
@@ -3979,14 +3980,14 @@ h1.hero-title .accent {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
+  gap: 6px;
+  margin-top: 10px;
   position: relative;
   z-index: 4;
 }
 .testi-dot {
-  width: 9px;
-  height: 9px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.45);
   border: none;
@@ -3998,37 +3999,37 @@ h1.hero-title .accent {
   background: rgba(255, 255, 255, 0.8);
 }
 .testi-dot.active {
-  width: 32px;
+  width: 22px;
   border-radius: 100px;
   background: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
 }
 
 /* Responsive */
 @media (max-width: 860px) {
   .testi-stage-container {
-    padding: 40px 18px 50px;
-    border-radius: 26px;
+    padding: 28px 14px 22px;
+    border-radius: 22px;
   }
   .testi-gradient-pillar {
-    width: 90%;
-    max-width: 90%;
+    width: 88%;
+    max-width: 88%;
   }
   .testi-card {
-    padding: 56px 20px 28px;
-    border-radius: 22px;
+    padding: 40px 16px 18px;
+    border-radius: 18px;
   }
   .testi-watermark-quote {
     display: none;
   }
   .testi-prev-btn {
     left: -10px;
-    width: 38px;
-    height: 38px;
+    width: 32px;
+    height: 32px;
   }
   .testi-next-btn {
     right: -10px;
-    width: 38px;
-    height: 38px;
+    width: 32px;
+    height: 32px;
   }
 }
