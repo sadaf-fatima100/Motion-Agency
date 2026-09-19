@@ -418,118 +418,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--v1);outline-offset:
   pointer-events: none;
 }
 
-/* ============================================================
-   LIVE FLOATING ABSTRACT 3D PARTICLES (CURATED NEGATIVE SPACE)
-   Positioned strictly in empty outer margins and background gutters.
-   Full-bleed 100vw backdrop layer: Never cut off by section boundaries!
-   ============================================================ */
-.hero-particles-stage {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  max-width: 100vw;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0; /* Placed behind hero copy (z-index: 2) so text stays 100% legible */
-  overflow: hidden;
-}
-
-.fp-element {
-  position: absolute;
-  pointer-events: auto;
-  will-change: transform;
-  user-select: none;
-  cursor: default;
-  transition: filter 0.35s ease;
-}
-.fp-element:hover {
-  filter: brightness(1.08) drop-shadow(0 10px 24px rgba(124, 92, 255, 0.28));
-}
-
-/* 1. Top-Left Kinetic Topo Sphere: Positioned safely inside screen margin */
-.fp-topo-sphere {
-  top: 90px;
-  left: clamp(16px, 3.5vw, 64px);
-  opacity: 0.8;
-}
-
-/* 2. Sparkle Star 1: Micro accent tucked beside the Topo Sphere */
-.fp-star-1 {
-  top: 120px;
-  left: clamp(140px, 12vw, 190px);
-  opacity: 0.85;
-}
-
-/* 3. 3D Velvet Purple Spiral Snake Tube: Framed on far-right viewport gutter */
-.fp-3d-tube-purple {
-  top: 110px;
-  right: clamp(16px, 3vw, 55px);
-  opacity: 0.88;
-}
-
-/* 4. 3D Soft Pink Matte Coil Tube: Deep bottom-left corner gutter */
-.fp-3d-tube-pink {
-  bottom: 25px;
-  left: clamp(16px, 3.5vw, 60px);
-  opacity: 0.82;
-}
-
-/* 5. Floating 3D Pearl Lavender Sphere: Positioned in empty breathing area */
-.fp-sphere {
-  border-radius: 50%;
-  box-shadow: inset -5px -6px 14px rgba(50, 25, 95, 0.4),
-              inset 4px 5px 10px rgba(255, 255, 255, 0.85),
-              0 10px 22px rgba(100, 65, 190, 0.2);
-}
-
-.fp-sphere-1 {
-  width: 32px;
-  height: 32px;
-  top: 140px;
-  left: 49vw;
-  background: radial-gradient(circle at 35% 30%, #ffffff 0%, #d8c2ff 35%, #9f75ff 75%, #5a38af 100%);
-  opacity: 0.75;
-}
-
-/* Responsive Handling: Hide or scale gracefully on smaller viewports */
-@media (max-width: 1280px) {
-  .fp-topo-sphere {
-    transform: scale(0.85);
-  }
-  .fp-3d-tube-purple {
-    transform: scale(0.85);
-  }
-  .fp-sphere-1 {
-    display: none;
-  }
-}
-
-@media (max-width: 1024px) {
-  .fp-topo-sphere,
-  .fp-star-1 {
-    display: none;
-  }
-  .fp-3d-tube-purple {
-    top: 60px;
-    right: 15px;
-    opacity: 0.5;
-    transform: scale(0.7);
-  }
-  .fp-3d-tube-pink {
-    bottom: 10px;
-    left: 15px;
-    opacity: 0.5;
-    transform: scale(0.7);
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-particles-stage {
-    display: none; /* Zero distraction on mobile screens */
-  }
-}
 
 
 .hero-copy {
@@ -1579,9 +1467,9 @@ h1.hero-title .accent {
 .notch-tl::after{content:"";position:absolute;top:0;right:-16px;width:16px;height:16px;background:transparent;border-top-left-radius:16px;box-shadow:-5px -5px 0 5px var(--bg);}
 .notch-tl::after{content:"";position:absolute;top:0;right:-16px;width:16px;height:16px;background:transparent;border-top-left-radius:16px;box-shadow:5px -5px 0 5px var(--bg);}
 
-.card-arrow{width:38px;height:38px;border-radius:50%;background:#ffffff;border:1px solid rgba(165,145,225,.3);box-shadow:0 4px 14px -2px rgba(100,70,180,.16);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s;}
-.work-card:hover .card-arrow{transform:scale(1.1) rotate(45deg);box-shadow:0 8px 20px -2px rgba(100,70,180,.28);}
-.card-arrow svg{width:13px;height:13px;stroke:var(--ink-0);fill:none;stroke-width:2.4;}
+.card-arrow{width:38px;height:38px;border-radius:50%;background:linear-gradient(120deg,#7c5cff 0%,#a98cff 45%,#ff8fce 100%)!important;border:1.5px solid rgba(255,255,255,0.55);box-shadow:0 4px 16px -2px rgba(124,92,255,0.45);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s;}
+.work-card:hover .card-arrow{transform:scale(1.14) rotate(45deg);box-shadow:0 8px 24px rgba(124,92,255,0.65);}
+.card-arrow svg{width:13px;height:13px;stroke:#ffffff!important;fill:none;stroke-width:2.6;}
 
 /* CAROUSEL BAR WITH NAVIGATION ARROWS */
 .carousel-bar{margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
@@ -2865,12 +2753,13 @@ h1.hero-title .accent {
   padding: 18px 24px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  will-change: transform, opacity;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
   cursor: pointer;
 }
 .about-slide-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 45px -10px rgba(100, 60, 200, 0.22);
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 24px 50px -10px rgba(100, 60, 200, 0.24);
 }
 
 .card-row-top {
@@ -3537,7 +3426,11 @@ h1.hero-title .accent {
 .card-thumb-wrap{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;}
 .card-art-overlay{position:absolute;inset:0;background:transparent;pointer-events:none;transition:opacity .35s ease,background .35s ease;}
 .work-card:hover .card-art-overlay{background:rgba(124,92,255,0.06);}
-.card-cat-badge{position:absolute;top:12px;left:12px;z-index:10;font-family:var(--font)!important;font-size:10px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:#ffffff!important;background:rgba(12,9,24,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.25);box-shadow:0 3px 10px rgba(0,0,0,0.3);padding:4px 10px;border-radius:100px;}
+.card-cat-badge{position:absolute;z-index:10;font-family:var(--font)!important;font-size:10px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:#ffffff!important;background:rgba(12,9,24,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.25);box-shadow:0 3px 10px rgba(0,0,0,0.3);padding:4px 10px;border-radius:100px;top:12px;left:12px;}
+.cat-top-left{top:12px;left:12px;bottom:auto;right:auto;}
+.cat-top-right{top:12px;right:12px;bottom:auto;left:auto;}
+.cat-bottom-left{bottom:12px;left:12px;top:auto;right:auto;}
+.cat-bottom-right{bottom:12px;right:12px;top:auto;left:auto;}
 .card-center-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.9);width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,0.25);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,0.85);display:flex;align-items:center;justify-content:center;color:#ffffff;z-index:9;opacity:0.85;box-shadow:0 8px 24px rgba(0,0,0,0.25);transition:all .35s cubic-bezier(0.16,1,0.3,1);pointer-events:none;}
 .card-center-play svg{width:20px;height:20px;margin-left:2px;fill:#ffffff;}
 .play-pulse-ring{position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.5);opacity:0;animation:playPulse 2.4s infinite;}
