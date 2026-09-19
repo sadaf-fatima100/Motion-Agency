@@ -118,6 +118,37 @@ function closeAboutInlineVideo(e) {
   if (thumb) thumb.style.display = "";
 }
 
+// Manifesto Inline Video Play & Close (About page)
+function playManifestoVideo(e) {
+  if (e) e.stopPropagation();
+  const slot = document.getElementById("manifestoIframeSlot");
+  const playOverlay = document.getElementById("manifestoPlayOverlay");
+  const videoOverlay = document.getElementById("manifestoVideoOverlay");
+  const videoImg = document.getElementById("manifestoVideoImg");
+  if (slot) {
+    slot.innerHTML = '<button type="button" class="inline-video-close-btn" onclick="closeManifestoVideo(event)" aria-label="Close video" title="Close Video"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button><iframe src="https://www.youtube.com/embed/ez8UKLwe2qw?autoplay=1&rel=0&modestbranding=1" title="3D CGI & VFX Showcase" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:none;border-radius:28px;"></iframe>';
+    slot.style.display = "block";
+    if (playOverlay) playOverlay.style.display = "none";
+    if (videoOverlay) videoOverlay.style.display = "none";
+    if (videoImg) videoImg.style.display = "none";
+  }
+}
+
+function closeManifestoVideo(e) {
+  if (e) e.stopPropagation();
+  const slot = document.getElementById("manifestoIframeSlot");
+  const playOverlay = document.getElementById("manifestoPlayOverlay");
+  const videoOverlay = document.getElementById("manifestoVideoOverlay");
+  const videoImg = document.getElementById("manifestoVideoImg");
+  if (slot) {
+    slot.innerHTML = "";
+    slot.style.display = "none";
+  }
+  if (playOverlay) playOverlay.style.display = "";
+  if (videoOverlay) videoOverlay.style.display = "";
+  if (videoImg) videoImg.style.display = "";
+}
+
 // Global Export
 window.openReel = openReel;
 window.closeReel = closeReel;
@@ -127,6 +158,8 @@ window.playHeroInlineVideo = playHeroInlineVideo;
 window.closeHeroInlineVideo = closeHeroInlineVideo;
 window.aboutPlayVideo = aboutPlayVideo;
 window.closeAboutInlineVideo = closeAboutInlineVideo;
+window.playManifestoVideo = playManifestoVideo;
+window.closeManifestoVideo = closeManifestoVideo;
 
 // Event Listeners for Closing
 document.addEventListener("click", e => {

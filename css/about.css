@@ -48,29 +48,24 @@
 
 
 .about-hero-section{position:relative;padding:130px 24px 0;max-width:1400px;margin:0 auto;box-sizing:border-box;}
-.about-hero-canvas{position:relative;background:transparent;padding:0 48px;overflow:visible;text-align:center;}
-.about-hero-glow-1{
-  position:absolute;
-  top:-90px;
-  left:50%;
-  transform:translateX(-50%);
-  width:min(1100px, 94vw);
-  height:650px;
-  background:radial-gradient(ellipse 58% 46% at 42% 40%, rgba(124,92,255,0.12) 0%, rgba(169,140,255,0.05) 50%, rgba(245,243,251,0) 100%);
-  pointer-events:none;
-  z-index:0;
+/* Full-bleed 100vw ambient backdrop with zero outer box boundaries or edges */
+.about-hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background: 
+    radial-gradient(circle 380px at 48% 38%, rgba(124, 92, 255, 0.08) 0%, rgba(169, 140, 255, 0.02) 50%, transparent 70%),
+    radial-gradient(circle 320px at 56% 44%, rgba(255, 143, 206, 0.07) 0%, rgba(255, 143, 206, 0.02) 50%, transparent 70%);
 }
-.about-hero-glow-2{
-  position:absolute;
-  top:-50px;
-  left:50%;
-  transform:translateX(-50%);
-  width:min(980px, 90vw);
-  height:580px;
-  background:radial-gradient(ellipse 50% 42% at 62% 48%, rgba(255,143,206,0.11) 0%, rgba(255,143,206,0.04) 50%, rgba(245,243,251,0) 100%);
-  pointer-events:none;
-  z-index:0;
-}
+.about-hero-canvas{position:relative;background:transparent;padding:0 48px;overflow:visible;text-align:center;z-index:1;}
+.about-hero-glow-1,
+.about-hero-glow-2{display:none!important;}
 /* .about-eyebrow font is controlled by style.css unified eyebrow lock (font-weight:600 !important) */
 .about-eyebrow{margin-bottom:28px;position:relative;z-index:2;}
 .about-collage-headline{position:relative;z-index:2;max-width:1100px;margin:0 auto;font-family:"Urbanist","Satoshi",sans-serif;text-transform:uppercase;color:#0e0b1a;line-height:1.14;letter-spacing:-.03em;font-weight:350;}
@@ -151,6 +146,80 @@
 .about-bottom-dock{margin-top:54px;padding:40px 0 54px;display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:center;text-align:left;position:relative;z-index:2;}
 .dock-left-module{display:flex;flex-direction:column;gap:18px;}
 .dock-tags-stack{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+
+/* DOCK PILLS DROP-IN ENTRANCE FROM TOP (Framer Motion Gravity Drop & Spring Settle) */
+.dock-pill-drop-item {
+  display: inline-flex;
+  align-items: center;
+  will-change: transform, opacity;
+  animation-fill-mode: both;
+}
+
+.dock-pill-drop-item:nth-child(1) {
+  animation: pillDropFromTop1 1.05s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+}
+
+.dock-pill-drop-item:nth-child(2) {
+  animation: pillDropFromTop2 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.42s both;
+}
+
+.dock-pill-drop-item:nth-child(3) {
+  animation: pillDropFromTop3 1.05s cubic-bezier(0.22, 1, 0.36, 1) 0.58s both;
+}
+
+@keyframes pillDropFromTop1 {
+  0% {
+    opacity: 0;
+    transform: translateY(-95px) rotate(-8deg) scale(0.85);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(8px) rotate(1.5deg) scale(1.03);
+  }
+  80% {
+    transform: translateY(-3.5px) rotate(-0.5deg) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes pillDropFromTop2 {
+  0% {
+    opacity: 0;
+    transform: translateY(-110px) rotate(7deg) scale(0.85);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(9px) rotate(-1.5deg) scale(1.03);
+  }
+  80% {
+    transform: translateY(-4px) rotate(0.5deg) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes pillDropFromTop3 {
+  0% {
+    opacity: 0;
+    transform: translateY(-95px) rotate(-6deg) scale(0.85);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(8px) rotate(1.2deg) scale(1.03);
+  }
+  80% {
+    transform: translateY(-3.5px) rotate(-0.5deg) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
 
 /* DOCK TAG PILLS - Framer Motion Floating Physics */
 .dock-tag-pill {
@@ -269,8 +338,13 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .tag-orange, .tag-coral, .tag-yellow {
+  .dock-pill-drop-item,
+  .tag-orange,
+  .tag-coral,
+  .tag-yellow {
     animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
@@ -288,7 +362,7 @@
   flex-direction:column;
   justify-content:space-between;
   min-height:120px;
-  transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease,border-color .35s ease;
+  transition:transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),box-shadow .35s ease,border-color .35s ease;
 }
 
 /* Card 1: Soft Light Pastel Lavender (Theme Primary) */
@@ -677,7 +751,7 @@
   background: var(--surface,#fff);
   box-shadow: 0 10px 30px -10px rgba(100,70,180,.08);
   border: 1.5px solid var(--line,#ece5f8);
-  transition: transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease,border-color .35s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .35s ease, border-color .35s ease;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -822,7 +896,7 @@
   overflow:hidden;
   box-shadow:0 8px 24px -6px rgba(120,80,220,.06);
   position:relative;
-  transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease,border-color .35s ease;
+  transition:transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),box-shadow .35s ease,border-color .35s ease;
 }
 .team-member-card:hover{
   transform:translateY(-8px);
