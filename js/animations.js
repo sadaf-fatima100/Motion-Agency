@@ -633,15 +633,56 @@ if(!rm){
   // (Pillars cards, Pipeline step cards, Team cards matching Home Process cards)
   // ============================================================
   if (document.querySelector(".pillars-grid")) {
-    gsap.from(".pillars-grid .pillar-card", {
+    const pillarCards = gsap.utils.toArray(".pillars-grid .pillar-card");
+    
+    gsap.fromTo(pillarCards, 
+      {
+        opacity: 0,
+        y: 44,
+        scale: 0.96
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1.05,
+        stagger: 0.12,
+        ease: "power3.out",
+        clearProps: "transform,opacity",
+        scrollTrigger: {
+          trigger: ".pillars-grid",
+          start: "top 84%"
+        }
+      }
+    );
+
+    // Subtle Framer-style staggered reveal of internal icon boxes and badges
+    gsap.from(".pillars-grid .pillar-card .process-icon-box", {
+      scale: 0.8,
       opacity: 0,
-      y: 46,
-      scale: 0.93,
-      stagger: 0.1,
-      duration: 0.9,
-      ease: "back.out(1.3)",
-      clearProps: "transform",
-      scrollTrigger: { trigger: ".pillars-grid", start: "top 86%" }
+      duration: 0.8,
+      stagger: 0.12,
+      delay: 0.15,
+      ease: "power2.out",
+      clearProps: "transform,opacity",
+      scrollTrigger: {
+        trigger: ".pillars-grid",
+        start: "top 84%"
+      }
+    });
+
+    gsap.from(".pillars-grid .pillar-card .step-badge", {
+      x: 12,
+      opacity: 0,
+      duration: 0.65,
+      stagger: 0.12,
+      delay: 0.2,
+      ease: "power2.out",
+      clearProps: "transform,opacity",
+      scrollTrigger: {
+        trigger: ".pillars-grid",
+        start: "top 84%"
+      }
     });
   }
 
