@@ -1135,10 +1135,8 @@
 /* 9. PRICING PLANS — HIGH-CONTRAST ILLUMINATION */
 [data-theme="dark"] .pricing-section {
   background: 
-    radial-gradient(ellipse 85% 55% at 50% 0%, rgba(139, 109, 255, 0.24) 0%, rgba(0, 0, 0, 0) 65%),
-    radial-gradient(ellipse 60% 45% at 85% 85%, rgba(255, 160, 216, 0.14) 0%, rgba(0, 0, 0, 0) 60%),
-    #000000 !important;
-  border-radius: 36px;
+    radial-gradient(ellipse 70% 50% at 50% 15%, rgba(139, 109, 255, 0.2) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%) !important;
+  border-radius: 0 !important;
 }
 
 [data-theme="dark"] .pricing-main-title {
