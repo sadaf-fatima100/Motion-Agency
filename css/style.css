@@ -80,9 +80,9 @@ h3,
   font-weight: 600 !important;
   letter-spacing: 0.02em !important;
   text-transform: none !important;
-  color: #7448ee !important;
+  color: #6336e4 !important;
   background: rgba(124, 92, 255, 0.08) !important;
-  border: 1.2px solid rgba(124, 92, 255, 0.22) !important;
+  border: 1.2px solid rgba(124, 92, 255, 0.24) !important;
   border-radius: 100px !important;
   padding: 6px 16px !important;
   display: inline-flex !important;
@@ -90,6 +90,21 @@ h3,
   gap: 8px !important;
   box-shadow: 0 2px 10px rgba(124, 92, 255, 0.08) !important;
   width: fit-content;
+}
+
+.eyebrow-dot,
+.hero-eyebrow-dot,
+.why-us-eyebrow-dot,
+.process-eyebrow-dot,
+.about-eyebrow-dot,
+.pricing-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7c5cff, #ff8fce);
+  box-shadow: 0 0 8px rgba(124, 92, 255, 0.5);
+  display: inline-block;
+  flex-shrink: 0;
 }
 
 /* 5. UNIFIED GRADIENT ACCENT TEXT - Cross-browser, vibrant, always 100% visible */

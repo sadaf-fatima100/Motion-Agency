@@ -68,6 +68,34 @@
   filter: drop-shadow(0 0 14px rgba(167, 126, 255, 0.45));
 }
 
+/* 1C. UNIFIED HIGH-CONTRAST EYEBROW PILLS (WCAG AAA COMPLIANT ON DARK) */
+[data-theme="dark"] .hero-eyebrow,
+[data-theme="dark"] .anim-solutions-eyebrow,
+[data-theme="dark"] .eyebrow,
+[data-theme="dark"] div.eyebrow,
+[data-theme="dark"] .why-us-eyebrow,
+[data-theme="dark"] .process-eyebrow,
+[data-theme="dark"] .about-eyebrow,
+[data-theme="dark"] .pricing-eyebrow,
+[data-theme="dark"] .about-section-eyebrow,
+[data-theme="dark"] .reel-modal-cat,
+[data-theme="dark"] .testi-head .eyebrow {
+  color: #e2d9ff !important;
+  background: rgba(139, 109, 255, 0.16) !important;
+  border: 1.2px solid rgba(188, 166, 255, 0.42) !important;
+  box-shadow: 0 0 16px rgba(139, 109, 255, 0.22) !important;
+}
+
+[data-theme="dark"] .eyebrow-dot,
+[data-theme="dark"] .hero-eyebrow-dot,
+[data-theme="dark"] .why-us-eyebrow-dot,
+[data-theme="dark"] .process-eyebrow-dot,
+[data-theme="dark"] .about-eyebrow-dot,
+[data-theme="dark"] .pricing-eyebrow-dot {
+  background: linear-gradient(135deg, #a888ff, #ffa0d8) !important;
+  box-shadow: 0 0 10px rgba(168, 136, 255, 0.8) !important;
+}
+
 /* 2. NAVBAR & CAPSULE (SEAMLESS AT TOP, FROSTED ON SCROLL) */
 [data-theme="dark"] .site-header {
   background: transparent !important;
@@ -195,13 +223,15 @@
   position: relative;
   overflow: hidden;
   background:
-    /* 1. Luminous neon cyber-violet glow behind left headline & buttons */
+    /* Focal gradient directly where the user made the dot (43% 80%, below trust avatars) */
+    radial-gradient(ellipse 55% 45% at 43% 80%, rgba(255, 120, 205, 0.28) 0%, rgba(139, 109, 255, 0.20) 38%, rgba(90, 45, 210, 0.08) 60%, transparent 75%),
+    /* Luminous neon cyber-violet glow behind left headline & buttons */
     radial-gradient(ellipse 70% 55% at 20% 30%, rgba(124, 92, 255, 0.22) 0%, rgba(90, 50, 210, 0.08) 50%, transparent 75%),
-    /* 2. Vibrant neon magenta / rose halo directly behind video card */
-    radial-gradient(ellipse 65% 55% at 78% 42%, rgba(220, 80, 180, 0.18) 0%, rgba(124, 92, 255, 0.12) 45%, transparent 75%),
-    /* 3. Deep electric purple atmospheric floor glow */
-    radial-gradient(circle 600px at 50% 95%, rgba(80, 40, 180, 0.14) 0%, transparent 70%),
-    /* 4. Top seamless dark horizon blend */
+    /* Vibrant neon magenta / rose halo directly behind video card */
+    radial-gradient(ellipse 65% 55% at 78% 42%, rgba(220, 80, 180, 0.20) 0%, rgba(124, 92, 255, 0.14) 45%, transparent 75%),
+    /* Deep electric purple atmospheric floor glow */
+    radial-gradient(circle 600px at 50% 95%, rgba(80, 40, 180, 0.16) 0%, transparent 70%),
+    /* Top seamless dark horizon blend */
     radial-gradient(ellipse 100% 45% at 50% 0%, rgba(124, 92, 255, 0.10) 0%, transparent 60%),
     #04020a !important;
 }
