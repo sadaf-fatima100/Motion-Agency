@@ -41,7 +41,7 @@
 [data-theme="dark"] .grad-word,
 [data-theme="dark"] .collage-word-orange,
 [data-theme="dark"] h1.hero-title .accent,
-[data-theme="dark"] .hero-title .accent,
+[data-theme="dark"] .hero-section-title .accent,
 [data-theme="dark"] .anim-solutions-title .accent-text,
 [data-theme="dark"] .manifesto-heading .gradient-accent,
 [data-theme="dark"] .manifesto-heading .highlight-brand,
@@ -177,24 +177,36 @@
 }
 
 /* 3. HERO & VIDEO CARD ILLUMINATION */
-[data-theme="dark"] .hero {
-  background: 
-    radial-gradient(ellipse 80% 55% at 50% -10%, rgba(139, 109, 255, 0.28) 0%, rgba(0, 0, 0, 0) 65%),
+[data-theme="dark"] .hero-section {
+  background: transparent !important;
+}
+
+[data-theme="dark"] .hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 80% 55% at 50% -10%, rgba(139, 109, 255, 0.28) 0%, rgba(0, 0, 0, 0) 65%),
     radial-gradient(ellipse 60% 45% at 85% 75%, rgba(255, 160, 216, 0.12) 0%, rgba(0, 0, 0, 0) 60%),
     radial-gradient(ellipse 50% 40% at 15% 85%, rgba(124, 92, 255, 0.14) 0%, rgba(0, 0, 0, 0) 55%),
     #000000 !important;
 }
 
-[data-theme="dark"] .hero-title {
+[data-theme="dark"] .hero-section-title {
   color: #ffffff !important;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
 }
 
-[data-theme="dark"] .hero-sub {
+[data-theme="dark"] .hero-section-sub {
   color: #b8b1d0 !important;
 }
 
-[data-theme="dark"] .hero-badge {
+[data-theme="dark"] .hero-section-badge {
   background: rgba(139, 109, 255, 0.12) !important;
   border-color: rgba(139, 109, 255, 0.35) !important;
   color: #c4b0ff !important;
@@ -251,7 +263,7 @@
 }
 
 /* HERO STATS DOCK — UNBOXED CLEAN EDITORIAL METRICS */
-[data-theme="dark"] .hero-stats-dock {
+[data-theme="dark"] .hero-section-stats-dock {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -259,14 +271,14 @@
 }
 
 /* Remove separate rectangular boxes around metrics */
-[data-theme="dark"] .hero-stat-item {
+[data-theme="dark"] .hero-section-stat-item {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
   padding: 4px 6px !important;
 }
 
-[data-theme="dark"] .hero-stat-item:hover {
+[data-theme="dark"] .hero-section-stat-item:hover {
   transform: translateY(-2px);
 }
 
@@ -277,7 +289,7 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 14px rgba(124, 92, 255, 0.2) !important;
 }
 
-[data-theme="dark"] .hero-stat-item:hover .stat-icon-circle {
+[data-theme="dark"] .hero-section-stat-item:hover .stat-icon-circle {
   background: rgba(139, 109, 255, 0.22) !important;
   border-color: rgba(255, 160, 216, 0.65) !important;
   box-shadow: 0 0 20px rgba(139, 109, 255, 0.45) !important;
@@ -306,12 +318,12 @@
   height: 28px !important;
 }
 
-[data-theme="dark"] .hero-video-card {
+[data-theme="dark"] .hero-section-video-card {
   background: #08060f !important;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 35px rgba(124, 92, 255, 0.28) !important;
 }
 
-[data-theme="dark"] .hero-card-play-btn {
+[data-theme="dark"] .hero-section-card-play-btn {
   background: rgba(14, 10, 26, 0.95) !important;
   border-color: rgba(169, 140, 255, 0.55) !important;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(124, 92, 255, 0.4) !important;
@@ -364,11 +376,36 @@
   background: transparent !important;
 }
 
+[data-theme="dark"] .anim-solutions-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  background: transparent !important;
+}
+
 [data-theme="dark"] .anim-solutions-section {
-  background: 
-    radial-gradient(ellipse 65% 50% at 50% 20%, rgba(139, 109, 255, 0.18) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%) !important;
+  background: transparent !important;
   border-radius: 0 !important;
   position: relative;
+}
+
+[data-theme="dark"] .anim-solutions-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 65% 50% at 50% 20%, rgba(139, 109, 255, 0.18) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%) !important;
 }
 
 [data-theme="dark"] .anim-solutions-title {
@@ -464,17 +501,15 @@
 }
 
 /* 5. PROCESS SECTION (01, 02, 03 ILLUMINATION) */
-[data-theme="dark"] .process-head {
-  background: 
-    radial-gradient(ellipse 60% 50% at 50% 20%, rgba(139, 109, 255, 0.16) 0%, transparent 70%) !important;
+[data-theme="dark"] .process-head { background: transparent !important; }
+
+
+
+[data-theme="dark"] .services-grid { background: transparent !important;
   border-radius: 0 !important;
 }
 
-[data-theme="dark"] .services-grid {
-  background: 
-    radial-gradient(ellipse 65% 50% at 50% 50%, rgba(124, 92, 255, 0.14) 0%, transparent 70%) !important;
-  border-radius: 0 !important;
-}
+
 
 [data-theme="dark"] .process-main-title {
   color: #ffffff !important;
@@ -542,11 +577,9 @@
 }
 
 /* 6. FEATURED WORK / PORTFOLIO */
-[data-theme="dark"] .section-head {
-  background: 
-    radial-gradient(ellipse 60% 50% at 50% 20%, rgba(139, 109, 255, 0.15) 0%, transparent 70%) !important;
-  border-radius: 0 !important;
-}
+[data-theme="dark"] .section-head { background: transparent !important; }
+
+
 
 [data-theme="dark"] .section-head h2 {
   color: #ffffff !important;
@@ -621,12 +654,12 @@
 }
 
 /* Horizontal Scrollbar — Dark Trench with Vibrant Neon Gradient Thumb */
-[data-theme="dark"] .work-grid {
-  background: 
-    radial-gradient(ellipse 65% 50% at 50% 50%, rgba(124, 92, 255, 0.14) 0%, transparent 70%) !important;
+[data-theme="dark"] .work-grid { background: transparent !important;
   border-radius: 0 !important;
   scrollbar-color: #8b6dff rgba(255, 255, 255, 0.08) !important;
 }
+
+
 
 [data-theme="dark"] .work-grid::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.06) !important;
@@ -696,9 +729,21 @@
 
 /* 7. SLIDING CARDS & ABOUT SECTION */
 [data-theme="dark"] .about-agency-section {
-  background: 
-    radial-gradient(ellipse 65% 50% at 50% 40%, rgba(139, 109, 255, 0.18) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%) !important;
+  background: transparent !important;
   border-radius: 0 !important;
+}
+
+[data-theme="dark"] .about-agency-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 65% 50% at 50% 40%, rgba(139, 109, 255, 0.18) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%) !important;
 }
 
 [data-theme="dark"] .about-agency-left h2,
@@ -828,9 +873,21 @@
 
 /* 8. WHY US / BENTO GRID — DEEP OBSIDIAN ILLUMINATION */
 [data-theme="dark"] .why-us-section {
-  background: 
-    radial-gradient(ellipse 65% 50% at 50% 30%, rgba(139, 109, 255, 0.18) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%) !important;
+  background: transparent !important;
   border-radius: 0 !important;
+}
+
+[data-theme="dark"] .why-us-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 65% 50% at 50% 30%, rgba(139, 109, 255, 0.18) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%) !important;
 }
 
 [data-theme="dark"] .why-us-main-title {
@@ -1134,9 +1191,21 @@
 
 /* 9. PRICING PLANS — HIGH-CONTRAST ILLUMINATION */
 [data-theme="dark"] .pricing-section {
-  background: 
-    radial-gradient(ellipse 70% 50% at 50% 15%, rgba(139, 109, 255, 0.2) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%) !important;
+  background: transparent !important;
   border-radius: 0 !important;
+}
+
+[data-theme="dark"] .pricing-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 70% 50% at 50% 15%, rgba(139, 109, 255, 0.2) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%) !important;
 }
 
 [data-theme="dark"] .pricing-main-title {
@@ -1234,11 +1303,21 @@
 [data-theme="dark"] .testimonials-section {
   margin: 70px auto 35px !important;
   padding: 10px 0 10px !important;
-  background: 
-    radial-gradient(ellipse 75% 50% at 50% 20%, rgba(139, 109, 255, 0.2) 0%, rgba(0, 0, 0, 0) 70%),
-    radial-gradient(ellipse 45% 35% at 15% 80%, rgba(255, 160, 216, 0.1) 0%, rgba(0, 0, 0, 0) 60%),
-    #000000 !important;
-  border-radius: 36px;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+[data-theme="dark"] .testimonials-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 65% 50% at 50% 25%, rgba(139, 109, 255, 0.16) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%) !important;
 }
 
 [data-theme="dark"] .testi-eyebrow {
@@ -1400,11 +1479,23 @@
 
 /* 12. CTA BAND (JET BLACK WITH RADIANT NEON ILLUMINATION) */
 [data-theme="dark"] .cta-band {
-  background: 
-    radial-gradient(ellipse 85% 65% at 50% 40%, rgba(139, 109, 255, 0.28) 0%, rgba(255, 160, 216, 0.12) 45%, rgba(14, 10, 28, 0.95) 80%),
-    linear-gradient(135deg, #0e0a1c 0%, #150f28 50%, #0a0716 100%) !important;
+  background: transparent !important;
   border: 1.5px solid rgba(169, 140, 255, 0.45) !important;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 45px rgba(124, 92, 255, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.08) inset !important;
+}
+
+[data-theme="dark"] .cta-band::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 85% 65% at 50% 40%, rgba(139, 109, 255, 0.28) 0%, rgba(255, 160, 216, 0.12) 45%, rgba(14, 10, 28, 0.95) 80%),
+    linear-gradient(135deg, #0e0a1c 0%, #150f28 50%, #0a0716 100%) !important;
 }
 
 [data-theme="dark"] .cta-band h2 {
@@ -1477,9 +1568,15 @@
 }
 
 [data-theme="dark"] .footer-bottom-pill {
-  background: rgba(11, 9, 20, 0.92) !important;
-  border: 1px solid rgba(139, 109, 255, 0.28) !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
   color: #b8b1d0 !important;
+}
+
+[data-theme="dark"] .footer-bottom-pill::before {
+  background: linear-gradient(90deg, transparent 0%, rgba(139, 109, 255, 0.25) 15%, #8b6dff 40%, #ffa0d8 60%, rgba(255, 160, 216, 0.25) 85%, transparent 100%) !important;
+  box-shadow: 0 0 14px rgba(139, 109, 255, 0.45);
 }
 
 /* 14. ABOUT PAGE SPECIFICS */
@@ -1606,10 +1703,8 @@
 [data-theme="dark"] .manifesto-section,
 [data-theme="dark"] .about-manifesto-section {
   background: 
-    radial-gradient(ellipse 80% 50% at 85% 25%, rgba(139, 109, 255, 0.22) 0%, rgba(0, 0, 0, 0) 65%),
-    radial-gradient(ellipse 65% 45% at 15% 75%, rgba(255, 160, 216, 0.14) 0%, rgba(0, 0, 0, 0) 60%),
-    #000000 !important;
-  border-radius: 32px;
+    radial-gradient(ellipse 65% 55% at 50% 50%, rgba(139, 109, 255, 0.18) 0%, rgba(255, 160, 216, 0.07) 45%, transparent 70%) !important;
+  border-radius: 0 !important;
 }
 
 [data-theme="dark"] .manifesto-tag {
@@ -1642,22 +1737,20 @@
 /* PILLARS & PIPELINE SECTIONS */
 [data-theme="dark"] .about-pillars-section {
   background: 
-    radial-gradient(ellipse 80% 50% at 50% 15%, rgba(139, 109, 255, 0.22) 0%, rgba(0, 0, 0, 0) 70%),
-    radial-gradient(ellipse 45% 35% at 85% 80%, rgba(255, 160, 216, 0.1) 0%, rgba(0, 0, 0, 0) 60%),
-    #000000 !important;
+    radial-gradient(ellipse 65% 50% at 50% 20%, rgba(139, 109, 255, 0.18) 0%, transparent 70%) !important;
+  border-radius: 0 !important;
 }
 
 [data-theme="dark"] .about-pipeline-section {
   background: 
-    radial-gradient(ellipse 75% 50% at 50% 25%, rgba(124, 92, 255, 0.18) 0%, rgba(0, 0, 0, 0) 68%),
-    radial-gradient(ellipse 50% 40% at 15% 85%, rgba(255, 160, 216, 0.12) 0%, rgba(0, 0, 0, 0) 60%),
-    #000000 !important;
+    radial-gradient(ellipse 65% 50% at 50% 30%, rgba(124, 92, 255, 0.16) 0%, transparent 70%) !important;
+  border-radius: 0 !important;
 }
 
 [data-theme="dark"] .about-cta-section {
   background: 
-    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(139, 109, 255, 0.2) 0%, rgba(0, 0, 0, 0) 70%),
-    #000000 !important;
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(139, 109, 255, 0.18) 0%, transparent 70%) !important;
+  border-radius: 0 !important;
 }
 
 [data-theme="dark"] .about-section-eyebrow {
@@ -1929,9 +2022,6 @@
 }
 
 /* Footer Bottom Copyright Pill */
-[data-theme="dark"] .footer-bottom-pill {
-  border-top: 1px solid rgba(139, 109, 255, 0.22) !important;
-}
 
 [data-theme="dark"] .footer-bottom-pill p {
   color: #9d94b8 !important;
@@ -1941,3 +2031,97 @@
   color: #c98eff !important;
 }
 
+
+
+/* ============================================================
+   PRODUCTION DARK THEME: FULL-WIDTH SECTION ILLUMINATION
+   Applied directly to full-width sections - 100% natural bleeding,
+   ZERO box clipping, ZERO sharp edges on wide monitors.
+   ============================================================ */
+[data-theme="dark"] .hero-section {
+  background: 
+    radial-gradient(ellipse 80% 55% at 50% -10%, rgba(139, 109, 255, 0.28) 0%, rgba(0, 0, 0, 0) 65%),
+    radial-gradient(ellipse 60% 45% at 85% 75%, rgba(255, 160, 216, 0.12) 0%, rgba(0, 0, 0, 0) 60%),
+    radial-gradient(ellipse 50% 40% at 15% 85%, rgba(124, 92, 255, 0.14) 0%, rgba(0, 0, 0, 0) 55%),
+    #000000 !important;
+}
+
+[data-theme="dark"] .hero {
+  background: transparent !important;
+}
+
+[data-theme="dark"] .stats-section {
+  background: #000000 !important;
+}
+
+[data-theme="dark"] .anim-solutions-section {
+  background: 
+    radial-gradient(ellipse 65% 50% at 50% 20%, rgba(139, 109, 255, 0.18) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%),
+    #000000 !important;
+}
+
+[data-theme="dark"] .portfolio-section {
+  background: 
+    radial-gradient(ellipse 65% 50% at 50% 25%, rgba(139, 109, 255, 0.16) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%),
+    #000000 !important;
+}
+
+[data-theme="dark"] .manifesto-section {
+  background: 
+    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(139, 109, 255, 0.18) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%),
+    #000000 !important;
+}
+
+[data-theme="dark"] .why-us-section {
+  background: 
+    radial-gradient(ellipse 65% 50% at 50% 30%, rgba(139, 109, 255, 0.18) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%),
+    #000000 !important;
+}
+
+[data-theme="dark"] .process-section {
+  background: 
+    radial-gradient(ellipse 65% 50% at 50% 30%, rgba(124, 92, 255, 0.16) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%),
+    #000000 !important;
+}
+
+[data-theme="dark"] .about-agency-section {
+  background: 
+    radial-gradient(ellipse 65% 50% at 50% 40%, rgba(139, 109, 255, 0.18) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%),
+    #000000 !important;
+}
+
+[data-theme="dark"] .pricing-section {
+  background: 
+    radial-gradient(ellipse 70% 50% at 50% 15%, rgba(139, 109, 255, 0.2) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%),
+    #000000 !important;
+}
+
+[data-theme="dark"] .testimonials-section {
+  background: 
+    radial-gradient(ellipse 65% 50% at 50% 25%, rgba(139, 109, 255, 0.16) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%),
+    #000000 !important;
+}
+
+[data-theme="dark"] .marquee-section {
+  background: #000000 !important;
+}
+
+[data-theme="dark"] .cta-section {
+  background: 
+    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(124, 92, 255, 0.15) 0%, transparent 70%),
+    #000000 !important;
+}
+
+/* Remove old full-bleed ::before hacks that caused clipping on dark sections */
+[data-theme="dark"] .hero-section::before,
+[data-theme="dark"] .anim-solutions-section::before,
+[data-theme="dark"] .portfolio-section::before,
+[data-theme="dark"] .manifesto-section::before,
+[data-theme="dark"] .why-us-section::before,
+[data-theme="dark"] .process-section::before,
+[data-theme="dark"] .about-agency-section::before,
+[data-theme="dark"] .pricing-section::before,
+[data-theme="dark"] .testimonials-section::before,
+[data-theme="dark"] .cta-section::before {
+  display: none !important;
+}

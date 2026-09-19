@@ -85,7 +85,8 @@
 
 <main>
 
-  <section class="hero" id="top">
+  <section class="hero-section" id="top">
+    <div class="hero">
     <!-- Ambient Aurora Flow Gradient Layers (Pure gradients in exact positions, no particles/lines/emblems) -->
     <div class="hero-aurora-backdrop" aria-hidden="true">
       <svg class="hero-aurora-svg" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -291,10 +292,12 @@
         </div>
       </div>
     </div>
+    </div>
   </section>
 
-  <div class="wrap">
-    <div class="stats-bar">
+  <section class="stats-section">
+    <div class="wrap">
+      <div class="stats-bar">
       <div class="stats-left">
         <div class="stat-unit">
           <span class="stat-num">850+</span>
@@ -329,11 +332,14 @@
 
       <div class="stats-right">Every day, our studio crafts high-impact motion for global brands!</div>
     </div>
+    </div>
+  </section>
 
-    <!-- ======================================================= -->
-    <!-- CORE ANIMATION CAPABILITIES (3D, WHITEBOARD, EXPLAINER) -->
-    <!-- ======================================================= -->
-    <section class="anim-solutions-section" id="capabilities">
+  <!-- ======================================================= -->
+  <!-- CORE ANIMATION CAPABILITIES (3D, WHITEBOARD, EXPLAINER) -->
+  <!-- ======================================================= -->
+  <section class="anim-solutions-section" id="capabilities">
+    <div class="wrap">
       <div class="anim-solutions-head">
         <div class="anim-solutions-eyebrow">
           <span class="anim-solutions-dot"></span>
@@ -559,10 +565,13 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <div id="work"></div>
-    <div class="section-head">
+  <!-- PORTFOLIO SECTION -->
+  <section class="portfolio-section" id="work">
+    <div class="wrap">
+      <div class="section-head">
       <div class="eyebrow" style="margin-bottom: 8px;"><span class="eyebrow-dot"></span>Portfolio &amp; showcase</div>
       <h2>Inspiring works &amp; <span class="accent-text">animation showcase</span></h2>
       <p>Explore our curated portfolio of commercial showreels, 3D CGI spectacles, whiteboard explainers, and high-impact brand stories.</p>
@@ -758,9 +767,12 @@
         </div>
       </div>
     </div>
+    </div>
+  </section>
 
-    <!-- EDITORIAL MANIFESTO SECTION -->
-    <section class="manifesto-section">
+  <!-- EDITORIAL MANIFESTO SECTION -->
+  <section class="manifesto-section">
+    <div class="wrap">
       <!-- Random Floating 3D Particles (Minimal & Organic, 1-2 Elements) -->
       <!-- Particle 1: Upper-Left Wave Swirl & Glossy Orb -->
       <div class="manifesto-particle particle-left" aria-hidden="true">
@@ -871,10 +883,12 @@
       <p class="manifesto-note">
         Join our thriving creative collective to craft bold commercial showreels, high-impact explainer videos, and unforgettable visual stories.
       </p>
-    </section>
+    </div>
+  </section>
 
-    <div id="why-us"></div>
-    <section class="why-us-section">
+  <!-- WHY US SECTION -->
+  <section class="why-us-section" id="why-us">
+    <div class="wrap">
       <!-- Section Header with Angled Floating Pills -->
       <div class="why-us-header">
         <div class="why-us-title-wrap">
@@ -1118,11 +1132,14 @@
         </div>
 
       </div>
-    </section>
+    </div>
+  </section>
 
+  <!-- PROCESS SECTION -->
+  <section class="process-section" id="process">
     <div id="services"></div>
-    <div id="process"></div>
-    <div class="process-head">
+    <div class="wrap">
+      <div class="process-head">
       <div class="process-eyebrow">
         <span class="process-eyebrow-dot"></span>
         <span>Our working process</span>
@@ -1253,10 +1270,12 @@
         <div class="service-card-accent-bar"></div>
       </div>
     </div>
+    </div>
+  </section>
 
-    <!-- ABOUT ANIMATION AGENCY (SLIDING CARDS & 3D MOTION SECTION) -->
-    <div id="about"></div>
-    <section class="about-agency-section">
+  <!-- ABOUT AGENCY SECTION -->
+  <section class="about-agency-section" id="about">
+    <div class="wrap">
       <div class="about-agency-grid">
         
         <!-- Left Column: Content & Live Studio Animation (Replaces Static Girl) -->
@@ -1372,10 +1391,12 @@
         </div>
 
       </div>
-    </section>
+    </div>
+  </section>
 
-    <div id="pricing"></div>
-    <section class="pricing-section">
+  <!-- PRICING SECTION -->
+  <section class="pricing-section" id="pricing">
+    <div class="wrap">
       <div class="pricing-head">
         <div class="pricing-eyebrow">
           <span class="pricing-eyebrow-dot"></span>
@@ -1556,12 +1577,12 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ============================================================
-         CLIENT TESTIMONIALS SECTION (Center Card with Theme Gradient Pillar & Rating Stars)
-         ============================================================ -->
-    <section class="testimonials-section" id="testimonials">
+  <!-- CLIENT TESTIMONIALS SECTION -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="wrap">
       <div class="testi-head">
         <div class="eyebrow" style="margin-bottom: 8px;"><span class="eyebrow-dot"></span>Client Testimonials</div>
         <h2 class="testimonials-title">Loved by visionary founders <span class="accent-text">&amp; creative leaders</span></h2>
@@ -1719,12 +1740,12 @@
         </div>
 
       </div> <!-- .testi-stage-container -->
-    </section>
-
-  </div> <!-- .wrap closes here to allow full-width marquee ticker -->
+    </div>
+  </section>
 
   <!-- INFINITE SCROLLING TEXT BAR (MARQUEE) -->
-  <div class="about-ticker-bar" aria-label="Kinetix Motion Studio Highlights">
+  <section class="marquee-section">
+    <div class="about-ticker-bar" aria-label="Kinetix Motion Studio Highlights">
     <div class="about-ticker-track">
       <div class="about-ticker-content">
         <span class="ticker-item"><span class="ticker-spark">&#10022;</span> Cinematic Storytelling</span>
@@ -1746,16 +1767,18 @@
       </div>
     </div>
   </div>
+  </section>
 
-  <div class="wrap">
-    <div id="contact"></div>
-    <div class="cta-band">
+  <!-- CTA SECTION -->
+  <section class="cta-section" id="contact">
+    <div class="wrap">
+      <div class="cta-band">
       <h2>Ready to bring your <span class="accent-purple">vision to the</span> <span class="accent-pink">screen</span> with our studio?</h2>
       <p>Tell us what you are building and our directors will prepare a bespoke cinematic treatment within three business days.</p>
       <a href="#contact" class="btn-primary">Book a Consultation<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" style="width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.4;display:block;"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     </div>
-
-  </div> <!-- .wrap closes here, allowing full-width footer -->
+    </div>
+  </section>
 
   <!-- ============================================================
        FULL-WIDTH NUVIO-STYLE LUXURY FOOTER (EDGE-TO-EDGE CANVAS)
