@@ -161,7 +161,110 @@ if(!rm){
       duration: 0.5,
       stagger: 0.1,
       ease: "power2.out"
-    }, "-=0.6");
+    }, "-=0.6")
+    .from(".hero-particles-stage .fp-element", {
+      opacity: 0,
+      scale: 0.6,
+      y: 35,
+      rotation: -10,
+      stagger: 0.08,
+      duration: 1.2,
+      ease: "elastic.out(1.1, 0.4)"
+    }, "-=0.8");
+
+  // ============================================================
+  // FRAMER MOTION AMBIENT FLOAT ENGINE (CURATED 5 PARTICLES)
+  // Continuous smooth multi-axis harmonic float without cursor distraction
+  // ============================================================
+  function initHeroFramerParticles() {
+    const stage = document.querySelector(".hero-particles-stage");
+    if (!stage) return;
+
+    const particles = [
+      {
+        el: stage.querySelector(".fp-topo-sphere"),
+        yRange: 12,
+        xRange: 6,
+        rotRange: 6,
+        durY: 6.2,
+        durX: 7.8,
+        durRot: 11.0
+      },
+      {
+        el: stage.querySelector(".fp-star-1"),
+        yRange: 14,
+        xRange: 8,
+        rotRange: 18,
+        durY: 4.8,
+        durX: 6.2,
+        durRot: 7.5
+      },
+      {
+        el: stage.querySelector(".fp-3d-tube-purple"),
+        yRange: 16,
+        xRange: 8,
+        rotRange: 6,
+        durY: 7.0,
+        durX: 8.5,
+        durRot: 12.5
+      },
+      {
+        el: stage.querySelector(".fp-3d-tube-pink"),
+        yRange: 14,
+        xRange: 9,
+        rotRange: -6,
+        durY: 6.4,
+        durX: 8.0,
+        durRot: 10.0
+      },
+      {
+        el: stage.querySelector(".fp-sphere-1"),
+        yRange: 14,
+        xRange: 7,
+        rotRange: 10,
+        durY: 5.0,
+        durX: 6.8,
+        durRot: 8.5
+      }
+    ];
+
+    // Smooth organic harmonic floating loops (matching Framer Motion repeat: Infinity, ease: 'easeInOut')
+    particles.forEach(p => {
+      if (!p.el) return;
+
+      // Vertical floating sine wave
+      gsap.to(p.el, {
+        y: `+=${p.yRange}`,
+        duration: p.durY,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        delay: Math.random() * 2
+      });
+
+      // Horizontal subtle drift
+      gsap.to(p.el, {
+        x: `+=${p.xRange}`,
+        duration: p.durX,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        delay: Math.random() * 2
+      });
+
+      // Gentle rotational tilt
+      gsap.to(p.el, {
+        rotation: p.rotRange,
+        duration: p.durRot,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        delay: Math.random() * 1.5
+      });
+    });
+  }
+
+  initHeroFramerParticles();
 
   // ============================================================
   // 2. STATS BAR SECTION

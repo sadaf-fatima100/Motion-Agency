@@ -56,101 +56,165 @@
 <main>
 
   <section class="hero" id="top">
-    <!-- HERO FLUID KINETIC RIBBON & MOTION PATH BACKDROP -->
-    <div class="hero-ribbon-backdrop" aria-hidden="true">
-      <svg class="hero-ribbon-svg" viewBox="0 0 1440 820" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+    <!-- Ambient Aurora Flow Gradient Layers (Pure gradients in exact positions, no particles/lines/emblems) -->
+    <div class="hero-aurora-backdrop" aria-hidden="true">
+      <svg class="hero-aurora-svg" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <defs>
-          <!-- Soft Deep Ambient Glow -->
-          <filter id="ribbonGlowBlur" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="36" result="blur" />
-          </filter>
-          <filter id="ribbonSoftBlur" x="-10%" y="-10%" width="120%" height="120%">
-            <feGaussianBlur stdDeviation="12" result="blur" />
-          </filter>
+          <!-- Top Left Ambient Aurora Gradient -->
+          <linearGradient id="hero-tl-wave" x1="0%" y1="0%" x2="70%" y2="80%">
+            <stop offset="0%" stop-color="#8c5aff" stop-opacity="0.32" />
+            <stop offset="45%" stop-color="#b695ff" stop-opacity="0.18" />
+            <stop offset="85%" stop-color="#f5b6dc" stop-opacity="0.08" />
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+          </linearGradient>
 
-          <!-- Gradient: Main Fluid Silk Ribbon -->
-          <linearGradient id="heroRibbonGrad1" x1="0%" y1="100%" x2="100%" y2="0%">
+          <!-- Bottom Left Sweeping Ribbon Base Gradient -->
+          <linearGradient id="hero-bl-ribbon-base" x1="5%" y1="100%" x2="75%" y2="40%">
             <stop offset="0%" stop-color="#7c5cff" stop-opacity="0.32" />
-            <stop offset="30%" stop-color="#9966ff" stop-opacity="0.26" />
-            <stop offset="65%" stop-color="#ff8fce" stop-opacity="0.35" />
-            <stop offset="90%" stop-color="#ffc4e4" stop-opacity="0.18" />
-            <stop offset="100%" stop-color="#a98cff" stop-opacity="0.05" />
+            <stop offset="30%" stop-color="#9a7af8" stop-opacity="0.24" />
+            <stop offset="65%" stop-color="#e8a2cf" stop-opacity="0.16" />
+            <stop offset="90%" stop-color="#fcc2de" stop-opacity="0.06" />
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
           </linearGradient>
 
-          <!-- Gradient: 3D Ribbon Fold (Creates Depth & Twist) -->
-          <linearGradient id="heroRibbonGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#6438ee" stop-opacity="0.22" />
-            <stop offset="45%" stop-color="#8c52ff" stop-opacity="0.18" />
-            <stop offset="75%" stop-color="#f472b6" stop-opacity="0.25" />
-            <stop offset="100%" stop-color="#ffffff" stop-opacity="0.0" />
+          <!-- Bottom Left Sweeping Ribbon Upper Luminous Arc -->
+          <linearGradient id="hero-bl-ribbon-crest" x1="0%" y1="85%" x2="90%" y2="25%">
+            <stop offset="0%" stop-color="#9d76ff" stop-opacity="0.26" />
+            <stop offset="40%" stop-color="#c49eff" stop-opacity="0.20" />
+            <stop offset="75%" stop-color="#ffb0d6" stop-opacity="0.14" />
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
           </linearGradient>
 
-          <!-- Gradient: Ambient Under-Glow -->
-          <linearGradient id="heroRibbonGlow" x1="20%" y1="80%" x2="80%" y2="20%">
-            <stop offset="0%" stop-color="#7c5cff" stop-opacity="0.35" />
-            <stop offset="55%" stop-color="#ff8fce" stop-opacity="0.25" />
-            <stop offset="100%" stop-color="#a98cff" stop-opacity="0" />
+          <!-- Right Side Aurora Gradient (Behind Video Card) -->
+          <linearGradient id="hero-right-wave1" x1="100%" y1="15%" x2="15%" y2="85%">
+            <stop offset="0%" stop-color="#8a5fff" stop-opacity="0.28" />
+            <stop offset="40%" stop-color="#bd92ff" stop-opacity="0.20" />
+            <stop offset="75%" stop-color="#ffaed4" stop-opacity="0.14" />
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
           </linearGradient>
 
-          <!-- Gradient: Crest Ridge Highlight Stroke -->
-          <linearGradient id="ribbonRidgeStroke" x1="0%" y1="50%" x2="100%" y2="50%">
-            <stop offset="0%" stop-color="#7c5cff" stop-opacity="0.1" />
-            <stop offset="25%" stop-color="#a98cff" stop-opacity="0.65" />
-            <stop offset="55%" stop-color="#ffffff" stop-opacity="0.95" />
-            <stop offset="78%" stop-color="#ff8fce" stop-opacity="0.8" />
-            <stop offset="100%" stop-color="#ffb3da" stop-opacity="0.1" />
+          <!-- Right Side Bottom Arc Gradient -->
+          <linearGradient id="hero-right-wave2" x1="95%" y1="95%" x2="35%" y2="45%">
+            <stop offset="0%" stop-color="#8050ff" stop-opacity="0.26" />
+            <stop offset="50%" stop-color="#d49be0" stop-opacity="0.16" />
+            <stop offset="85%" stop-color="#ffb6dc" stop-opacity="0.08" />
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
           </linearGradient>
 
-          <!-- Motion Path Timeline Gradient -->
-          <linearGradient id="motionPathGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#7c5cff" stop-opacity="0.45" />
-            <stop offset="50%" stop-color="#ff8fce" stop-opacity="0.55" />
-            <stop offset="100%" stop-color="#7c5cff" stop-opacity="0.15" />
-          </linearGradient>
+          <!-- Smooth Gaussian Blur Filters for Soft Silk Aurora Flow -->
+          <filter id="aurora-soft-blur" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="36" />
+          </filter>
+          <filter id="ribbon-crest-blur" x="-15%" y="-15%" width="130%" height="130%">
+            <feGaussianBlur stdDeviation="16" />
+          </filter>
         </defs>
 
-        <!-- 1. Ambient Background Glow Aura (Diffused) -->
-        <ellipse cx="480" cy="680" rx="360" ry="140" fill="url(#heroRibbonGlow)" filter="url(#ribbonGlowBlur)" />
-        <ellipse cx="880" cy="660" rx="420" ry="160" fill="url(#heroRibbonGlow)" filter="url(#ribbonGlowBlur)" />
+        <!-- 1. Top-Left Flowing Aurora Wave -->
+        <path d="M-80 -40 C 70 60, 160 170, 90 320 C 35 440, -50 500, -120 520 L -120 -60 Z" fill="url(#hero-tl-wave)" filter="url(#aurora-soft-blur)" />
 
-        <!-- 2. Lower Soft Ribbon Layer -->
-        <path class="ribbon-flow-layer-1" d="M-80 780 C180 740 320 620 520 640 C720 660 860 550 1100 610 C1280 655 1420 590 1520 630 L1520 840 L-80 840 Z" fill="url(#heroRibbonGrad1)" filter="url(#ribbonSoftBlur)" />
+        <!-- 2. Bottom-Left Sweeping Ribbon Waves (Sweeps up under buttons towards center) -->
+        <path d="M-100 880 C 80 840, 240 760, 420 640 C 580 530, 760 570, 920 640 C 1020 680, 1100 730, 1180 800 C 940 870, 600 910, -100 910 Z" fill="url(#hero-bl-ribbon-base)" filter="url(#aurora-soft-blur)" />
 
-        <!-- 3. Main Crisp 3D Ribbon Wave Body -->
-        <path class="ribbon-flow-layer-2" d="M-60 740 C140 700 300 580 490 600 C680 620 790 510 1020 560 C1220 605 1380 540 1500 590 L1500 780 C1360 720 1200 770 1000 710 C780 650 670 760 480 720 C290 680 140 810 -60 830 Z" fill="url(#heroRibbonGrad1)" />
+        <path d="M-60 810 C 150 740, 340 660, 520 570 C 690 490, 860 550, 1020 660 C 780 760, 450 820, -60 860 Z" fill="url(#hero-bl-ribbon-crest)" filter="url(#ribbon-crest-blur)" />
 
-        <!-- 4. Front Twisted Fold Layer (Adds Silky 3D Dimension) -->
-        <path class="ribbon-flow-layer-3" d="M420 670 C540 590 660 550 780 575 C900 600 1060 560 1240 600 C1080 660 920 640 800 620 C680 600 560 690 420 670 Z" fill="url(#heroRibbonGrad2)" />
+        <!-- 3. Right & Bottom-Right Flowing Aurora Waves (Behind & curving under video stage) -->
+        <path d="M1680 -20 C 1500 110, 1360 250, 1380 440 C 1400 610, 1530 730, 1720 840 L 1720 -40 Z" fill="url(#hero-right-wave1)" filter="url(#aurora-soft-blur)" />
 
-        <!-- 5. Luminous Crest Ridge Line (Shimmering Light Edge) -->
-        <path class="ribbon-ridge-line" d="M-60 740 C140 700 300 580 490 600 C680 620 790 510 1020 560 C1220 605 1380 540 1500 590" stroke="url(#ribbonRidgeStroke)" stroke-width="2.2" stroke-linecap="round" fill="none" />
-
-        <!-- 6. Secondary Delicate Crest Line -->
-        <path class="ribbon-ridge-line-sub" d="M-40 770 C160 725 320 615 510 635 C700 655 810 545 1040 595 C1240 640 1380 580 1500 620" stroke="url(#ribbonRidgeStroke)" stroke-width="1.2" stroke-opacity="0.6" stroke-linecap="round" fill="none" />
-
-        <!-- 7. Kinetic Motion Path Lines with Keyframe Nodes (Cinematic Animation Cue) -->
-        <g class="hero-motion-timeline">
-          <!-- Timeline curved dashed trajectory -->
-          <path d="M 390 650 C 470 580, 560 590, 640 530" stroke="url(#motionPathGrad)" stroke-width="1.6" stroke-dasharray="4 6" fill="none" />
-          
-          <!-- Keyframe Diamonds & Dots -->
-          <rect x="386" y="646" width="7" height="7" rx="1.5" transform="rotate(45 389.5 649.5)" fill="#7c5cff" stroke="#ffffff" stroke-width="1.2" />
-          <circle cx="510" cy="582" r="3" fill="#ff8fce" stroke="#ffffff" stroke-width="1" />
-          <rect x="636" y="526" width="7" height="7" rx="1.5" transform="rotate(45 639.5 529.5)" fill="#7c5cff" stroke="#ffffff" stroke-width="1.2" />
-        </g>
+        <path d="M1680 440 C 1480 510, 1320 620, 1240 770 C 1180 880, 1220 940, 1340 960 C 1500 960, 1640 910, 1720 860 Z" fill="url(#hero-right-wave2)" filter="url(#aurora-soft-blur)" />
       </svg>
-
-      <!-- Floating Frosted Motion Play Emblem (Positioned in Empty Center Space) -->
-      <div class="hero-floating-play-emblem" aria-hidden="true">
-        <div class="emblem-frosted-circle">
-          <svg viewBox="0 0 24 24" width="13" height="13" fill="#7c5cff">
-            <polygon points="7 4 20 12 7 20 7 4"/>
-          </svg>
-        </div>
-        <div class="emblem-spark emblem-spark-1">+</div>
-        <div class="emblem-spark emblem-spark-2">&#10022;</div>
-      </div>
     </div>
+
+    <!-- Live Floating Abstract 3D Particles (Curated Luxury Composition - Pure Ambient Float, Zero Content Obstruction) -->
+    <div class="hero-particles-stage" aria-hidden="true">
+      <!-- 1. Kinetic Topographic Wireframe Sphere (Top Left negative space, above text) -->
+      <div class="fp-element fp-topo-sphere">
+        <svg viewBox="0 0 160 160" width="130" height="130" fill="none">
+          <defs>
+            <linearGradient id="fp-topo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#9a72ff" stop-opacity="0.8" />
+              <stop offset="50%" stop-color="#ff9ac2" stop-opacity="0.65" />
+              <stop offset="100%" stop-color="#fed679" stop-opacity="0.6" />
+            </linearGradient>
+            <clipPath id="topo-circle-clip">
+              <circle cx="80" cy="80" r="72" />
+            </clipPath>
+          </defs>
+          <circle cx="80" cy="80" r="72" stroke="url(#fp-topo-grad)" stroke-width="1.1" stroke-dasharray="3 2" opacity="0.35" />
+          <g clip-path="url(#topo-circle-clip)" stroke="url(#fp-topo-grad)" stroke-width="1.2" fill="none" opacity="0.75">
+            <path d="M-10 25 Q 40 10, 80 32 T 170 30" />
+            <path d="M-10 40 Q 40 25, 80 47 T 170 45" />
+            <path d="M-10 55 Q 40 40, 80 62 T 170 60" />
+            <path d="M-10 70 Q 40 55, 80 77 T 170 75" />
+            <path d="M-10 85 Q 40 70, 80 92 T 170 90" />
+            <path d="M-10 100 Q 40 85, 80 107 T 170 105" />
+            <path d="M-10 115 Q 40 100, 80 122 T 170 120" />
+            <path d="M-10 130 Q 40 115, 80 137 T 170 135" />
+            <path d="M-10 145 Q 40 130, 80 152 T 170 150" />
+          </g>
+        </svg>
+      </div>
+
+      <!-- 2. Sparkle Star (Top Left accent near topo sphere) -->
+      <div class="fp-element fp-sparkle-star fp-star-1">
+        <svg viewBox="0 0 40 40" width="28" height="28" fill="none">
+          <defs>
+            <linearGradient id="fp-star-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffd56b" />
+              <stop offset="100%" stop-color="#ff89b8" />
+            </linearGradient>
+          </defs>
+          <path d="M20 0 L22 15 L37 17 L25 24 L29 39 L19 28 L9 39 L13 24 L1 17 L16 15 Z" fill="url(#fp-star-grad1)" />
+        </svg>
+      </div>
+
+      <!-- 3. Velvet Purple 3D Spiral Snake Tube (Far Right Edge, framing video stage) -->
+      <div class="fp-element fp-3d-tube-purple">
+        <svg viewBox="0 0 160 260" width="130" height="210" fill="none">
+          <defs>
+            <linearGradient id="tube-velvet-grad" x1="15%" y1="5%" x2="85%" y2="95%">
+              <stop offset="0%" stop-color="#5538af" />
+              <stop offset="25%" stop-color="#7a57df" />
+              <stop offset="50%" stop-color="#a482ff" />
+              <stop offset="72%" stop-color="#d4b4ff" />
+              <stop offset="90%" stop-color="#ffffff" />
+              <stop offset="100%" stop-color="#6946c7" />
+            </linearGradient>
+            <filter id="fp-tube-shadow" x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="-6" dy="14" stdDeviation="12" flood-color="#4a2e9b" flood-opacity="0.3" />
+            </filter>
+          </defs>
+          <path d="M 125 35 C 150 70, 75 95, 65 130 C 55 165, 140 185, 115 225"
+                stroke="url(#tube-velvet-grad)" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"
+                filter="url(#fp-tube-shadow)" />
+        </svg>
+      </div>
+
+      <!-- 4. Soft Pink Matte 3D Coil Tube (Far Bottom-Left, below trust row in gutter) -->
+      <div class="fp-element fp-3d-tube-pink">
+        <svg viewBox="0 0 190 140" width="140" height="105" fill="none">
+          <defs>
+            <linearGradient id="tube-pink-grad" x1="0%" y1="20%" x2="100%" y2="80%">
+              <stop offset="0%" stop-color="#f58abf" />
+              <stop offset="35%" stop-color="#f8a7d0" />
+              <stop offset="65%" stop-color="#fcc4e1" />
+              <stop offset="85%" stop-color="#ffdff0" />
+              <stop offset="100%" stop-color="#e976b0" />
+            </linearGradient>
+            <filter id="fp-pink-shadow" x="-20%" y="-20%" width="150%" height="150%">
+              <feDropShadow dx="4" dy="10" stdDeviation="10" flood-color="#b8457c" flood-opacity="0.2" />
+            </filter>
+          </defs>
+          <path d="M 35 110 C 20 60, 160 55, 150 95 C 140 125, 65 115, 55 50 C 48 20, 145 25, 160 30"
+                stroke="url(#tube-pink-grad)" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"
+                filter="url(#fp-pink-shadow)" />
+        </svg>
+      </div>
+
+      <!-- 5. Floating 3D Pearl Lavender Sphere (Margin gutter between left copy & center) -->
+      <div class="fp-element fp-sphere fp-sphere-1"></div>
+    </div>
+
 
     <div class="hero-copy">
       <!-- FINAL HERO HEADLINE - LOCKED (DO NOT REVERT TO OLD TEXT) -->
@@ -548,7 +612,7 @@
       <!-- Card 1: 3D CGI & VFX Showcase (ez8UKLwe2qw) -->
       <div class="work-card" data-category="3d" onclick="openReel('ez8UKLwe2qw', '3D CGI &amp; VFX Showcase', '3D &amp; CGI')">
         <div class="card-thumb-wrap">
-          <img src="https://i.ytimg.com/vi/ez8UKLwe2qw/hqdefault.jpg" alt="3D CGI &amp; VFX Showcase" class="card-art" loading="lazy" />
+          <img src="https://i.ytimg.com/vi/ez8UKLwe2qw/maxresdefault.jpg" onerror="if(!this.dataset.retried){this.dataset.retried=1;this.src='https://i.ytimg.com/vi/ez8UKLwe2qw/mqdefault.jpg';}" alt="3D CGI &amp; VFX Showcase" class="card-art" loading="lazy" />
           <div class="card-art-overlay"></div>
           <div class="card-center-play" aria-hidden="true">
             <div class="play-pulse-ring"></div>
@@ -572,7 +636,7 @@
       <!-- Card 2: Explainer Video Production (V1gTR9Nd1h0) -->
       <div class="work-card" data-category="explainer" onclick="openReel('V1gTR9Nd1h0', 'Explainer Video Production', 'Explainer Video')">
         <div class="card-thumb-wrap">
-          <img src="https://i.ytimg.com/vi/V1gTR9Nd1h0/hqdefault.jpg" alt="Explainer Video Production" class="card-art" loading="lazy" />
+          <img src="https://i.ytimg.com/vi/V1gTR9Nd1h0/maxresdefault.jpg" onerror="if(!this.dataset.retried){this.dataset.retried=1;this.src='https://i.ytimg.com/vi/V1gTR9Nd1h0/mqdefault.jpg';}" alt="Explainer Video Production" class="card-art" loading="lazy" />
           <div class="card-art-overlay"></div>
           <div class="card-center-play" aria-hidden="true">
             <div class="play-pulse-ring"></div>
@@ -596,7 +660,7 @@
       <!-- Card 3: Whiteboard Strategy Animation (sUYgEgjqi1M) -->
       <div class="work-card" data-category="whiteboard" onclick="openReel('sUYgEgjqi1M', 'Whiteboard Strategy Animation', 'Whiteboard Animation')">
         <div class="card-thumb-wrap">
-          <img src="https://i.ytimg.com/vi/sUYgEgjqi1M/hqdefault.jpg" alt="Whiteboard Strategy Animation" class="card-art" loading="lazy" />
+          <img src="https://i.ytimg.com/vi/sUYgEgjqi1M/maxresdefault.jpg" onerror="if(!this.dataset.retried){this.dataset.retried=1;this.src='https://i.ytimg.com/vi/sUYgEgjqi1M/mqdefault.jpg';}" alt="Whiteboard Strategy Animation" class="card-art" loading="lazy" />
           <div class="card-art-overlay"></div>
           <div class="card-center-play" aria-hidden="true">
             <div class="play-pulse-ring"></div>
@@ -620,7 +684,7 @@
       <!-- Card 4: SaaS Character Animation (u0sxesfLTdA) -->
       <div class="work-card" data-category="explainer" onclick="openReel('u0sxesfLTdA', 'SaaS Character Animation', '2D &amp; SaaS')">
         <div class="card-thumb-wrap">
-          <img src="https://i.ytimg.com/vi/u0sxesfLTdA/hqdefault.jpg" alt="SaaS Character Animation" class="card-art" loading="lazy" />
+          <img src="https://i.ytimg.com/vi/u0sxesfLTdA/maxresdefault.jpg" onerror="if(!this.dataset.retried){this.dataset.retried=1;this.src='https://i.ytimg.com/vi/u0sxesfLTdA/mqdefault.jpg';}" alt="SaaS Character Animation" class="card-art" loading="lazy" />
           <div class="card-art-overlay"></div>
           <div class="card-center-play" aria-hidden="true">
             <div class="play-pulse-ring"></div>
@@ -644,7 +708,7 @@
       <!-- Card 5: Commercial Showreel (T_qT_NWyPEU) -->
       <div class="work-card" data-category="commercial" onclick="openReel('T_qT_NWyPEU', 'Commercial Showreel · Company Intro', 'Showreel')">
         <div class="card-thumb-wrap">
-          <img src="https://i.ytimg.com/vi/T_qT_NWyPEU/hqdefault.jpg" alt="Commercial Showreel" class="card-art" loading="lazy" />
+          <img src="https://i.ytimg.com/vi/T_qT_NWyPEU/maxresdefault.jpg" onerror="if(!this.dataset.retried){this.dataset.retried=1;this.src='https://i.ytimg.com/vi/T_qT_NWyPEU/mqdefault.jpg';}" alt="Commercial Showreel" class="card-art" loading="lazy" />
           <div class="card-art-overlay"></div>
           <div class="card-center-play" aria-hidden="true">
             <div class="play-pulse-ring"></div>
@@ -668,7 +732,7 @@
       <!-- Card 6: Corporate Motion Graphics (DjNLgHpFXkY) -->
       <div class="work-card" data-category="explainer" onclick="openReel('DjNLgHpFXkY', 'Corporate Motion Graphics', 'Corporate Motion')">
         <div class="card-thumb-wrap">
-          <img src="https://i.ytimg.com/vi/DjNLgHpFXkY/hqdefault.jpg" alt="Corporate Motion Graphics" class="card-art" loading="lazy" />
+          <img src="https://i.ytimg.com/vi/DjNLgHpFXkY/maxresdefault.jpg" onerror="if(!this.dataset.retried){this.dataset.retried=1;this.src='https://i.ytimg.com/vi/DjNLgHpFXkY/mqdefault.jpg';}" alt="Corporate Motion Graphics" class="card-art" loading="lazy" />
           <div class="card-art-overlay"></div>
           <div class="card-center-play" aria-hidden="true">
             <div class="play-pulse-ring"></div>
@@ -692,7 +756,7 @@
       <!-- Card 7: Product Launch Storyboard (XiVTU4-7WcM) -->
       <div class="work-card" data-category="whiteboard" onclick="openReel('XiVTU4-7WcM', 'Product Launch Storyboard', 'Storyboard')">
         <div class="card-thumb-wrap">
-          <img src="https://i.ytimg.com/vi/XiVTU4-7WcM/hqdefault.jpg" alt="Product Launch Storyboard" class="card-art" loading="lazy" />
+          <img src="https://i.ytimg.com/vi/XiVTU4-7WcM/maxresdefault.jpg" onerror="if(!this.dataset.retried){this.dataset.retried=1;this.src='https://i.ytimg.com/vi/XiVTU4-7WcM/mqdefault.jpg';}" alt="Product Launch Storyboard" class="card-art" loading="lazy" />
           <div class="card-art-overlay"></div>
           <div class="card-center-play" aria-hidden="true">
             <div class="play-pulse-ring"></div>
@@ -716,7 +780,7 @@
       <!-- Card 8: Commercial Narrative Animation (FiQ_KsLjoq4) -->
       <div class="work-card" data-category="commercial" onclick="openReel('FiQ_KsLjoq4', 'Commercial Narrative Animation', 'Commercial Film')">
         <div class="card-thumb-wrap">
-          <img src="https://i.ytimg.com/vi/FiQ_KsLjoq4/hqdefault.jpg" alt="Commercial Narrative Animation" class="card-art" loading="lazy" />
+          <img src="https://i.ytimg.com/vi/FiQ_KsLjoq4/maxresdefault.jpg" onerror="if(!this.dataset.retried){this.dataset.retried=1;this.src='https://i.ytimg.com/vi/FiQ_KsLjoq4/mqdefault.jpg';}" alt="Commercial Narrative Animation" class="card-art" loading="lazy" />
           <div class="card-art-overlay"></div>
           <div class="card-center-play" aria-hidden="true">
             <div class="play-pulse-ring"></div>
@@ -737,10 +801,10 @@
         </div>
       </div>
 
-      <!-- Card 9: Brand Storytelling Video (J_e-hDqWpYI) -->
-      <div class="work-card" data-category="commercial" onclick="openReel('J_e-hDqWpYI', 'Brand Storytelling Video', 'Brand Film')">
+      <!-- Card 9: Brand Storytelling Video (FiQ_KsLjoq4) -->
+      <div class="work-card" data-category="commercial" onclick="openReel('FiQ_KsLjoq4', 'Brand Storytelling Video', 'Brand Film')">
         <div class="card-thumb-wrap">
-          <img src="https://i.ytimg.com/vi/FiQ_KsLjoq4/hqdefault.jpg" alt="Brand Storytelling Video" class="card-art" loading="lazy" />
+          <img src="https://i.ytimg.com/vi/FiQ_KsLjoq4/maxresdefault.jpg" onerror="if(!this.dataset.retried){this.dataset.retried=1;this.src='https://i.ytimg.com/vi/FiQ_KsLjoq4/mqdefault.jpg';}" alt="Brand Storytelling Video" class="card-art" loading="lazy" />
           <div class="card-art-overlay"></div>
           <div class="card-center-play" aria-hidden="true">
             <div class="play-pulse-ring"></div>
@@ -1194,7 +1258,7 @@
             <div class="about-video-thumb" id="aboutVideoThumb" onclick="aboutPlayVideo()">
               <img
                 src="https://i.ytimg.com/vi/T_qT_NWyPEU/maxresdefault.jpg"
-                onerror="this.src='https://i.ytimg.com/vi/T_qT_NWyPEU/hqdefault.jpg'"
+                onerror="this.src='https://i.ytimg.com/vi/T_qT_NWyPEU/mqdefault.jpg'"
                 alt="Flagship Studio Showreel"
                 class="about-video-img"
               />
