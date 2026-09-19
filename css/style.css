@@ -415,11 +415,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--v1);outline-offset:
 /* ============================================================
    LIVE FLOATING ABSTRACT 3D PARTICLES (CURATED NEGATIVE SPACE)
    Positioned strictly in empty outer margins and background gutters.
-   Never overlaps text, buttons, or main content.
-   ============================================================ */
-/* ============================================================
-   LIVE FLOATING ABSTRACT 3D PARTICLES (CURATED NEGATIVE SPACE)
-   Positioned strictly in empty outer margins and background gutters.
    Full-bleed 100vw backdrop layer: Never cut off by section boundaries!
    ============================================================ */
 .hero-particles-stage {
