@@ -270,7 +270,7 @@ if(!rm){
     opacity: 0,
     y: 28,
     duration: 0.75,
-    stagger: 0,
+    stagger: 0.08,
     ease: "power3.out",
     clearProps: "transform",
     scrollTrigger: { trigger: ".work-grid", start: "top 90%" }
@@ -936,42 +936,73 @@ if(!rm){
         // Heat decay
         cell.heat *= 0.94;
 
-        // Color computation: Light Theme luxury pastel lavender & radiant violet/pink shimmer
         const d1 = Math.hypot(cell.u - 0.5, (cell.v - 0.8) * 1.2);
         const d2 = Math.hypot(cell.u - 0.8, (cell.v - 0.3) * 1.2);
         const w1 = Math.max(0, 1 - d1 * 1.4);
         const w2 = Math.max(0, 1 - d2 * 1.3);
 
-        const baseR = Math.round(242 - w1 * 18 - w2 * 12);
-        const baseG = Math.round(238 - w1 * 14 - w2 * 8);
-        const baseB = Math.round(252 - w1 * 4);
-        const baseA = 0.74 + w1 * 0.22 + w2 * 0.18;
+        // Dynamic theme detection
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
 
         let r, g, b, a;
         let strokeColor = null;
 
-        if (combinedHeat > 0.01) {
-          // Hover color animation: Soft, luminous pastel lilac & studio lavender violet
-          // Keeps the exact signature violet shade while keeping luminance high for crystal-clear text readability
-          const animR = Math.round(208 + Math.sin(time * 3 + cell.u * 5) * 14);
-          const animG = Math.round(194 + Math.cos(time * 2.5 + cell.v * 5) * 12);
-          const animB = 254;
+        if (isDark) {
+          // Dark Theme: Jet Black Obsidian tiles with illuminating neon violet & pink excitation
+          const baseR = 10;
+          const baseG = 8;
+          const baseB = 18;
+          const baseA = 0.88;
 
-          const heatBlend = Math.min(0.68, combinedHeat * 0.68);
+          if (combinedHeat > 0.01) {
+            const animR = Math.round(180 + Math.sin(time * 3 + cell.u * 5) * 45);
+            const animG = Math.round(120 + Math.cos(time * 2.5 + cell.v * 5) * 35);
+            const animB = 255;
 
-          r = Math.round(lerp(baseR, animR, heatBlend));
-          g = Math.round(lerp(baseG, animG, heatBlend));
-          b = Math.round(lerp(baseB, animB, heatBlend));
-          a = Math.min(0.95, baseA + combinedHeat * 0.15);
+            const heatBlend = Math.min(0.85, combinedHeat * 0.85);
 
-          const strokeAlpha = (0.18 + combinedHeat * 0.28).toFixed(3);
-          strokeColor = `rgba(138, 102, 255, ${strokeAlpha})`;
+            r = Math.round(lerp(baseR, animR, heatBlend));
+            g = Math.round(lerp(baseG, animG, heatBlend));
+            b = Math.round(lerp(baseB, animB, heatBlend));
+            a = Math.min(0.96, baseA + combinedHeat * 0.08);
+
+            const strokeAlpha = (0.22 + combinedHeat * 0.45).toFixed(3);
+            strokeColor = `rgba(188, 166, 255, ${strokeAlpha})`;
+          } else {
+            r = baseR;
+            g = baseG;
+            b = baseB;
+            a = baseA;
+            strokeColor = `rgba(139, 109, 255, ${(0.12 + w1 * 0.1).toFixed(3)})`;
+          }
         } else {
-          r = Math.max(0, Math.min(255, baseR));
-          g = Math.max(0, Math.min(255, baseG));
-          b = Math.max(0, Math.min(255, baseB));
-          a = Math.min(1.0, baseA);
-          strokeColor = `rgba(215, 204, 245, ${(0.3 + w1 * 0.2).toFixed(3)})`;
+          // Light Theme: Luxury pastel lavender & radiant violet/pink shimmer
+          const baseR = Math.round(242 - w1 * 18 - w2 * 12);
+          const baseG = Math.round(238 - w1 * 14 - w2 * 8);
+          const baseB = Math.round(252 - w1 * 4);
+          const baseA = 0.74 + w1 * 0.22 + w2 * 0.18;
+
+          if (combinedHeat > 0.01) {
+            const animR = Math.round(208 + Math.sin(time * 3 + cell.u * 5) * 14);
+            const animG = Math.round(194 + Math.cos(time * 2.5 + cell.v * 5) * 12);
+            const animB = 254;
+
+            const heatBlend = Math.min(0.68, combinedHeat * 0.68);
+
+            r = Math.round(lerp(baseR, animR, heatBlend));
+            g = Math.round(lerp(baseG, animG, heatBlend));
+            b = Math.round(lerp(baseB, animB, heatBlend));
+            a = Math.min(0.95, baseA + combinedHeat * 0.15);
+
+            const strokeAlpha = (0.18 + combinedHeat * 0.28).toFixed(3);
+            strokeColor = `rgba(138, 102, 255, ${strokeAlpha})`;
+          } else {
+            r = Math.max(0, Math.min(255, baseR));
+            g = Math.max(0, Math.min(255, baseG));
+            b = Math.max(0, Math.min(255, baseB));
+            a = Math.min(1.0, baseA);
+            strokeColor = `rgba(215, 204, 245, ${(0.3 + w1 * 0.2).toFixed(3)})`;
+          }
         }
 
         const fillColor = `rgba(${r}, ${g}, ${b}, ${a.toFixed(3)})`;
