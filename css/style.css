@@ -380,8 +380,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--v1);outline-offset:
   margin: 0 auto;
   position: relative;
   align-items: stretch;
-  /* Top padding accounts for 76px fixed navbar + 64px visible breathing room to match bottom 64px space exactly */
-  padding: 140px 36px 64px 36px;
+  align-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  /* Top padding clears 76px fixed navbar with 32px minimum buffer; align-content: center balances remaining space equally */
+  padding-top: calc(76px + 32px);
+  padding-bottom: 32px;
+  padding-left: 36px;
+  padding-right: 36px;
   gap: 44px;
   box-sizing: border-box;
   width: 100%;
