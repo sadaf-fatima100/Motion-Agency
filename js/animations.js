@@ -583,6 +583,49 @@ if(!rm){
   });
 
   // ============================================================
+  // ABOUT PAGE CARDS SCROLLTRIGGER ANIMATIONS
+  // (Pillars cards, Pipeline step cards, Team cards matching Home Process cards)
+  // ============================================================
+  if (document.querySelector(".pillars-grid")) {
+    gsap.from(".pillars-grid .pillar-card", {
+      opacity: 0,
+      y: 46,
+      scale: 0.93,
+      stagger: 0.1,
+      duration: 0.9,
+      ease: "back.out(1.3)",
+      clearProps: "transform",
+      scrollTrigger: { trigger: ".pillars-grid", start: "top 86%" }
+    });
+  }
+
+  if (document.querySelector(".pipeline-steps-grid")) {
+    gsap.from(".pipeline-steps-grid .pipeline-step-card", {
+      opacity: 0,
+      y: 46,
+      scale: 0.93,
+      stagger: 0.1,
+      duration: 0.9,
+      ease: "back.out(1.3)",
+      clearProps: "transform",
+      scrollTrigger: { trigger: ".pipeline-steps-grid", start: "top 86%" }
+    });
+  }
+
+  if (document.querySelector(".team-grid")) {
+    gsap.from(".team-grid .team-member-card", {
+      opacity: 0,
+      y: 40,
+      scale: 0.94,
+      stagger: 0.08,
+      duration: 0.85,
+      ease: "back.out(1.2)",
+      clearProps: "transform",
+      scrollTrigger: { trigger: ".team-grid", start: "top 88%" }
+    });
+  }
+
+  // ============================================================
   // NUVIO-STYLE INTERACTIVE GENERATIVE MOSAIC PIXEL CANVAS
   // (Reactive generative grid with ripple propagation on hover/click)
   // ============================================================
