@@ -98,13 +98,15 @@ if(!rm){
       opacity: 0,
       y: 28,
       duration: 0.9,
-      ease: "power4.out"
+      ease: "power4.out",
+      clearProps: "all"
     }, document.querySelector(".hero-eyebrow") ? "-=0.55" : "+=0")
     .from(".hero-sub", {
       opacity: 0,
       y: 22,
       duration: 0.85,
-      ease: "power3.out"
+      ease: "power3.out",
+      clearProps: "all"
     }, "-=0.6")
     .from(".hero-actions > *", {
       opacity: 0,
@@ -112,13 +114,15 @@ if(!rm){
       scale: 0.94,
       stagger: 0.12,
       duration: 0.75,
-      ease: "back.out(1.4)"
+      ease: "power3.out",
+      clearProps: "all"
     }, "-=0.5")
     .from(".trust-row", {
       opacity: 0,
       y: 16,
       duration: 0.7,
-      ease: "power3.out"
+      ease: "power3.out",
+      clearProps: "all"
     }, "-=0.4")
     .from(".hero-stage", {
       opacity: 0,
@@ -267,6 +271,20 @@ if(!rm){
   // 5. EDITORIAL MANIFESTO SECTION
   // ============================================================
   animateFramerHeading(".manifesto-heading", ".manifesto-section");
+  gsap.from(".particle-left", {
+    x: -30,
+    opacity: 0,
+    duration: 1.1,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".manifesto-section", start: "top 85%" }
+  });
+  gsap.from(".particle-right", {
+    x: 30,
+    opacity: 0,
+    duration: 1.1,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".manifesto-section", start: "top 85%" }
+  });
   gsap.from(".manifesto-badge", {
     scale: 0,
     rotate: -45,
@@ -351,13 +369,21 @@ if(!rm){
     );
   gsap.from(".why-bento-grid .why-card", {
     opacity: 0,
-    y: 48,
-    scale: 0.95,
-    stagger: 0,
-    duration: 0.95,
-    ease: "power4.out",
-    clearProps: "transform",
+    y: 45,
+    scale: 0.94,
+    stagger: 0.12,
+    duration: 1.0,
+    ease: "back.out(1.4)",
+    clearProps: "transform,opacity",
     scrollTrigger: { trigger: ".why-bento-grid", start: "top 86%" }
+  });
+  gsap.from(".why-banner-tag", {
+    scale: 0.8,
+    opacity: 0,
+    stagger: 0.06,
+    duration: 0.65,
+    ease: "back.out(1.8)",
+    scrollTrigger: { trigger: ".why-card-banner", start: "top 88%" }
   });
   gsap.from(".why-phones-visual .why-phone", {
     x: 45,
@@ -376,6 +402,22 @@ if(!rm){
     ease: "back.out(1.5)",
     clearProps: "transform",
     scrollTrigger: { trigger: ".why-tools-box", start: "top 90%" }
+  });
+  gsap.from(".why-clipboard-board", {
+    scale: 0.85,
+    opacity: 0,
+    y: 20,
+    duration: 0.9,
+    ease: "back.out(1.6)",
+    scrollTrigger: { trigger: ".why-card-banner", start: "top 85%" }
+  });
+  gsap.from(".why-floating-capsule", {
+    scale: 0,
+    opacity: 0,
+    stagger: 0.1,
+    duration: 0.8,
+    ease: "back.out(2)",
+    scrollTrigger: { trigger: ".why-card-banner", start: "top 85%" }
   });
 
   // ============================================================

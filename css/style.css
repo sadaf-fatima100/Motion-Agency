@@ -504,6 +504,8 @@ h1.hero-title .accent {
   min-width: 216px !important;
   box-sizing: border-box !important;
   padding: 0 10px 0 24px !important;
+  margin: 0 !important;
+  vertical-align: middle !important;
   border-radius: 100px !important;
   font-family: var(--font) !important;
   font-size: 15.5px !important;
@@ -516,7 +518,7 @@ h1.hero-title .accent {
   outline: none !important;
   -webkit-appearance: none !important;
   appearance: none !important;
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease !important;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 
 .btn-primary {
@@ -526,7 +528,7 @@ h1.hero-title .accent {
   box-shadow: 0 8px 24px -4px rgba(14, 11, 26, 0.4) !important;
 }
 .btn-primary:hover {
-  transform: translateY(-2px) !important;
+  transform: translateY(-2px);
   box-shadow: 0 14px 32px -4px rgba(14, 11, 26, 0.55) !important;
   background: #1a1033 !important;
   border-color: #1a1033 !important;
@@ -539,7 +541,7 @@ h1.hero-title .accent {
   box-shadow: 0 4px 18px rgba(120, 90, 200, 0.08) !important;
 }
 .btn-ghost:hover {
-  transform: translateY(-2px) !important;
+  transform: translateY(-2px);
   border-color: rgba(124, 92, 255, 0.55) !important;
   box-shadow: 0 8px 24px rgba(120, 90, 200, 0.16) !important;
 }
@@ -949,15 +951,15 @@ h1.hero-title .accent {
 .stat-value {
   font-family: var(--font) !important;
   font-size: 32px !important;
-  font-weight: 850 !important;
+  font-weight: 550 !important;
   color: #110c22 !important;
   line-height: 1.1 !important;
-  letter-spacing: -0.03em !important;
+  letter-spacing: -0.02em !important;
 }
 .stat-label {
   font-family: var(--font) !important;
   font-size: 14px !important;
-  font-weight: 600 !important;
+  font-weight: 450 !important;
   color: #5c5572 !important;
   margin-top: 3px !important;
   line-height: 1.25 !important;
@@ -1494,16 +1496,130 @@ h1.hero-title .accent {
 .see-all-btn:hover{color:#7c5cff;transform:translateX(4px);}
 
 /* EDITORIAL MANIFESTO SECTION */
-.manifesto-section{margin:120px auto 100px;max-width:1320px;text-align:center;padding:0 24px;position:relative;}
-.manifesto-heading{font-family:var(--font)!important;font-size:clamp(34px,4.8vw,62px);font-weight:300!important;line-height:1.2;letter-spacing:-.025em;color:var(--ink-0);margin:0 auto;max-width:1300px;text-wrap:balance;}
+.manifesto-section{margin:130px auto 110px;max-width:1440px;text-align:center;padding:0 24px;position:relative;overflow:visible;}
+.manifesto-heading{font-family:var(--font)!important;font-size:clamp(32px,4.4vw,56px);font-weight:300!important;line-height:1.24;letter-spacing:-.025em;color:var(--ink-0);margin:0 auto;max-width:920px;text-wrap:balance;position:relative;z-index:2;}
 .manifesto-line{display:block;}
 .grad-word{background:linear-gradient(135deg,#7448ee 0%,#a56ff5 45%,#f69cb8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;font-weight:300!important;}
-.manifesto-badge-wrap{margin-top:36px;display:flex;justify-content:center;}
+.manifesto-badge-wrap{margin-top:36px;display:flex;justify-content:center;position:relative;z-index:2;}
 .manifesto-badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(120deg,#7c5cff 0%,#a98cff 45%,#ff8fce 100%);color:#ffffff;padding:12px 28px;border-radius:100px;font-family:var(--font)!important;font-size:14.5px;font-weight:700;letter-spacing:-0.01em;text-decoration:none;white-space:nowrap;box-shadow:0 8px 24px -4px rgba(124,92,255,0.45),0 4px 14px -2px rgba(255,143,206,0.35),0 0 0 1px rgba(255,255,255,0.35) inset;transition:transform 0.25s ease,box-shadow 0.25s ease,filter 0.25s ease;cursor:pointer;}
 .manifesto-badge:hover{transform:translateY(-2px);filter:brightness(1.06);box-shadow:0 12px 32px -4px rgba(124,92,255,0.6),0 6px 18px -2px rgba(255,143,206,0.45),0 0 0 1px rgba(255,255,255,0.5) inset;}
 .manifesto-arrow-icon{width:15px;height:15px;stroke:#ffffff;transition:transform 0.25s ease;}
 .manifesto-badge:hover .manifesto-arrow-icon{transform:translateX(3px);}
-.manifesto-note{margin:20px auto 0;max-width:680px;font-size:14px;color:var(--ink-2);font-weight:500;line-height:1.6;}
+.manifesto-note{margin:20px auto 0;max-width:680px;font-size:14px;color:var(--ink-2);font-weight:500;line-height:1.6;position:relative;z-index:2;}
+
+/* ============================================================
+   MANIFESTO 3D DECORATIVE PARTICLES (ORGANIC, RANDOM & MINIMAL)
+   ============================================================ */
+.manifesto-particle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Particle 1: Upper-Left natural tilted float (asymmetrical, NOT straight) */
+.particle-left {
+  top: 15px;
+  left: 30px;
+  width: 145px;
+  height: 145px;
+  transform: rotate(-10deg);
+  animation: organicFloatLeft 8s ease-in-out infinite alternate;
+}
+
+/* Particle 2: Lower-Right natural tilted float (asymmetrical, opposite diagonal) */
+.particle-right {
+  bottom: 5px;
+  right: 35px;
+  width: 145px;
+  height: 145px;
+  transform: rotate(14deg);
+  animation: organicFloatRight 9s ease-in-out infinite alternate;
+}
+
+@keyframes organicFloatLeft {
+  0% { transform: translateY(0px) rotate(-10deg) scale(1); }
+  50% { transform: translateY(-16px) rotate(-5deg) scale(1.04); }
+  100% { transform: translateY(8px) rotate(-14deg) scale(0.97); }
+}
+
+@keyframes organicFloatRight {
+  0% { transform: translateY(0px) rotate(14deg) scale(1); }
+  50% { transform: translateY(-18px) rotate(19deg) scale(1.05); }
+  100% { transform: translateY(10px) rotate(9deg) scale(0.96); }
+}
+
+/* Wave Mesh */
+.particle-wave-mesh {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 3D Glossy Spheres */
+.particle-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.orb-primary {
+  width: 36px;
+  height: 36px;
+  top: 60px;
+  left: 12px;
+  background: radial-gradient(circle at 35% 30%, #ffffff 0%, #e9d5ff 28%, #a855f7 65%, #6b21a8 100%);
+  box-shadow: 0 12px 24px -4px rgba(107, 33, 168, 0.45), inset -3px -3px 8px rgba(0,0,0,0.3), inset 2px 2px 5px rgba(255,255,255,0.85);
+  animation: orbSubtleFloat 5s ease-in-out infinite alternate;
+}
+.orb-secondary {
+  width: 24px;
+  height: 24px;
+  top: 72px;
+  right: -6px;
+  background: radial-gradient(circle at 35% 30%, #ffffff 0%, #fbcfe8 25%, #f43f5e 65%, #881337 100%);
+  box-shadow: 0 10px 20px -3px rgba(244, 63, 94, 0.4), inset -2px -2px 6px rgba(0,0,0,0.25), inset 2px 2px 4px rgba(255,255,255,0.85);
+  animation: orbSubtleFloat 5.5s ease-in-out infinite alternate-reverse;
+}
+@keyframes orbSubtleFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+/* 8-Point Stars */
+.particle-star {
+  position: absolute;
+  filter: drop-shadow(0 0 10px rgba(226, 249, 82, 0.75));
+  animation: starTwinklePulse 3.5s ease-in-out infinite;
+}
+.star-left {
+  top: -8px;
+  right: 14px;
+}
+.star-right {
+  top: -10px;
+  left: 8px;
+}
+@keyframes starTwinklePulse {
+  0%, 100% { transform: scale(0.9) rotate(0deg); opacity: 0.85; }
+  50% { transform: scale(1.18) rotate(22deg); opacity: 1; filter: drop-shadow(0 0 16px rgba(226, 249, 82, 0.95)); }
+}
+
+/* 3D Ribbon */
+.particle-ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Responsive Scaling for Laptops / Tablets */
+@media (max-width: 1280px) {
+  .particle-left { left: 5px; transform: rotate(-8deg) scale(0.85); }
+  .particle-right { right: 5px; transform: rotate(10deg) scale(0.85); }
+}
+@media (max-width: 980px) {
+  .manifesto-particle {
+    display: none !important;
+  }
+}
 
 /* SERVICES / WORKING PROCESS */
 .process-head{margin:120px 0 28px;text-align:left;}
@@ -2287,7 +2403,8 @@ h1.hero-title .accent {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 180px;
+  min-height: 220px;
+  width: 100%;
 }
 .why-floating-capsule {
   position: absolute;
@@ -2296,13 +2413,16 @@ h1.hero-title .accent {
   font-size: 11px;
   font-weight: 700;
   color: #5c3bbb;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(124, 92, 255, 0.25);
-  box-shadow: 0 4px 14px -2px rgba(100, 60, 200, 0.12);
+  box-shadow: 0 4px 14px -2px rgba(100, 60, 200, 0.14);
+  white-space: nowrap;
+  z-index: 3;
 }
-.capsule-1 { top: 8px; left: 10px; animation: floatBgPill 5s ease-in-out infinite alternate; }
-.capsule-2 { top: 12px; right: 10px; animation: floatBgPill 6s ease-in-out infinite alternate-reverse; }
-.capsule-3 { bottom: 10px; left: 15px; animation: floatBgPill 5.5s ease-in-out infinite alternate; }
+/* Perfectly positioned capsules orbiting around the centered clipboard */
+.capsule-1 { top: 12px; left: 16px; animation: floatBgPill 5s ease-in-out infinite alternate; }
+.capsule-2 { top: 12px; right: 16px; animation: floatBgPill 6s ease-in-out infinite alternate-reverse; }
+.capsule-3 { bottom: 12px; left: 24px; animation: floatBgPill 5.5s ease-in-out infinite alternate; }
 
 @keyframes floatBgPill {
   0% { transform: translateY(0); }
@@ -2317,7 +2437,8 @@ h1.hero-title .accent {
   border-radius: 18px;
   padding: 16px 20px;
   box-shadow: 0 12px 30px -8px rgba(100, 60, 200, 0.18);
-  width: 190px;
+  width: 175px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -3171,30 +3292,31 @@ h1.hero-title .accent {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1.5px solid rgba(124, 92, 255, 0.22);
+  background: linear-gradient(120deg, #7c5cff 0%, #a98cff 45%, #ff8fce 100%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1a1230;
-  box-shadow: 0 2px 8px rgba(100, 60, 200, 0.08);
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #ffffff;
+  box-shadow: 0 4px 14px -2px rgba(124, 92, 255, 0.42), 0 2px 8px -1px rgba(255, 143, 206, 0.28);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, filter 0.3s ease;
   text-decoration: none;
 }
 .social-icon svg {
   width: 16px;
   height: 16px;
-  transition: transform 0.25s ease;
+  stroke: #ffffff;
+  color: #ffffff;
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .social-icon:hover {
-  background: linear-gradient(120deg, #7c5cff 0%, #a98cff 45%, #ff8fce 100%);
-  border-color: transparent;
-  color: #ffffff;
-  transform: translateY(-3px) scale(1.1);
-  box-shadow: 0 8px 22px rgba(124, 92, 255, 0.45);
+  transform: translateY(-4px) scale(1.14);
+  filter: brightness(1.1);
+  box-shadow: 0 10px 24px -2px rgba(124, 92, 255, 0.65), 0 4px 16px rgba(255, 143, 206, 0.45);
 }
 .social-icon:hover svg {
-  transform: scale(1.1);
+  transform: scale(1.18) rotate(10deg);
 }
 
 /* Headings with Radiant Gradient Underline (Dark Shade) */
@@ -3286,56 +3408,93 @@ h1.hero-title .accent {
   font-size: 14px !important;
   font-weight: 500 !important;
   line-height: 22px !important;
-  transition: transform 0.25s ease, color 0.25s ease;
 }
+
+/* Static Address Item — Strictly NO hover effects */
+.footer-contact li.contact-address-item,
+.footer-contact li:first-child {
+  cursor: default;
+  pointer-events: auto;
+}
+.footer-contact li.contact-address-item:hover,
+.footer-contact li:first-child:hover {
+  transform: none !important;
+  color: #1f1635 !important;
+}
+.footer-contact li.contact-address-item:hover span,
+.footer-contact li:first-child:hover span {
+  color: #1f1635 !important;
+  font-weight: 500 !important;
+}
+.footer-contact li.contact-address-item:hover .contact-icon,
+.footer-contact li:first-child:hover .contact-icon {
+  transform: none !important;
+  filter: none !important;
+  box-shadow: 0 4px 14px -2px rgba(124, 92, 255, 0.42), 0 2px 8px -1px rgba(255, 143, 206, 0.28) !important;
+}
+.footer-contact li.contact-address-item:hover .contact-icon svg,
+.footer-contact li:first-child:hover .contact-icon svg {
+  transform: none !important;
+}
+
+/* Interactive Contact Links (Phone, Email, WhatsApp) */
 .contact-item-link {
   display: inline-flex;
   align-items: center;
   gap: 0.95rem;
-  color: inherit;
-  text-decoration: none;
-  transition: all 0.25s ease;
-}
-.footer-contact a {
   color: #1f1635;
   text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s ease;
+  cursor: pointer;
+}
+.contact-item-link span {
   transition: color 0.25s ease, font-weight 0.25s ease;
 }
-.footer-contact li:hover,
-.footer-contact li:hover .contact-item-link,
-.footer-contact a:hover {
+.contact-item-link:hover {
   color: #6a2bf8 !important;
   transform: translateX(4px);
 }
-.footer-contact li:hover a,
-.footer-contact li:hover .contact-item-link span {
+.contact-item-link:hover span {
   color: #6a2bf8 !important;
   font-weight: 700 !important;
 }
+
+/* Contact Icon Base: Navbar Button Gradient by Default */
 .contact-icon {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1.5px solid rgba(124, 92, 255, 0.22);
+  background: linear-gradient(120deg, #7c5cff 0%, #a98cff 45%, #ff8fce 100%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #7c5cff;
+  color: #ffffff;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(100, 60, 200, 0.08);
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px -2px rgba(124, 92, 255, 0.42), 0 2px 8px -1px rgba(255, 143, 206, 0.28);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, filter 0.3s ease;
 }
 .contact-icon svg {
   width: 16px;
   height: 16px;
-}
-.footer-contact li:hover .contact-icon {
-  background: linear-gradient(120deg, #7c5cff 0%, #a98cff 45%, #ff8fce 100%);
-  border-color: transparent;
   color: #ffffff;
-  transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(124, 92, 255, 0.4);
+  stroke: #ffffff;
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.contact-icon svg path[fill]:not([fill="none"]),
+.contact-icon svg[fill="currentColor"] {
+  fill: #ffffff !important;
+}
+
+/* Interactive Contact Hover Animation (Only for Phone, Email, WhatsApp) */
+.contact-item-link:hover .contact-icon {
+  transform: translateY(-3px) scale(1.14);
+  filter: brightness(1.1);
+  box-shadow: 0 10px 24px -2px rgba(124, 92, 255, 0.65), 0 4px 14px rgba(255, 143, 206, 0.45);
+}
+.contact-item-link:hover .contact-icon svg {
+  transform: scale(1.18) rotate(10deg);
 }
 
 
