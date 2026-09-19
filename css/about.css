@@ -60,8 +60,17 @@
   pointer-events: none;
   z-index: 0;
   background: 
-    radial-gradient(circle 380px at 48% 38%, rgba(124, 92, 255, 0.08) 0%, rgba(169, 140, 255, 0.02) 50%, transparent 70%),
-    radial-gradient(circle 320px at 56% 44%, rgba(255, 143, 206, 0.07) 0%, rgba(255, 143, 206, 0.02) 50%, transparent 70%);
+    /* 1. Top-Right Ambient Aurora Glow (Fills right negative space under Get Started & beside headline) */
+    radial-gradient(ellipse 720px 520px at 86% 24%, rgba(255, 143, 206, 0.24) 0%, rgba(200, 160, 255, 0.14) 38%, rgba(124, 92, 255, 0.04) 62%, transparent 80%),
+
+    /* 2. Mid/Bottom-Left Ambient Aurora Glow (Fills left negative space beside headline & above dock) */
+    radial-gradient(ellipse 680px 480px at 12% 52%, rgba(124, 92, 255, 0.22) 0%, rgba(169, 140, 255, 0.13) 36%, rgba(255, 143, 206, 0.04) 62%, transparent 80%),
+
+    /* 3. Subtle Top-Left Ambient Touch (Balances upper atmosphere near navbar) */
+    radial-gradient(ellipse 480px 340px at 8% 14%, rgba(124, 92, 255, 0.11) 0%, rgba(169, 140, 255, 0.03) 50%, transparent 75%),
+
+    /* 4. Center Soft Halo (Ensures headline stays crisp, readable, and elevated) */
+    radial-gradient(ellipse 520px 380px at 50% 36%, rgba(255, 255, 255, 0.72) 0%, rgba(245, 240, 255, 0.3) 45%, transparent 75%);
 }
 .about-hero-canvas{position:relative;background:transparent;padding:0 48px;overflow:visible;text-align:center;z-index:1;}
 .about-hero-glow-1,
