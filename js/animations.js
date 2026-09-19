@@ -108,15 +108,24 @@ if(!rm){
       ease: "power3.out",
       clearProps: "all"
     }, "-=0.6")
-    .from(".hero-actions > *", {
-      opacity: 0,
-      scale: 0,
-      rotate: -45,
-      stagger: 0.15,
-      duration: 1.05,
-      ease: "back.out(2)",
-      clearProps: "all"
-    }, "-=0.45")
+    .fromTo(".hero-actions > *", 
+      {
+        opacity: 0,
+        scale: 0,
+        rotate: -45,
+        transformOrigin: "50% 50%"
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        rotate: 0,
+        stagger: 0.15,
+        duration: 1.1,
+        ease: "back.out(2)",
+        clearProps: "transform,opacity"
+      },
+      "-=0.45"
+    )
     .from(".trust-row", {
       opacity: 0,
       y: 16,
@@ -660,15 +669,23 @@ if(!rm){
   // ABOUT PAGE HERO BUTTON FLIP ANIMATION
   // ============================================================
   if (document.querySelector(".about-hero-action")) {
-    gsap.from(".about-hero-action > *", {
-      opacity: 0,
-      scale: 0,
-      rotate: -45,
-      duration: 1.05,
-      ease: "back.out(2)",
-      clearProps: "all",
-      delay: 0.35
-    });
+    gsap.fromTo(".about-hero-action > *", 
+      {
+        opacity: 0,
+        scale: 0,
+        rotate: -45,
+        transformOrigin: "50% 50%"
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        rotate: 0,
+        duration: 1.1,
+        ease: "back.out(2)",
+        clearProps: "transform,opacity",
+        delay: 0.35
+      }
+    );
   }
 
   // ============================================================
