@@ -949,3 +949,79 @@
   .dock-notch-cards-row,.pillars-grid,.team-grid,.pipeline-steps-grid{grid-template-columns:1fr;gap:12px;}
   .about-wrap{padding:0 20px;}
 }
+
+/* ============================================================
+   TESTIMONIALS & TICKER BAR (ABOUT PAGE)
+   ============================================================ */
+.testimonials-section {
+  margin: 90px auto 35px;
+}
+
+.about-ticker-bar {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 25px 0 60px;
+  padding: 16px 0;
+  background: linear-gradient(90deg, rgba(124, 92, 255, 0.03) 0%, rgba(255, 143, 206, 0.05) 50%, rgba(124, 92, 255, 0.03) 100%);
+  border-top: 1px solid rgba(124, 92, 255, 0.12);
+  border-bottom: 1px solid rgba(124, 92, 255, 0.12);
+  mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  user-select: none;
+}
+
+.about-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: aboutTickerLoop 28s linear infinite;
+  will-change: transform;
+}
+
+.about-ticker-bar:hover .about-ticker-track {
+  animation-play-state: paused;
+}
+
+.about-ticker-content {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  padding-right: 36px;
+  white-space: nowrap;
+}
+
+.ticker-item {
+  font-family: var(--font, "Urbanist", sans-serif);
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #241a3e;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: color 0.25s ease;
+}
+
+.ticker-spark {
+  background: linear-gradient(120deg, #7c5cff, #ff8fce);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 17px;
+  display: inline-block;
+  line-height: 1;
+}
+
+.ticker-item:hover {
+  color: #7c5cff;
+}
+
+@keyframes aboutTickerLoop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
