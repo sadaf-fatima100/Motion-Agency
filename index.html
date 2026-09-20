@@ -1369,173 +1369,274 @@
 
       <div class="pricing-grid">
         <!-- Card 1: Whiteboard Video -->
-        <div class="pricing-card card-lavender">
-          <div class="pricing-notch-tl">
-            <h3 class="pricing-card-title">Whiteboard video</h3>
-            <span class="pricing-pill">30s</span>
-          </div>
-
-                    <!-- Full-Width Video Player with Live TryShort Overlay & YouTube Link -->
-          <div class="pricing-card-video" onclick="playPricingVideo(this, 'https://www.youtube.com/embed/sUYgEgjqi1M?autoplay=1&rel=0')" title="Click to play Whiteboard Video" style="position:relative;width:100%;height:210px;margin-top:60px;background:#15102a;overflow:hidden;cursor:pointer;">
-            <img src="assets/pricing-whiteboard.jpg" onerror="this.src='https://animationagency3.tryshort.com/wp-content/uploads/2025/03/Animation-Videos-Image-Portfolio-Overlay-1.jpg'" alt="Whiteboard Video" class="pricing-video-thumb" style="width:100%;height:100%;object-fit:cover;display:block;">
-            <div class="play-btn-circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,0.95);box-shadow:0 8px 24px rgba(20,10,50,0.35);display:flex;align-items:center;justify-content:center;z-index:5;pointer-events:none;">
-              <svg width="22" height="22" viewBox="0 0 24 24" style="width:22px;height:22px;margin-left:3px;fill:#7c5cff;display:block;"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-
-          <div class="pricing-content">
-            <p class="pricing-intro">High-converting whiteboard animation crafted to explain, educate, and convert audiences.</p>
-            <ul class="pricing-features">
-              <li>High Converting Script</li>
-              <li>Powerful Voice-Over</li>
-              <li>Engaging Animation</li>
-              <li>Music &amp; SFX</li>
-              <li>2 X Revisions</li>
-              <li>4+ Weeks Delivery</li>
-              <li>Custom Graphics</li>
-              <li>Premium Animation Team</li>
-            </ul>
-
-            <!-- Translucent 3D Watermark -->
-            <svg class="pricing-watermark" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M80 20 C120 20 145 50 145 90 C145 130 115 145 80 145 C45 145 15 125 15 80 C15 40 45 20 80 20 Z" stroke="rgba(255,255,255,0.75)" stroke-width="6" stroke-linecap="round"/>
-              <path d="M55 45 C80 30 115 40 125 75 C135 110 105 130 75 125 C45 120 35 90 45 65 Z" stroke="rgba(255,255,255,0.9)" stroke-width="5" fill="rgba(255,255,255,0.12)"/>
-              <circle cx="95" cy="85" r="22" stroke="rgba(255,255,255,0.65)" stroke-width="4"/>
-            </svg>
-
-            <div class="pricing-footer">
-              <div class="pricing-price-box">
-                <span class="pricing-sublabel">Select your video length after pressing “Order Now”</span>
-                <div class="pricing-price-row">
-                  <span class="pricing-amount">$698</span>
-                  <span class="pricing-unit">30 Seconds</span>
-                </div>
+        <div class="pricing-card card-whiteboard">
+          <div class="pricing-card-header">
+            <div class="pricing-title-row">
+              <div class="pricing-tier-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                  <path d="M2 2l7.586 7.586"/>
+                  <circle cx="11" cy="11" r="2"/>
+                </svg>
               </div>
+              <h3 class="pricing-card-title">Whiteboard video</h3>
+            </div>
+            <p class="pricing-intro">High-converting whiteboard animation crafted to explain, educate, and convert audiences.</p>
+          </div>
+
+          <!-- Video Sample Player (Full Width Above Pricing) -->
+          <div class="pricing-card-video" onclick="playPricingVideo(this, 'https://www.youtube.com/embed/sUYgEgjqi1M?autoplay=1&rel=0')" title="Click to play Whiteboard Video">
+            <img src="assets/pricing-whiteboard.jpg" onerror="this.src='https://animationagency3.tryshort.com/wp-content/uploads/2025/03/Animation-Videos-Image-Portfolio-Overlay-1.jpg'" alt="Whiteboard Video" class="pricing-video-thumb">
+            <div class="play-btn-circle">
+              <svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </div>
           </div>
 
-          <div class="pricing-notch-br">
-            <a href="https://animationagency3.tryshort.com/product/whiteboard-video/" target="_blank" rel="noopener" class="pricing-btn">
-              <span>Order Now</span>
-              <span class="pricing-btn-arrow">
-                <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
-              </span>
-            </a>
+          <div class="pricing-price-section">
+            <div class="pricing-price-row">
+              <span class="pricing-amount">$698</span>
+              <span class="pricing-unit">/ 30 Seconds</span>
+            </div>
+            <span class="pricing-sublabel">Select your video length after pressing “Order Now”</span>
           </div>
+
+          <a href="https://animationagency3.tryshort.com/product/whiteboard-video/" target="_blank" rel="noopener" class="pricing-cta-btn">
+            <span>Order Now</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <ul class="pricing-features">
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>High Converting Script</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Powerful Voice-Over</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Engaging Animation</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Music &amp; SFX</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>2 X Revisions</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>4+ Weeks Delivery</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Custom Graphics</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Premium Animation Team</span>
+            </li>
+          </ul>
         </div>
 
-        <!-- Card 2: Explainer Video -->
-        <div class="pricing-card card-pink">
-          <div class="pricing-notch-tl">
-            <h3 class="pricing-card-title">Explainer video</h3>
-            <span class="pricing-pill">30s</span>
-          </div>
-
-                    <!-- Full-Width Video Player with Live TryShort Overlay & YouTube Link -->
-          <div class="pricing-card-video" onclick="playPricingVideo(this, 'https://www.youtube.com/embed/ez8UKLwe2qw?autoplay=1&rel=0')" title="Click to play Explainer Video" style="position:relative;width:100%;height:210px;margin-top:60px;background:#15102a;overflow:hidden;cursor:pointer;">
-            <img src="assets/pricing-explainer.jpg" onerror="this.src='https://animationagency3.tryshort.com/wp-content/uploads/2025/03/Animation-Videos-Image-Portfolio-Overlay-6.jpg'" alt="Explainer Video" class="pricing-video-thumb" style="width:100%;height:100%;object-fit:cover;display:block;">
-            <div class="play-btn-circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,0.95);box-shadow:0 8px 24px rgba(20,10,50,0.35);display:flex;align-items:center;justify-content:center;z-index:5;pointer-events:none;">
-              <svg width="22" height="22" viewBox="0 0 24 24" style="width:22px;height:22px;margin-left:3px;fill:#7c5cff;display:block;"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-
-          <div class="pricing-content">
-            <p class="pricing-intro">Dynamic 2D &amp; motion graphics engineered for SaaS demos, startups, and brand clarity.</p>
-            <ul class="pricing-features">
-              <li>High Converting Script</li>
-              <li>Powerful Voice-Over</li>
-              <li>Engaging Animation</li>
-              <li>Music &amp; SFX</li>
-              <li>2 X Revisions</li>
-              <li>4+ Weeks Delivery</li>
-              <li>Custom Graphics</li>
-              <li>Premium Animation Team</li>
-            </ul>
-
-            <!-- Translucent 3D Watermark -->
-            <svg class="pricing-watermark" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <polygon points="80,25 135,55 80,85 25,55" stroke="rgba(255,255,255,0.85)" stroke-width="5" fill="rgba(255,255,255,0.12)"/>
-              <polygon points="25,55 80,85 80,140 25,110" stroke="rgba(255,255,255,0.75)" stroke-width="5" fill="rgba(255,255,255,0.06)"/>
-              <polygon points="80,85 135,55 135,110 80,140" stroke="rgba(255,255,255,0.9)" stroke-width="5" fill="rgba(255,255,255,0.18)"/>
-              <circle cx="80" cy="85" r="30" stroke="rgba(255,255,255,0.45)" stroke-width="3" stroke-dasharray="6 6"/>
-            </svg>
-
-            <div class="pricing-footer">
-              <div class="pricing-price-box">
-                <span class="pricing-sublabel">Select your video length after pressing “Order Now”</span>
-                <div class="pricing-price-row">
-                  <span class="pricing-amount">$698</span>
-                  <span class="pricing-unit">30 Seconds</span>
-                </div>
+        <!-- Card 2: Explainer Video (Featured / Most Popular) -->
+        <div class="pricing-card card-explainer featured">
+          <div class="pricing-card-header">
+            <div class="pricing-title-row">
+              <div class="pricing-tier-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+              <h3 class="pricing-card-title">Explainer video</h3>
+              <div class="pricing-popular-badge">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span>Popular</span>
               </div>
             </div>
+            <p class="pricing-intro">Dynamic 2D &amp; motion graphics engineered for SaaS demos, startups, and brand clarity.</p>
           </div>
 
-          <div class="pricing-notch-br">
-            <a href="https://animationagency3.tryshort.com/product/whiteboard-video/" target="_blank" rel="noopener" class="pricing-btn">
-              <span>Order Now</span>
-              <span class="pricing-btn-arrow">
-                <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
-              </span>
-            </a>
+          <!-- Video Sample Player (Full Width Above Pricing) -->
+          <div class="pricing-card-video" onclick="playPricingVideo(this, 'https://www.youtube.com/embed/ez8UKLwe2qw?autoplay=1&rel=0')" title="Click to play Explainer Video">
+            <img src="assets/pricing-explainer.jpg" onerror="this.src='https://animationagency3.tryshort.com/wp-content/uploads/2025/03/Animation-Videos-Image-Portfolio-Overlay-6.jpg'" alt="Explainer Video" class="pricing-video-thumb">
+            <div class="play-btn-circle">
+              <svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
           </div>
+
+          <div class="pricing-price-section">
+            <div class="pricing-price-row">
+              <span class="pricing-amount">$698</span>
+              <span class="pricing-unit">/ 30 Seconds</span>
+            </div>
+            <span class="pricing-sublabel">Select your video length after pressing “Order Now”</span>
+          </div>
+
+          <a href="https://animationagency3.tryshort.com/product/whiteboard-video/" target="_blank" rel="noopener" class="pricing-cta-btn btn-featured">
+            <span>Order Now</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <ul class="pricing-features">
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>High Converting Script</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Powerful Voice-Over</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Engaging Animation</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Music &amp; SFX</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>2 X Revisions</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>4+ Weeks Delivery</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Custom Graphics</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Premium Animation Team</span>
+            </li>
+          </ul>
         </div>
 
         <!-- Card 3: Premium Video -->
-        <div class="pricing-card card-blue">
-          <div class="pricing-notch-tl">
-            <h3 class="pricing-card-title">Premium video</h3>
-            <span class="pricing-pill">30s</span>
-          </div>
-
-                    <!-- Full-Width Video Player with Live TryShort Overlay & YouTube Link -->
-          <div class="pricing-card-video" onclick="playPricingVideo(this, 'https://www.youtube.com/embed/FiQ_KsLjoq4?autoplay=1&rel=0')" title="Click to play Premium Video" style="position:relative;width:100%;height:210px;margin-top:60px;background:#15102a;overflow:hidden;cursor:pointer;">
-            <img src="assets/pricing-premium.jpg" onerror="this.src='https://animationagency3.tryshort.com/wp-content/uploads/2025/03/Animation-Videos-Image-Overlay-7.jpg'" alt="Premium Video" class="pricing-video-thumb" style="width:100%;height:100%;object-fit:cover;display:block;">
-            <div class="play-btn-circle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,0.95);box-shadow:0 8px 24px rgba(20,10,50,0.35);display:flex;align-items:center;justify-content:center;z-index:5;pointer-events:none;">
-              <svg width="22" height="22" viewBox="0 0 24 24" style="width:22px;height:22px;margin-left:3px;fill:#7c5cff;display:block;"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-
-          <div class="pricing-content">
-            <p class="pricing-intro">Bespoke cinematic animation and high-end visual design built to stand out on any platform.</p>
-            <ul class="pricing-features">
-              <li>High Converting Script</li>
-              <li>Powerful Voice-Over</li>
-              <li>Engaging Animation</li>
-              <li>Music &amp; SFX</li>
-              <li>2 X Revisions</li>
-              <li>4+ Weeks Delivery</li>
-              <li>Custom Graphics</li>
-              <li>Premium Animation Team</li>
-            </ul>
-
-            <!-- Translucent 3D Watermark -->
-            <svg class="pricing-watermark" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="80" cy="45" rx="55" ry="25" stroke="rgba(255,255,255,0.85)" stroke-width="5" fill="rgba(255,255,255,0.15)"/>
-              <path d="M25 45 V105 C25 120 50 135 80 135 C110 135 135 120 135 105 V45" stroke="rgba(255,255,255,0.75)" stroke-width="5"/>
-              <ellipse cx="80" cy="105" rx="55" ry="25" stroke="rgba(255,255,255,0.9)" stroke-width="5" fill="rgba(255,255,255,0.1)"/>
-              <ellipse cx="80" cy="75" rx="35" ry="16" stroke="rgba(255,255,255,0.55)" stroke-width="3" stroke-dasharray="5 5"/>
-            </svg>
-
-            <div class="pricing-footer">
-              <div class="pricing-price-box">
-                <span class="pricing-sublabel">Select your video length after pressing “Order Now”</span>
-                <div class="pricing-price-row">
-                  <span class="pricing-amount">$698</span>
-                  <span class="pricing-unit">30 Seconds</span>
-                </div>
+        <div class="pricing-card card-premium">
+          <div class="pricing-card-header">
+            <div class="pricing-title-row">
+              <div class="pricing-tier-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
               </div>
+              <h3 class="pricing-card-title">Premium video</h3>
+            </div>
+            <p class="pricing-intro">Bespoke cinematic animation and high-end visual design built to stand out on any platform.</p>
+          </div>
+
+          <!-- Video Sample Player (Full Width Above Pricing) -->
+          <div class="pricing-card-video" onclick="playPricingVideo(this, 'https://www.youtube.com/embed/FiQ_KsLjoq4?autoplay=1&rel=0')" title="Click to play Premium Video">
+            <img src="assets/pricing-premium.jpg" onerror="this.src='https://animationagency3.tryshort.com/wp-content/uploads/2025/03/Animation-Videos-Image-Overlay-7.jpg'" alt="Premium Video" class="pricing-video-thumb">
+            <div class="play-btn-circle">
+              <svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </div>
           </div>
 
-          <div class="pricing-notch-br">
-            <a href="https://animationagency3.tryshort.com/product/whiteboard-video/" target="_blank" rel="noopener" class="pricing-btn">
-              <span>Order Now</span>
-              <span class="pricing-btn-arrow">
-                <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
-              </span>
-            </a>
+          <div class="pricing-price-section">
+            <div class="pricing-price-row">
+              <span class="pricing-amount">$698</span>
+              <span class="pricing-unit">/ 30 Seconds</span>
+            </div>
+            <span class="pricing-sublabel">Select your video length after pressing “Order Now”</span>
           </div>
+
+          <a href="https://animationagency3.tryshort.com/product/whiteboard-video/" target="_blank" rel="noopener" class="pricing-cta-btn">
+            <span>Order Now</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <ul class="pricing-features">
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>High Converting Script</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Powerful Voice-Over</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Engaging Animation</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Music &amp; SFX</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>2 X Revisions</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>4+ Weeks Delivery</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Custom Graphics</span>
+            </li>
+            <li>
+              <span class="pricing-check-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2L8.6 12.8L14 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Premium Animation Team</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
