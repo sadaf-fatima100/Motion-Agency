@@ -223,15 +223,13 @@
   position: relative;
   overflow: hidden;
   background:
-    /* Focal gradient directly where the user made the dot (43% 80%, below trust avatars) */
-    radial-gradient(ellipse 55% 45% at 43% 80%, rgba(255, 120, 205, 0.28) 0%, rgba(139, 109, 255, 0.20) 38%, rgba(90, 45, 210, 0.08) 60%, transparent 75%),
-    /* Luminous neon cyber-violet glow behind left headline & buttons */
+    /* 1. Luminous neon cyber-violet glow behind left headline & buttons */
     radial-gradient(ellipse 70% 55% at 20% 30%, rgba(124, 92, 255, 0.22) 0%, rgba(90, 50, 210, 0.08) 50%, transparent 75%),
-    /* Vibrant neon magenta / rose halo directly behind video card */
-    radial-gradient(ellipse 65% 55% at 78% 42%, rgba(220, 80, 180, 0.20) 0%, rgba(124, 92, 255, 0.14) 45%, transparent 75%),
-    /* Deep electric purple atmospheric floor glow */
-    radial-gradient(circle 600px at 50% 95%, rgba(80, 40, 180, 0.16) 0%, transparent 70%),
-    /* Top seamless dark horizon blend */
+    /* 2. Vibrant neon magenta / rose halo directly behind video card */
+    radial-gradient(ellipse 65% 55% at 78% 42%, rgba(220, 80, 180, 0.18) 0%, rgba(124, 92, 255, 0.12) 45%, transparent 75%),
+    /* 3. Deep electric purple atmospheric floor glow */
+    radial-gradient(circle 600px at 50% 95%, rgba(80, 40, 180, 0.14) 0%, transparent 70%),
+    /* 4. Top seamless dark horizon blend */
     radial-gradient(ellipse 100% 45% at 50% 0%, rgba(124, 92, 255, 0.10) 0%, transparent 60%),
     #04020a !important;
 }
@@ -327,57 +325,76 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8), 0 0 22px rgba(124, 92, 255, 0.45) !important;
 }
 
-/* HERO STATS DOCK (UNBOXED SLEEK METRICS ROW) */
-[data-theme="dark"] .hero-stats-dock {
-  background: rgba(14, 10, 26, 0.85) !important;
-  border: 1.5px solid rgba(139, 109, 255, 0.3) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.8), 0 0 22px rgba(124, 92, 255, 0.14) !important;
-  border-radius: 20px !important;
-}
-
-[data-theme="dark"] .hero-stat-item {
+/* HERO METRICS DOCK (CLEAN BORDERLESS ROW FOR DARK THEME) */
+[data-theme="dark"] .hero-metrics-card {
   background: transparent !important;
   border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 6px 4px !important;
+  min-height: 52px !important;
 }
 
-[data-theme="dark"] .stat-icon-circle {
+[data-theme="dark"] .hero-metrics-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .metric-cell {
+  background: transparent !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  flex: 1 !important;
+}
+
+[data-theme="dark"] .metric-icon {
   background: rgba(22, 16, 42, 0.9) !important;
   border: 1.5px solid rgba(169, 140, 255, 0.4) !important;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), 0 0 14px rgba(124, 92, 255, 0.22) !important;
 }
 
-[data-theme="dark"] .hero-stat-item:hover .stat-icon-circle {
+[data-theme="dark"] .metric-cell:hover .metric-icon {
   background: rgba(30, 22, 58, 0.95) !important;
   border-color: rgba(255, 160, 216, 0.65) !important;
   box-shadow: 0 0 20px rgba(139, 109, 255, 0.5) !important;
 }
 
-[data-theme="dark"] .stat-icon-circle.icon-star svg {
+[data-theme="dark"] .metric-icon.star-icon svg {
   fill: #bca6ff !important;
 }
 
-[data-theme="dark"] .stat-icon-circle.icon-gem svg {
+[data-theme="dark"] .metric-icon.gem-icon svg {
   stroke: #ffa0d8 !important;
 }
 
-[data-theme="dark"] .stat-icon-circle.icon-bolt svg {
+[data-theme="dark"] .metric-icon.bolt-icon svg {
   fill: #bca6ff !important;
 }
 
-[data-theme="dark"] .stat-value {
+[data-theme="dark"] .metric-data {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+}
+
+[data-theme="dark"] .metric-val {
   color: #ffffff !important;
   font-weight: 750 !important;
+  line-height: 1.1 !important;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8) !important;
 }
 
-[data-theme="dark"] .stat-label {
+[data-theme="dark"] .metric-lbl {
   color: #b8b0cf !important;
+  line-height: 1.2 !important;
 }
 
-[data-theme="dark"] .stat-dock-divider {
-  background: rgba(139, 109, 255, 0.25) !important;
+[data-theme="dark"] .metric-sep {
+  background: rgba(139, 109, 255, 0.28) !important;
 }
 
 /* 3B. STATS BAR CAPSULE (FROSTED OBSIDIAN GLASS WITH VIBRANT NEON BORDER) */
@@ -703,17 +720,9 @@
   border-color: rgba(188, 166, 255, 0.5) !important;
 }
 
-[data-theme="dark"] .card-pill {
-  background: #110e1e !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(139, 109, 255, 0.35) !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.7) !important;
-}
-
+[data-theme="dark"] .card-pill,
 [data-theme="dark"] .card-cat-badge {
-  background: rgba(11, 9, 20, 0.92) !important;
-  color: #c4b0ff !important;
-  border: 1px solid rgba(139, 109, 255, 0.35) !important;
+  display: none !important;
 }
 
 /* Horizontal Scrollbar — Dark Trench with Vibrant Neon Gradient Thumb */

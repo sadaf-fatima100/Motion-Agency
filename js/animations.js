@@ -160,58 +160,47 @@ if(!rm){
       duration: 0.85,
       ease: "back.out(2)"
     }, "-=0.6")
-    .from(".hero-stats-dock .hero-stat-item", {
+    .from(".hero-metrics-card .metric-cell", {
       opacity: 0,
-      y: 22,
-      scale: 0.9,
-      stagger: 0.12,
-      duration: 0.8,
-      ease: "back.out(1.4)"
+      y: 18,
+      scale: 0.92,
+      stagger: 0.1,
+      duration: 0.75,
+      ease: "back.out(1.4)",
+      clearProps: "all"
     }, "-=0.4")
-    .from(".stat-dock-divider", {
+    .from(".hero-metrics-card .metric-sep", {
       scaleY: 0,
       opacity: 0,
-      duration: 0.5,
+      duration: 0.45,
+      stagger: 0.08,
+      ease: "power2.out",
+      clearProps: "all"
+    }, "-=0.5")
+    .from(".stats-bar", {
+      opacity: 0,
+      y: 24,
+      scale: 0.98,
+      duration: 0.8,
+      ease: "power3.out",
+      clearProps: "all"
+    }, "-=0.3")
+    .from(".stat-unit", {
+      opacity: 0,
+      y: 16,
       stagger: 0.1,
-      ease: "power2.out"
-    }, "-=0.6");
-
-  // ============================================================
-  // 2. STATS BAR SECTION
-  // ============================================================
-  gsap.from(".stats-bar", {
-    opacity: 0,
-    y: 36,
-    scale: 0.97,
-    duration: 0.95,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".stats-bar",
-      start: "top 90%"
-    }
-  });
-  gsap.from(".stat-unit", {
-    opacity: 0,
-    y: 24,
-    stagger: 0.15,
-    duration: 0.85,
-    ease: "back.out(1.3)",
-    scrollTrigger: {
-      trigger: ".stats-bar",
-      start: "top 90%"
-    }
-  });
-  gsap.from(".stats-badge-anchor", {
-    scale: 0.6,
-    opacity: 0,
-    rotate: -30,
-    duration: 1.0,
-    ease: "back.out(1.8)",
-    scrollTrigger: {
-      trigger: ".stats-bar",
-      start: "top 90%"
-    }
-  });
+      duration: 0.65,
+      ease: "back.out(1.3)",
+      clearProps: "all"
+    }, "-=0.5")
+    .from(".stats-badge-anchor", {
+      scale: 0.6,
+      opacity: 0,
+      rotate: -30,
+      duration: 0.8,
+      ease: "back.out(1.8)",
+      clearProps: "all"
+    }, "-=0.5");
 
   // ============================================================
   // 3. CORE ANIMATION CAPABILITIES SECTION (#capabilities)
