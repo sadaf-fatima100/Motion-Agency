@@ -450,43 +450,29 @@ if(!rm){
   // ============================================================
   // 8. ABOUT AGENCY SECTION (#about)
   // ============================================================
-  gsap.from(".about-eyebrow", {
+  gsap.from(".about-sculpted-canvas", {
     opacity: 0,
-    y: 16,
-    duration: 0.75,
-    ease: "power3.out",
-    scrollTrigger: { trigger: ".about-agency-left", start: "top 88%" }
-  });
-  animateFramerHeading(".about-main-title", ".about-agency-left");
-  gsap.from(".about-video-wrap", {
-    opacity: 0,
-    y: 28,
-    scale: 0.94,
+    y: 40,
     duration: 0.9,
     ease: "power3.out",
-    scrollTrigger: { trigger: ".about-agency-left", start: "top 86%" }
+    scrollTrigger: { trigger: ".about-agency-section", start: "top 85%" }
   });
-  gsap.from(".about-sublead, .about-actions-row", {
+  gsap.from(".about-video-frame", {
     opacity: 0,
-    y: 22,
+    y: 30,
+    stagger: 0.18,
+    duration: 0.85,
+    ease: "power3.out",
+    scrollTrigger: { trigger: ".about-dual-videos", start: "top 86%" }
+  });
+  animateFramerHeading(".about-open-title", ".about-open-editorial");
+  gsap.from(".about-open-eyebrow, .about-open-narrative, .about-open-callout, .about-open-metrics, .about-open-actions", {
+    opacity: 0,
+    y: 20,
     stagger: 0.12,
     duration: 0.8,
     ease: "power3.out",
-    scrollTrigger: { trigger: ".about-actions-row", start: "top 90%" }
-  });
-  // 8. ABOUT AGENCY SECTION: RIGHT STACKED CARDS (SILKY SMOOTH FLAT SLIDE-IN ONE BY ONE)
-  gsap.from(".about-slide-card", {
-    opacity: 0,
-    x: 70,
-    stagger: 0.16,
-    duration: 0.85,
-    ease: "power3.out",
-    clearProps: "all",
-    scrollTrigger: {
-      trigger: ".about-cards-stack",
-      start: "top 85%",
-      toggleActions: "play none none none"
-    }
+    scrollTrigger: { trigger: ".about-open-editorial", start: "top 86%" }
   });
 
   // ============================================================
@@ -555,6 +541,39 @@ if(!rm){
     clearProps: "opacity,transform",
     scrollTrigger: { trigger: ".testimonials-section", start: "top 85%" }
   });
+
+  // ============================================================
+  // 9.8 LATEST & TRENDING BLOG SECTION (#blog)
+  // ============================================================
+  if (document.querySelector(".blog-section")) {
+    gsap.from(".blog-title, .blog-head .eyebrow", {
+      opacity: 0,
+      y: 24,
+      duration: 0.85,
+      stagger: 0.1,
+      ease: "power3.out",
+      clearProps: "opacity,transform",
+      scrollTrigger: { trigger: ".blog-section", start: "top 88%" }
+    });
+    gsap.from(".blog-subtitle", {
+      opacity: 0,
+      y: 18,
+      duration: 0.85,
+      ease: "power3.out",
+      delay: 0.15,
+      clearProps: "opacity,transform",
+      scrollTrigger: { trigger: ".blog-section", start: "top 88%" }
+    });
+    gsap.from(".blog-card", {
+      opacity: 0,
+      y: 36,
+      stagger: 0.16,
+      duration: 0.9,
+      ease: "power3.out",
+      clearProps: "opacity,transform",
+      scrollTrigger: { trigger: ".blog-grid", start: "top 85%" }
+    });
+  }
 
   // ============================================================
   // 10. CTA BAND (#contact)

@@ -800,147 +800,71 @@
 }
 
 /* 7. SLIDING CARDS & ABOUT SECTION */
+/* 7. ABOUT AGENCY / CREATORS SECTION (OPEN EDITORIAL & DUAL VIDEO — DARK THEME) */
 [data-theme="dark"] .about-agency-section {
   background: transparent !important;
-  border-radius: 0 !important;
 }
 
-[data-theme="dark"] .about-agency-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 100vw;
-  height: 100%;
-  transform: translateX(-50%);
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(ellipse 65% 50% at 50% 40%, rgba(139, 109, 255, 0.18) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%) !important;
+[data-theme="dark"] .about-sculpted-canvas {
+  background: 
+    radial-gradient(ellipse 110% 70% at 20% 0%, rgba(139, 109, 255, 0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 90% 60% at 80% 100%, rgba(255, 143, 206, 0.1) 0%, transparent 60%),
+    #0c0818 !important;
+  border-color: rgba(169, 140, 255, 0.32) !important;
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.95), 0 0 32px -4px rgba(124, 92, 255, 0.18) !important;
 }
 
-[data-theme="dark"] .about-agency-left h2,
-[data-theme="dark"] .about-main-title {
-  color: #ffffff !important;
+[data-theme="dark"] .crest-circle-outer {
+  background: #0c0818 !important;
+  box-shadow: 0 8px 24px -4px rgba(139, 109, 255, 0.4), 0 0 0 1.5px rgba(169, 140, 255, 0.35) !important;
 }
 
-[data-theme="dark"] .about-agency-left p {
-  color: #b8b1d0 !important;
+[data-theme="dark"] .crest-circle-inner {
+  background: #140d28 !important;
 }
 
-[data-theme="dark"] .about-eyebrow {
-  background: rgba(139, 109, 255, 0.12) !important;
+[data-theme="dark"] .about-video-frame {
+  background: #080511 !important;
   border-color: rgba(139, 109, 255, 0.35) !important;
-  color: #c4b0ff !important;
+  box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.9) !important;
 }
 
-[data-theme="dark"] .slide-card-1 {
-  background: 
-    radial-gradient(ellipse 110% 80% at 20% 0%, rgba(139, 109, 255, 0.22) 0%, transparent 60%),
-    linear-gradient(155deg, #181132 0%, #0d081b 100%) !important;
-  border: 1.5px solid rgba(169, 140, 255, 0.42) !important;
-  box-shadow: 
-    0 24px 54px -12px rgba(0, 0, 0, 0.92),
-    0 0 32px -4px rgba(124, 92, 255, 0.26),
-    inset 0 1px 0 rgba(255, 255, 255, 0.24),
-    inset 0 0 28px rgba(139, 109, 255, 0.1) !important;
+[data-theme="dark"] .about-video-frame:hover {
+  border-color: rgba(185, 160, 255, 0.7) !important;
+  box-shadow: 0 20px 48px -10px rgba(139, 109, 255, 0.4) !important;
+}
+
+[data-theme="dark"] .about-open-title {
   color: #ffffff !important;
 }
 
-[data-theme="dark"] .slide-card-1 .card-slide-title {
-  color: #ffffff !important;
-}
-
-[data-theme="dark"] .slide-card-1 .card-slide-desc {
+[data-theme="dark"] .about-open-narrative {
   color: #b8b1d0 !important;
 }
 
-[data-theme="dark"] .slide-card-1 .card-slide-badge {
-  background: rgba(139, 109, 255, 0.16) !important;
-  color: #c4b0ff !important;
-  border: 1px solid rgba(139, 109, 255, 0.35) !important;
+[data-theme="dark"] .callout-highlight-text {
+  color: #e2dbf7 !important;
 }
 
-[data-theme="dark"] .slide-card-1 .card-meta-tags {
-  color: #c4b0ff !important;
+[data-theme="dark"] .callout-bold-accent {
+  color: #c98eff !important;
 }
 
-[data-theme="dark"] .slide-card-2 {
-  background: 
-    radial-gradient(ellipse 110% 80% at 80% 0%, rgba(255, 143, 206, 0.20) 0%, transparent 60%),
-    linear-gradient(155deg, #221544 0%, #100922 100%) !important;
-  border: 1.5px solid rgba(185, 160, 255, 0.48) !important;
-  box-shadow: 
-    0 28px 58px -12px rgba(0, 0, 0, 0.95),
-    0 0 36px -4px rgba(255, 143, 206, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.28),
-    inset 0 0 28px rgba(139, 109, 255, 0.12) !important;
+[data-theme="dark"] .open-metric-num {
   color: #ffffff !important;
 }
 
-[data-theme="dark"] .slide-card-2 .card-slide-title {
-  color: #ffffff !important;
+[data-theme="dark"] .open-metric-label {
+  color: #9d94b8 !important;
 }
 
-[data-theme="dark"] .slide-card-2 .card-slide-desc {
-  color: #c4bcd8 !important;
+[data-theme="dark"] .open-metric-divider,
+[data-theme="dark"] .about-open-metrics {
+  border-color: rgba(139, 109, 255, 0.22) !important;
 }
 
-[data-theme="dark"] .slide-card-2 .card-slide-badge {
-  background: rgba(139, 109, 255, 0.2) !important;
+[data-theme="dark"] .about-open-trust {
   color: #dcd4f5 !important;
-  border: 1px solid rgba(139, 109, 255, 0.4) !important;
-}
-
-[data-theme="dark"] .slide-card-2 .card-meta-tags {
-  color: #dcd4f5 !important;
-}
-
-[data-theme="dark"] .slide-card-3 {
-  background: 
-    radial-gradient(ellipse 110% 80% at 50% 0%, rgba(169, 140, 255, 0.22) 0%, transparent 60%),
-    linear-gradient(155deg, #241646 0%, #110922 100%) !important;
-  border: 1.5px solid rgba(195, 168, 255, 0.46) !important;
-  box-shadow: 
-    0 28px 58px -12px rgba(0, 0, 0, 0.95),
-    0 0 36px -4px rgba(139, 109, 255, 0.26),
-    inset 0 1px 0 rgba(255, 255, 255, 0.26),
-    inset 0 0 28px rgba(139, 109, 255, 0.12) !important;
-  color: #ffffff !important;
-}
-
-[data-theme="dark"] .slide-card-3 .card-slide-title {
-  color: #ffffff !important;
-}
-
-[data-theme="dark"] .slide-card-3 .card-slide-desc {
-  color: #c4bcd8 !important;
-}
-
-[data-theme="dark"] .slide-card-3 .card-slide-badge {
-  background: rgba(139, 109, 255, 0.2) !important;
-  color: #dcd4f5 !important;
-  border: 1px solid rgba(139, 109, 255, 0.4) !important;
-}
-
-[data-theme="dark"] .slide-card-3 .card-meta-tags {
-  color: #dcd4f5 !important;
-}
-
-[data-theme="dark"] .about-slide-card .card-btn-pill {
-  background: rgba(255, 255, 255, 0.12) !important;
-  border: 1px solid rgba(255, 255, 255, 0.22) !important;
-  color: #ffffff !important;
-}
-
-[data-theme="dark"] .about-slide-card:hover .card-btn-pill {
-  background: rgba(139, 109, 255, 0.35) !important;
-  border-color: rgba(169, 140, 255, 0.55) !important;
-}
-
-[data-theme="dark"] .about-trust-pill {
-  background: rgba(11, 9, 20, 0.9) !important;
-  border-color: rgba(240, 184, 126, 0.5) !important;
-  color: #ffffff !important;
 }
 
 /* 8. WHY US / BENTO GRID — DEEP OBSIDIAN ILLUMINATION */
@@ -2186,6 +2110,78 @@
 [data-theme="dark"] .about-agency-section::before,
 [data-theme="dark"] .pricing-section::before,
 [data-theme="dark"] .testimonials-section::before,
+[data-theme="dark"] .blog-section::before,
 [data-theme="dark"] .cta-section::before {
   display: none !important;
+}
+
+/* ============================================================
+   LATEST & TRENDING BLOGS SECTION (DARK THEME)
+   ============================================================ */
+[data-theme="dark"] .blog-section {
+  background: 
+    radial-gradient(ellipse 70% 50% at 50% 20%, rgba(139, 109, 255, 0.16) 0%, rgba(255, 160, 216, 0.06) 45%, transparent 70%),
+    #000000 !important;
+}
+
+[data-theme="dark"] .blog-head .eyebrow {
+  background: rgba(139, 109, 255, 0.12) !important;
+  border-color: rgba(139, 109, 255, 0.35) !important;
+  color: #c4b0ff !important;
+}
+
+[data-theme="dark"] .blog-title {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .blog-subtitle {
+  color: #b8b1d0 !important;
+}
+
+[data-theme="dark"] .blog-card {
+  background: linear-gradient(155deg, rgba(22, 16, 42, 0.92) 0%, rgba(12, 8, 24, 0.96) 100%) !important;
+  border-color: rgba(142, 114, 255, 0.22) !important;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(124, 92, 255, 0.08) inset !important;
+}
+
+[data-theme="dark"] .blog-card:hover {
+  border-color: rgba(167, 139, 250, 0.48) !important;
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.75), 0 0 32px rgba(124, 92, 255, 0.22) !important;
+}
+
+[data-theme="dark"] .blog-card-media {
+  background: #090514 !important;
+}
+
+[data-theme="dark"] .blog-badge {
+  background: rgba(18, 14, 34, 0.88) !important;
+  border-color: rgba(167, 139, 250, 0.35) !important;
+  color: #c4b0ff !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .blog-card-body {
+  background: transparent !important;
+}
+
+[data-theme="dark"] .blog-card-title {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .blog-card:hover .blog-card-title {
+  color: #c4b0ff !important;
+}
+
+[data-theme="dark"] .blog-card-excerpt {
+  color: #b8b1d0 !important;
+}
+
+[data-theme="dark"] .blog-read-btn {
+  background: linear-gradient(120deg, #7c5cff 0%, #9a74ff 45%, #ff8fce 100%) !important;
+  box-shadow: 0 4px 20px rgba(124, 92, 255, 0.5) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .blog-read-btn:hover {
+  box-shadow: 0 8px 28px rgba(124, 92, 255, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.6) inset !important;
 }

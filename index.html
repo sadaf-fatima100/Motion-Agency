@@ -11,8 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<link rel="stylesheet" href="css/style.css?v=2.5">
-<link rel="stylesheet" href="css/dark-theme.css?v=2.5">
+<link rel="stylesheet" href="css/style.css?v=2.6">
+<link rel="stylesheet" href="css/dark-theme.css?v=2.6">
 <script>
   (function(){
     try {
@@ -47,6 +47,7 @@
           <a href="#why-us" class="nav-item">Why Us</a>
           <a href="#pricing" class="nav-item">Pricing</a>
           <a href="#testimonials" class="nav-item">Reviews</a>
+          <a href="#blog" class="nav-item">Blog</a>
           <a href="about.html" class="nav-item">About Us</a>
           <a href="#contact" class="nav-item">Contact Us</a>
         </nav>
@@ -1234,124 +1235,139 @@
     </div>
   </section>
 
-  <!-- ABOUT AGENCY SECTION -->
+  <!-- ABOUT AGENCY / CREATORS SECTION (OPEN EDITORIAL & DUAL VIDEO SHOWCASE) -->
   <section class="about-agency-section" id="about">
     <div class="wrap">
-      <div class="about-agency-grid">
-        
-        <!-- Left Column: Content & Live Studio Animation (Replaces Static Girl) -->
-        <div class="about-agency-left">
-          <div class="about-eyebrow">
-            <span class="about-eyebrow-dot"></span>
-            <span>Top rated agency · About us</span>
-          </div>
+      
+      <!-- Sculpted Outer Frame Container with Top-Center Crest Medallion -->
+      <div class="about-sculpted-canvas">
 
-          <h2 class="about-main-title">
-            Bring ideas to life with <span class="about-accent">custom animation services</span> that inspire
-          </h2>
-
-          <!-- Featured Video Preview below heading -->
-          <div class="about-video-wrap" id="aboutVideoWrap">
-            <div class="about-video-thumb" id="aboutVideoThumb" onclick="aboutPlayVideo()">
-              <img
-                src="https://i.ytimg.com/vi/T_qT_NWyPEU/maxresdefault.jpg"
-                onerror="this.src='https://i.ytimg.com/vi/T_qT_NWyPEU/mqdefault.jpg'"
-                alt="Flagship Studio Showreel"
-                class="about-video-img"
-              />
-              <div class="about-video-overlay"></div>
-              <div class="about-video-play-btn" aria-label="Play Showreel">
-                <svg viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19 8 5"/></svg>
-              </div>
-              <div class="about-video-label">✦ Watch Our Flagship Showreel</div>
-            </div>
-            <div id="aboutIframeSlot" style="display:none;position:absolute;inset:0;width:100%;height:100%;border-radius:20px;overflow:hidden;background:#000;"></div>
-          </div>
-
-
-
-          <div class="about-actions-row">
-            <a href="https://animationagency3.tryshort.com/#pricing" target="_blank" rel="noopener" class="about-cta-btn">
-              <span>Get Started</span>
-              <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Top Center Crest Medallion with KINETIX Motion Star Symbol -->
+        <div class="sculpted-crest-medallion" title="KINETIX Motion Studio">
+          <div class="crest-circle-outer">
+            <div class="crest-circle-inner">
+              <svg class="crest-motion-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2v5M12 17v5M2 12h5M17 12h5M4.93 4.93l3.54 3.54M15.54 15.54l3.53 3.53M4.93 19.07l3.54-3.54M15.54 8.46l3.53-3.53" stroke="url(#aboutCrestGrad)" stroke-width="2.6" stroke-linecap="round"/>
+                <circle cx="12" cy="12" r="2.6" fill="url(#aboutCrestGrad)"/>
+                <defs>
+                  <linearGradient id="aboutCrestGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#7c5cff"/>
+                    <stop offset="100%" stop-color="#ff8fce"/>
+                  </linearGradient>
+                </defs>
               </svg>
-            </a>
-
-            <div class="about-trust-pill" title="5 Star Rated on Trustpilot">
-              <span class="trust-stars">★ ★ ★ ★ ★</span>
-              <span>Trustpilot Reviews</span>
             </div>
           </div>
-
         </div>
 
-        <!-- Right Column: 3 Sliding Stacked Cards (Gradient Cascading) -->
-        <div class="about-cards-stack">
+        <div class="about-sculpted-grid">
           
-          <!-- Card 1: Lightest Lavender -->
-          <div class="about-slide-card slide-card-1">
-            <div class="card-row-top">
-              <h3 class="card-slide-title">Meaningful brand interaction</h3>
-              <span class="card-slide-badge">99% Retention</span>
-            </div>
-            <p class="card-slide-desc">Engage your audience with emotionally resonant motion design, authentic customer trust, and magnetic storytelling.</p>
-            <div class="card-action-row">
-              <span class="card-btn-pill" style="cursor:pointer;" onclick="openReel('J_e-hDqWpYI', 'Brand Storytelling Video', 'Brand Story')">Watch Video <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-              <div class="card-meta-tags">
-                <span>Brand Trust</span>
-                <span class="meta-sep">&middot;</span>
-                <span>Retention</span>
+          <!-- LEFT SIDE: DUAL VIDEO BOXES (Upper & Lower) -->
+          <div class="about-dual-videos">
+            
+            <!-- Upper Video Box: 2D & Explainer Video Showcase -->
+            <div class="about-video-frame upper-video" onclick="openReel('V1gTR9Nd1h0', '2D Explainer Video Production', 'Explainer Animation')" title="Click to Play 2D Explainer Showcase">
+              <img
+                src="assets/pricing-explainer.jpg"
+                onerror="this.src='https://i.ytimg.com/vi/V1gTR9Nd1h0/maxresdefault.jpg'"
+                alt="2D Explainer Video Showcase"
+                class="video-frame-thumb"
+              />
+              <div class="video-frame-overlay"></div>
+              <div class="video-frame-play-btn" aria-label="Play 2D Explainer Showcase">
+                <div class="video-play-pulse"></div>
+                <svg viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+              </div>
+              <div class="video-frame-tag">
+                <span class="video-tag-dot"></span>
+                <span>✦ 2D &amp; Explainer Video</span>
               </div>
             </div>
-            <svg class="card-deco-shape" viewBox="0 0 100 100" fill="none">
-              <path d="M20 0C50 30 80 10 100 40V100H0V20C10 10 15 5 20 0Z" fill="currentColor"/>
-            </svg>
+
+            <!-- Lower Video Box: 3D CGI & Motion Reel -->
+            <div class="about-video-frame lower-video" onclick="openReel('ez8UKLwe2qw', '3D CGI &amp; VFX Showcase', '3D Motion')" title="Click to Play 3D CGI Showcase">
+              <img
+                src="https://i.ytimg.com/vi/ez8UKLwe2qw/maxresdefault.jpg"
+                onerror="this.src='https://i.ytimg.com/vi/ez8UKLwe2qw/mqdefault.jpg'"
+                alt="3D CGI &amp; VFX Showcase"
+                class="video-frame-thumb"
+              />
+              <div class="video-frame-overlay"></div>
+              <div class="video-frame-play-btn" aria-label="Play 3D CGI Showcase">
+                <div class="video-play-pulse"></div>
+                <svg viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+              </div>
+              <div class="video-frame-tag">
+                <span class="video-tag-dot"></span>
+                <span>✦ 3D CGI &amp; Motion Reel</span>
+              </div>
+            </div>
+
           </div>
 
-          <!-- Card 2: Soft Lavender -->
-          <div class="about-slide-card slide-card-2">
-            <div class="card-row-top">
-              <h3 class="card-slide-title">Effective communication</h3>
-              <span class="card-slide-badge">Clarity First</span>
+          <!-- RIGHT SIDE: PURE OPEN EDITORIAL (NO BOXED CARDS!) -->
+          <div class="about-open-editorial">
+            
+            <div class="about-open-eyebrow">
+              <span class="eyebrow-accent-dot"></span>
+              <span>Our Story &middot; Creative Collective</span>
             </div>
-            <p class="card-slide-desc">Translate intricate workflows, product mechanics, and dense data into crystal-clear visual stories that captivate.</p>
-            <div class="card-action-row">
-              <span class="card-btn-pill" style="cursor:pointer;" onclick="openReel('V1gTR9Nd1h0', 'Explainer Video Production', 'Explainer Video')">Watch Video <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-              <div class="card-meta-tags">
-                <span>Explainer Videos</span>
-                <span class="meta-sep">&middot;</span>
-                <span>SaaS Clarity</span>
-              </div>
-            </div>
-            <svg class="card-deco-shape" viewBox="0 0 100 100" fill="none">
-              <path d="M30 0C60 25 75 15 100 35V100H0V15C15 5 20 0 30 0Z" fill="currentColor"/>
-            </svg>
-          </div>
 
-          <!-- Card 3: Royal Signature Violet (Finale) -->
-          <div class="about-slide-card slide-card-3">
-            <div class="card-row-top">
-              <h3 class="card-slide-title">Innovation &amp; creativity</h3>
-              <span class="card-slide-badge">High ROI 3D</span>
+            <h2 class="about-open-title">
+              Creators of Animation That <span class="accent-text">Builds Connection</span>
+            </h2>
+
+            <p class="about-open-narrative">
+              At Video Animation Agency, we believe in the transformative power of animation. Founded by storytellers, designers, and technologists, our mission is to help creators bring their ideas to life through innovative visual storytelling.
+            </p>
+
+            <!-- Inspiring Callout Statement (Open typography, zero card borders) -->
+            <div class="about-open-callout">
+              <div class="callout-vertical-glow"></div>
+              <p class="callout-highlight-text">
+                Transform your vision into captivating animation. <span class="callout-bold-accent">Let’s create something amazing.</span>
+              </p>
             </div>
-            <p class="card-slide-desc">Pioneering visual artistry combining 3D CGI spectacles with high-converting animations engineered to maximize sales.</p>
-            <div class="card-action-row">
-              <span class="card-btn-pill" style="cursor:pointer;" onclick="openReel('ez8UKLwe2qw', '3D CGI &amp; VFX Showcase', '3D &amp; CGI')">Watch Video <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-              <div class="card-meta-tags">
-                <span>3D Motion</span>
-                <span class="meta-sep">&middot;</span>
-                <span>Conversion Lift</span>
+
+            <!-- Open Key Metrics / Proof Points (Clean, unboxed) -->
+            <div class="about-open-metrics">
+              <div class="open-metric-col">
+                <div class="open-metric-num">99%</div>
+                <div class="open-metric-label">Audience Retention</div>
+              </div>
+              <div class="open-metric-divider"></div>
+              <div class="open-metric-col">
+                <div class="open-metric-num">500+</div>
+                <div class="open-metric-label">Completed Films</div>
+              </div>
+              <div class="open-metric-divider"></div>
+              <div class="open-metric-col">
+                <div class="open-metric-num">5.0★</div>
+                <div class="open-metric-label">Client Rating</div>
               </div>
             </div>
-            <svg class="card-deco-shape" viewBox="0 0 100 100" fill="none">
-              <path d="M10 20C40 0 80 40 100 20V100H0V40C0 30 5 25 10 20Z" fill="currentColor"/>
-            </svg>
+
+            <!-- Action Row -->
+            <div class="about-open-actions">
+              <a href="https://animationagency3.tryshort.com/#pricing" target="_blank" rel="noopener" class="about-primary-btn">
+                <span>Get Started</span>
+                <svg class="btn-arrow-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
+                </svg>
+              </a>
+
+              <div class="about-open-trust" title="5 Star Rated on Trustpilot">
+                <span class="trust-stars">★ ★ ★ ★ ★</span>
+                <span>Trustpilot Verified</span>
+              </div>
+            </div>
+
           </div>
 
         </div>
 
       </div>
+
     </div>
   </section>
 
@@ -1778,6 +1794,81 @@
     </div>
   </section>
 
+  <!-- ============================================================
+       LATEST & TRENDING BLOGS SECTION
+       ============================================================ -->
+  <section class="blog-section" id="blog">
+    <div class="wrap">
+      <div class="section-head text-center blog-head">
+        <div class="eyebrow"><span class="eyebrow-dot"></span>INSIGHTS &amp; ARTICLES</div>
+        <h2 class="blog-title">Our Latest &amp; <span class="accent-text">Trending Blogs</span></h2>
+        <p class="blog-subtitle">Stay updated with animation trends, expert tips, creative insights, and storytelling strategies that empower your brand and elevate your visual content to new heights.</p>
+      </div>
+
+      <div class="blog-grid">
+        <!-- Card 1: Animation Editing Videos -->
+        <article class="blog-card">
+          <div class="blog-card-media">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&auto=format&fit=crop&q=80" alt="Animation Editing Videos: Best Tools and Techniques" class="blog-img" loading="lazy" />
+            <span class="blog-badge">Editing &amp; Tools</span>
+          </div>
+          <div class="blog-card-body">
+            <h3 class="blog-card-title">Animation Editing Videos: Best Tools &amp; Techniques</h3>
+            <p class="blog-card-excerpt">Discover top tools and expert techniques for editing animation videos. Learn how to craft seamless pacing, soundscapes, and visual rhythm that captivate audiences.</p>
+            <div class="blog-card-footer">
+              <a href="#contact" class="blog-read-btn">
+                <span>Read More</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17L17 7M17 7H8M17 7V16"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: How Animation Enhances E-Learning -->
+        <article class="blog-card">
+          <div class="blog-card-media">
+            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&auto=format&fit=crop&q=80" alt="How Animation Enhances E-Learning and Education" class="blog-img" loading="lazy" />
+            <span class="blog-badge">Education &amp; Tech</span>
+          </div>
+          <div class="blog-card-body">
+            <h3 class="blog-card-title">How Animation Enhances E-Learning and Education</h3>
+            <p class="blog-card-excerpt">Explore how animation transforms e-learning by simplifying complex concepts, boosting student comprehension, and creating unforgettable interactive training modules.</p>
+            <div class="blog-card-footer">
+              <a href="#contact" class="blog-read-btn">
+                <span>Read More</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17L17 7M17 7H8M17 7V16"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: The Impact of Animation in Digital Marketing -->
+        <article class="blog-card">
+          <div class="blog-card-media">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&auto=format&fit=crop&q=80" alt="The Impact of Animation in Digital Marketing" class="blog-img" loading="lazy" />
+            <span class="blog-badge">Digital Marketing</span>
+          </div>
+          <div class="blog-card-body">
+            <h3 class="blog-card-title">The Impact of Animation in Digital Marketing</h3>
+            <p class="blog-card-excerpt">Discover how animation revolutionizes digital marketing by capturing attention, simplifying value propositions, and driving sky-high conversion rates for modern brands.</p>
+            <div class="blog-card-footer">
+              <a href="#contact" class="blog-read-btn">
+                <span>Read More</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17L17 7M17 7H8M17 7V16"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- INFINITE SCROLLING TEXT BAR (MARQUEE) -->
   <section class="marquee-section">
     <div class="about-ticker-bar" aria-label="Kinetix Motion Studio Highlights">
@@ -1873,7 +1964,7 @@
               <li><a href="https://animationagency3.tryshort.com/#portfolio"><span class="link-text">Portfolio</span></a></li>
               <li><a href="https://animationagency3.tryshort.com/#pricing"><span class="link-text">Pricing</span></a></li>
               <li><a href="#about"><span class="link-text">About Us</span></a></li>
-              <li><a href="https://animationagency3.tryshort.com/blog/"><span class="link-text">Our Blog</span></a></li>
+              <li><a href="#blog"><span class="link-text">Our Blog</span></a></li>
               <li><a href="https://animationagency3.tryshort.com/contact-us/"><span class="link-text">Contact Us</span></a></li>
             </ul>
           </div>
