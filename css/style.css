@@ -1982,7 +1982,7 @@ h1.hero-title .accent {
   overflow: visible;
   text-align: center;
   margin: 0 !important;
-  padding: 50px 0 100px !important;
+  padding: 55px 0 !important;
   box-sizing: border-box;
 }
 .manifesto-section > .wrap {
@@ -2067,7 +2067,7 @@ h1.hero-title .accent {
 /* Large Screens (1440px+) */
 @media (min-width: 1440px) {
   .manifesto-section {
-    padding: 65px 0 115px !important;
+    padding: 65px 0 !important;
   }
   .manifesto-heading {
     font-size: clamp(52px, 3.5vw, 66px) !important;
@@ -2104,7 +2104,7 @@ h1.hero-title .accent {
 /* Ultra-Wide & 4K (1920px+) */
 @media (min-width: 1920px) {
   .manifesto-section {
-    padding: 85px 0 135px !important;
+    padding: 85px 0 !important;
   }
   .manifesto-heading {
     font-size: clamp(62px, 3.3vw, 76px) !important;
@@ -4986,7 +4986,7 @@ h1.hero-title .accent {
 .manifesto-section {
   width: 100%;
   position: relative;
-  padding: 45px 0 100px !important;
+  padding: 55px 0 !important;
   margin: 0 !important;
   box-sizing: border-box;
 }
