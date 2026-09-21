@@ -938,18 +938,163 @@
   .pillars-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
   .team-grid,.pipeline-steps-grid{grid-template-columns:repeat(2,1fr);gap:18px;}
 }
-@media(max-width:860px){
+
+/* ─── TABLET (max 960px) ──────────────────────────────────────────────────── */
+@media(max-width:960px){
+  .about-hero-section{padding:100px 20px 0;}
+  .about-hero-canvas{padding:28px 16px 0;}
   .about-wrap{padding:0 20px !important;}
+  .manifesto-grid{grid-template-columns:1fr;gap:32px;}
+  .manifesto-title{font-size:clamp(26px,4.5vw,38px);}
+  .manifesto-body{font-size:15px;}
+  .manifesto-stats-row{gap:24px;}
+  .manifesto-stat-num{font-size:clamp(32px,5vw,48px);}
+  .about-manifesto-section{padding:60px 0 50px;}
+  .about-pillars-section{padding:60px 0;}
+  .pillars-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
+  .about-pipeline-section{padding:60px 0;}
+  .pipeline-steps-grid{grid-template-columns:repeat(2,1fr);gap:16px;}
+  .team-grid{grid-template-columns:repeat(2,1fr);gap:16px;}
+  .about-bottom-dock{grid-template-columns:1fr;gap:28px;padding:28px 0 40px;}
+  .dock-notch-cards-row{grid-template-columns:1fr 1fr;}
 }
+
+/* ─── LARGE MOBILE / PHABLET (max 768px) ─────────────────────────────────── */
 @media(max-width:768px){
-  .about-hero-section{padding-top:104px;}
-  .about-hero-canvas{padding:40px 20px 0;border-radius:28px;}
-  .collage-line{gap:10px;}
-  .collage-word-huge,.collage-word-orange{font-size:clamp(28px,7.5vw,40px);}
-  .collage-pill-purple{font-size:clamp(20px,5.5vw,30px);padding:4px 16px;}
-  .dock-notch-cards-row,.pillars-grid,.team-grid,.pipeline-steps-grid{grid-template-columns:1fr;gap:12px;}
-  .about-wrap{padding:0 20px;}
+  .about-hero-section{padding-top:90px;padding-left:16px;padding-right:16px;}
+  .about-hero-canvas{padding:20px 14px 0;border-radius:24px;}
+  .collage-line{gap:8px;margin-bottom:6px;}
+  .collage-word-huge,.collage-word-orange{font-size:clamp(24px,6.5vw,36px);}
+  .collage-pill-purple{font-size:clamp(18px,5vw,28px);padding:3px 14px;}
+  .collage-spiral-svg{width:clamp(32px,6vw,50px);height:clamp(32px,6vw,50px);}
+  .collage-gold-sticker{width:clamp(44px,9vw,64px);height:clamp(44px,9vw,64px);}
+  .about-hero-sub{font-size:14.5px;margin-top:18px;padding:0 4px;}
+  .about-hero-action{margin-top:22px;}
+  .about-bottom-dock{margin-top:36px;padding:22px 0 36px;grid-template-columns:1fr;gap:22px;}
+  .dock-notch-cards-row{grid-template-columns:1fr 1fr;gap:12px;}
+  .stat-notch-card{padding:16px 14px;min-height:100px;}
+  .notch-card-num{font-size:clamp(24px,6vw,34px);}
+  .dock-impact-statement{font-size:clamp(14px,4vw,18px);}
+  .dock-tags-stack{gap:8px;}
+  .dock-tag-pill{font-size:11px;padding:5px 14px;}
+  .about-wrap{padding:0 16px !important;}
+  .about-manifesto-section{padding:48px 0 40px;}
+  .manifesto-grid{grid-template-columns:1fr;gap:26px;}
+  .manifesto-title{font-size:clamp(24px,5.5vw,34px);}
+  .manifesto-body{font-size:14.5px;margin-bottom:14px;}
+  .manifesto-stats-row{gap:18px;margin-top:22px;}
+  .manifesto-stat-num{font-size:clamp(30px,7vw,44px);}
+  .manifesto-stat-label{font-size:12px;}
+  .manifesto-video-card{border-radius:24px;padding:7px;}
+  .manifesto-floating-badge{font-size:10.5px;padding:6px 12px;bottom:12px;left:12px;}
+  .about-pillars-section{padding:48px 0;}
+  .pillars-head{margin-bottom:28px;padding:0 4px;}
+  .pillars-grid{grid-template-columns:1fr 1fr;gap:12px;}
+  .pillars-grid .pillar-card-inner{padding:18px 16px 16px;}
+  .pillars-grid .pillar-card .process-icon-box{width:44px;height:44px;}
+  .pillars-grid .pillar-card .process-animated-svg{width:32px;height:32px;}
+  .pillars-grid .pillar-card .step-number{font-size:26px;}
+  .pillars-grid .pillar-card .service-card-title,.pillars-grid .pillar-card h3{font-size:15px;}
+  .pillars-grid .pillar-card p{font-size:12.5px;}
+  .about-pipeline-section{padding:48px 0;}
+  .pipeline-steps-grid{grid-template-columns:1fr 1fr;gap:14px;}
+  .pipeline-step-card{padding:24px 18px;}
+  .pillar-card .process-icon-box,.pipeline-step-card .process-icon-box{width:58px;height:58px;}
+  .team-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
+  .dock-notch-cards-row,.pillars-grid,.team-grid,.pipeline-steps-grid{gap:12px;}
 }
+
+/* ─── MOBILE PORTRAIT (max 480px) ────────────────────────────────────────── */
+@media(max-width:480px){
+  .about-hero-section{padding-top:80px;padding-left:14px;padding-right:14px;}
+  .about-hero-canvas{padding:16px 12px 0;border-radius:20px;}
+  .collage-line{gap:6px;margin-bottom:4px;flex-wrap:wrap;}
+  .collage-word-huge,.collage-word-orange{font-size:clamp(20px,7vw,30px);}
+  .collage-pill-purple{font-size:clamp(16px,5.5vw,24px);padding:3px 12px;}
+  .collage-spiral-svg{width:28px;height:28px;}
+  .collage-gold-sticker{width:38px;height:38px;}
+  .collage-photo-card{margin:0 4px;}
+  .photo-avatar-box{width:44px;height:52px;}
+  .about-hero-sub{font-size:14px;margin-top:16px;}
+  .about-hero-action{margin-top:18px;}
+  .about-bottom-dock{margin-top:28px;padding:18px 0 28px;gap:18px;}
+  .dock-notch-cards-row{grid-template-columns:1fr 1fr;gap:10px;}
+  .stat-notch-card{padding:14px 12px;min-height:90px;border-radius:18px;}
+  .notch-card-num{font-size:clamp(22px,7vw,30px);}
+  .notch-card-label{font-size:11px;margin-top:10px;}
+  .dock-impact-statement{font-size:clamp(13px,4.2vw,16px);}
+  .dock-impact-sub{font-size:12px;}
+  .dock-micro-desc{font-size:11.5px;}
+  .dock-tags-stack{gap:6px;flex-wrap:wrap;}
+  .dock-tag-pill{font-size:10.5px;padding:5px 12px;}
+  .about-wrap{padding:0 14px !important;}
+  .about-manifesto-section{padding:40px 0 32px;}
+  .manifesto-grid{gap:22px;}
+  .manifesto-title{font-size:clamp(22px,6.5vw,30px);}
+  .manifesto-body{font-size:14px;margin-bottom:12px;line-height:1.62;}
+  .manifesto-stats-row{gap:14px;margin-top:18px;flex-wrap:wrap;}
+  .manifesto-stat-num{font-size:clamp(28px,8vw,40px);}
+  .manifesto-stat-label{font-size:11.5px;}
+  .manifesto-tag{font-size:10px;padding:5px 12px;}
+  .manifesto-video-card{border-radius:20px;padding:6px;}
+  .manifesto-floating-badge{font-size:9.5px;padding:5px 10px;bottom:10px;left:10px;gap:6px;}
+  .mfb-dot{width:6px;height:6px;}
+  .manifesto-video-play-btn{width:52px;height:52px;}
+  .about-pillars-section{padding:40px 0;}
+  .pillars-head{margin-bottom:22px;}
+  .pillars-grid{grid-template-columns:1fr;gap:12px;}
+  .pillars-grid .pillar-card-inner{padding:16px 14px 14px;}
+  .pillars-grid .pillar-card .process-icon-box{width:40px;height:40px;border-radius:12px;}
+  .pillars-grid .pillar-card .process-animated-svg{width:30px;height:30px;}
+  .pillars-grid .pillar-card .step-number{font-size:22px;}
+  .pillars-grid .pillar-card .service-card-title,.pillars-grid .pillar-card h3{font-size:14.5px;}
+  .pillars-grid .pillar-card p{font-size:12.5px;line-height:1.5;}
+  .about-pipeline-section{padding:40px 0;}
+  .pipeline-steps-grid{grid-template-columns:1fr;gap:14px;}
+  .pipeline-step-card{padding:22px 16px;}
+  .pillar-card .process-icon-box,.pipeline-step-card .process-icon-box{width:52px;height:52px;border-radius:16px;}
+  .pipeline-step-card .step-number{font-size:30px;}
+  .pillar-card .service-card-title,.pipeline-step-card .service-card-title,
+  .pillar-card h3,.pipeline-step-card h3{font-size:17px;}
+  .pillar-card p,.pipeline-step-card p{font-size:13.5px;}
+  .team-grid{grid-template-columns:1fr 1fr;gap:12px;}
+  .team-info{padding:14px 14px 18px;}
+  .team-name{font-size:15px;}
+  .team-role{font-size:12px;}
+  .team-bio{font-size:12px;}
+}
+
+/* ─── SMALL MOBILE (max 360px) ───────────────────────────────────────────── */
+@media(max-width:360px){
+  .about-hero-section{padding-top:72px;padding-left:10px;padding-right:10px;}
+  .about-hero-canvas{padding:12px 10px 0;border-radius:18px;}
+  .collage-word-huge,.collage-word-orange{font-size:clamp(18px,7.5vw,26px);}
+  .collage-pill-purple{font-size:clamp(14px,5.5vw,20px);padding:2px 10px;}
+  .about-wrap{padding:0 10px !important;}
+  .about-bottom-dock{gap:14px;padding:14px 0 22px;}
+  .dock-notch-cards-row{gap:8px;}
+  .stat-notch-card{padding:12px 10px;min-height:80px;border-radius:16px;}
+  .notch-card-num{font-size:clamp(20px,7.5vw,28px);}
+  .pillars-grid{grid-template-columns:1fr;gap:10px;}
+  .pipeline-steps-grid{grid-template-columns:1fr;gap:12px;}
+  .team-grid{grid-template-columns:1fr;gap:12px;}
+  .manifesto-stats-row{gap:10px;}
+  .manifesto-stat-num{font-size:clamp(26px,8.5vw,36px);}
+}
+
+/* ─── MICRO (max 300px) ──────────────────────────────────────────────────── */
+@media(max-width:300px){
+  .about-hero-section{padding-top:64px;padding-left:6px;padding-right:6px;}
+  .about-hero-canvas{padding:10px 8px 0;border-radius:16px;}
+  .about-wrap{padding:0 6px !important;}
+  .collage-word-huge,.collage-word-orange{font-size:clamp(16px,7.8vw,22px);}
+  .collage-pill-purple{font-size:clamp(13px,5.5vw,18px);padding:2px 8px;}
+  .dock-notch-cards-row{grid-template-columns:1fr;}
+  .manifesto-stats-row{flex-direction:column;gap:8px;}
+  .manifesto-stat-num{font-size:clamp(24px,9vw,32px);}
+  .pillars-grid,.pipeline-steps-grid,.team-grid{grid-template-columns:1fr;}
+}
+
 
 /* ============================================================
    TESTIMONIALS & TICKER BAR (ABOUT PAGE)
