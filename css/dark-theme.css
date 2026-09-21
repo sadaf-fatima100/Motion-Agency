@@ -159,6 +159,33 @@
   box-shadow: 0 0 10px rgba(139, 109, 255, 0.8) !important;
 }
 
+/* 2B. MOBILE HAMBURGER & DRAWER MENU (DARK THEME) */
+[data-theme="dark"] .nav-hamburger {
+  background: rgba(139, 109, 255, 0.16) !important;
+  border-color: rgba(188, 166, 255, 0.38) !important;
+}
+[data-theme="dark"] .nav-hamburger:hover,
+[data-theme="dark"] .nav-hamburger.is-open {
+  background: rgba(139, 109, 255, 0.28) !important;
+  border-color: rgba(188, 166, 255, 0.65) !important;
+}
+[data-theme="dark"] .ham-bar {
+  background: #ffffff !important;
+}
+[data-theme="dark"] .mobile-nav-drawer {
+  background: rgba(10, 6, 22, 0.97) !important;
+  border-bottom: 1.5px solid rgba(139, 109, 255, 0.25) !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.92), 0 0 24px rgba(124, 92, 255, 0.15) !important;
+}
+[data-theme="dark"] .mobile-nav-item {
+  color: #c8c0df !important;
+}
+[data-theme="dark"] .mobile-nav-item:hover,
+[data-theme="dark"] .mobile-nav-item.active {
+  background: rgba(139, 109, 255, 0.18) !important;
+  color: #ffffff !important;
+}
+
 /* NAVBAR THEME TOGGLE BUTTON */
 .theme-toggle-btn {
   width: 44px;

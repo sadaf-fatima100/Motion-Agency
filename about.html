@@ -11,9 +11,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<link rel="stylesheet" href="css/style.css?v=3.8">
-<link rel="stylesheet" href="css/about.css?v=3.7">
-<link rel="stylesheet" href="css/dark-theme.css?v=3.6">
+<link rel="stylesheet" href="css/style.css?v=3.9">
+<link rel="stylesheet" href="css/about.css?v=3.8">
+<link rel="stylesheet" href="css/dark-theme.css?v=3.9">
 <script>
   (function(){
     try {
@@ -52,6 +52,13 @@
       </div>
     </div>
     <div class="nav-cta-wrap">
+      <!-- Hamburger Button (mobile only) -->
+      <button type="button" class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileMenu(event)">
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+      </button>
+
       <!-- Dark / Light Theme Toggle -->
       <button type="button" class="theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
         <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20">
@@ -78,7 +85,22 @@
       </a>
     </div>
   </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <nav class="mobile-nav-links">
+      <a href="index.html#top" class="mobile-nav-item" onclick="closeMobileMenu()">Home</a>
+      <a href="index.html#work" class="mobile-nav-item" onclick="closeMobileMenu()">Portfolio</a>
+      <a href="index.html#why-us" class="mobile-nav-item" onclick="closeMobileMenu()">Why Us</a>
+      <a href="index.html#pricing" class="mobile-nav-item" onclick="closeMobileMenu()">Pricing</a>
+      <a href="index.html#blog" class="mobile-nav-item" onclick="closeMobileMenu()">Blog</a>
+      <a href="about.html" class="mobile-nav-item active">About Us</a>
+      <a href="index.html#contact" class="mobile-nav-item" onclick="closeMobileMenu()">Contact Us</a>
+    </nav>
+    <a href="index.html#contact" class="mobile-nav-cta">Get Started <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
 </header>
+
 
 <main>
 
@@ -897,7 +919,7 @@
   </footer>
 
   <script src="js/theme.js"></script>
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js?v=3.0" defer></script>
   <script src="js/animations.js" defer></script>
 </body>
 </html>

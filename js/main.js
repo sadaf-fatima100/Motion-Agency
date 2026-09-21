@@ -161,18 +161,55 @@ window.closeAboutInlineVideo = closeAboutInlineVideo;
 window.playManifestoVideo = playManifestoVideo;
 window.closeManifestoVideo = closeManifestoVideo;
 
-// Event Listeners for Closing
+// Mobile Navigation Drawer Toggle & Close
+function toggleMobileMenu(e) {
+  if (e) e.stopPropagation();
+  const hamburger = document.getElementById("navHamburger");
+  const drawer = document.getElementById("mobileNavDrawer");
+  if (!hamburger || !drawer) return;
+  const isOpen = hamburger.classList.toggle("is-open");
+  drawer.classList.toggle("is-open", isOpen);
+  hamburger.setAttribute("aria-expanded", String(isOpen));
+  drawer.setAttribute("aria-hidden", String(!isOpen));
+}
+
+function closeMobileMenu() {
+  const hamburger = document.getElementById("navHamburger");
+  const drawer = document.getElementById("mobileNavDrawer");
+  if (!hamburger || !drawer) return;
+  hamburger.classList.remove("is-open");
+  drawer.classList.remove("is-open");
+  hamburger.setAttribute("aria-expanded", "false");
+  drawer.setAttribute("aria-hidden", "true");
+}
+
+window.toggleMobileMenu = toggleMobileMenu;
+window.closeMobileMenu = closeMobileMenu;
+
+// Event Listeners for Closing & Mobile Navigation
 document.addEventListener("click", e => {
   if (e.target.closest(".reel-close") || e.target.closest(".reel-close-floating") || e.target.closest(".reel-backdrop-close")) {
     e.preventDefault();
     closeReel();
   }
+
+  const hamburger = document.getElementById("navHamburger");
+  const drawer = document.getElementById("mobileNavDrawer");
+  if (hamburger && hamburger.contains(e.target)) {
+    toggleMobileMenu(e);
+  } else if (drawer && drawer.classList.contains("is-open")) {
+    if (!drawer.contains(e.target)) {
+      closeMobileMenu();
+    }
+  }
 });
+
 document.addEventListener("keydown", e => {
   if (e.key === "Escape") {
     closeReel();
     closeHeroInlineVideo();
     closeAboutInlineVideo();
+    closeMobileMenu();
   }
 });
 
