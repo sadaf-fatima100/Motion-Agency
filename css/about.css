@@ -407,7 +407,7 @@
 }
 
 .notch-card-top{display:flex;align-items:flex-start;justify-content:space-between;}
-.notch-card-num{font-size:clamp(28px,3.2vw,38px);font-weight:850;letter-spacing:-.03em;line-height:1;color:#130d24;}
+.notch-card-num{font-size:clamp(28px,3.2vw,38px);font-weight:400;letter-spacing:-.03em;line-height:1;color:#130d24;}
 .notch-arrow-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .25s ease;}
 .stat-notch-card:hover .notch-arrow-icon{transform:scale(1.08);}
 .notch-arrow-icon svg{width:13px;height:13px;stroke:#fff;stroke-width:2.8;fill:none;}
