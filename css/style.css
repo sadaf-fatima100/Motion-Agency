@@ -1,4 +1,11 @@
-html{overflow-x:clip;}:root{--bg:#f5f3fb;--surface:#ffffff;--ink-0:#0e0b1a;--ink-1:#5c5572;--ink-2:#9d96b0;
+html {
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+:root{--bg:#f5f3fb;--surface:#ffffff;--ink-0:#0e0b1a;--ink-1:#5c5572;--ink-2:#9d96b0;
   --v1:#7c5cff;--v2:#a98cff;--pk:#ff8fce;--line:#ede8f8;
   --r-xl:28px;--r-lg:20px;--r-md:14px;--r-sm:10px;--font:"Urbanist","Satoshi",sans-serif;
   --s-xl:0 32px 64px -20px rgba(100,60,200,.28);--s-md:0 16px 36px -16px rgba(100,60,200,.22);--s-sm:0 8px 18px -10px rgba(100,60,200,.18);
@@ -6,8 +13,9 @@ html{overflow-x:clip;}:root{--bg:#f5f3fb;--surface:#ffffff;--ink-0:#0e0b1a;--ink
   --grad-btn:linear-gradient(120deg,#7c5cff,#ff8fce);}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;scroll-padding-top:84px;}
-body{font-family:var(--font);background:var(--bg);color:var(--ink-0);overflow-x:hidden;}
-a{color:inherit;text-decoration:none;}img,svg{display:block;}
+body{font-family:var(--font);background:var(--bg);color:var(--ink-0);overflow-x:clip;width:100%;max-width:100%;position:relative;}
+a{color:inherit;text-decoration:none;}img,svg{display:block;max-width:100%;}
+h1, h2, h3, h4, h5, h6, p, span, a, div {overflow-wrap: break-word;}
 /* ============================================================
    PRODUCTION DESIGN SYSTEM TYPOGRAPHY & HEADING HIERARCHY LOCK
    ============================================================ */
@@ -385,6 +393,33 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--v1);outline-offset:
   .nav-main-capsule { max-width: fit-content; }
   .site-header { padding: 12px 0; }
   .btn-get-started { padding: 9px 18px; font-size: 13px; }
+}
+@media(max-width: 480px) {
+  .nav-wrapper, .wrap { padding-left: 14px !important; padding-right: 14px !important; }
+  .site-header { padding: 8px 0 !important; }
+  .nav-main-capsule { padding: 3px !important; }
+  .nav-logo-box { padding: 6px 12px !important; height: 36px !important; gap: 6px !important; }
+  .nav-logo-text { font-size: 13px !important; }
+  .nav-cta-wrap { gap: 8px !important; }
+  .theme-toggle-btn { width: 36px !important; height: 36px !important; min-width: 36px !important; }
+  .btn-get-started { padding: 8px 14px !important; font-size: 12.5px !important; gap: 6px !important; }
+}
+@media(max-width: 360px) {
+  .nav-wrapper, .wrap { padding-left: 10px !important; padding-right: 10px !important; }
+  .nav-logo-box { padding: 5px 9px !important; height: 34px !important; }
+  .nav-logo-text { font-size: 12px !important; }
+  .btn-get-started { padding: 7px 11px !important; font-size: 11.5px !important; }
+}
+@media(max-width: 300px) {
+  .nav-wrapper, .wrap { padding-left: 6px !important; padding-right: 6px !important; }
+  .nav-logo-box { padding: 4px 6px !important; height: 32px !important; gap: 4px !important; }
+  .nav-motion-icon { width: 15px !important; height: 15px !important; }
+  .nav-logo-text { font-size: 11px !important; letter-spacing: 0 !important; }
+  .nav-cta-wrap { gap: 4px !important; }
+  .theme-toggle-btn { width: 30px !important; height: 30px !important; min-width: 30px !important; }
+  .theme-toggle-btn svg { width: 15px !important; height: 15px !important; }
+  .btn-get-started { padding: 5px 7px !important; font-size: 10px !important; gap: 3px !important; }
+  .btn-arrow-icon { width: 10px !important; height: 10px !important; }
 }
 
 
@@ -1106,6 +1141,126 @@ h1.hero-title .accent {
   }
   .hctb-title {
     font-size: 9.5px;
+  }
+}
+@media(max-width: 480px) {
+  .hero {
+    padding-top: calc(64px + 24px) !important;
+    padding-bottom: 24px !important;
+    gap: 24px !important;
+  }
+  .hero-copy {
+    padding: 0 !important;
+  }
+  h1.hero-title {
+    font-size: clamp(24px, 7.4vw, 34px) !important;
+    line-height: 1.18 !important;
+  }
+  .hero-sub {
+    font-size: 14.5px !important;
+    line-height: 1.6 !important;
+    margin-top: 14px !important;
+  }
+  .hero-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+    margin-top: 22px !important;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 12px 20px !important;
+  }
+  .trust-row {
+    margin-top: 20px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    flex-wrap: wrap !important;
+  }
+  .hero-video-card {
+    min-height: auto !important;
+    border-radius: 20px !important;
+    padding: 6px !important;
+  }
+  .hero-video-container {
+    border-radius: 15px !important;
+  }
+  .hero-card-brand-title span {
+    font-size: 14.5px !important;
+  }
+  .hero-card-duration {
+    font-size: 11px !important;
+    padding: 3px 8px !important;
+  }
+}
+@media(max-width: 360px) {
+  h1.hero-title {
+    font-size: clamp(21px, 7.2vw, 26px) !important;
+  }
+  .hero-metrics-card {
+    gap: 10px 6px !important;
+    padding: 10px 8px !important;
+  }
+  .metric-val {
+    font-size: 16px !important;
+  }
+  .metric-lbl {
+    font-size: 10px !important;
+  }
+}
+@media(max-width: 300px) {
+  .hero {
+    padding-top: calc(56px + 14px) !important;
+    padding-bottom: 16px !important;
+    gap: 16px !important;
+  }
+  h1.hero-title {
+    font-size: clamp(18px, 7vw, 21px) !important;
+  }
+  .hero-metrics-card {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    padding: 8px 6px !important;
+  }
+  .metric-cell {
+    gap: 6px !important;
+  }
+  .metric-icon {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+  }
+  .metric-icon svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+  .metric-val {
+    font-size: 15px !important;
+  }
+  .metric-lbl {
+    font-size: 9.5px !important;
+  }
+  .hero-card-brand-title span {
+    font-size: 12.5px !important;
+  }
+  .hero-card-top-badge {
+    padding: 2px 6px !important;
+    top: 6px !important;
+    right: 6px !important;
+  }
+  .hctb-title {
+    font-size: 8px !important;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost {
+    padding: 10px 12px !important;
+    font-size: 12.5px !important;
+  }
+  .trust-text {
+    font-size: 11.5px !important;
   }
 }
 
@@ -4722,3 +4877,1061 @@ h1.hero-title .accent {
     font-size: 14px;
   }
 }
+
+/* ==========================================================================
+   PRODUCTION RESPONSIVE ARCHITECTURE (360px - 480px, 300px, down to 250px & 4K+)
+   Zero horizontal sway, zero design breakage, fluid typography & grid resilience.
+   ========================================================================== */
+
+/* ── 1. TABLET & COMPACT DESKTOP (<= 1024px) ── */
+@media (max-width: 1024px) {
+  .hero-section > .wrap,
+  .stats-section > .wrap,
+  .anim-solutions-section > .wrap,
+  .portfolio-section > .wrap,
+  .manifesto-section > .wrap,
+  .why-us-section > .wrap,
+  .process-section > .wrap,
+  .about-agency-section > .wrap,
+  .pricing-section > .wrap,
+  .testimonials-section > .wrap,
+  .blog-section > .wrap,
+  .cta-section > .wrap,
+  .wrap {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+/* ── 2. MOBILE LANDSCAPE & TABLETS (<= 768px) ── */
+@media (max-width: 768px) {
+  .hero-section > .wrap,
+  .stats-section > .wrap,
+  .anim-solutions-section > .wrap,
+  .portfolio-section > .wrap,
+  .manifesto-section > .wrap,
+  .why-us-section > .wrap,
+  .process-section > .wrap,
+  .about-agency-section > .wrap,
+  .pricing-section > .wrap,
+  .testimonials-section > .wrap,
+  .blog-section > .wrap,
+  .cta-section > .wrap,
+  .wrap {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  /* Section vertical spacing reduction for mobile flow */
+  .anim-solutions-section,
+  .portfolio-section,
+  .manifesto-section,
+  .why-us-section,
+  .pricing-section {
+    padding: 72px 0 !important;
+  }
+  .process-section {
+    padding: 72px 0 25px !important;
+  }
+  .about-agency-section {
+    padding: 24px 0 55px !important;
+  }
+  .testimonials-section {
+    padding: 72px 0 45px !important;
+  }
+  .cta-section {
+    padding: 48px 0 55px !important;
+  }
+
+  /* Section headers spacing */
+  .section-head,
+  .anim-solutions-head,
+  .process-head,
+  .pricing-head,
+  .testi-head,
+  .why-us-header,
+  .blog-head {
+    margin-bottom: 28px !important;
+  }
+
+  /* Stats Bar - Reflow to column & eliminate text blow-out */
+  .stats-bar {
+    height: auto !important;
+    padding: 22px 20px !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    border-radius: 24px !important;
+    text-align: center !important;
+  }
+  .stats-left {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 16px 24px !important;
+  }
+  .stats-badge-anchor {
+    position: static !important;
+    transform: none !important;
+    margin: 4px 0 !important;
+  }
+  .stats-right {
+    white-space: normal !important;
+    text-align: center !important;
+    max-width: 100% !important;
+  }
+
+  /* Services / Process Pipeline Grid */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    margin-bottom: 40px !important;
+  }
+
+  /* Pricing Grid */
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* About Agency Sculpted Grid */
+  .about-sculpted-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .about-sculpted-canvas {
+    padding: 48px 20px 32px !important;
+    border-radius: 28px !important;
+  }
+}
+
+/* ── 3. STANDARD MOBILE PHONES (<= 480px) ── */
+@media (max-width: 480px) {
+  .hero-section > .wrap,
+  .stats-section > .wrap,
+  .anim-solutions-section > .wrap,
+  .portfolio-section > .wrap,
+  .manifesto-section > .wrap,
+  .why-us-section > .wrap,
+  .process-section > .wrap,
+  .about-agency-section > .wrap,
+  .pricing-section > .wrap,
+  .testimonials-section > .wrap,
+  .blog-section > .wrap,
+  .cta-section > .wrap,
+  .wrap {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    padding: 18px 14px !important;
+    border-radius: 20px !important;
+    gap: 14px !important;
+  }
+  .stats-left {
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .stat-unit {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .stat-num {
+    font-size: 24px !important;
+  }
+  .stat-lbl {
+    font-size: 11px !important;
+    white-space: normal !important;
+  }
+  .stats-badge {
+    width: 68px !important;
+    height: 68px !important;
+  }
+  .stats-right {
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Animation Solutions */
+  .anim-solution-card {
+    padding: 22px 18px !important;
+    border-radius: 20px !important;
+  }
+  .anim-icon-box {
+    width: 64px !important;
+    height: 64px !important;
+    border-radius: 16px !important;
+  }
+  .live-anim-svg {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  /* Work Grid */
+  .work-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding-bottom: 16px !important;
+  }
+  .work-card {
+    aspect-ratio: 16 / 10 !important;
+    border-radius: 20px !important;
+  }
+  .work-filter-bar {
+    gap: 6px !important;
+    margin: 20px 0 24px !important;
+  }
+  .filter-tab {
+    font-size: 12px !important;
+    padding: 6px 14px !important;
+  }
+
+  /* Manifesto */
+  .manifesto-heading {
+    font-size: clamp(22px, 6.4vw, 30px) !important;
+    line-height: 1.25 !important;
+  }
+  .manifesto-badge {
+    padding: 10px 22px !important;
+    font-size: 13px !important;
+  }
+  .manifesto-note {
+    font-size: 13px !important;
+  }
+
+  /* Why Us / Bento Grid */
+  .why-us-pills {
+    align-items: flex-start !important;
+    width: 100% !important;
+    gap: 8px !important;
+  }
+  .why-pill {
+    transform: none !important;
+    margin: 0 !important;
+    font-size: 12px !important;
+    padding: 7px 14px !important;
+    white-space: normal !important;
+  }
+  .why-pill-reviews,
+  .why-pill-satisfaction {
+    transform: none !important;
+    margin: 0 !important;
+  }
+  .why-bento-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .why-card {
+    padding: 22px 16px !important;
+    border-radius: 20px !important;
+  }
+  .why-tools-grid {
+    gap: 10px !important;
+  }
+  .why-tool-item {
+    padding: 10px 6px !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .why-cta-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 12px 18px !important;
+  }
+
+  /* Process Pipeline Cards */
+  .service-card {
+    padding: 24px 18px !important;
+    border-radius: 20px !important;
+  }
+  .step-number {
+    font-size: 30px !important;
+  }
+  .process-icon-box {
+    width: 58px !important;
+    height: 58px !important;
+    border-radius: 16px !important;
+  }
+  .process-animated-svg {
+    width: 44px !important;
+    height: 44px !important;
+  }
+  .service-card h3 {
+    font-size: 18px !important;
+  }
+
+  /* Pricing Cards */
+  .pricing-card {
+    padding: 24px 16px !important;
+    border-radius: 20px !important;
+  }
+  .pricing-card-video {
+    width: calc(100% + 32px) !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+  }
+  .pricing-amount {
+    font-size: 32px !important;
+  }
+  .pricing-intro {
+    min-height: auto !important;
+  }
+  .pricing-cta-btn {
+    padding: 12px 16px !important;
+  }
+
+  /* About Agency Open Narrative & Metrics */
+  .about-sculpted-canvas {
+    padding: 44px 16px 28px !important;
+    border-radius: 24px !important;
+  }
+  .sculpted-crest-medallion {
+    top: -26px !important;
+  }
+  .crest-circle-outer {
+    width: 52px !important;
+    height: 52px !important;
+  }
+  .about-video-frame {
+    height: 200px !important;
+    border-radius: 18px !important;
+  }
+  .about-open-title {
+    font-size: clamp(22px, 6.5vw, 30px) !important;
+    line-height: 1.25 !important;
+  }
+  .about-open-metrics {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    padding: 14px 0 !important;
+  }
+  .open-metric-col {
+    width: 100% !important;
+  }
+  .open-metric-divider {
+    display: none !important;
+  }
+  .open-metric-label {
+    white-space: normal !important;
+  }
+  .about-open-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+  .about-primary-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 12px 20px !important;
+  }
+
+  /* Testimonials Slider */
+  .testi-card-box {
+    padding: 22px 16px 18px !important;
+    border-radius: 20px !important;
+  }
+  .testi-card-quote {
+    font-size: 13.5px !important;
+    line-height: 1.6 !important;
+  }
+  .testi-slider-nav {
+    margin-top: 24px !important;
+    gap: 12px !important;
+  }
+  .testi-nav-arrow {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  /* Blog Cards */
+  .blog-card {
+    border-radius: 18px !important;
+  }
+  .blog-card-media {
+    height: 190px !important;
+  }
+  .blog-card-body {
+    padding: 20px 16px !important;
+  }
+  .blog-card-title {
+    font-size: 17px !important;
+  }
+
+  /* CTA Band */
+  .cta-band {
+    padding: 36px 16px !important;
+    border-radius: 22px !important;
+  }
+  .cta-band h2 {
+    font-size: clamp(22px, 6.2vw, 28px) !important;
+  }
+  .cta-band p {
+    font-size: 14px !important;
+    margin-bottom: 22px !important;
+  }
+  .cta-band .btn-primary {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Site Footer */
+  .site-footer {
+    padding-block: 50px 28px !important;
+    border-radius: 28px 28px 0 0 !important;
+  }
+  .footer-container {
+    padding: 0 14px !important;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Modal Dialog */
+  .reel-modal {
+    padding: 10px !important;
+  }
+  .reel-box {
+    border-radius: 18px !important;
+  }
+  .reel-close-floating {
+    top: 10px !important;
+    right: 10px !important;
+    width: 36px !important;
+    height: 36px !important;
+  }
+}
+
+/* ── 4. COMPACT MOBILE (<= 360px) ── */
+@media (max-width: 360px) {
+  .hero-section > .wrap,
+  .stats-section > .wrap,
+  .anim-solutions-section > .wrap,
+  .portfolio-section > .wrap,
+  .manifesto-section > .wrap,
+  .why-us-section > .wrap,
+  .process-section > .wrap,
+  .about-agency-section > .wrap,
+  .pricing-section > .wrap,
+  .testimonials-section > .wrap,
+  .blog-section > .wrap,
+  .cta-section > .wrap,
+  .wrap {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    padding: 14px 10px !important;
+    border-radius: 16px !important;
+  }
+  .stat-num {
+    font-size: 21px !important;
+  }
+  .stat-lbl {
+    font-size: 10px !important;
+  }
+  .stats-badge {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .stats-right {
+    font-size: 11.5px !important;
+  }
+
+  /* Core Capabilities */
+  .anim-solution-card {
+    padding: 18px 12px !important;
+  }
+  .anim-icon-box {
+    width: 54px !important;
+    height: 54px !important;
+  }
+  .live-anim-svg {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  /* Work */
+  .work-card {
+    border-radius: 16px !important;
+    aspect-ratio: 16 / 10 !important;
+  }
+  .filter-tab {
+    font-size: 11px !important;
+    padding: 5px 10px !important;
+  }
+
+  /* Bento */
+  .why-card {
+    padding: 18px 12px !important;
+    border-radius: 16px !important;
+  }
+  .why-tools-grid {
+    gap: 8px !important;
+  }
+  .why-phones-visual {
+    height: 160px !important;
+  }
+  .why-phone {
+    width: 95px !important;
+    height: 135px !important;
+  }
+  .phone-1 {
+    left: 8px !important;
+  }
+  .phone-2 {
+    right: 8px !important;
+  }
+  .why-clipboard-board {
+    width: 145px !important;
+    padding: 12px 14px !important;
+  }
+  .why-floating-capsule {
+    display: none !important;
+  }
+
+  /* Process */
+  .service-card {
+    padding: 20px 14px !important;
+  }
+  .process-icon-box {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .process-animated-svg {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  /* Pricing */
+  .pricing-card {
+    padding: 20px 12px !important;
+  }
+  .pricing-card-video {
+    width: calc(100% + 24px) !important;
+    margin-left: -12px !important;
+    margin-right: -12px !important;
+  }
+  .pricing-amount {
+    font-size: 28px !important;
+  }
+
+  /* About */
+  .about-sculpted-canvas {
+    padding: 38px 12px 22px !important;
+    border-radius: 20px !important;
+  }
+  .about-video-frame {
+    height: 180px !important;
+  }
+
+  /* Testimonials */
+  .testi-card-box {
+    padding: 18px 12px !important;
+  }
+  .testi-card-quote {
+    font-size: 13px !important;
+  }
+
+  /* Blog */
+  .blog-card-media {
+    height: 165px !important;
+  }
+  .blog-card-body {
+    padding: 16px 12px !important;
+  }
+  .blog-card-title {
+    font-size: 15.5px !important;
+  }
+
+  /* CTA */
+  .cta-band {
+    padding: 30px 12px !important;
+    border-radius: 18px !important;
+  }
+
+  /* Footer */
+  .footer-container {
+    padding: 0 10px !important;
+  }
+}
+
+/* ── 5. EXTREME MICRO-VIEWPORTS (300px down to 250px) ── */
+@media (max-width: 300px) {
+  .hero-section > .wrap,
+  .stats-section > .wrap,
+  .anim-solutions-section > .wrap,
+  .portfolio-section > .wrap,
+  .manifesto-section > .wrap,
+  .why-us-section > .wrap,
+  .process-section > .wrap,
+  .about-agency-section > .wrap,
+  .pricing-section > .wrap,
+  .testimonials-section > .wrap,
+  .blog-section > .wrap,
+  .cta-section > .wrap,
+  .wrap {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+
+  /* Global section headings clamp down on micro screens */
+  .section-head h2,
+  .anim-solutions-title,
+  .process-main-title,
+  .pricing-main-title,
+  .about-open-title,
+  .testi-head h2,
+  .blog-title,
+  .why-us-title {
+    font-size: clamp(18px, 6.8vw, 21px) !important;
+    line-height: 1.2 !important;
+  }
+  .section-head p,
+  .anim-solutions-subtitle,
+  .process-sub-text,
+  .pricing-sub-text,
+  .about-open-narrative,
+  .testi-head p,
+  .blog-subtitle,
+  .why-us-desc {
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Section padding tight */
+  .anim-solutions-section,
+  .portfolio-section,
+  .manifesto-section,
+  .why-us-section,
+  .pricing-section,
+  .testimonials-section,
+  .blog-section {
+    padding: 40px 0 !important;
+  }
+  .process-section {
+    padding: 40px 0 20px !important;
+  }
+  .about-agency-section {
+    padding: 15px 0 35px !important;
+  }
+  .cta-section {
+    padding: 28px 0 36px !important;
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    padding: 12px 6px !important;
+    border-radius: 12px !important;
+    gap: 10px !important;
+  }
+  .stat-num {
+    font-size: 19px !important;
+  }
+  .stat-lbl {
+    font-size: 9.5px !important;
+  }
+  .stats-badge {
+    width: 52px !important;
+    height: 52px !important;
+  }
+  .stats-badge-text {
+    font-size: 6.8px !important;
+  }
+  .stats-right {
+    font-size: 10.5px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Core Capabilities */
+  .anim-solution-card {
+    padding: 14px 8px !important;
+    border-radius: 14px !important;
+  }
+  .anim-icon-box {
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 12px !important;
+  }
+  .live-anim-svg {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .anim-card-chip {
+    font-size: 9px !important;
+    padding: 3px 6px !important;
+  }
+  .anim-solution-card h3 {
+    font-size: 16px !important;
+  }
+  .anim-solution-card p {
+    font-size: 12px !important;
+  }
+
+  /* Work Showcase */
+  .work-card {
+    border-radius: 12px !important;
+    aspect-ratio: 16 / 11 !important;
+  }
+  .work-filter-bar {
+    gap: 4px !important;
+  }
+  .filter-tab {
+    font-size: 10px !important;
+    padding: 4px 8px !important;
+  }
+
+  /* Manifesto */
+  .manifesto-heading {
+    font-size: clamp(16px, 6.2vw, 19px) !important;
+    line-height: 1.25 !important;
+  }
+  .manifesto-badge {
+    padding: 8px 14px !important;
+    font-size: 11px !important;
+    gap: 5px !important;
+  }
+  .manifesto-arrow-icon {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  .manifesto-note {
+    font-size: 11.5px !important;
+  }
+
+  /* Bento / Why Us */
+  .why-pill {
+    font-size: 10px !important;
+    padding: 5px 8px !important;
+  }
+  .why-card {
+    padding: 14px 8px !important;
+    border-radius: 14px !important;
+  }
+  .why-card-icon {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .why-card-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  .why-card-title {
+    font-size: 15px !important;
+  }
+  .why-card-desc {
+    font-size: 12px !important;
+  }
+  .why-tools-grid {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+  }
+  .why-tool-item {
+    padding: 8px 6px !important;
+  }
+  .why-tool-icon {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .why-tool-name {
+    font-size: 11px !important;
+  }
+  .why-phones-visual {
+    height: 140px !important;
+  }
+  .why-phone {
+    width: 80px !important;
+    height: 115px !important;
+  }
+  .phone-1 {
+    left: 4px !important;
+  }
+  .phone-2 {
+    right: 4px !important;
+  }
+  .why-clipboard-board {
+    width: 130px !important;
+    padding: 10px 10px !important;
+  }
+  .why-cta-btn {
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+  }
+
+  /* Process Cards */
+  .service-card {
+    padding: 16px 8px !important;
+    border-radius: 14px !important;
+  }
+  .step-number {
+    font-size: 24px !important;
+  }
+  .step-badge {
+    font-size: 9px !important;
+    padding: 3px 8px !important;
+  }
+  .process-icon-box {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+  }
+  .process-animated-svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .service-card h3 {
+    font-size: 15.5px !important;
+  }
+  .service-card p {
+    font-size: 12px !important;
+  }
+
+  /* Pricing Cards */
+  .pricing-card {
+    padding: 16px 8px !important;
+    border-radius: 14px !important;
+  }
+  .pricing-card-video {
+    width: calc(100% + 16px) !important;
+    margin-left: -8px !important;
+    margin-right: -8px !important;
+  }
+  .pricing-tier-icon {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .pricing-card-title {
+    font-size: 16px !important;
+  }
+  .pricing-popular-badge {
+    font-size: 9px !important;
+    padding: 2px 7px !important;
+  }
+  .pricing-amount {
+    font-size: 24px !important;
+  }
+  .pricing-unit {
+    font-size: 11px !important;
+  }
+  .pricing-features li {
+    font-size: 12px !important;
+    gap: 7px !important;
+  }
+  .pricing-check-icon {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .pricing-cta-btn {
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+  }
+
+  /* About Sculpted Canvas */
+  .about-sculpted-canvas {
+    padding: 32px 8px 18px !important;
+    border-radius: 16px !important;
+  }
+  .sculpted-crest-medallion {
+    top: -20px !important;
+  }
+  .crest-circle-outer {
+    width: 42px !important;
+    height: 42px !important;
+    padding: 2px !important;
+  }
+  .crest-motion-icon {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .about-video-frame {
+    height: 150px !important;
+    border-radius: 14px !important;
+  }
+  .video-frame-play-btn {
+    width: 42px !important;
+    height: 42px !important;
+  }
+  .video-frame-play-btn svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .open-metric-num {
+    font-size: 20px !important;
+  }
+  .open-metric-label {
+    font-size: 10px !important;
+  }
+  .about-primary-btn {
+    padding: 10px 14px !important;
+    font-size: 12px !important;
+  }
+  .about-open-trust {
+    font-size: 11px !important;
+  }
+
+  /* Testimonials */
+  .testi-card-box {
+    padding: 14px 8px !important;
+    border-radius: 14px !important;
+  }
+  .testi-card-quote {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+  }
+  .testi-card-avatar {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .testi-card-name {
+    font-size: 12.5px !important;
+  }
+  .testi-card-role {
+    font-size: 10.5px !important;
+  }
+  .testi-card-stars {
+    font-size: 12px !important;
+    letter-spacing: 0.5px !important;
+  }
+  .testi-nav-arrow {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  .testi-nav-arrow svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* Blog */
+  .blog-card {
+    border-radius: 14px !important;
+  }
+  .blog-card-media {
+    height: 135px !important;
+  }
+  .blog-badge {
+    font-size: 9px !important;
+    padding: 3px 7px !important;
+    top: 6px !important;
+    left: 6px !important;
+  }
+  .blog-card-body {
+    padding: 12px 8px !important;
+  }
+  .blog-card-title {
+    font-size: 14px !important;
+  }
+  .blog-card-excerpt {
+    font-size: 11.5px !important;
+    margin-bottom: 14px !important;
+  }
+  .blog-read-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 11px !important;
+    padding: 8px 10px !important;
+  }
+
+  /* CTA Band */
+  .cta-band {
+    padding: 22px 8px !important;
+    border-radius: 14px !important;
+  }
+  .cta-band h2 {
+    font-size: clamp(16px, 6vw, 19px) !important;
+  }
+  .cta-band p {
+    font-size: 11.5px !important;
+    margin-bottom: 16px !important;
+  }
+  .cta-band .btn-primary {
+    font-size: 11.5px !important;
+    padding: 9px 14px !important;
+  }
+
+  /* Site Footer */
+  .site-footer {
+    padding-block: 34px 18px !important;
+    border-radius: 18px 18px 0 0 !important;
+  }
+  .footer-container {
+    padding: 0 6px !important;
+  }
+  .footer-brand-icon {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 5px !important;
+  }
+  .footer-heading {
+    font-size: 13.5px !important;
+  }
+  .footer-links a {
+    font-size: 12px !important;
+    line-height: 20px !important;
+  }
+  .footer-contact li {
+    font-size: 11.5px !important;
+    gap: 0.5rem !important;
+  }
+  .contact-icon {
+    width: 26px !important;
+    height: 26px !important;
+    min-width: 26px !important;
+  }
+  .contact-icon svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  .footer-bottom-pill p {
+    font-size: 10px !important;
+  }
+
+  /* Modal Dialog */
+  .reel-modal {
+    padding: 4px !important;
+  }
+  .reel-modal-header {
+    padding: 8px 10px !important;
+  }
+  .reel-modal-cat {
+    font-size: 9px !important;
+    padding: 2px 7px !important;
+  }
+  .reel-modal-title {
+    font-size: 12px !important;
+  }
+  .reel-close {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .reel-close svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+}
+
+/* ── 6. ULTRA-WIDE & 4K DISPLAY LOCK (>= 1441px) ── */
+@media (min-width: 1441px) {
+  .hero-section > .wrap,
+  .stats-section > .wrap,
+  .anim-solutions-section > .wrap,
+  .portfolio-section > .wrap,
+  .manifesto-section > .wrap,
+  .why-us-section > .wrap,
+  .process-section > .wrap,
+  .about-agency-section > .wrap,
+  .pricing-section > .wrap,
+  .testimonials-section > .wrap,
+  .blog-section > .wrap,
+  .cta-section > .wrap,
+  .wrap,
+  .footer-container {
+    max-width: 1440px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
