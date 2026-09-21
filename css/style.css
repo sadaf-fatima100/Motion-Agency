@@ -3881,10 +3881,19 @@ h1.hero-title .accent {
 }
 .open-metric-num {
   font-size: 26px;
-  font-weight: 850;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   color: #140e28;
   line-height: 1.1;
+  display: inline-flex;
+  align-items: center;
+}
+.open-metric-star {
+  color: #f59e0b;
+  font-size: 0.82em;
+  margin-left: 2px;
+  display: inline-block;
+  vertical-align: middle;
 }
 .open-metric-label {
   font-size: 11.5px;
@@ -3940,8 +3949,17 @@ h1.hero-title .accent {
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   color: #3b3054;
+}
+.trust-stars {
+  color: #00b67a;
+  letter-spacing: 2px;
+  font-size: 14px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 400;
 }
 
 /* Responsive */
@@ -4668,12 +4686,13 @@ h1.hero-title .accent {
   width: 100%;
   max-width: 1360px;
   margin: 0 auto;
-  overflow: visible;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .testi-slider-viewport {
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   padding: 20px 24px 32px;
   box-sizing: border-box;
 }

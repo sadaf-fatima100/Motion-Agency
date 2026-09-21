@@ -186,6 +186,22 @@
   color: #ffffff !important;
 }
 
+/* 2C. ABOUT OPEN METRICS & TRUST STARS (DARK THEME) */
+[data-theme="dark"] .open-metric-num {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .open-metric-star {
+  color: #f59e0b !important;
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.5) !important;
+}
+[data-theme="dark"] .about-open-trust {
+  color: #c8c0df !important;
+}
+[data-theme="dark"] .trust-stars {
+  color: #00d68f !important;
+  text-shadow: 0 0 10px rgba(0, 214, 143, 0.45) !important;
+}
+
 /* NAVBAR THEME TOGGLE BUTTON */
 .theme-toggle-btn {
   width: 44px;
