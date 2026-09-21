@@ -2250,7 +2250,7 @@ h1.hero-title .accent {
 .process-main-title .accent-text{background:linear-gradient(135deg,#7448ee 0%,#a56ff5 45%,#f69cb8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:450!important;display:inline!important;}
 .process-sub-text{font-size:16px;color:var(--ink-1);line-height:1.68;max-width:720px;text-align:left;}
 
-.services-grid{margin-top:0;margin-bottom:130px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;
+.services-grid{margin-top:0;margin-bottom:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;
   position: relative;}
 .service-card{padding:34px 28px;border-radius:24px;background:var(--surface);box-shadow:0 10px 30px -10px rgba(100,70,180,.08);border:1.5px solid var(--line);transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease,border-color .35s ease;position:relative;display:flex;flex-direction:column;overflow:hidden;}
 .service-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px -12px rgba(100,60,200,.18);border-color:rgba(169,140,255,.45);}
@@ -3820,7 +3820,7 @@ h1.hero-title .accent {
 .about-open-title {
   font-family: var(--font) !important;
   font-size: clamp(28px, 3.4vw, 42px) !important;
-  font-weight: 350 !important;
+  font-weight: 300 !important;
   letter-spacing: -0.02em !important;
   line-height: 1.22 !important;
   color: var(--ink-0) !important;
@@ -4699,7 +4699,7 @@ h1.hero-title .accent {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 10px 30px -10px rgba(120, 80, 220, 0.08);
+  box-shadow: 0 4px 12px rgba(120, 80, 220, 0.04), 0 12px 40px rgba(120, 80, 220, 0.08);
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
   min-height: 230px;
   box-sizing: border-box;
@@ -4709,7 +4709,7 @@ h1.hero-title .accent {
 .testi-card-box.featured {
   background: linear-gradient(155deg, #f8f5ff 0%, #ffffff 100%);
   border-color: rgba(124, 92, 255, 0.35);
-  box-shadow: 0 18px 42px -10px rgba(124, 92, 255, 0.16);
+  box-shadow: 0 6px 18px rgba(124, 92, 255, 0.08), 0 20px 52px rgba(124, 92, 255, 0.14);
   transform: translateY(-4px);
 }
 
@@ -4922,7 +4922,7 @@ h1.hero-title .accent {
 .process-section {
   width: 100%;
   position: relative;
-  padding: 95px 0 35px !important;
+  padding: 95px 0 20px !important;
   margin: 0 !important;
   box-sizing: border-box;
 }
@@ -4930,7 +4930,7 @@ h1.hero-title .accent {
 .about-agency-section {
   width: 100%;
   position: relative;
-  padding: 30px 0 75px !important;
+  padding: 35px 0 75px !important;
   margin: 0 !important;
   box-sizing: border-box;
   scroll-margin-top: 85px;
