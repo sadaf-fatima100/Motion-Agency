@@ -3045,8 +3045,9 @@ h1.hero-title .accent {
 .about-agency-section {
   position: relative;
   overflow: visible;
-  padding: 100px 0 80px !important;
+  padding: 30px 0 75px !important;
   margin: 0 !important;
+  scroll-margin-top: 85px;
 }
 
 /* Sculpted Outer Frame Container with Top Medallion Crest */
@@ -4327,14 +4328,29 @@ h1.hero-title .accent {
 .portfolio-section,
 .manifesto-section,
 .why-us-section,
-.process-section,
-.about-agency-section,
 .pricing-section {
   width: 100%;
   position: relative;
   padding: 100px 0 !important;
   margin: 0 !important;
   box-sizing: border-box;
+}
+
+.process-section {
+  width: 100%;
+  position: relative;
+  padding: 95px 0 35px !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+.about-agency-section {
+  width: 100%;
+  position: relative;
+  padding: 30px 0 75px !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+  scroll-margin-top: 85px;
 }
 
 /* Testimonials: 95px top (generous breathing room), 65px bottom before marquee */
