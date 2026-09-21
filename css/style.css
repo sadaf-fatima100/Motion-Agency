@@ -4674,7 +4674,7 @@ h1.hero-title .accent {
 .testi-slider-viewport {
   width: 100%;
   overflow: hidden;
-  padding: 16px 4px 24px;
+  padding: 20px 24px 32px;
   box-sizing: border-box;
 }
 
@@ -4699,7 +4699,7 @@ h1.hero-title .accent {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 4px 12px rgba(120, 80, 220, 0.04), 0 12px 40px rgba(120, 80, 220, 0.08);
+  box-shadow: 0 2px 8px rgba(120, 80, 220, 0.05), 0 10px 32px rgba(120, 80, 220, 0.09);
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
   min-height: 230px;
   box-sizing: border-box;
