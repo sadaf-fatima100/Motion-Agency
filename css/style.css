@@ -26,20 +26,24 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* 1. HERO MAIN TITLE (H1) */
-.hero-title {
+h1,
+.hero-title,
+h1.hero-title,
+.about-hero-title {
   font-family: var(--font) !important;
-  font-size: clamp(36px, 4.4vw, 58px) !important;
+  font-size: clamp(44px, 3.8vw, 56px) !important;
   font-weight: 350 !important;
   line-height: 1.14 !important;
   letter-spacing: -0.025em !important;
   text-transform: none !important;
   color: var(--ink-0);
-  max-width: 600px;
+  max-width: 720px;
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
 
 /* 2. UNIFIED SECTION HEADINGS (H2) - Consistent across every section */
+h2,
 .section-head h2,
 .anim-solutions-title,
 .why-us-main-title,
@@ -48,10 +52,18 @@ h1, h2, h3, h4, h5, h6,
 .about-open-title,
 .pricing-main-title,
 .testimonials-title,
+.testi-head h2,
 .blog-title,
-.cta-band h2 {
+.cta-band h2,
+.manifesto-heading,
+.manifesto-title,
+.about-section-title,
+.about-pillars-title,
+.pipeline-title,
+.values-title,
+.cta-box h2 {
   font-family: var(--font) !important;
-  font-size: clamp(28px, 3.4vw, 42px) !important;
+  font-size: clamp(30px, 2.4vw, 38px) !important;
   font-weight: 350 !important;
   line-height: 1.22 !important;
   letter-spacing: -0.02em !important;
@@ -62,19 +74,36 @@ h1, h2, h3, h4, h5, h6,
 /* 3. UNIFIED CARD & COMPONENT HEADINGS (H3) - Consistent across every section */
 h3,
 .anim-card-title,
+.anim-solution-card h3,
 .why-card-title,
+.why-cta-title,
 .service-card h3,
 .service-card-title,
 .card-slide-title,
 .pricing-card-title,
+.blog-card-title,
 .footer-heading,
-.reel-modal-title {
+.reel-modal-title,
+.pillar-card h3,
+.step-card h3,
+.value-card h3 {
   font-family: var(--font) !important;
-  font-size: clamp(18px, 1.4vw, 22px) !important;
+  font-size: clamp(18px, 1.4vw, 21px) !important;
   font-weight: 600 !important;
   line-height: 1.3 !important;
   letter-spacing: -0.01em !important;
   text-transform: none !important;
+}
+
+/* 4. UNIFIED SUB-COMPONENT HEADINGS (H4) */
+h4,
+.testi-card-name,
+.member-name {
+  font-family: var(--font) !important;
+  font-size: clamp(14px, 1.0vw, 15.5px) !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  letter-spacing: -0.01em !important;
 }
 
 /* 4. UNIFIED EYEBROW PILLS - Consistent across every section (Sentence Case) */
@@ -521,7 +550,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--v1);outline-offset:
 
 h1.hero-title {
   font-family: var(--font) !important;
-  font-size: clamp(38px, 4.4vw, 56px) !important;
+  font-size: clamp(44px, 3.8vw, 56px) !important;
   font-weight: 350 !important;
   line-height: 1.15 !important;
   letter-spacing: -.025em;
@@ -1735,11 +1764,11 @@ h1.hero-title .accent {
 
 /* SECTION HEAD */
 .section-head { margin: 0 0 40px 0 !important; padding: 0 !important; width: 100%; box-sizing: border-box; }
-.section-head h2{font-family:var(--font)!important;font-size:clamp(28px,3.4vw,42px)!important;font-weight:350!important;line-height:1.22!important;letter-spacing:-.02em!important;text-transform:none!important;color:var(--ink-0);}
+.section-head h2{font-family:var(--font)!important;font-weight:350!important;line-height:1.22!important;letter-spacing:-.02em!important;text-transform:none!important;color:var(--ink-0);}
 .section-head p{margin-top:8px;font-size:14px;color:var(--ink-2);line-height:1.6;max-width:680px;}
 
 /* WORK 3-COLUMN GRID SHOWCASE */
-.work-grid{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:30px 24px!important;position:relative;padding:16px 0 20px 0!important;margin-bottom:40px;overflow:visible!important;cursor:default!important;}
+.work-grid{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:30px 24px!important;position:relative;padding:16px 0 20px 0!important;margin-bottom:12px;overflow:visible!important;cursor:default!important;}
 .work-grid::-webkit-scrollbar{display:none!important;}
 
 .work-card{position:relative;width:100%!important;min-width:0!important;flex:none!important;aspect-ratio:1/0.72;margin-bottom:0;border-radius:28px;overflow:hidden;background:#ffffff;box-shadow:0 10px 30px -10px rgba(100,70,180,.14);transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .4s;cursor:pointer;user-select:none;}
@@ -1773,7 +1802,7 @@ h1.hero-title .accent {
   overflow: visible;
   text-align: center;
   margin: 0 !important;
-  padding: 100px 0 !important;
+  padding: 50px 0 100px !important;
   box-sizing: border-box;
 }
 .manifesto-section > .wrap {
@@ -1784,7 +1813,7 @@ h1.hero-title .accent {
   text-align: center;
   margin: 0 auto !important;
 }
-.manifesto-heading{font-family:var(--font)!important;font-size:clamp(34px,4.8vw,66px)!important;font-weight:300!important;line-height:1.22!important;letter-spacing:-.025em;color:var(--ink-0);margin:0 auto;max-width:1080px;text-wrap:balance;position:relative;z-index:2;}
+.manifesto-heading{font-family:var(--font)!important;font-weight:300!important;line-height:1.22!important;letter-spacing:-.025em;color:var(--ink-0);margin:0 auto;max-width:1080px;text-wrap:balance;position:relative;z-index:2;}
 .manifesto-line{display:block;}
 .grad-word{background:linear-gradient(135deg,#7448ee 0%,#a56ff5 45%,#f69cb8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;font-weight:300!important;}
 .manifesto-badge-wrap{margin-top:36px;display:flex;justify-content:center;position:relative;z-index:2;}
@@ -1913,7 +1942,7 @@ h1.hero-title .accent {
 .process-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(124,92,255,.08);border:1px solid rgba(124,92,255,.22);color:#7448ee;font-size:12px;font-weight:600;letter-spacing:.02em;text-transform:none;padding:6px 16px;border-radius:100px;margin-bottom:16px;box-shadow:0 2px 10px rgba(124,92,255,.08);}
 .process-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,#7c5cff,#ff8fce);box-shadow:0 0 8px #7c5cff;animation:pulseDot 2s ease-in-out infinite;}
 @keyframes pulseDot{0%,100%{transform:scale(1);opacity:.8;}50%{transform:scale(1.3);opacity:1;}}
-.process-main-title{font-family:var(--font)!important;font-size:clamp(28px,3.4vw,42px)!important;font-weight:350!important;letter-spacing:-.02em;line-height:1.22;color:var(--ink-0);margin-bottom:14px;text-align:left;display:block;width:100%;}
+.process-main-title{font-family:var(--font)!important;font-weight:350!important;letter-spacing:-.02em;line-height:1.22;color:var(--ink-0);margin-bottom:14px;text-align:left;display:block;width:100%;}
 .process-main-title .accent-text{background:linear-gradient(135deg,#7448ee 0%,#a56ff5 45%,#f69cb8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:450!important;display:inline!important;}
 .process-sub-text{font-size:16px;color:var(--ink-1);line-height:1.68;max-width:720px;text-align:left;}
 
@@ -1931,13 +1960,9 @@ h1.hero-title .accent {
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
-  background: linear-gradient(135deg, #7c5cff 0%, #ff8fce 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 0.45;
-  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-  user-select: none;
+  color: #140e26;
+  opacity: 0.88;
+  transition: all 0.35s ease;
   display: inline-block;
 }
 .service-card:hover .step-number {
@@ -1950,7 +1975,7 @@ h1.hero-title .accent {
 .service-card:hover .process-icon-box{transform:scale(1.08);box-shadow:0 14px 30px -6px rgba(120,80,220,.28);}
 .process-animated-svg{width:58px;height:58px;display:block;}
 
-.service-card h3{font-family:var(--font)!important;font-size:20px;font-weight:450!important;margin-bottom:10px;letter-spacing:-.01em;color:var(--ink-0);}
+.service-card h3{font-family:var(--font)!important;font-weight:450!important;margin-bottom:10px;letter-spacing:-.01em;color:var(--ink-0);}
 .service-card p{font-size:14px;color:var(--ink-1);line-height:1.65;flex-grow:1;}
 .service-card-accent-bar{position:absolute;bottom:0;left:0;width:100%;height:3.5px;background:linear-gradient(90deg,#7c5cff 0%,#ff8fce 100%);transform:scaleX(0);transform-origin:left;transition:transform .35s ease;}
 .service-card:hover .service-card-accent-bar{transform:scaleX(1);}
@@ -1981,7 +2006,7 @@ h1.hero-title .accent {
 .pricing-head { margin: 0 0 40px 0 !important; padding: 0 !important; width: 100%; box-sizing: border-box; text-align: left; }
 .pricing-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(124,92,255,.08);border:1px solid rgba(124,92,255,.22);color:#7448ee;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:16px;box-shadow:0 2px 10px rgba(124,92,255,.08);}
 .pricing-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,#7c5cff,#ff8fce);box-shadow:0 0 8px #7c5cff;animation:pulseDot 2s ease-in-out infinite;}
-.pricing-main-title{font-family:var(--font)!important;font-size:clamp(26px,3.2vw,40px);font-weight:300!important;letter-spacing:-.02em;line-height:1.25;color:var(--ink-0);margin-bottom:12px;}
+.pricing-main-title{font-family:var(--font)!important;font-weight:300!important;letter-spacing:-.02em;line-height:1.25;color:var(--ink-0);margin-bottom:12px;}
 .pricing-main-title .accent-text{background:linear-gradient(135deg,#7448ee 0%,#a56ff5 45%,#f69cb8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:400!important;}
 .pricing-sub-text{font-size:15px;color:var(--ink-1);line-height:1.68;max-width:720px;}
 
@@ -4550,13 +4575,27 @@ h1.hero-title .accent {
 }
 
 .anim-solutions-section,
-.portfolio-section,
-.manifesto-section,
 .why-us-section,
 .pricing-section {
   width: 100%;
   position: relative;
   padding: 100px 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+.portfolio-section {
+  width: 100%;
+  position: relative;
+  padding: 100px 0 45px !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+.manifesto-section {
+  width: 100%;
+  position: relative;
+  padding: 45px 0 100px !important;
   margin: 0 !important;
   box-sizing: border-box;
 }
@@ -4660,13 +4699,16 @@ h1.hero-title .accent {
 
 .portfolio-section {
   background: 
-    radial-gradient(ellipse 70% 50% at 50% 20%, rgba(124, 92, 255, 0.05) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(255, 143, 206, 0.04) 0%, transparent 60%);
+    radial-gradient(ellipse 95% 55% at 50% 100%, rgba(124, 92, 255, 0.16) 0%, rgba(255, 143, 206, 0.11) 45%, transparent 75%),
+    radial-gradient(ellipse 70% 50% at 50% 15%, rgba(124, 92, 255, 0.06) 0%, transparent 70%),
+    linear-gradient(180deg, #f5f3fb 0%, #f7f4fd 50%, #eee6fd 100%);
 }
 
 .manifesto-section {
   background: 
-    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(139, 109, 255, 0.05) 0%, transparent 75%);
+    radial-gradient(ellipse 95% 50% at 50% 0%, rgba(124, 92, 255, 0.13) 0%, rgba(255, 143, 206, 0.08) 42%, transparent 70%),
+    radial-gradient(ellipse 70% 50% at 50% 60%, rgba(139, 109, 255, 0.06) 0%, transparent 75%),
+    linear-gradient(180deg, #eee6fd 0%, #f5f3fb 45%, #f5f3fb 100%);
 }
 
 .why-us-section {
@@ -5016,9 +5058,21 @@ h1.hero-title .accent {
   .hero-copy {
     padding: 0 !important;
   }
-  h1.hero-title {
-    font-size: clamp(28px, 3.2vw, 38px) !important;
-    line-height: 1.2 !important;
+  /* Typographic Hierarchy (H1 > H2 > H3 > H4) */
+  h1, .hero-title, h1.hero-title, .about-hero-title {
+    font-size: clamp(36px, 3.4vw, 42px) !important;
+    line-height: 1.18 !important;
+  }
+  h2, .section-head h2, .anim-solutions-title, .why-us-main-title, .process-main-title, .about-main-title, .about-open-title, .pricing-main-title, .testimonials-title, .testi-head h2, .blog-title, .cta-band h2, .manifesto-heading, .manifesto-title, .about-section-title, .about-pillars-title, .pipeline-title, .values-title, .cta-box h2 {
+    font-size: clamp(27px, 2.5vw, 30px) !important;
+    line-height: 1.22 !important;
+  }
+  h3, .anim-card-title, .anim-solution-card h3, .why-card-title, .why-cta-title, .service-card h3, .service-card-title, .card-slide-title, .pricing-card-title, .blog-card-title, .footer-heading, .reel-modal-title, .pillar-card h3, .step-card h3, .value-card h3 {
+    font-size: clamp(18px, 1.6vw, 19.5px) !important;
+    line-height: 1.3 !important;
+  }
+  h4, .testi-card-name, .member-name {
+    font-size: 14px !important;
   }
   .hero-sub {
     font-size: 15px !important;
@@ -5250,11 +5304,23 @@ h1.hero-title .accent {
   h1.hero-title br {
     display: none !important;
   }
-  h1.hero-title {
-    font-size: clamp(26px, 3.8vw, 36px) !important;
-    line-height: 1.25 !important;
+  /* Typographic Hierarchy (H1 > H2 > H3 > H4) */
+  h1, .hero-title, h1.hero-title, .about-hero-title {
+    font-size: clamp(32px, 3.8vw, 36px) !important;
+    line-height: 1.22 !important;
     text-wrap: balance !important;
     max-width: 100% !important;
+  }
+  h2, .section-head h2, .anim-solutions-title, .why-us-main-title, .process-main-title, .about-main-title, .about-open-title, .pricing-main-title, .testimonials-title, .testi-head h2, .blog-title, .cta-band h2, .manifesto-heading, .manifesto-title, .about-section-title, .about-pillars-title, .pipeline-title, .values-title, .cta-box h2 {
+    font-size: clamp(24px, 2.8vw, 26px) !important;
+    line-height: 1.25 !important;
+  }
+  h3, .anim-card-title, .anim-solution-card h3, .why-card-title, .why-cta-title, .service-card h3, .service-card-title, .card-slide-title, .pricing-card-title, .blog-card-title, .footer-heading, .reel-modal-title, .pillar-card h3, .step-card h3, .value-card h3 {
+    font-size: clamp(17px, 2.0vw, 18.5px) !important;
+    line-height: 1.3 !important;
+  }
+  h4, .testi-card-name, .member-name {
+    font-size: 13.5px !important;
   }
   .hero-actions {
     margin-top: 20px !important;
@@ -5410,6 +5476,23 @@ h1.hero-title .accent {
   .wrap {
     padding-left: 18px !important;
     padding-right: 18px !important;
+  }
+
+  /* Typographic Hierarchy (H1 > H2 > H3 > H4) */
+  h1, .hero-title, h1.hero-title, .about-hero-title {
+    font-size: clamp(28px, 4.4vw, 32px) !important;
+    line-height: 1.2 !important;
+  }
+  h2, .section-head h2, .anim-solutions-title, .why-us-main-title, .process-main-title, .about-main-title, .about-open-title, .pricing-main-title, .testimonials-title, .testi-head h2, .blog-title, .cta-band h2, .manifesto-heading, .manifesto-title, .about-section-title, .about-pillars-title, .pipeline-title, .values-title, .cta-box h2 {
+    font-size: clamp(22px, 3.4vw, 24px) !important;
+    line-height: 1.25 !important;
+  }
+  h3, .anim-card-title, .anim-solution-card h3, .why-card-title, .why-cta-title, .service-card h3, .service-card-title, .card-slide-title, .pricing-card-title, .blog-card-title, .footer-heading, .reel-modal-title, .pillar-card h3, .step-card h3, .value-card h3 {
+    font-size: clamp(16px, 2.4vw, 17.5px) !important;
+    line-height: 1.32 !important;
+  }
+  h4, .testi-card-name, .member-name {
+    font-size: 13px !important;
   }
 
   /* Section vertical spacing reduction for mobile flow */
