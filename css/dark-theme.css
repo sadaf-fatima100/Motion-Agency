@@ -721,7 +721,9 @@
 }
 
 [data-theme="dark"] .card-pill,
-[data-theme="dark"] .card-cat-badge {
+[data-theme="dark"] .card-cat-badge,
+[data-theme="dark"] .card-notch,
+[data-theme="dark"] .card-arrow {
   display: none !important;
 }
 
