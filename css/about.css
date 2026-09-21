@@ -708,25 +708,26 @@
   height: 40px;
 }
 
-.pillars-grid .pillar-card .step-badge {
-  font-size: 10px;
+.pillars-grid .pillar-card .step-number {
+  font-family: var(--font, "Urbanist", sans-serif);
+  font-size: 32px;
   font-weight: 800;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: #7c5cff;
-  background: rgba(124, 92, 255, 0.08);
-  border: 1px solid rgba(124, 92, 255, 0.18);
-  padding: 4px 10px;
-  border-radius: 100px;
-  transition: all .3s ease;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #7c5cff 0%, #ff8fce 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.45;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
+  display: inline-block;
 }
 
-.pillars-grid .pillar-card:hover .step-badge {
-  background: linear-gradient(135deg, #7c5cff, #ff8fce);
-  color: #ffffff;
-  border-color: transparent;
-  box-shadow: 0 4px 12px rgba(124, 92, 255, 0.35);
-  transform: translateY(-1px);
+.pillars-grid .pillar-card:hover .step-number {
+  opacity: 1;
+  transform: scale(1.08) translateY(-2px);
+  filter: drop-shadow(0 4px 12px rgba(124, 92, 255, 0.35));
 }
 
 .pillars-grid .pillar-card .service-card-title,
@@ -783,27 +784,28 @@
   width:100%;
 }
 
-.pillar-card .step-badge,
-.pipeline-step-card .step-badge{
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:#7c5cff;
-  background:rgba(124,92,255,.08);
-  border:1px solid rgba(124,92,255,.18);
-  padding:5px 12px;
-  border-radius:100px;
-  transition:all .3s ease;
+
+/* Pipeline Step Numbers (Matches Home Process Cards) */
+.pipeline-step-card .step-number {
+  font-family: var(--font, "Urbanist", sans-serif);
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #7c5cff 0%, #ff8fce 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.45;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
+  display: inline-block;
 }
 
-.pillar-card:hover .step-badge,
-.pipeline-step-card:hover .step-badge{
-  background:linear-gradient(135deg,#7c5cff,#ff8fce);
-  color:#ffffff;
-  border-color:transparent;
-  box-shadow:0 4px 12px rgba(124,92,255,.35);
-  transform:translateY(-1px);
+.pipeline-step-card:hover .step-number {
+  opacity: 1;
+  transform: scale(1.08) translateY(-2px);
+  filter: drop-shadow(0 4px 12px rgba(124, 92, 255, 0.35));
 }
 
 .pillar-card .process-icon-box,

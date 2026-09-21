@@ -1826,22 +1826,23 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.75), 0 0 12px rgba(139, 109, 255, 0.18) !important;
 }
 
-/* Step Badges */
-[data-theme="dark"] .pillars-grid .pillar-card .step-badge,
-[data-theme="dark"] .pillar-card .step-badge,
-[data-theme="dark"] .pipeline-step-card .step-badge {
-  background: rgba(139, 109, 255, 0.16) !important;
-  border: 1px solid rgba(139, 109, 255, 0.35) !important;
-  color: #ffa0d8 !important;
+/* Step Numbers (Pillars, Pipeline & Home Process Cards) */
+[data-theme="dark"] .step-number,
+[data-theme="dark"] .pillars-grid .pillar-card .step-number,
+[data-theme="dark"] .pipeline-step-card .step-number {
+  background: linear-gradient(135deg, #a78bfa 0%, #ff8fce 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  opacity: 0.55 !important;
 }
 
-[data-theme="dark"] .pillars-grid .pillar-card:hover .step-badge,
-[data-theme="dark"] .pillar-card:hover .step-badge,
-[data-theme="dark"] .pipeline-step-card:hover .step-badge {
-  background: linear-gradient(135deg, #8b6dff, #ffa0d8) !important;
-  color: #ffffff !important;
-  border-color: transparent !important;
-  box-shadow: 0 0 14px rgba(139, 109, 255, 0.5) !important;
+[data-theme="dark"] .service-card:hover .step-number,
+[data-theme="dark"] .pillars-grid .pillar-card:hover .step-number,
+[data-theme="dark"] .pipeline-step-card:hover .step-number {
+  opacity: 1 !important;
+  transform: scale(1.08) translateY(-2px) !important;
+  filter: drop-shadow(0 4px 16px rgba(167, 139, 250, 0.55)) !important;
 }
 
 /* Titles & Descriptions */
