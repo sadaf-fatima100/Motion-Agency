@@ -2128,7 +2128,7 @@
 }
 
 [data-theme="dark"] .blog-head {
-  margin: 0 auto 52px auto !important;
+  margin: 0 auto 40px auto !important;
   text-align: center !important;
   display: flex !important;
   flex-direction: column !important;
