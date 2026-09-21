@@ -55,7 +55,6 @@ h2,
 .testi-head h2,
 .blog-title,
 .cta-band h2,
-.manifesto-heading,
 .manifesto-title,
 .about-section-title,
 .about-pillars-title,
@@ -1949,15 +1948,150 @@ h1.hero-title .accent {
   text-align: center;
   margin: 0 auto !important;
 }
-.manifesto-heading{font-family:var(--font)!important;font-weight:300!important;line-height:1.22!important;letter-spacing:-.025em;color:var(--ink-0);margin:0 auto;max-width:1080px;text-wrap:balance;position:relative;z-index:2;}
-.manifesto-line{display:block;}
-.grad-word{background:linear-gradient(135deg,#7448ee 0%,#a56ff5 45%,#f69cb8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;font-weight:300!important;}
-.manifesto-badge-wrap{margin-top:36px;display:flex;justify-content:center;position:relative;z-index:2;}
-.manifesto-badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(120deg,#7c5cff 0%,#a98cff 45%,#ff8fce 100%);color:#ffffff;padding:12px 28px;border-radius:100px;font-family:var(--font)!important;font-size:14.5px;font-weight:700;letter-spacing:-0.01em;text-decoration:none;white-space:nowrap;box-shadow:0 8px 24px -4px rgba(124,92,255,0.45),0 4px 14px -2px rgba(255,143,206,0.35),0 0 0 1px rgba(255,255,255,0.35) inset;transition:transform 0.25s ease,box-shadow 0.25s ease,filter 0.25s ease;cursor:pointer;}
-.manifesto-badge:hover{transform:translateY(-2px);filter:brightness(1.06);box-shadow:0 12px 32px -4px rgba(124,92,255,0.6),0 6px 18px -2px rgba(255,143,206,0.45),0 0 0 1px rgba(255,255,255,0.5) inset;}
-.manifesto-arrow-icon{width:15px;height:15px;stroke:#ffffff;transition:transform 0.25s ease;}
-.manifesto-badge:hover .manifesto-arrow-icon{transform:translateX(3px);}
-.manifesto-note{margin:20px auto 0;max-width:680px;font-size:14px;color:var(--ink-2);font-weight:500;line-height:1.6;position:relative;z-index:2;}
+.manifesto-heading {
+  font-family: var(--font) !important;
+  font-size: clamp(42px, 3.4vw, 56px) !important;
+  font-weight: 300 !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.025em;
+  color: var(--ink-0);
+  margin: 0 auto;
+  max-width: 1140px;
+  text-wrap: balance;
+  position: relative;
+  z-index: 2;
+}
+.manifesto-line { display: block; }
+.grad-word {
+  background: linear-gradient(135deg, #7448ee 0%, #a56ff5 45%, #f69cb8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 300 !important;
+}
+.manifesto-badge-wrap {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+.manifesto-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(120deg, #7c5cff 0%, #a98cff 45%, #ff8fce 100%);
+  color: #ffffff;
+  padding: 13px 30px;
+  border-radius: 100px;
+  font-family: var(--font) !important;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px -4px rgba(124, 92, 255, 0.45), 0 4px 14px -2px rgba(255, 143, 206, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.35) inset;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  cursor: pointer;
+}
+.manifesto-badge:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 12px 32px -4px rgba(124, 92, 255, 0.6), 0 6px 18px -2px rgba(255, 143, 206, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+}
+.manifesto-arrow-icon {
+  width: 15px;
+  height: 15px;
+  stroke: #ffffff;
+  transition: transform 0.25s ease;
+}
+.manifesto-badge:hover .manifesto-arrow-icon {
+  transform: translateX(3px);
+}
+.manifesto-note {
+  margin: 22px auto 0;
+  max-width: 720px;
+  font-size: 15px;
+  color: var(--ink-2);
+  font-weight: 500;
+  line-height: 1.62;
+  position: relative;
+  z-index: 2;
+}
+
+/* Large Screens (1440px+) */
+@media (min-width: 1440px) {
+  .manifesto-section {
+    padding: 65px 0 115px !important;
+  }
+  .manifesto-heading {
+    font-size: clamp(52px, 3.5vw, 66px) !important;
+    line-height: 1.16 !important;
+    max-width: 1280px !important;
+  }
+  .manifesto-note {
+    font-size: 16.5px !important;
+    max-width: 780px !important;
+    line-height: 1.65 !important;
+    margin-top: 24px !important;
+  }
+  .manifesto-badge {
+    padding: 14px 34px !important;
+    font-size: 15.5px !important;
+  }
+  .manifesto-badge-wrap {
+    margin-top: 40px !important;
+  }
+  .particle-left {
+    width: 170px !important;
+    height: 170px !important;
+    left: 45px !important;
+    top: 10px !important;
+  }
+  .particle-right {
+    width: 170px !important;
+    height: 170px !important;
+    right: 50px !important;
+    bottom: 0px !important;
+  }
+}
+
+/* Ultra-Wide & 4K (1920px+) */
+@media (min-width: 1920px) {
+  .manifesto-section {
+    padding: 85px 0 135px !important;
+  }
+  .manifesto-heading {
+    font-size: clamp(62px, 3.3vw, 76px) !important;
+    line-height: 1.15 !important;
+    max-width: 1440px !important;
+  }
+  .manifesto-note {
+    font-size: 18px !important;
+    max-width: 860px !important;
+    line-height: 1.68 !important;
+    margin-top: 28px !important;
+  }
+  .manifesto-badge {
+    padding: 16px 38px !important;
+    font-size: 16.5px !important;
+  }
+  .manifesto-badge-wrap {
+    margin-top: 44px !important;
+  }
+  .particle-left {
+    width: 195px !important;
+    height: 195px !important;
+    left: 60px !important;
+    top: 5px !important;
+  }
+  .particle-right {
+    width: 195px !important;
+    height: 195px !important;
+    right: 70px !important;
+    bottom: -10px !important;
+  }
+}
 
 /* ============================================================
    MANIFESTO 3D DECORATIVE PARTICLES (ORGANIC, RANDOM & MINIMAL)
