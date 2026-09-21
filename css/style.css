@@ -381,18 +381,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--v1);outline-offset:
   transform: translateX(3px);
 }
 
-@media(max-width: 1100px) {
-  .nav-wrapper, .hero, .wrap { padding-left: 28px !important; padding-right: 28px !important; }
-  .nav-links-menu { gap: 14px; justify-content: space-evenly; }
-  .nav-item { font-size: 13.5px; }
-  .site-header { padding: 12px 0; }
-}
-@media(max-width: 860px) {
-  .nav-wrapper, .hero, .wrap { padding-left: 20px !important; padding-right: 20px !important; }
+@media(max-width: 1140px) {
+  .nav-wrapper, .hero, .wrap { padding-left: 24px !important; padding-right: 24px !important; }
   .nav-links-menu { display: none; }
   .nav-main-capsule { max-width: fit-content; }
   .site-header { padding: 12px 0; }
-  .btn-get-started { padding: 9px 18px; font-size: 13px; }
+  .btn-get-started { padding: 10px 20px; font-size: 13.5px; }
 }
 @media(max-width: 480px) {
   .nav-wrapper, .wrap { padding-left: 14px !important; padding-right: 14px !important; }
@@ -1082,32 +1076,90 @@ h1.hero-title .accent {
 }
 
 @media(max-width: 1200px) {
+  .hero {
+    min-height: auto !important;
+    padding-top: calc(76px + 20px) !important;
+    padding-bottom: 32px !important;
+    column-gap: 32px !important;
+    row-gap: 24px !important;
+  }
+  .hero-copy {
+    padding: 0 !important;
+  }
+  h1.hero-title {
+    font-size: clamp(28px, 3.2vw, 40px) !important;
+    line-height: 1.2 !important;
+  }
+  .hero-sub {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    margin-top: 14px !important;
+  }
+  .hero-actions {
+    margin-top: 22px !important;
+    gap: 12px !important;
+    flex-wrap: nowrap !important;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost {
+    min-width: 155px !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    padding: 0 8px 0 16px !important;
+    font-size: 13.5px !important;
+  }
+  .hero-actions .btn-primary .ic,
+  .hero-actions .btn-ghost .pc {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    margin-left: 8px !important;
+  }
+  .trust-row {
+    margin-top: 18px !important;
+  }
   .hero-metrics-card {
-    padding: 12px 14px;
-    gap: 6px;
-    min-height: 68px;
+    padding: 10px 12px !important;
+    gap: 6px !important;
+    min-height: 56px !important;
   }
   .metric-val {
-    font-size: 20px !important;
+    font-size: 18px !important;
   }
   .metric-lbl {
-    font-size: 11px !important;
+    font-size: 10.5px !important;
   }
   .metric-icon {
-    width: 36px;
-    height: 36px;
-    min-width: 36px;
-    min-height: 36px;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+  }
+  .metric-icon svg {
+    width: 15px !important;
+    height: 15px !important;
   }
 }
-@media(max-width: 1024px) {
+@media(max-width: 960px) {
   .hero {
-    grid-template-columns: 1fr;
-    gap: 36px;
-    padding: 146px 24px 40px;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding: calc(76px + 20px) 20px 32px !important;
+  }
+  .hero-actions {
+    flex-wrap: wrap !important;
   }
   .hero-video-card {
-    min-height: 280px;
+    min-height: 260px !important;
+    max-width: 620px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+  .hero-metrics-card {
+    max-width: 620px !important;
+    margin: 0 auto !important;
   }
 }
 @media(max-width: 640px) {
@@ -1654,8 +1706,18 @@ h1.hero-title .accent {
 .b-dot.bd2 { animation: typingDots 1.2s infinite 0.2s; }
 .b-dot.bd3 { animation: typingDots 1.2s infinite 0.4s; }
 
-@media(max-width: 1024px) {
-  .anim-solutions-grid { grid-template-columns: 1fr; gap: 20px; }
+@media(max-width: 1180px) {
+  .anim-solutions-grid { gap: 16px; }
+  .anim-solution-card { padding: 24px 18px 22px; }
+  .anim-card-top { margin-bottom: 18px; }
+  .anim-icon-box { width: 62px; height: 62px; border-radius: 16px; }
+  .live-anim-svg { width: 46px; height: 46px; }
+  .anim-card-chip { font-size: 10px; padding: 4px 10px; letter-spacing: 0.04em; white-space: nowrap; }
+  .anim-solution-card h3 { font-size: 19px; }
+  .anim-solution-card p { font-size: 13.5px; line-height: 1.55; }
+}
+@media(max-width: 900px) {
+  .anim-solutions-grid { grid-template-columns: 1fr; max-width: 580px; margin: 0 auto; gap: 20px; }
   .anim-solution-card { padding: 26px 22px 22px; }
 }
 
@@ -3124,28 +3186,42 @@ h1.hero-title .accent {
 }
 
 /* Responsive adjustments */
-@media(max-width: 1080px) {
+@media(max-width: 1140px) {
   .why-bento-grid {
     grid-template-columns: 1fr 1fr;
+    grid-auto-flow: dense;
+    gap: 16px;
   }
+  /* Row 1: Tall card in col 1, First mid card in col 2 */
   .why-card-tall {
     grid-column: 1;
     grid-row: 1;
   }
+  .why-card-mid:nth-of-type(3) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  /* Row 2: Wide card spans both columns */
   .why-card-wide {
     grid-column: 1 / span 2;
-    grid-row: auto;
+    grid-row: 2;
   }
-  .why-card-mid {
-    grid-row: auto;
-  }
-  .why-card-banner {
-    grid-column: 1 / span 2;
-    grid-row: auto;
+  /* Row 3: Second mid card in col 1, CTA card in col 2 */
+  .why-card-mid:nth-of-type(4) {
+    grid-column: 1;
+    grid-row: 3;
   }
   .why-card-cta {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  /* Row 4: Banner card spans both columns */
+  .why-card-banner {
     grid-column: 1 / span 2;
-    grid-row: auto;
+    grid-row: 4;
+  }
+  .why-card {
+    padding: 26px 20px;
   }
 }
 
@@ -4173,24 +4249,18 @@ h1.hero-title .accent {
 .hero-play-overlay:hover .hero-play-button{transform:scale(1.1);box-shadow:0 18px 50px -4px rgba(124,18,255,0.8), 0 0 0 10px rgba(255,255,255,0.25);}
 .hero-play-label{margin-top:12px;font-family:var(--font)!important;font-size:12px;font-weight:750;letter-spacing:0.08em;text-transform:uppercase;color:#ffffff;background:rgba(18,12,38,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:5px 14px;border-radius:100px;border:1px solid rgba(255,255,255,0.25);box-shadow:0 4px 16px rgba(0,0,0,0.2);}
 
-/* RESPONSIVE */
+/* RESPONSIVE BASE HELPERS */
 @media(max-width:1024px){
   .wrap{padding:0 24px;}
   .nav-links{display:none;}
-  .hero{grid-template-columns:1fr;min-height:auto;}
-  .hero-copy{padding:56px 28px;}
-  .hero-panel{min-height:420px;}
-  .stats-bar{height:auto;padding:24px 28px;flex-direction:column;gap:20px;border-radius:28px;text-align:center;}
-  .stats-left{flex-wrap:wrap;justify-content:center;gap:20px;}
-  .stats-badge-anchor{position:static;transform:none;}
+  .hero-copy{padding:0 !important;}
+  .hero-panel{min-height:auto !important;}
   .work-grid{grid-template-columns:repeat(2,1fr)!important;gap:20px!important;padding-bottom:30px!important;}
   .work-card{width:100%!important;min-width:0!important;flex:none!important;}
-  .services-grid{grid-template-columns:1fr;}
 }
 @media(max-width:640px){
   .wrap{padding:0 20px;}nav{padding:0 20px;}
-  .hero-copy{padding:40px 20px;}
-  .stats-left{flex-direction:column;gap:12px;}
+  .hero-copy{padding:0 !important;}
   .work-grid{grid-template-columns:1fr!important;gap:20px!important;padding-bottom:20px!important;}
   .work-card{width:100%!important;min-width:0!important;flex:none!important;aspect-ratio:1/0.72;}
   .cta-band{padding:44px 24px;border-radius:var(--r-xl);}
@@ -4883,8 +4953,8 @@ h1.hero-title .accent {
    Zero horizontal sway, zero design breakage, fluid typography & grid resilience.
    ========================================================================== */
 
-/* ── 1. TABLET & COMPACT DESKTOP (<= 1024px) ── */
-@media (max-width: 1024px) {
+/* ── 1. COMPACT DESKTOPS & SMALL LAPTOPS (961px - 1180px, including 1037px) ── */
+@media (max-width: 1180px) and (min-width: 961px) {
   .hero-section > .wrap,
   .stats-section > .wrap,
   .anim-solutions-section > .wrap,
@@ -4901,9 +4971,363 @@ h1.hero-title .accent {
     padding-left: 24px !important;
     padding-right: 24px !important;
   }
+
+  /* Header & Capsule */
+  .nav-links-menu {
+    display: none !important;
+  }
+  .nav-main-capsule {
+    max-width: fit-content !important;
+  }
+
+  /* Hero Layout */
+  .hero {
+    min-height: auto !important;
+    padding-top: calc(76px + 20px) !important;
+    padding-bottom: 28px !important;
+    column-gap: 28px !important;
+    row-gap: 24px !important;
+    grid-template-columns: 1.05fr 1fr !important;
+  }
+  .hero-copy {
+    padding: 0 !important;
+  }
+  h1.hero-title {
+    font-size: clamp(28px, 3.2vw, 38px) !important;
+    line-height: 1.2 !important;
+  }
+  .hero-sub {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    margin-top: 14px !important;
+  }
+  .hero-actions {
+    margin-top: 20px !important;
+    gap: 12px !important;
+    flex-wrap: nowrap !important;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost {
+    min-width: 150px !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    padding: 0 8px 0 16px !important;
+    font-size: 13.5px !important;
+  }
+  .hero-actions .btn-primary .ic,
+  .hero-actions .btn-ghost .pc {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    margin-left: 8px !important;
+  }
+  .trust-row {
+    margin-top: 16px !important;
+  }
+  .hero-metrics-card {
+    padding: 10px 12px !important;
+    gap: 6px !important;
+    min-height: 56px !important;
+  }
+  .metric-val {
+    font-size: 17px !important;
+  }
+  .metric-lbl {
+    font-size: 10px !important;
+  }
+  .metric-icon {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+  }
+  .metric-icon svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* Core Capabilities (Animation Solutions) */
+  .anim-solutions-grid {
+    gap: 14px !important;
+  }
+  .anim-solution-card {
+    padding: 22px 16px 20px !important;
+    border-radius: 20px !important;
+  }
+  .anim-card-top {
+    margin-bottom: 16px !important;
+  }
+  .anim-icon-box {
+    width: 58px !important;
+    height: 58px !important;
+    border-radius: 16px !important;
+  }
+  .live-anim-svg {
+    width: 42px !important;
+    height: 42px !important;
+  }
+  .anim-card-chip {
+    font-size: 9.5px !important;
+    padding: 4px 8px !important;
+    letter-spacing: 0.04em !important;
+    white-space: nowrap !important;
+  }
+  .anim-solution-card h3 {
+    font-size: 18px !important;
+    margin-bottom: 8px !important;
+  }
+  .anim-solution-card p {
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Bento Grid: 2-Column Gapless Layout */
+  .why-bento-grid {
+    grid-template-columns: 1fr 1fr !important;
+    grid-auto-flow: dense !important;
+    gap: 14px !important;
+  }
+  .why-card-tall {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+  .why-card-mid:nth-of-type(3),
+  .why-card:nth-child(3) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+  .why-card-wide {
+    grid-column: 1 / span 2 !important;
+    grid-row: 2 !important;
+  }
+  .why-card-mid:nth-of-type(4),
+  .why-card:nth-child(4) {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+  }
+  .why-card-cta {
+    grid-column: 2 !important;
+    grid-row: 3 !important;
+  }
+  .why-card-banner {
+    grid-column: 1 / span 2 !important;
+    grid-row: 4 !important;
+  }
+
+  /* Process Cards */
+  .services-grid {
+    gap: 14px !important;
+  }
+  .service-card {
+    padding: 24px 18px !important;
+    border-radius: 20px !important;
+  }
+  .step-number {
+    font-size: 28px !important;
+  }
+  .process-icon-box {
+    width: 58px !important;
+    height: 58px !important;
+  }
+  .process-animated-svg {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  /* Pricing Cards */
+  .pricing-grid {
+    gap: 16px !important;
+  }
+  .pricing-card {
+    padding: 26px 18px !important;
+  }
+  .pricing-card-video {
+    width: calc(100% + 36px) !important;
+    margin-left: -18px !important;
+    margin-right: -18px !important;
+  }
+  .pricing-amount {
+    font-size: 34px !important;
+  }
+
+  /* About Agency */
+  .about-sculpted-grid {
+    gap: 32px !important;
+  }
+  .about-video-frame {
+    height: 200px !important;
+  }
+  .about-open-title {
+    font-size: 30px !important;
+  }
+
+  /* Testimonials */
+  .testi-card-box {
+    padding: 26px 18px 22px !important;
+  }
+  .testi-card-quote {
+    font-size: 13.5px !important;
+  }
 }
 
-/* ── 2. MOBILE LANDSCAPE & TABLETS (<= 768px) ── */
+/* ── 2. TABLETS & MEDIUM SCREENS (769px - 960px) ── */
+@media (max-width: 960px) and (min-width: 769px) {
+  .hero-section > .wrap,
+  .stats-section > .wrap,
+  .anim-solutions-section > .wrap,
+  .portfolio-section > .wrap,
+  .manifesto-section > .wrap,
+  .why-us-section > .wrap,
+  .process-section > .wrap,
+  .about-agency-section > .wrap,
+  .pricing-section > .wrap,
+  .testimonials-section > .wrap,
+  .blog-section > .wrap,
+  .cta-section > .wrap,
+  .wrap {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .nav-links-menu {
+    display: none !important;
+  }
+  .nav-main-capsule {
+    max-width: fit-content !important;
+  }
+
+  /* Hero: 1-Column Balanced Flow */
+  .hero {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding: calc(76px + 20px) 20px 32px !important;
+    min-height: auto !important;
+  }
+  .hero-copy {
+    padding: 0 !important;
+    max-width: 680px !important;
+  }
+  h1.hero-title {
+    font-size: clamp(28px, 4vw, 38px) !important;
+    line-height: 1.22 !important;
+  }
+  .hero-actions {
+    margin-top: 20px !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost {
+    min-width: 170px !important;
+    height: 50px !important;
+    min-height: 50px !important;
+  }
+  .hero-video-card {
+    min-height: 260px !important;
+    max-width: 640px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+  .hero-metrics-card {
+    max-width: 640px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Core Capabilities: 1-Column Clean Cards */
+  .anim-solutions-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    gap: 20px !important;
+  }
+
+  /* Work Grid: 2 Columns */
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  /* Bento Grid: 2-Column Gapless */
+  .why-bento-grid {
+    grid-template-columns: 1fr 1fr !important;
+    grid-auto-flow: dense !important;
+    gap: 16px !important;
+  }
+  .why-card-tall {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+  .why-card-mid:nth-of-type(3),
+  .why-card:nth-child(3) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+  .why-card-wide {
+    grid-column: 1 / span 2 !important;
+    grid-row: 2 !important;
+  }
+  .why-card-mid:nth-of-type(4),
+  .why-card:nth-child(4) {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+  }
+  .why-card-cta {
+    grid-column: 2 !important;
+    grid-row: 3 !important;
+  }
+  .why-card-banner {
+    grid-column: 1 / span 2 !important;
+    grid-row: 4 !important;
+  }
+
+  /* Process Pipeline: 1-Column */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    gap: 20px !important;
+  }
+
+  /* Pricing: 1-Column */
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+    gap: 28px !important;
+  }
+
+  /* About Agency: 1-Column */
+  .about-sculpted-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* Testimonials: 2 Cards */
+  .testi-card-box {
+    flex: 0 0 calc((100% - 20px) / 2) !important;
+    width: calc((100% - 20px) / 2) !important;
+    min-width: calc((100% - 20px) / 2) !important;
+    max-width: calc((100% - 20px) / 2) !important;
+  }
+
+  /* Blog: 1-Column */
+  .blog-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+    gap: 24px !important;
+  }
+
+  /* Footer: 2-Column */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2.5rem !important;
+  }
+}
+
+/* ── 3. MOBILE LANDSCAPE & TABLETS (<= 768px) ── */
 @media (max-width: 768px) {
   .hero-section > .wrap,
   .stats-section > .wrap,
