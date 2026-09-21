@@ -202,6 +202,19 @@
   text-shadow: 0 0 10px rgba(0, 214, 143, 0.45) !important;
 }
 
+/* 2D. SCROLL PROGRESS BAR (DARK THEME) */
+[data-theme="dark"] .header-scroll-progress-track {
+  background: rgba(139, 109, 255, 0.12) !important;
+}
+[data-theme="dark"] .header-scroll-progress-bar {
+  background: linear-gradient(90deg, #8b6dff 0%, #c084fc 35%, #ffa0d8 75%, #fde047 100%) !important;
+  box-shadow: 0 0 16px rgba(139, 109, 255, 0.95), 0 0 8px rgba(255, 160, 216, 0.8) !important;
+}
+[data-theme="dark"] .header-scroll-progress-bar::after {
+  background: #ffffff !important;
+  box-shadow: 0 0 12px 3px #ffa0d8, 0 0 8px 2px #8b6dff !important;
+}
+
 /* NAVBAR THEME TOGGLE BUTTON */
 .theme-toggle-btn {
   width: 44px;

@@ -247,19 +247,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  // Floating Sticky/Fixed Header Scroll State
+  // Floating Sticky/Fixed Header Scroll State & Trendy Scroll Progress Bar
   const siteHeader = document.querySelector(".site-header");
+  const progressBar = document.getElementById("headerProgressBar");
   if (siteHeader) {
-    const handleScroll = () => {
-      if (window.scrollY > 15) {
+    let ticking = false;
+    const updateScrollProgress = () => {
+      const scrollY = window.scrollY || window.pageYOffset || 0;
+      if (scrollY > 15) {
         siteHeader.classList.add("scrolled");
       } else {
         siteHeader.classList.remove("scrolled");
       }
+
+      if (progressBar) {
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight > 0) {
+          const progress = Math.min(Math.max(scrollY / docHeight, 0), 1);
+          progressBar.style.transform = `scaleX(${progress})`;
+          progressBar.style.opacity = scrollY > 8 ? "1" : "0";
+        } else {
+          progressBar.style.opacity = "0";
+        }
+      }
+      ticking = false;
     };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollProgress);
+        ticking = true;
+      }
+    };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    window.addEventListener("resize", handleScroll, { passive: true });
+    updateScrollProgress();
   }
+
 
   // ============================================================
   // TESTIMONIALS MULTI-CARD CAROUSEL SLIDER
