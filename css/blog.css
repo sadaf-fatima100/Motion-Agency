@@ -829,21 +829,27 @@
 
 @media (max-width: 768px) {
   .blog-breadcrumb-section {
-    padding-top: 78px;
-    padding-bottom: 10px;
+    padding-top: calc(76px + 16px) !important;
+    padding-bottom: 10px !important;
   }
   .article-header {
-    padding: 10px 0 35px 0;
+    padding: 6px 0 28px 0 !important;
+  }
+  .article-header-wrap {
+    margin: 0 !important;
+    text-align: left !important;
   }
   .article-title {
     font-size: clamp(24px, 6.4vw, 34px) !important;
     line-height: 1.22 !important;
     margin-bottom: 16px !important;
+    text-align: left !important;
   }
   .article-subtitle {
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 24px;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 24px !important;
+    text-align: left !important;
   }
   .takeaway-grid {
     grid-template-columns: 1fr;
@@ -948,10 +954,12 @@
   .article-title {
     font-size: clamp(21px, 6.8vw, 26px) !important;
     line-height: 1.25 !important;
+    text-align: left !important;
   }
   .article-subtitle {
-    font-size: 14px;
-    line-height: 1.55;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+    text-align: left !important;
   }
   .takeaway-card {
     padding: 16px 14px;
