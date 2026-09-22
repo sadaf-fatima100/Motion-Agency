@@ -7054,3 +7054,346 @@ h1.hero-title .accent {
   }
 }
 
+/* ============================================================
+   KINETIX FLOATING WHATSAPP CHAT WIDGET (PROFESSIONAL DIRECT-RESPONSE)
+   Phone Target: +92 314 3110259
+   ============================================================ */
+.kinetix-wa-widget {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  z-index: 9990;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: none;
+  font-family: var(--font, "Urbanist", -apple-system, BlinkMacSystemFont, sans-serif);
+}
+
+.kinetix-wa-widget * {
+  box-sizing: border-box;
+}
+
+/* Floating Prompt Card / Chatty Preview */
+.kinetix-wa-card {
+  pointer-events: auto;
+  width: 320px;
+  max-width: calc(100vw - 36px);
+  margin-bottom: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1.5px solid rgba(124, 92, 255, 0.18);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px -10px rgba(70, 30, 150, 0.22), 0 4px 18px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(16px) scale(0.96);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+  visibility: hidden;
+  position: relative;
+}
+
+.kinetix-wa-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+}
+
+.kinetix-wa-card.hidden {
+  opacity: 0 !important;
+  transform: translateY(16px) scale(0.96) !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+/* Card Header */
+.kinetix-wa-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.08) 0%, rgba(37, 211, 102, 0.08) 100%);
+  border-bottom: 1px solid rgba(124, 92, 255, 0.12);
+}
+
+.kinetix-wa-avatar-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.kinetix-wa-avatar {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
+  flex-shrink: 0;
+}
+
+.kinetix-wa-avatar svg {
+  width: 22px;
+  height: 22px;
+  fill: #ffffff;
+}
+
+.kinetix-wa-online-dot {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #25D366;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 6px #25D366;
+}
+
+.kinetix-wa-title-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.kinetix-wa-name {
+  font-size: 14px;
+  font-weight: 750;
+  color: #0e0b1a;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.kinetix-wa-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #128C7E;
+  margin-top: 2px;
+}
+
+.kinetix-wa-status-beacon {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #25D366;
+  display: inline-block;
+  animation: waPulseDot 1.8s infinite ease-in-out;
+}
+
+.kinetix-wa-close {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5c5572;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.kinetix-wa-close:hover {
+  background: rgba(0, 0, 0, 0.12);
+  color: #0e0b1a;
+  transform: rotate(90deg);
+}
+
+/* Card Body */
+.kinetix-wa-body {
+  padding: 15px 16px 16px 16px;
+}
+
+.kinetix-wa-msg {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #4b4560;
+  margin: 0 0 14px 0;
+}
+
+.kinetix-wa-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: 0.02em;
+  border-radius: 100px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.kinetix-wa-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.5);
+  filter: brightness(1.05);
+}
+
+/* Floating Action Button */
+.kinetix-wa-btn {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 22px 11px 16px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  border-radius: 100px;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 750;
+  letter-spacing: 0.01em;
+  box-shadow: 0 10px 28px -4px rgba(37, 211, 102, 0.48), 0 2px 10px rgba(0, 0, 0, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.kinetix-wa-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 16px 36px -4px rgba(37, 211, 102, 0.58), 0 6px 16px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.06);
+}
+
+.kinetix-wa-btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.kinetix-wa-btn-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.kinetix-wa-btn-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: #ffffff;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+.kinetix-wa-badge-dot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #25D366;
+  box-shadow: 0 0 6px #ffffff;
+}
+
+.kinetix-wa-btn-label {
+  white-space: nowrap;
+}
+
+/* Subtle Pulsing Rings Behind Button */
+.kinetix-wa-pulse-rings {
+  position: absolute;
+  inset: -6px;
+  border-radius: 100px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.kinetix-wa-pulse-rings .pulse-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 100px;
+  border: 2px solid #25D366;
+  opacity: 0;
+  animation: waPulseRing 2.6s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.kinetix-wa-pulse-rings .pulse-ring.delay {
+  animation-delay: 1.3s;
+}
+
+@keyframes waPulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+}
+
+@keyframes waPulseRing {
+  0% { transform: scale(0.92); opacity: 0.7; }
+  60% { transform: scale(1.22); opacity: 0; }
+  100% { transform: scale(1.28); opacity: 0; }
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] .kinetix-wa-card {
+  background: rgba(14, 10, 26, 0.95);
+  border-color: rgba(169, 140, 255, 0.28);
+  box-shadow: 0 24px 60px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(124, 92, 255, 0.16);
+}
+
+[data-theme="dark"] .kinetix-wa-header {
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.15) 0%, rgba(37, 211, 102, 0.1) 100%);
+  border-bottom-color: rgba(169, 140, 255, 0.2);
+}
+
+[data-theme="dark"] .kinetix-wa-name {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .kinetix-wa-status {
+  color: #4ade80;
+}
+
+[data-theme="dark"] .kinetix-wa-close {
+  background: rgba(255, 255, 255, 0.08);
+  color: #c8c0df;
+}
+
+[data-theme="dark"] .kinetix-wa-close:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .kinetix-wa-msg {
+  color: #c8c0df;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 600px) {
+  .kinetix-wa-widget {
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    right: 16px;
+  }
+  .kinetix-wa-card {
+    width: calc(100vw - 32px);
+    max-width: 320px;
+    margin-bottom: 10px;
+  }
+  .kinetix-wa-btn {
+    padding: 10px 18px 10px 14px;
+    font-size: 13.5px;
+    gap: 9px;
+  }
+  .kinetix-wa-btn-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+

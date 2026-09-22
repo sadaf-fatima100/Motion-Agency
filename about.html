@@ -11,9 +11,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<link rel="stylesheet" href="css/style.css?v=5.2">
+<link rel="stylesheet" href="css/style.css?v=5.3">
 <link rel="stylesheet" href="css/about.css?v=5.2">
-<link rel="stylesheet" href="css/dark-theme.css?v=5.2">
+<link rel="stylesheet" href="css/dark-theme.css?v=5.3">
 <script>
   (function(){
     try {
@@ -917,8 +917,62 @@
       </div>
   </footer>
 
+  <!-- ============================================================
+       FLOATING WHATSAPP CHAT WIDGET (+92 314 3110259)
+       ============================================================ -->
+  <div class="kinetix-wa-widget" id="kinetixWaWidget">
+    <!-- Interactive Prompt Card / Speech Bubble -->
+    <div class="kinetix-wa-card" id="kinetixWaCard" role="dialog" aria-label="WhatsApp Chat Support">
+      <div class="kinetix-wa-header">
+        <div class="kinetix-wa-avatar-group">
+          <div class="kinetix-wa-avatar">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff" aria-hidden="true">
+              <path d="M12.031 0C5.394 0 .01 5.385.01 12.023c0 2.12.553 4.186 1.605 6.012L0 24l6.143-1.613a11.96 11.96 0 0 0 5.888 1.54h.005c6.634 0 12.02-5.385 12.02-12.023 0-3.212-1.25-6.23-3.52-8.503C18.266 1.25 15.246 0 12.031 0zm-.005 21.99a9.96 9.96 0 0 1-5.074-1.39l-.364-.216-3.77.99.99-3.673-.238-.378a9.96 9.96 0 0 1-1.528-5.3c0-5.503 4.478-9.98 9.984-9.98 2.665 0 5.172 1.038 7.058 2.924a9.94 9.94 0 0 1 2.92 7.056c0 5.503-4.478 9.98-9.978 9.98zm5.468-7.464c-.3-.15-1.776-.876-2.052-.976-.275-.1-.475-.15-.675.15-.2.3-.775.976-.95 1.176-.175.2-.35.225-.65.075-.3-.15-1.267-.467-2.413-1.49-.892-.796-1.493-1.78-1.668-2.08-.175-.3-.018-.462.132-.611.135-.134.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525s-.675-1.625-.925-2.225c-.244-.585-.493-.505-.675-.515-.175-.008-.375-.01-.575-.01s-.525.075-.8.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.115 3.23 5.125 4.53.716.31 1.275.495 1.71.634.72.228 1.375.196 1.892.119.578-.086 1.776-.726 2.026-1.426.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z"/>
+            </svg>
+            <span class="kinetix-wa-online-dot"></span>
+          </div>
+          <div class="kinetix-wa-title-area">
+            <div class="kinetix-wa-name">KINETIX Studio</div>
+            <div class="kinetix-wa-status">
+              <span class="kinetix-wa-status-beacon"></span>
+              Online &bull; Instant Reply
+            </div>
+          </div>
+        </div>
+        <button type="button" class="kinetix-wa-close" id="kinetixWaClose" aria-label="Close message preview" onclick="closeKinetixWa(event)">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="kinetix-wa-body">
+        <p class="kinetix-wa-msg">
+          Hi there! 👋 Need a custom motion graphic, 3D animation, or explainer video? Chat directly with our studio team.
+        </p>
+        <a href="https://wa.me/923143110259?text=Hello%20KINETIX%20team%2C%20I%20would%20like%20to%20inquire%20about%20a%20motion%20project." target="_blank" rel="noopener noreferrer" class="kinetix-wa-cta-btn">
+          <span>Start Conversation</span>
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Floating Action Button (Redirects to WhatsApp) -->
+    <a href="https://wa.me/923143110259?text=Hello%20KINETIX%20team%2C%20I%20would%20like%20to%20inquire%20about%20a%20motion%20project." target="_blank" rel="noopener noreferrer" class="kinetix-wa-btn" id="kinetixWaBtn" aria-label="Chat with KINETIX on WhatsApp">
+      <div class="kinetix-wa-pulse-rings" aria-hidden="true">
+        <span class="pulse-ring"></span>
+        <span class="pulse-ring delay"></span>
+      </div>
+      <div class="kinetix-wa-btn-icon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff" aria-hidden="true">
+          <path d="M12.031 0C5.394 0 .01 5.385.01 12.023c0 2.12.553 4.186 1.605 6.012L0 24l6.143-1.613a11.96 11.96 0 0 0 5.888 1.54h.005c6.634 0 12.02-5.385 12.02-12.023 0-3.212-1.25-6.23-3.52-8.503C18.266 1.25 15.246 0 12.031 0zm-.005 21.99a9.96 9.96 0 0 1-5.074-1.39l-.364-.216-3.77.99.99-3.673-.238-.378a9.96 9.96 0 0 1-1.528-5.3c0-5.503 4.478-9.98 9.984-9.98 2.665 0 5.172 1.038 7.058 2.924a9.94 9.94 0 0 1 2.92 7.056c0 5.503-4.478 9.98-9.978 9.98zm5.468-7.464c-.3-.15-1.776-.876-2.052-.976-.275-.1-.475-.15-.675.15-.2.3-.775.976-.95 1.176-.175.2-.35.225-.65.075-.3-.15-1.267-.467-2.413-1.49-.892-.796-1.493-1.78-1.668-2.08-.175-.3-.018-.462.132-.611.135-.134.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525s-.675-1.625-.925-2.225c-.244-.585-.493-.505-.675-.515-.175-.008-.375-.01-.575-.01s-.525.075-.8.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.115 3.23 5.125 4.53.716.31 1.275.495 1.71.634.72.228 1.375.196 1.892.119.578-.086 1.776-.726 2.026-1.426.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z"/>
+        </svg>
+        <span class="kinetix-wa-badge-dot"></span>
+      </div>
+      <span class="kinetix-wa-btn-label">Chat with us</span>
+    </a>
+  </div>
+
   <script src="js/theme.js"></script>
+  <script src="js/whatsapp-widget.js" defer></script>
   <script src="js/main.js?v=3.1" defer></script>
-  <script src="js/animations.js" defer></script>
+  <script src="js/animations.js?v=3.0" defer></script>
 </body>
 </html>

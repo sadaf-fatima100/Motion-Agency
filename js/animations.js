@@ -135,38 +135,36 @@ if(!rm){
     }, "-=0.4")
     .from(".hero-stage", {
       opacity: 0,
-      y: 32,
-      scale: 0.95,
-      duration: 1.1,
-      ease: "power4.out"
+      filter: "blur(10px)",
+      duration: 1.0,
+      ease: "power2.out",
+      clearProps: "all"
     }, "-=0.9")
     .from(".hero-card-brand-title span", {
       opacity: 0,
-      x: -24,
-      stagger: 0.08,
-      duration: 0.8,
-      ease: "power3.out"
+      x: -16,
+      stagger: 0.06,
+      duration: 0.75,
+      ease: "power2.out"
     }, "-=0.6")
     .from(".hero-card-top-badge", {
       opacity: 0,
-      y: -18,
-      scale: 0.85,
-      duration: 0.75,
-      ease: "back.out(1.6)"
+      scale: 0.92,
+      duration: 0.7,
+      ease: "power2.out"
     }, "-=0.6")
     .from(".hero-card-play-btn", {
-      scale: 0.6,
+      scale: 0.8,
       opacity: 0,
-      duration: 0.85,
-      ease: "back.out(2)"
+      duration: 0.75,
+      ease: "power2.out"
     }, "-=0.6")
     .from(".hero-metrics-card .metric-cell", {
       opacity: 0,
-      y: 18,
-      scale: 0.92,
-      stagger: 0.1,
+      filter: "blur(6px)",
+      stagger: 0.08,
       duration: 0.75,
-      ease: "back.out(1.4)",
+      ease: "power2.out",
       clearProps: "all"
     }, "-=0.4")
     .from(".hero-metrics-card .metric-sep", {
@@ -179,26 +177,25 @@ if(!rm){
     }, "-=0.5")
     .from(".stats-bar", {
       opacity: 0,
-      y: 24,
-      scale: 0.98,
+      filter: "blur(6px)",
       duration: 0.8,
-      ease: "power3.out",
+      ease: "power2.out",
       clearProps: "all"
     }, "-=0.3")
     .from(".stat-unit", {
       opacity: 0,
-      y: 16,
-      stagger: 0.1,
+      filter: "blur(6px)",
+      stagger: 0.08,
       duration: 0.65,
-      ease: "back.out(1.3)",
+      ease: "power2.out",
       clearProps: "all"
     }, "-=0.5")
     .from(".stats-badge-anchor", {
-      scale: 0.6,
+      scale: 0.85,
       opacity: 0,
-      rotate: -30,
-      duration: 0.8,
-      ease: "back.out(1.8)",
+      rotate: -15,
+      duration: 0.75,
+      ease: "power2.out",
       clearProps: "all"
     }, "-=0.5");
 
@@ -222,48 +219,68 @@ if(!rm){
     delay: 0.2,
     scrollTrigger: { trigger: ".anim-solutions-head", start: "top 88%" }
   });
-  gsap.from(".anim-solution-card", {
-    opacity: 0,
-    y: 50,
-    scale: 0.93,
-    stagger: 0,
-    duration: 0.95,
-    ease: "power4.out",
-    clearProps: "transform",
-    scrollTrigger: {
-      trigger: ".anim-solutions-grid",
-      start: "top 86%"
-    }
-  });
+  // Cards stay firmly upright with About-page Framer Motion blur-reveal (no y-drop, no scale shrink)
+  const solutionCards = gsap.utils.toArray(".anim-solutions-grid .anim-solution-card");
+  if (solutionCards.length) {
+    gsap.fromTo(solutionCards,
+      {
+        opacity: 0,
+        filter: "blur(10px)"
+      },
+      {
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 0.9,
+        stagger: 0.08,
+        ease: "power2.out",
+        clearProps: "all",
+        scrollTrigger: {
+          trigger: ".anim-solutions-grid",
+          start: "top 86%"
+        }
+      }
+    );
+  }
 
   // ============================================================
   // 4. PORTFOLIO & SHOWCASE SECTION (#work)
   // ============================================================
   gsap.from(".section-head .eyebrow", {
     opacity: 0,
-    y: 16,
+    y: 12,
     duration: 0.75,
-    ease: "power3.out",
+    ease: "power2.out",
     scrollTrigger: { trigger: ".section-head", start: "top 88%" }
   });
   animateFramerHeading(".section-head h2", ".section-head");
   gsap.from(".section-head p", {
     opacity: 0,
-    y: 20,
+    y: 14,
     duration: 0.85,
-    ease: "power3.out",
-    delay: 0.18,
+    ease: "power2.out",
+    delay: 0.15,
     scrollTrigger: { trigger: ".section-head", start: "top 88%" }
   });
-  gsap.from(".work-card", {
-    opacity: 0,
-    y: 28,
-    duration: 0.75,
-    stagger: 0.08,
-    ease: "power3.out",
-    clearProps: "transform",
-    scrollTrigger: { trigger: ".work-grid", start: "top 90%" }
-  });
+
+  // Cards stay firmly upright with About-page Framer Motion blur-reveal
+  const workCards = gsap.utils.toArray(".work-grid .work-card");
+  if (workCards.length) {
+    gsap.fromTo(workCards,
+      {
+        opacity: 0,
+        filter: "blur(10px)"
+      },
+      {
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 0.85,
+        stagger: 0.08,
+        ease: "power2.out",
+        clearProps: "all",
+        scrollTrigger: { trigger: ".work-grid", start: "top 88%" }
+      }
+    );
+  }
 
   // ============================================================
   // 5. EDITORIAL MANIFESTO SECTION
@@ -311,7 +328,7 @@ if(!rm){
     scrollTrigger: { trigger: ".why-us-header", start: "top 88%" }
   });
   animateFramerHeading(".why-us-main-title", ".why-us-header");
-  // Framer Motion Smooth Drop for Why-Us Badges (Random / Non-straight angles)
+  // Framer Motion Smooth Reveal for Why-Us Badges (Upright, zero bobbing)
   const pillTl = gsap.timeline({
     scrollTrigger: {
       trigger: ".why-us-header",
@@ -322,98 +339,93 @@ if(!rm){
 
   pillTl
     .fromTo(".why-pill-reviews", 
-      { opacity: 0, y: -80, rotation: -14, scale: 0.75 },
+      { opacity: 0, scale: 0.92, rotation: -4, filter: "blur(8px)" },
       { 
         opacity: 1, 
-        y: 0, 
-        rotation: -4, 
         scale: 1, 
-        duration: 0.95, 
-        ease: "back.out(1.85)",
-        onComplete: () => {
-          gsap.to(".why-pill-reviews", {
-            y: -5,
-            rotation: -2.8,
-            duration: 2.4,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut"
-          });
-        }
+        rotation: -4, 
+        filter: "blur(0px)", 
+        duration: 0.85, 
+        ease: "power2.out",
+        clearProps: "filter"
       }
     )
     .fromTo(".why-pill-satisfaction",
-      { opacity: 0, y: -90, rotation: 14, scale: 0.75 },
+      { opacity: 0, scale: 0.92, rotation: 3.5, filter: "blur(8px)" },
       { 
         opacity: 1, 
-        y: 0, 
-        rotation: 3.5, 
         scale: 1, 
-        duration: 1.0, 
-        ease: "back.out(1.95)",
-        onComplete: () => {
-          gsap.to(".why-pill-satisfaction", {
-            y: -5,
-            rotation: 4.6,
-            duration: 2.7,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut",
-            delay: 0.35
-          });
-        }
+        rotation: 3.5, 
+        filter: "blur(0px)", 
+        duration: 0.85, 
+        ease: "power2.out",
+        clearProps: "filter"
       },
-      "-=0.75"
+      "-=0.6"
     );
-  gsap.from(".why-bento-grid .why-card", {
-    opacity: 0,
-    y: 26,
-    stagger: 0.08,
-    duration: 0.85,
-    ease: "power2.out",
-    clearProps: "transform,opacity",
-    scrollTrigger: { trigger: ".why-bento-grid", start: "top 86%" }
-  });
+
+  // Cards stay firmly upright with About-page Framer Motion blur-reveal
+  const whyCards = gsap.utils.toArray(".why-bento-grid .why-card");
+  if (whyCards.length) {
+    gsap.fromTo(whyCards,
+      {
+        opacity: 0,
+        filter: "blur(10px)"
+      },
+      {
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 0.85,
+        stagger: 0.08,
+        ease: "power2.out",
+        clearProps: "all",
+        scrollTrigger: { trigger: ".why-bento-grid", start: "top 86%" }
+      }
+    );
+  }
+
   gsap.from(".why-banner-tag", {
-    scale: 0.8,
+    scale: 0.9,
     opacity: 0,
     stagger: 0.06,
     duration: 0.65,
-    ease: "back.out(1.8)",
+    ease: "power2.out",
+    clearProps: "all",
     scrollTrigger: { trigger: ".why-card-banner", start: "top 88%" }
   });
   gsap.from(".why-phones-visual .why-phone", {
-    x: 45,
+    x: 35,
     opacity: 0,
-    stagger: 0.15,
-    duration: 1.0,
-    ease: "power3.out",
+    stagger: 0.12,
+    duration: 0.9,
+    ease: "power2.out",
     clearProps: "transform",
     scrollTrigger: { trigger: ".why-card-wide", start: "top 85%" }
   });
   gsap.from(".why-tool-item", {
-    scale: 0.8,
+    scale: 0.9,
     opacity: 0,
-    stagger: 0.08,
-    duration: 0.7,
-    ease: "back.out(1.5)",
-    clearProps: "transform",
+    stagger: 0.06,
+    duration: 0.65,
+    ease: "power2.out",
+    clearProps: "all",
     scrollTrigger: { trigger: ".why-tools-box", start: "top 90%" }
   });
   gsap.from(".why-clipboard-board", {
-    scale: 0.85,
+    scale: 0.92,
     opacity: 0,
-    y: 20,
-    duration: 0.9,
-    ease: "back.out(1.6)",
+    duration: 0.8,
+    ease: "power2.out",
+    clearProps: "all",
     scrollTrigger: { trigger: ".why-card-banner", start: "top 85%" }
   });
   gsap.from(".why-floating-capsule", {
-    scale: 0,
+    scale: 0.85,
     opacity: 0,
-    stagger: 0.1,
-    duration: 0.8,
-    ease: "back.out(2)",
+    stagger: 0.08,
+    duration: 0.75,
+    ease: "power2.out",
+    clearProps: "all",
     scrollTrigger: { trigger: ".why-card-banner", start: "top 85%" }
   });
 
@@ -436,35 +448,47 @@ if(!rm){
     delay: 0.2,
     scrollTrigger: { trigger: ".process-head", start: "top 88%" }
   });
-  gsap.from(".services-grid .service-card", {
-    opacity: 0,
-    y: 48,
-    scale: 0.93,
-    stagger: 0,
-    duration: 0.95,
-    ease: "back.out(1.3)",
-    clearProps: "transform",
-    scrollTrigger: { trigger: ".services-grid", start: "top 86%" }
-  });
+  // Cards stay firmly upright with About-page Framer Motion blur-reveal
+  const serviceCards = gsap.utils.toArray(".services-grid .service-card");
+  if (serviceCards.length) {
+    gsap.fromTo(serviceCards,
+      {
+        opacity: 0,
+        filter: "blur(10px)"
+      },
+      {
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 0.85,
+        stagger: 0.08,
+        ease: "power2.out",
+        clearProps: "all",
+        scrollTrigger: { trigger: ".services-grid", start: "top 86%" }
+      }
+    );
+  }
 
   // ============================================================
   // 8. ABOUT AGENCY SECTION (#about)
   // ============================================================
-  gsap.from(".about-sculpted-canvas", {
-    opacity: 0,
-    y: 40,
-    duration: 0.9,
-    ease: "power3.out",
-    scrollTrigger: { trigger: ".about-agency-section", start: "top 85%" }
-  });
-  gsap.from(".about-video-frame", {
-    opacity: 0,
-    y: 30,
-    stagger: 0.18,
-    duration: 0.85,
-    ease: "power3.out",
-    scrollTrigger: { trigger: ".about-dual-videos", start: "top 86%" }
-  });
+  const aboutVisuals = gsap.utils.toArray(".about-sculpted-canvas, .about-video-frame");
+  if (aboutVisuals.length) {
+    gsap.fromTo(aboutVisuals,
+      {
+        opacity: 0,
+        filter: "blur(10px)"
+      },
+      {
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 0.85,
+        stagger: 0.1,
+        ease: "power2.out",
+        clearProps: "all",
+        scrollTrigger: { trigger: ".about-agency-section", start: "top 85%" }
+      }
+    );
+  }
   animateFramerHeading(".about-open-title", ".about-open-editorial");
   gsap.from(".about-open-eyebrow, .about-open-narrative, .about-open-callout, .about-open-metrics, .about-open-actions", {
     opacity: 0,
@@ -494,22 +518,32 @@ if(!rm){
     delay: 0.2,
     scrollTrigger: { trigger: ".pricing-head", start: "top 88%" }
   });
-  gsap.from(".pricing-card", {
-    opacity: 0,
-    y: 55,
-    scale: 0.92,
-    stagger: 0,
-    duration: 0.95,
-    ease: "power3.out",
-    clearProps: "transform",
-    scrollTrigger: { trigger: ".pricing-grid", start: "top 86%" }
-  });
+  // Cards stay firmly upright with About-page Framer Motion blur-reveal
+  const pricingCards = gsap.utils.toArray(".pricing-card");
+  if (pricingCards.length) {
+    gsap.fromTo(pricingCards,
+      {
+        opacity: 0,
+        filter: "blur(10px)"
+      },
+      {
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 0.85,
+        stagger: 0.08,
+        ease: "power2.out",
+        clearProps: "all",
+        scrollTrigger: { trigger: ".pricing-grid", start: "top 86%" }
+      }
+    );
+  }
   gsap.from(".pricing-popular-badge", {
-    scale: 0,
+    scale: 0.85,
     opacity: 0,
     duration: 0.75,
-    ease: "back.out(2)",
-    delay: 0.4,
+    ease: "power2.out",
+    delay: 0.3,
+    clearProps: "all",
     scrollTrigger: { trigger: ".pricing-grid", start: "top 86%" }
   });
 
@@ -533,14 +567,23 @@ if(!rm){
     clearProps: "opacity,transform",
     scrollTrigger: { trigger: ".testimonials-section", start: "top 88%" }
   });
-  gsap.from(".testi-slider-wrapper, .testi-stage-container", {
-    opacity: 0,
-    y: 28,
-    duration: 0.9,
-    ease: "power3.out",
-    clearProps: "opacity,transform",
-    scrollTrigger: { trigger: ".testimonials-section", start: "top 85%" }
-  });
+  const testiStages = gsap.utils.toArray(".testi-slider-wrapper, .testi-stage-container");
+  if (testiStages.length) {
+    gsap.fromTo(testiStages,
+      {
+        opacity: 0,
+        filter: "blur(10px)"
+      },
+      {
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 0.85,
+        ease: "power2.out",
+        clearProps: "all",
+        scrollTrigger: { trigger: ".testimonials-section", start: "top 85%" }
+      }
+    );
+  }
 
   // ============================================================
   // 9.8 LATEST & TRENDING BLOG SECTION (#blog)
@@ -564,28 +607,43 @@ if(!rm){
       clearProps: "opacity,transform",
       scrollTrigger: { trigger: ".blog-section", start: "top 88%" }
     });
-    gsap.from(".blog-card", {
-      opacity: 0,
-      y: 36,
-      stagger: 0.16,
-      duration: 0.9,
-      ease: "power3.out",
-      clearProps: "opacity,transform",
-      scrollTrigger: { trigger: ".blog-grid", start: "top 85%" }
-    });
+    const blogCards = gsap.utils.toArray(".blog-card");
+    if (blogCards.length) {
+      gsap.fromTo(blogCards,
+        {
+          opacity: 0,
+          filter: "blur(10px)"
+        },
+        {
+          opacity: 1,
+          filter: "blur(0px)",
+          duration: 0.85,
+          stagger: 0.08,
+          ease: "power2.out",
+          clearProps: "all",
+          scrollTrigger: { trigger: ".blog-grid", start: "top 85%" }
+        }
+      );
+    }
   }
 
   // ============================================================
   // 10. CTA BAND (#contact)
   // ============================================================
-  gsap.from(".cta-band", {
-    opacity: 0,
-    scale: 0.94,
-    y: 42,
-    duration: 1.0,
-    ease: "power4.out",
-    scrollTrigger: { trigger: ".cta-band", start: "top 88%" }
-  });
+  gsap.fromTo(".cta-band", 
+    {
+      opacity: 0,
+      filter: "blur(10px)"
+    },
+    {
+      opacity: 1,
+      filter: "blur(0px)",
+      duration: 0.9,
+      ease: "power2.out",
+      clearProps: "all",
+      scrollTrigger: { trigger: ".cta-band", start: "top 88%" }
+    }
+  );
   animateFramerHeading(".cta-band h2", ".cta-band");
   gsap.from(".cta-band p, .cta-band .btn-primary", {
     opacity: 0,
@@ -618,21 +676,6 @@ if(!rm){
   // ============================================================
   // 12. CONTINUOUS FRAMER MOTION FLOATING MICRO-ANIMATIONS
   // ============================================================
-  gsap.to(".why-pill-reviews", {
-    y: -7,
-    duration: 3.2,
-    repeat: -1,
-    yoyo: true,
-    ease: "sine.inOut"
-  });
-  gsap.to(".why-pill-satisfaction", {
-    y: 7,
-    duration: 3.6,
-    repeat: -1,
-    yoyo: true,
-    ease: "sine.inOut",
-    delay: 0.5
-  });
   gsap.to(".hctb-icon", {
     scale: 1.08,
     duration: 2.2,
