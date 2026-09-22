@@ -11,19 +11,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<link rel="stylesheet" href="css/style.css?v=5.5">
+<link rel="stylesheet" href="css/style.css?v=5.6">
 <link rel="stylesheet" href="css/dark-theme.css?v=5.4">
-<script>
-  (function(){
-    try {
-      var saved = localStorage.getItem('kinetix_theme');
-      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (saved === 'dark' || (!saved && prefersDark)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-    } catch(e){}
-  })();
-</script>
+<script src="js/theme.js"></script>
 </head>
 <body>
 
@@ -62,7 +52,7 @@
       </button>
 
       <!-- Dark / Light Theme Toggle -->
-      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode" onclick="toggleKinetixTheme()">
         <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
@@ -1898,31 +1888,46 @@
           </div>
         </div>
 
-        <!-- RIGHT: Stats card grid -->
+        <!-- RIGHT: Animated visual composition -->
         <div class="cta-right">
-          <div class="cta-stats-grid">
-            <div class="cta-stat-card cta-stat-accent">
-              <span class="cta-stat-num">340+</span>
-              <span class="cta-stat-label">Projects Delivered</span>
+          <div class="cta-visual-stage">
+
+            <!-- Central glowing orb -->
+            <div class="cta-orb-wrap">
+              <div class="cta-orb">
+                <div class="cta-orb-inner">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.6"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <div class="cta-orb-ring ring-1"></div>
+                <div class="cta-orb-ring ring-2"></div>
+                <div class="cta-orb-ring ring-3"></div>
+              </div>
             </div>
-            <div class="cta-stat-card">
-              <span class="cta-stat-num">5.0★</span>
-              <span class="cta-stat-label">Client Rating</span>
+
+            <!-- Floating service chips — orbit around the orb -->
+            <div class="cta-float-chip chip-1">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <span>3D CGI</span>
             </div>
-            <div class="cta-stat-card">
-              <span class="cta-stat-num">42%</span>
-              <span class="cta-stat-label">Avg. Conversion Lift</span>
+            <div class="cta-float-chip chip-2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+              <span>Explainer</span>
             </div>
-            <div class="cta-stat-card cta-stat-dark">
-              <svg class="cta-card-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              <span class="cta-stat-num">3 Days</span>
-              <span class="cta-stat-label">First Draft Delivery</span>
+            <div class="cta-float-chip chip-3">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              <span>Commercial</span>
             </div>
-          </div>
-          <div class="cta-badge-strip">
-            <span class="cta-badge">4K UHD Output</span>
-            <span class="cta-badge">Commercial License</span>
-            <span class="cta-badge">Unlimited Revisions</span>
+            <div class="cta-float-chip chip-4">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              <span>Whiteboard</span>
+            </div>
+
+            <!-- Status pill — floating bottom -->
+            <div class="cta-live-pill">
+              <span class="cta-live-dot"></span>
+              <span>Studio is Open — 3 slots left</span>
+            </div>
+
           </div>
         </div>
 
