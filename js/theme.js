@@ -15,13 +15,14 @@
   const html = document.documentElement;
   let lastToggleTimestamp = 0;
 
-  // Initialize theme as early as possible
+  // Initialize theme as early as possible — defaults to dark
   function getPreferredTheme() {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved === 'dark' || saved === 'light') return saved;
     } catch (e) {}
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    // Default is dark theme for elite motion studio aesthetic
+    return 'dark';
   }
 
   function applyTheme(theme) {
