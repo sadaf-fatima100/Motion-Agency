@@ -869,17 +869,6 @@
       }, 700);
     }
 
-    function toggleKinetixTheme() {
-      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('kinetix_theme', 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('kinetix_theme', 'dark');
-      }
-    }
-
     function toggleMobileMenu(e) {
       e.stopPropagation();
       var drawer = document.getElementById('mobileNavDrawer');
@@ -983,7 +972,6 @@
     </a>
   </div>
 
-  <script src="js/theme.js"></script>
   <script src="js/whatsapp-widget.js" defer></script>
   <script src="js/animations.js?v=3.0" defer></script>
 </body>
