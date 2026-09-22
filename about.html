@@ -800,9 +800,41 @@
   <section class="cta-section about-cta-section" id="contact">
     <div class="wrap">
       <div class="cta-band">
-        <h2>Ready to bring your <span class="accent-purple">vision to the</span> <span class="accent-pink">screen</span> with our studio?</h2>
-        <p>Tell us what you are building and our directors will prepare a bespoke cinematic treatment within three business days.</p>
-        <a href="index.html#contact" class="btn-primary">Book a Consultation<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" style="width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.4;display:block;"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <!-- Concentric Circular Ripple Rings radiating from the right edge -->
+        <div class="cta-ripple-waves" aria-hidden="true">
+          <svg viewBox="0 0 600 600" class="cta-ripple-svg" preserveAspectRatio="xMaxYMid meet">
+            <circle cx="600" cy="300" r="540" class="cta-ripple-ring ring-6" />
+            <circle cx="600" cy="300" r="440" class="cta-ripple-ring ring-5" />
+            <circle cx="600" cy="300" r="340" class="cta-ripple-ring ring-4" />
+            <circle cx="600" cy="300" r="250" class="cta-ripple-ring ring-3" />
+            <circle cx="600" cy="300" r="160" class="cta-ripple-ring ring-2" />
+            <circle cx="600" cy="300" r="80"  class="cta-ripple-ring ring-1" />
+          </svg>
+        </div>
+
+        <!-- Left Content: Headline + Subtitle + Capsule Action Buttons -->
+        <div class="cta-content-area">
+          <h2 class="cta-banner-title">Ready to bring your vision to the screen?</h2>
+          <p class="cta-banner-desc">Tell us what you are building. Our directors will prepare a bespoke cinematic treatment tailored to your timeline within three business days.</p>
+          <div class="cta-capsules-group">
+            <a href="index.html#contact" class="cta-capsule-btn primary-capsule">
+              <span class="capsule-label">Book a Consultation</span>
+              <span class="capsule-orb">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </span>
+            </a>
+            <a href="product.html?id=explainer" class="cta-capsule-btn secondary-capsule">
+              <span class="capsule-label">Explore Packages</span>
+              <span class="capsule-orb">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

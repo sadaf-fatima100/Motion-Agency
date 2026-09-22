@@ -634,11 +634,21 @@
 }
 .about-pillars-section{padding:80px 0;background:rgba(124,92,255,.03);}
 .pillars-head{text-align:center;max-width:680px;margin:0 auto 40px;}
-.pillars-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:stretch;}
+.pillars-grid,
+.pipeline-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  align-items: stretch;
+}
+.pipeline-steps-grid {
+  margin-top: 45px;
+}
 
-/* PILLARS SHINING ROTATING BORDER CARDS (SLEEK RECTANGULAR SHAPE) */
-/* PILLARS RECTANGULAR CARDS (STATIC SOFT LUXURY GRADIENT BORDER - ZERO DISTRACTION) */
-.pillars-grid .pillar-card {
+/* PILLARS & PIPELINE RECTANGULAR CARDS (STATIC SOFT LUXURY GRADIENT BORDER - ZERO DISTRACTION) */
+.pillars-grid .pillar-card,
+.pipeline-steps-grid .pipeline-step-card,
+.pipeline-step-card {
   position: relative;
   border-radius: 20px;
   padding: 1.5px;
@@ -654,7 +664,9 @@
   text-align: left;
 }
 
-.pillars-grid .pillar-card:hover {
+.pillars-grid .pillar-card:hover,
+.pipeline-steps-grid .pipeline-step-card:hover,
+.pipeline-step-card:hover {
   transform: translateY(-5px);
   background: linear-gradient(135deg, rgba(124, 92, 255, 0.75) 0%, rgba(169, 140, 255, 0.5) 50%, rgba(255, 143, 206, 0.65) 100%);
   box-shadow: 0 20px 45px -10px rgba(124, 92, 255, 0.22),
@@ -662,7 +674,9 @@
 }
 
 /* Card Inner White Container (Compact Sleek Landscape Rectangle) */
-.pillars-grid .pillar-card-inner {
+.pillars-grid .pillar-card-inner,
+.pipeline-steps-grid .pillar-card-inner,
+.pipeline-step-card .pillar-card-inner {
   position: relative;
   z-index: 1;
   background: #ffffff;
@@ -675,7 +689,9 @@
   box-sizing: border-box;
 }
 
-.pillars-grid .pillar-card .service-card-top {
+.pillars-grid .pillar-card .service-card-top,
+.pipeline-steps-grid .pipeline-step-card .service-card-top,
+.pipeline-step-card .service-card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -683,7 +699,9 @@
   width: 100%;
 }
 
-.pillars-grid .pillar-card .process-icon-box {
+.pillars-grid .pillar-card .process-icon-box,
+.pipeline-steps-grid .pipeline-step-card .process-icon-box,
+.pipeline-step-card .process-icon-box {
   width: 52px;
   height: 52px;
   border-radius: 14px;
@@ -698,17 +716,23 @@
   flex-shrink: 0;
 }
 
-.pillars-grid .pillar-card:hover .process-icon-box {
+.pillars-grid .pillar-card:hover .process-icon-box,
+.pipeline-steps-grid .pipeline-step-card:hover .process-icon-box,
+.pipeline-step-card:hover .process-icon-box {
   transform: scale(1.08) translateY(-2px);
   box-shadow: 0 10px 24px -4px rgba(120, 80, 220, 0.24);
 }
 
-.pillars-grid .pillar-card .process-animated-svg {
+.pillars-grid .pillar-card .process-animated-svg,
+.pipeline-steps-grid .pipeline-step-card .process-animated-svg,
+.pipeline-step-card .process-animated-svg {
   width: 40px;
   height: 40px;
 }
 
-.pillars-grid .pillar-card .step-number {
+.pillars-grid .pillar-card .step-number,
+.pipeline-steps-grid .pipeline-step-card .step-number,
+.pipeline-step-card .step-number {
   font-family: var(--font, "Urbanist", sans-serif);
   font-size: 32px;
   font-weight: 800;
@@ -724,14 +748,20 @@
   display: inline-block;
 }
 
-.pillars-grid .pillar-card:hover .step-number {
+.pillars-grid .pillar-card:hover .step-number,
+.pipeline-steps-grid .pipeline-step-card:hover .step-number,
+.pipeline-step-card:hover .step-number {
   opacity: 1;
   transform: scale(1.08) translateY(-2px);
   filter: drop-shadow(0 4px 12px rgba(124, 92, 255, 0.35));
 }
 
 .pillars-grid .pillar-card .service-card-title,
-.pillars-grid .pillar-card h3 {
+.pillars-grid .pillar-card h3,
+.pipeline-steps-grid .pipeline-step-card .service-card-title,
+.pipeline-steps-grid .pipeline-step-card h3,
+.pipeline-step-card .service-card-title,
+.pipeline-step-card h3 {
   font-family: var(--font)!important;
   font-size: 17px;
   font-weight: 600!important;
@@ -741,7 +771,9 @@
   line-height: 1.25;
 }
 
-.pillars-grid .pillar-card p {
+.pillars-grid .pillar-card p,
+.pipeline-steps-grid .pipeline-step-card p,
+.pipeline-step-card p {
   font-size: 13.5px;
   color: var(--ink-1, #5c5572);
   line-height: 1.52;
@@ -749,126 +781,13 @@
   margin: 0;
 }
 
-.pillars-grid .pillar-card .service-card-accent-bar {
+.pillars-grid .pillar-card .service-card-accent-bar,
+.pipeline-steps-grid .pipeline-step-card .service-card-accent-bar,
+.pipeline-step-card .service-card-accent-bar {
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
 }
 
-/* PIPELINE STEP CARDS (STANDALONE CLEAN STYLE) */
-.pipeline-step-card {
-  padding: 34px 26px;
-  border-radius: 24px;
-  background: var(--surface,#fff);
-  box-shadow: 0 10px 30px -10px rgba(100,70,180,.08);
-  border: 1.5px solid var(--line,#ece5f8);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .35s ease, border-color .35s ease;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  text-align: left;
-}
-
-.pipeline-step-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 50px -12px rgba(100,60,200,.18);
-  border-color: rgba(169,140,255,.45);
-}
-
-.pillar-card .service-card-top,
-.pipeline-step-card .service-card-top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:24px;
-  width:100%;
-}
-
-
-/* Pipeline Step Numbers (Matches Home Process Cards) */
-.pipeline-step-card .step-number {
-  font-family: var(--font, "Urbanist", sans-serif);
-  font-size: 38px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  background: linear-gradient(135deg, #7c5cff 0%, #ff8fce 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 0.45;
-  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-  user-select: none;
-  display: inline-block;
-}
-
-.pipeline-step-card:hover .step-number {
-  opacity: 1;
-  transform: scale(1.08) translateY(-2px);
-  filter: drop-shadow(0 4px 12px rgba(124, 92, 255, 0.35));
-}
-
-.pillar-card .process-icon-box,
-.pipeline-step-card .process-icon-box{
-  width:72px;
-  height:72px;
-  border-radius:20px;
-  background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(245,240,255,.7));
-  border:1.5px solid rgba(169,140,255,.3);
-  box-shadow:0 8px 24px -6px rgba(120,80,220,.16);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease;
-  flex-shrink:0;
-}
-
-.pillar-card:hover .process-icon-box,
-.pipeline-step-card:hover .process-icon-box{
-  transform:scale(1.08);
-  box-shadow:0 14px 30px -6px rgba(120,80,220,.28);
-}
-
-.pillar-card .service-card-title,
-.pipeline-step-card .service-card-title,
-.pillar-card h3,
-.pipeline-step-card h3{
-  font-family:var(--font)!important;
-  font-size:19.5px;
-  font-weight:600!important;
-  margin-bottom:10px;
-  letter-spacing:-.015em;
-  color:var(--ink-0,#0e0b1a);
-  line-height:1.3;
-}
-
-.pillar-card p,
-.pipeline-step-card p{
-  font-size:14px;
-  color:var(--ink-1,#5c5572);
-  line-height:1.65;
-  flex-grow:1;
-  margin:0;
-}
-
-.pillar-card .service-card-accent-bar,
-.pipeline-step-card .service-card-accent-bar{
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  height:3.5px;
-  background:linear-gradient(90deg,#7c5cff 0%,#ff8fce 100%);
-  transform:scaleX(0);
-  transform-origin:left;
-  transition:transform .35s ease;
-}
-
-.pillar-card:hover .service-card-accent-bar,
-.pipeline-step-card:hover .service-card-accent-bar{
-  transform:scaleX(1);
-}
 
 /* LIVE ICON KEYFRAME ANIMATIONS */
 @keyframes animDrawPath{
@@ -989,17 +908,14 @@
   .manifesto-floating-badge{font-size:10.5px;padding:6px 12px;bottom:12px;left:12px;}
   .about-pillars-section{padding:48px 0;}
   .pillars-head{margin-bottom:28px;padding:0 4px;}
-  .pillars-grid{grid-template-columns:1fr 1fr;gap:12px;}
-  .pillars-grid .pillar-card-inner{padding:18px 16px 16px;}
-  .pillars-grid .pillar-card .process-icon-box{width:44px;height:44px;}
-  .pillars-grid .pillar-card .process-animated-svg{width:32px;height:32px;}
-  .pillars-grid .pillar-card .step-number{font-size:26px;}
-  .pillars-grid .pillar-card .service-card-title,.pillars-grid .pillar-card h3{font-size:15px;}
-  .pillars-grid .pillar-card p{font-size:12.5px;}
+  .pillars-grid, .pipeline-steps-grid{grid-template-columns:1fr 1fr;gap:12px;}
+  .pillars-grid .pillar-card-inner, .pipeline-steps-grid .pillar-card-inner{padding:18px 16px 16px;}
+  .pillars-grid .pillar-card .process-icon-box, .pipeline-steps-grid .process-icon-box{width:44px;height:44px;}
+  .pillars-grid .pillar-card .process-animated-svg, .pipeline-steps-grid .process-animated-svg{width:32px;height:32px;}
+  .pillars-grid .pillar-card .step-number, .pipeline-steps-grid .step-number{font-size:26px;}
+  .pillars-grid .pillar-card .service-card-title, .pillars-grid .pillar-card h3, .pipeline-steps-grid .service-card-title, .pipeline-steps-grid h3{font-size:15px;}
+  .pillars-grid .pillar-card p, .pipeline-steps-grid p{font-size:12.5px;}
   .about-pipeline-section{padding:48px 0;}
-  .pipeline-steps-grid{grid-template-columns:1fr 1fr;gap:14px;}
-  .pipeline-step-card{padding:24px 18px;}
-  .pillar-card .process-icon-box,.pipeline-step-card .process-icon-box{width:58px;height:58px;}
   .team-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
   .dock-notch-cards-row,.pillars-grid,.team-grid,.pipeline-steps-grid{gap:12px;}
 }
@@ -1042,21 +958,14 @@
   .manifesto-video-play-btn{width:52px;height:52px;}
   .about-pillars-section{padding:40px 0;}
   .pillars-head{margin-bottom:22px;}
-  .pillars-grid{grid-template-columns:1fr;gap:12px;}
-  .pillars-grid .pillar-card-inner{padding:16px 14px 14px;}
-  .pillars-grid .pillar-card .process-icon-box{width:40px;height:40px;border-radius:12px;}
-  .pillars-grid .pillar-card .process-animated-svg{width:30px;height:30px;}
-  .pillars-grid .pillar-card .step-number{font-size:22px;}
-  .pillars-grid .pillar-card .service-card-title,.pillars-grid .pillar-card h3{font-size:14.5px;}
-  .pillars-grid .pillar-card p{font-size:12.5px;line-height:1.5;}
+  .pillars-grid, .pipeline-steps-grid{grid-template-columns:1fr;gap:12px;}
+  .pillars-grid .pillar-card-inner, .pipeline-steps-grid .pillar-card-inner{padding:16px 14px 14px;}
+  .pillars-grid .pillar-card .process-icon-box, .pipeline-steps-grid .process-icon-box{width:40px;height:40px;border-radius:12px;}
+  .pillars-grid .pillar-card .process-animated-svg, .pipeline-steps-grid .process-animated-svg{width:30px;height:30px;}
+  .pillars-grid .pillar-card .step-number, .pipeline-steps-grid .step-number{font-size:22px;}
+  .pillars-grid .pillar-card .service-card-title, .pillars-grid .pillar-card h3, .pipeline-steps-grid .service-card-title, .pipeline-steps-grid h3{font-size:14.5px;}
+  .pillars-grid .pillar-card p, .pipeline-steps-grid p{font-size:12.5px;line-height:1.5;}
   .about-pipeline-section{padding:40px 0;}
-  .pipeline-steps-grid{grid-template-columns:1fr;gap:14px;}
-  .pipeline-step-card{padding:22px 16px;}
-  .pillar-card .process-icon-box,.pipeline-step-card .process-icon-box{width:52px;height:52px;border-radius:16px;}
-  .pipeline-step-card .step-number{font-size:30px;}
-  .pillar-card .service-card-title,.pipeline-step-card .service-card-title,
-  .pillar-card h3,.pipeline-step-card h3{font-size:17px;}
-  .pillar-card p,.pipeline-step-card p{font-size:13.5px;}
   .team-grid{grid-template-columns:1fr 1fr;gap:12px;}
   .team-info{padding:14px 14px 18px;}
   .team-name{font-size:15px;}
@@ -1132,6 +1041,16 @@
 .about-cta-section .cta-band,
 .cta-section .cta-band {
   margin: 0 auto !important;
+}
+
+.about-cta-section .cta-band h2,
+.about-cta-section .cta-band .cta-banner-title {
+  color: #ffffff !important;
+}
+
+.about-cta-section .cta-band p,
+.about-cta-section .cta-band .cta-banner-desc {
+  color: rgba(255, 255, 255, 0.94) !important;
 }
 
 .site-footer {
