@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Configure Video Package &mdash; KINETIX Motion Studio</title>
+  <meta name="description" content="Select your custom animation package, duration, and specifications. Transparent pricing, full commercial copyright, and guaranteed on-time delivery." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="css/style.css?v=5.3" />
+  <link rel="stylesheet" href="css/dark-theme.css?v=5.3" />
+  <link rel="stylesheet" href="css/product.css?v=1.0" />
+
+  <script>
+    (function(){
+      try {
+        var saved = localStorage.getItem('kinetix_theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch(e){}
+    })();
+  </script>
+</head>
+<body class="product-page-body">
+
+  <!-- ============================================================
+       TOP NAVIGATION BAR (MATCHING KINETIX DESIGN SYSTEM)
+       ============================================================ -->
+  <header class="site-header">
+    <div class="nav-wrapper">
+      <div class="nav-main-capsule">
+        <a href="index.html#top" class="nav-logo-box" aria-label="KINETIX Homepage">
+          <svg class="nav-motion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2v5M12 17v5M2 12h5M17 12h5M4.93 4.93l3.54 3.54M15.54 15.54l3.53 3.53M4.93 19.07l3.54-3.54M15.54 8.46l3.53-3.53" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="2.5" fill="#ffffff"/>
+          </svg>
+          <span class="nav-logo-text">KINETIX</span>
+        </a>
+        <div class="nav-links-segment">
+          <nav class="nav-links-menu">
+            <a href="index.html#top" class="nav-item">Home</a>
+            <a href="index.html#work" class="nav-item">Portfolio</a>
+            <a href="index.html#why-us" class="nav-item">Why Us</a>
+            <a href="index.html#pricing" class="nav-item active">Pricing</a>
+            <a href="index.html#blog" class="nav-item">Blog</a>
+            <a href="about.html" class="nav-item">About Us</a>
+            <a href="index.html#contact" class="nav-item">Contact Us</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="nav-cta-wrap">
+        <button type="button" class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleMobileMenu(event)">
+          <span class="ham-bar"></span>
+          <span class="ham-bar"></span>
+        </button>
+
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle dark/light theme" onclick="toggleKinetixTheme()">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+
+        <a href="#orderSection" class="btn-get-started" onclick="openOrderModal()">
+          <span>Order Package</span>
+          <svg class="btn-arrow-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <nav class="mobile-nav-links">
+        <a href="index.html#top" class="mobile-nav-item" onclick="closeMobileMenu()">Home</a>
+        <a href="index.html#work" class="mobile-nav-item" onclick="closeMobileMenu()">Portfolio</a>
+        <a href="index.html#why-us" class="mobile-nav-item" onclick="closeMobileMenu()">Why Us</a>
+        <a href="index.html#pricing" class="mobile-nav-item active" onclick="closeMobileMenu()">Pricing</a>
+        <a href="index.html#blog" class="mobile-nav-item" onclick="closeMobileMenu()">Blog</a>
+        <a href="about.html" class="mobile-nav-item" onclick="closeMobileMenu()">About Us</a>
+        <a href="index.html#contact" class="mobile-nav-item" onclick="closeMobileMenu()">Contact Us</a>
+      </nav>
+      <a href="#orderSection" class="mobile-nav-cta" onclick="closeMobileMenu(); openOrderModal();">
+        <span>Order Package</span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+          <path d="M5 12h14M13 6l6 6-6 6"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="header-scroll-progress-track" aria-hidden="true">
+      <div class="header-scroll-progress-bar" id="headerProgressBar"></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumb Section -->
+    <section class="product-breadcrumb-section">
+      <div class="wrap">
+        <nav class="product-breadcrumb" aria-label="Breadcrumb navigation">
+          <a href="index.html#top">Home</a>
+          <span class="product-breadcrumb-sep">/</span>
+          <a href="index.html#pricing">Packages &amp; Pricing</a>
+          <span class="product-breadcrumb-sep">/</span>
+          <span class="product-breadcrumb-current" id="breadcrumbProductName">Whiteboard Video</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Package Switcher Strip -->
+    <section class="product-hero-strip">
+      <div class="wrap">
+        <div class="product-package-pills">
+          <button type="button" class="package-switch-btn active" id="pill-whiteboard" onclick="switchPackage('whiteboard')">
+            <span>Whiteboard Video</span>
+          </button>
+          <button type="button" class="package-switch-btn" id="pill-explainer" onclick="switchPackage('explainer')">
+            <span>Explainer Video</span>
+          </button>
+          <button type="button" class="package-switch-btn" id="pill-premium" onclick="switchPackage('premium')">
+            <span>Premium 3D Video</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Configuration Section -->
+    <section class="product-detail-section" id="orderSection">
+      <div class="wrap">
+        <div class="product-grid">
+
+          <!-- Left Column: Video & Media Preview Stage -->
+          <div class="product-media-card">
+            <div class="product-media-wrap" id="productMediaWrap" onclick="playSelectedSampleVideo()">
+              <img src="assets/pricing-whiteboard.jpg" alt="Video Package Preview" class="product-media-img" id="productMainImage" />
+              
+              <div class="product-media-badges">
+                <span class="media-tag-pill">✦ 4K UHD Master</span>
+                <span class="media-tag-pill">60 FPS Fluid</span>
+              </div>
+
+              <div class="product-media-play-btn" title="Click to watch sample animation">
+                <div class="play-circle">
+                  <svg viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19 8 5"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thumbnail Switcher Strip -->
+            <div class="product-gallery-strip">
+              <div class="gallery-thumb-item active" id="thumb-1" onclick="switchGalleryImage(1)">
+                <img src="assets/pricing-whiteboard.jpg" alt="Preview Frame 1" id="thumbImg1" />
+              </div>
+              <div class="gallery-thumb-item" id="thumb-2" onclick="switchGalleryImage(2)">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=200&auto=format&fit=crop&q=80" alt="Production Board" />
+              </div>
+              <div class="gallery-thumb-item" id="thumb-3" onclick="switchGalleryImage(3)">
+                <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=200&auto=format&fit=crop&q=80" alt="Art Direction Detail" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Package Customizer -->
+          <div class="product-config-col">
+            
+            <div class="product-category-eyebrow">
+              <span class="eyebrow-accent-dot"></span>
+              <span id="productCategoryBadge">COMMERCIAL MOTION TIER</span>
+            </div>
+
+            <h1 class="product-title" id="productTitle">
+              Whiteboard <span class="gradient-accent">Video</span>
+            </h1>
+
+            <div class="product-rating-row">
+              <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <span class="product-rating-text">5.0 (48 verified client reviews)</span>
+              <span style="color:var(--ink-2);">&bull;</span>
+              <span style="color:#059669;font-weight:600;">In High Demand</span>
+            </div>
+
+            <!-- Dynamic Price Banner -->
+            <div class="product-price-box">
+              <div class="price-main-display">
+                <span class="price-amount" id="displayPrice">$698.00</span>
+                <span class="price-range-label" id="displayDurationUnit">for 30 Seconds</span>
+              </div>
+              <div class="price-savings-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Full Broadcast Rights Included</span>
+              </div>
+            </div>
+
+            <!-- Step 1: Video Duration Selection -->
+            <div class="config-group">
+              <div class="config-label-row">
+                <span class="config-label">1. Select Video Duration</span>
+                <span class="config-label-hint" id="durationHint">Standard 30 Seconds</span>
+              </div>
+              <div class="duration-selector-grid">
+                <button type="button" class="duration-pill-btn active" data-seconds="30" data-mult="1" onclick="selectDuration(this)">
+                  <span class="duration-time">30 Seconds</span>
+                  <span class="duration-cost" id="cost-30">$698</span>
+                </button>
+                <button type="button" class="duration-pill-btn" data-seconds="60" data-mult="2" onclick="selectDuration(this)">
+                  <span class="duration-time">60 Seconds</span>
+                  <span class="duration-cost" id="cost-60">$1,396</span>
+                </button>
+                <button type="button" class="duration-pill-btn" data-seconds="90" data-mult="3" onclick="selectDuration(this)">
+                  <span class="duration-time">90 Seconds</span>
+                  <span class="duration-cost" id="cost-90">$2,094</span>
+                </button>
+                <button type="button" class="duration-pill-btn" data-seconds="120" data-mult="4" onclick="selectDuration(this)">
+                  <span class="duration-time">120 Seconds</span>
+                  <span class="duration-cost" id="cost-120">$2,792</span>
+                </button>
+                <button type="button" class="duration-pill-btn" data-seconds="180" data-mult="6" onclick="selectDuration(this)">
+                  <span class="duration-time">3 Minutes</span>
+                  <span class="duration-cost" id="cost-180">$4,188</span>
+                </button>
+                <button type="button" class="duration-pill-btn" data-seconds="300" data-mult="10" onclick="selectDuration(this)">
+                  <span class="duration-time">5 Minutes</span>
+                  <span class="duration-cost" id="cost-300">$6,980</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Delivery Aspect Ratio Selection -->
+            <div class="config-group">
+              <div class="config-label-row">
+                <span class="config-label">2. Delivery Format &amp; Aspect Ratio</span>
+              </div>
+              <div class="aspect-options-row">
+                <button type="button" class="aspect-option-pill active" onclick="selectAspect(this, '16:9 Landscape (Web & YouTube)')">
+                  16:9 Landscape
+                </button>
+                <button type="button" class="aspect-option-pill" onclick="selectAspect(this, '9:16 Vertical (Reels & TikTok)')">
+                  9:16 Vertical
+                </button>
+                <button type="button" class="aspect-option-pill" onclick="selectAspect(this, 'Dual Format Pack (16:9 + 9:16)')">
+                  Dual Format Pack
+                </button>
+              </div>
+            </div>
+
+            <!-- Actions: Order Now / Request Inquiry -->
+            <div class="product-actions-box">
+              <button type="button" class="btn-order-primary" onclick="openOrderModal()">
+                <span>Proceed to Order &mdash; <span id="btnPriceTag">$698</span></span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+              <a href="index.html#contact" class="btn-inquire-ghost">
+                <span>Book 15-Min Strategy Call</span>
+              </a>
+            </div>
+
+            <!-- Perks / Commercial Safety Checklist -->
+            <div class="product-perks-row">
+              <div class="perk-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Full Commercial Copyright Transfer</span>
+              </div>
+              <div class="perk-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>2 Iterative Revision Rounds</span>
+              </div>
+              <div class="perk-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Broadcast Audio &amp; SFX License</span>
+              </div>
+              <div class="perk-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>On-Time Delivery Guarantee</span>
+              </div>
+            </div>
+
+            <div class="product-meta-specs">
+              <span><b>SKU:</b> <span id="productSku">KNTX-WB-01</span></span>
+              <span><b>Production Cycle:</b> 3-4 Weeks from Script Approval</span>
+              <span><b>Format Delivery:</b> 4K Ultra HD ProRes 422 &bull; H.264 Web Ready &bull; Native Audio Stems</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabs Section: Description, Specifications, Reviews -->
+    <section class="product-tabs-section">
+      <div class="wrap">
+        
+        <div class="tabs-nav-bar">
+          <button type="button" class="tab-btn active" onclick="switchTab(this, 'tab-description')">
+            Description &amp; Workflow
+          </button>
+          <button type="button" class="tab-btn" onclick="switchTab(this, 'tab-specs')">
+            Technical Specifications
+          </button>
+          <button type="button" class="tab-btn" onclick="switchTab(this, 'tab-reviews')">
+            Client Reviews (48)
+          </button>
+        </div>
+
+        <div class="tab-panel-box">
+          
+          <!-- Tab 1: Description -->
+          <div class="tab-panel active" id="tab-description">
+            <h3 id="tabDescTitle">Complete Script-to-Screen Production Workflow</h3>
+            <p id="tabDescParagraph">
+              Our animated video productions are engineered for measurable commercial outcomes: simplifying complex value propositions, holding audience retention above 78%, and driving clear viewer action. Every frame is hand-crafted by dedicated senior motion directors.
+            </p>
+
+            <div class="deliverables-grid">
+              <div class="deliverable-item">
+                <div class="deliverable-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <div class="deliverable-text">
+                  <b>High-Converting Scriptwriting</b>
+                  <span>Direct-response narrative architecture written by seasoned commercial copywriters.</span>
+                </div>
+              </div>
+
+              <div class="deliverable-item">
+                <div class="deliverable-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <div class="deliverable-text">
+                  <b>Professional Voice-Over Recording</b>
+                  <span>Studio recorded voice artistry across US, UK, and global accents with full broadcast buyouts.</span>
+                </div>
+              </div>
+
+              <div class="deliverable-item">
+                <div class="deliverable-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <div class="deliverable-text">
+                  <b>Bespoke Illustrated Storyboards</b>
+                  <span>Custom style frames and comprehensive visual layouts delivered before animation starts.</span>
+                </div>
+              </div>
+
+              <div class="deliverable-item">
+                <div class="deliverable-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <div class="deliverable-text">
+                  <b>60 FPS Smooth Fluid Motion</b>
+                  <span>Pixel-perfect kinetic animation with natural physics, cinematic pacing, and zero clunky easing.</span>
+                </div>
+              </div>
+
+              <div class="deliverable-item">
+                <div class="deliverable-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <div class="deliverable-text">
+                  <b>Full Music &amp; Custom Sound FX</b>
+                  <span>Multi-layer acoustic sound design, Foley recording, and licensed commercial audio scoring.</span>
+                </div>
+              </div>
+
+              <div class="deliverable-item">
+                <div class="deliverable-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <div class="deliverable-text">
+                  <b>2 Iterative Revision Rounds</b>
+                  <span>Guaranteed feedback loops at script, style frame, and animation preview milestones.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Technical Specifications -->
+          <div class="tab-panel" id="tab-specs">
+            <h3>Technical Delivery Specifications</h3>
+            <table class="specs-table">
+              <tbody>
+                <tr>
+                  <td>Render Resolution</td>
+                  <td>4K Ultra HD (3840 &times; 2160) &amp; Full HD (1920 &times; 1080)</td>
+                </tr>
+                <tr>
+                  <td>Frame Rate</td>
+                  <td>60 FPS Fluid High-Frame-Rate Output</td>
+                </tr>
+                <tr>
+                  <td>Delivery Codecs</td>
+                  <td>Apple ProRes 422 HQ (Master) &bull; MP4 H.264 / H.265 (Web-Optimized)</td>
+                </tr>
+                <tr>
+                  <td>Audio Delivery</td>
+                  <td>24-Bit 48kHz Stereo WAV &bull; Separated Dialogue, Music, and SFX Stems</td>
+                </tr>
+                <tr>
+                  <td>Standard Aspect Ratios</td>
+                  <td>16:9 Landscape &bull; 9:16 Vertical &bull; 1:1 Square</td>
+                </tr>
+                <tr>
+                  <td>Commercial Rights</td>
+                  <td>100% Perpetual Global Commercial Buyout Included</td>
+                </tr>
+                <tr>
+                  <td>Turnaround Time</td>
+                  <td>3 to 4 Weeks standard (Rush 14-day turnaround available on request)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Tab 3: Reviews -->
+          <div class="tab-panel" id="tab-reviews">
+            <h3>Verified Client Reviews &amp; Case Feedback</h3>
+            <div class="reviews-stack">
+              <div class="review-item">
+                <div class="review-header">
+                  <div class="reviewer-meta">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Client Reviewer" class="reviewer-avatar" />
+                    <div>
+                      <div class="reviewer-name">Ethan Miller</div>
+                      <div class="reviewer-role">Product Designer, Horizon Labs</div>
+                    </div>
+                  </div>
+                  <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+                <p class="review-comment">
+                  "KINETIX delivered our explainer video exactly on schedule. The animation quality and voiceover were cinematic level, and our conversion rate jumped +340% within the first month of launching the new showcase."
+                </p>
+              </div>
+
+              <div class="review-item">
+                <div class="review-header">
+                  <div class="reviewer-meta">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Client Reviewer" class="reviewer-avatar" />
+                    <div>
+                      <div class="reviewer-name">Subhikshan Murthy</div>
+                      <div class="reviewer-role">Product Lead, CloudScale AI</div>
+                    </div>
+                  </div>
+                  <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                </div>
+                <p class="review-comment">
+                  "Our enterprise software was difficult for investors to understand quickly. KINETIX translated our entire cloud architecture into a crisp, engaging 90-second animated story. Delivery was flawless."
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Related Packages Section -->
+    <section class="related-products-section">
+      <div class="wrap">
+        <div class="related-head">
+          <h2>Explore Other Production Packages</h2>
+          <a href="index.html#pricing" style="color:#7c5cff;font-weight:600;font-size:14px;text-decoration:none;">Compare All Tiers &rarr;</a>
+        </div>
+
+        <div class="related-grid" id="relatedCardsGrid">
+          <!-- Dynamically populated via JS depending on current active package -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Order Modal -->
+  <div class="order-modal-backdrop" id="orderModalBackdrop" onclick="if(event.target===this) closeOrderModal()">
+    <div class="order-modal-box">
+      <div class="order-modal-header">
+        <div class="order-modal-title">Complete Your Package Order</div>
+        <button type="button" class="order-modal-close" onclick="closeOrderModal()" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="order-modal-body">
+        <div class="modal-summary-box">
+          <div>
+            <b id="modalSummaryPackage">Whiteboard Video</b>
+            <div style="font-size:12px;color:var(--ink-2);margin-top:2px;" id="modalSummaryDuration">30 Seconds &bull; 16:9 Landscape</div>
+          </div>
+          <div style="font-size:18px;font-weight:700;color:#7c5cff;" id="modalSummaryPrice">$698.00</div>
+        </div>
+
+        <form id="orderForm" onsubmit="handleOrderSubmit(event)">
+          <div class="modal-form-group">
+            <label class="modal-form-label" for="clientName">Your Full Name</label>
+            <input type="text" id="clientName" class="modal-form-input" placeholder="e.g. Sarah Jenkins" required />
+          </div>
+
+          <div class="modal-form-group">
+            <label class="modal-form-label" for="clientEmail">Business Email</label>
+            <input type="email" id="clientEmail" class="modal-form-input" placeholder="e.g. sarah@company.com" required />
+          </div>
+
+          <div class="modal-form-group">
+            <label class="modal-form-label" for="projectBrief">Brief Overview / Link to Script</label>
+            <textarea id="projectBrief" class="modal-form-textarea" rows="3" placeholder="Tell us about your brand, audience, and goal for this video..."></textarea>
+          </div>
+
+          <button type="submit" class="modal-submit-btn" id="modalSubmitBtn">
+            <span>Confirm &amp; Start Production</span>
+          </button>
+        </form>
+
+        <div id="orderSuccessMsg" style="display:none;text-align:center;padding:20px 0;">
+          <div style="width:48px;height:48px;border-radius:50%;background:#10b981;color:#fff;display:inline-flex;align-items:center;justify-content:center;margin-bottom:12px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h4 style="font-size:18px;margin-bottom:6px;color:var(--ink-0);">Order Request Received!</h4>
+          <p style="font-size:14px;color:var(--ink-1);line-height:1.5;">Our production director will review your brief and send your onboarding package within 4 business hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reusable Video Sample Modal -->
+  <div class="reel-modal" id="reelModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="reel-backdrop-close" onclick="closeReel()"></div>
+    <div class="reel-box">
+      <div class="reel-modal-header">
+        <div class="reel-title-group">
+          <span class="reel-badge" id="reelBadge">Sample Showcase</span>
+          <h4 class="reel-modal-title" id="reelTitle">Commercial Video Showcase</h4>
+        </div>
+        <button type="button" class="reel-modal-close" onclick="closeReel()" aria-label="Close video player">&times;</button>
+      </div>
+      <div class="reel-iframe-holder">
+        <iframe id="reelIframe" src="" title="Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html#top" class="footer-logo">
+            <svg class="nav-motion-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2v5M12 17v5M2 12h5M17 12h5M4.93 4.93l3.54 3.54M15.54 15.54l3.53 3.53M4.93 19.07l3.54-3.54M15.54 8.46l3.53-3.53" stroke="url(#footGrad)" stroke-width="2.6" stroke-linecap="round"/>
+              <circle cx="12" cy="12" r="2.5" fill="url(#footGrad)"/>
+              <defs>
+                <linearGradient id="footGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#7c5cff"/>
+                  <stop offset="100%" stop-color="#ff8fce"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span class="footer-logo-text">KINETIX</span>
+          </a>
+          <p class="footer-tagline">Pakistan's premier commercial motion design studio. We turn complex products into captivating visual stories that convert.</p>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html#top">Home</a></li>
+            <li><a href="index.html#work">Portfolio</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Production Packages</div>
+          <ul class="footer-links">
+            <li><a href="product.html?id=whiteboard">Whiteboard Video</a></li>
+            <li><a href="product.html?id=explainer">Explainer Video</a></li>
+            <li><a href="product.html?id=premium">Premium 3D Video</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Studio Headquarters</div>
+          <p style="font-size:13.5px;color:var(--ink-2);line-height:1.6;margin-bottom:12px;">
+            KINETIX Studio House, Burewala, Punjab, Pakistan.<br/>
+            Global Inquiries: hello@kinetixmotion.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 KINETIX Motion Studio. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Package Data Definitions
+    var PACKAGES = {
+      whiteboard: {
+        id: 'whiteboard',
+        name: 'Whiteboard Video',
+        category: 'COMMERCIAL MOTION TIER',
+        basePrice: 698,
+        sku: 'KNTX-WB-01',
+        image: 'assets/pricing-whiteboard.jpg',
+        videoUrl: 'https://www.youtube.com/embed/T_qT_NWyPEU?autoplay=1&rel=0',
+        intro: 'Hand-drawn, clear, conceptual animation engineered to simplify complex services and training workflows with maximum viewer retention.',
+        descTitle: 'Whiteboard Video Production & Direct-Response Storytelling',
+        descText: 'Whiteboard animations excel at breaking down intricate concepts, corporate software platforms, and educational workflows. We replace boring presentations with captivating visual momentum that keeps clients engaged until the final call to action.',
+        specs: {
+          turnaround: '3 to 4 Weeks standard',
+          idealFor: 'Educational modules, B2B workflows, product tutorials, corporate compliance'
+        }
+      },
+      explainer: {
+        id: 'explainer',
+        name: 'Explainer Video',
+        category: 'FEATURED & MOST POPULAR TIER',
+        basePrice: 698,
+        sku: 'KNTX-EXP-02',
+        image: 'assets/pricing-explainer.jpg',
+        videoUrl: 'https://www.youtube.com/embed/ez8UKLwe2qw?autoplay=1&rel=0',
+        intro: 'Dynamic 2D motion graphics and vector animation designed for SaaS product demos, fast-growing startups, and high-converting landing pages.',
+        descTitle: 'High-Converting 2D Explainer Video Architecture',
+        descText: 'Our explainer videos combine sleek vector graphics, character animation, and isometric kinetic layouts to turn passive visitors into engaged buyers. Tailored for software demos, mobile applications, and consumer product launches.',
+        specs: {
+          turnaround: '3 to 4 Weeks standard',
+          idealFor: 'SaaS landing pages, startup pitch decks, product launches, paid ad campaigns'
+        }
+      },
+      premium: {
+        id: 'premium',
+        name: 'Premium 3D Video',
+        category: 'BESPOKE CINEMATIC TIER',
+        basePrice: 698,
+        sku: 'KNTX-PRM-03',
+        image: 'assets/pricing-premium.jpg',
+        videoUrl: 'https://www.youtube.com/embed/FiQ_KsLjoq4?autoplay=1&rel=0',
+        intro: 'Bespoke 3D CGI, photorealistic lighting, and cinematic visual effects engineered to position enterprise brands as undisputed category leaders.',
+        descTitle: 'Bespoke 3D CGI & Cinematic Brand Storytelling',
+        descText: 'Engineered for luxury hardware, tech hardware launches, and visionary consumer brands. We build custom 3D models, simulation physics, and high-fidelity lighting passes that command respect across television, social feeds, and global keynotes.',
+        specs: {
+          turnaround: '4 to 5 Weeks standard',
+          idealFor: 'Hardware reveals, enterprise tech, commercial broadcast ads, flagship rebrands'
+        }
+      }
+    };
+
+    var currentPackageId = 'whiteboard';
+    var currentMultiplier = 1;
+    var currentSeconds = 30;
+    var currentAspect = '16:9 Landscape (Web & YouTube)';
+
+    function getPackageIdFromUrl() {
+      var params = new URLSearchParams(window.location.search);
+      var id = params.get('id');
+      if (id && PACKAGES[id]) return id;
+      return 'whiteboard';
+    }
+
+    function switchPackage(id) {
+      if (!PACKAGES[id]) return;
+      currentPackageId = id;
+
+      // Update pills
+      document.querySelectorAll('.package-switch-btn').forEach(function(btn){
+        btn.classList.remove('active');
+      });
+      var activePill = document.getElementById('pill-' + id);
+      if (activePill) activePill.classList.add('active');
+
+      var pkg = PACKAGES[id];
+
+      // Update text
+      document.getElementById('breadcrumbProductName').textContent = pkg.name;
+      document.getElementById('productCategoryBadge').textContent = pkg.category;
+      document.getElementById('productTitle').innerHTML = pkg.name.replace('Video', '<span class="gradient-accent">Video</span>');
+      document.getElementById('productSku').textContent = pkg.sku;
+      document.getElementById('tabDescTitle').textContent = pkg.descTitle;
+      document.getElementById('tabDescParagraph').textContent = pkg.descText;
+
+      // Update image
+      var mainImg = document.getElementById('productMainImage');
+      mainImg.src = pkg.image;
+      document.getElementById('thumbImg1').src = pkg.image;
+
+      // Recalculate price grid
+      updateAllPrices();
+
+      // Update related packages
+      renderRelatedPackages();
+
+      // Update browser URL without reload
+      if (window.history.pushState) {
+        window.history.pushState(null, '', 'product.html?id=' + id);
+      }
+    }
+
+    function updateAllPrices() {
+      var pkg = PACKAGES[currentPackageId];
+      var base = pkg.basePrice;
+
+      // Update pill costs
+      var durations = [30, 60, 90, 120, 180, 300];
+      var mults = [1, 2, 3, 4, 6, 10];
+      for (var i = 0; i < durations.length; i++) {
+        var el = document.getElementById('cost-' + durations[i]);
+        if (el) el.textContent = '$' + (base * mults[i]).toLocaleString();
+      }
+
+      var currentTotal = base * currentMultiplier;
+      document.getElementById('displayPrice').textContent = '$' + currentTotal.toLocaleString() + '.00';
+      document.getElementById('btnPriceTag').textContent = '$' + currentTotal.toLocaleString();
+      document.getElementById('displayDurationUnit').textContent = 'for ' + (currentSeconds >= 60 ? (currentSeconds / 60) + ' Minute' + (currentSeconds > 60 ? 's' : '') : currentSeconds + ' Seconds');
+    }
+
+    function selectDuration(btn) {
+      document.querySelectorAll('.duration-pill-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentMultiplier = parseInt(btn.getAttribute('data-mult'), 10);
+      currentSeconds = parseInt(btn.getAttribute('data-seconds'), 10);
+      document.getElementById('durationHint').textContent = btn.querySelector('.duration-time').textContent;
+      updateAllPrices();
+    }
+
+    function selectAspect(pill, label) {
+      document.querySelectorAll('.aspect-option-pill').forEach(function(p){ p.classList.remove('active'); });
+      pill.classList.add('active');
+      currentAspect = label;
+    }
+
+    function switchGalleryImage(index) {
+      document.querySelectorAll('.gallery-thumb-item').forEach(function(t){ t.classList.remove('active'); });
+      var activeThumb = document.getElementById('thumb-' + index);
+      if (activeThumb) {
+        activeThumb.classList.add('active');
+        var thumbImg = activeThumb.querySelector('img');
+        if (thumbImg) {
+          document.getElementById('productMainImage').src = thumbImg.src;
+        }
+      }
+    }
+
+    function switchTab(btn, tabId) {
+      document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+      document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+      btn.classList.add('active');
+      var target = document.getElementById(tabId);
+      if (target) target.classList.add('active');
+    }
+
+    function renderRelatedPackages() {
+      var grid = document.getElementById('relatedCardsGrid');
+      grid.innerHTML = '';
+
+      var keys = ['whiteboard', 'explainer', 'premium'];
+      keys.forEach(function(k){
+        if (k === currentPackageId) return;
+        var p = PACKAGES[k];
+        var card = document.createElement('a');
+        card.href = 'product.html?id=' + p.id;
+        card.className = 'related-card';
+        card.innerHTML = 
+          '<div class="related-thumb-box">' +
+            '<img src="' + p.image + '" alt="' + p.name + '" />' +
+          '</div>' +
+          '<div class="related-card-content">' +
+            '<div>' +
+              '<h3 class="related-card-title">' + p.name + '</h3>' +
+              '<p class="related-card-desc">' + p.intro + '</p>' +
+            '</div>' +
+            '<div class="related-card-bottom">' +
+              '<span class="related-price">From $' + p.basePrice + '</span>' +
+              '<span class="related-btn-pill">Configure Plan &rarr;</span>' +
+            '</div>' +
+          '</div>';
+        grid.appendChild(card);
+      });
+    }
+
+    function playSelectedSampleVideo() {
+      var pkg = PACKAGES[currentPackageId];
+      if (window.openReel) {
+        window.openReel('T_qT_NWyPEU', pkg.name + ' Production Reel', 'KINETIX Studio');
+      } else {
+        var modal = document.getElementById('reelModal');
+        var iframe = document.getElementById('reelIframe');
+        iframe.src = pkg.videoUrl;
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+      }
+    }
+
+    function closeReel() {
+      var modal = document.getElementById('reelModal');
+      var iframe = document.getElementById('reelIframe');
+      iframe.src = '';
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    function openOrderModal() {
+      var pkg = PACKAGES[currentPackageId];
+      var total = pkg.basePrice * currentMultiplier;
+
+      document.getElementById('modalSummaryPackage').textContent = pkg.name;
+      document.getElementById('modalSummaryDuration').textContent = currentSeconds + 's Duration • ' + currentAspect;
+      document.getElementById('modalSummaryPrice').textContent = '$' + total.toLocaleString() + '.00';
+
+      document.getElementById('orderModalBackdrop').classList.add('open');
+    }
+
+    function closeOrderModal() {
+      document.getElementById('orderModalBackdrop').classList.remove('open');
+    }
+
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+      var btn = document.getElementById('modalSubmitBtn');
+      btn.disabled = true;
+      btn.innerText = 'Transmitting Order...';
+
+      setTimeout(function(){
+        document.getElementById('orderForm').style.display = 'none';
+        document.getElementById('orderSuccessMsg').style.display = 'block';
+      }, 700);
+    }
+
+    function toggleKinetixTheme() {
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('kinetix_theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('kinetix_theme', 'dark');
+      }
+    }
+
+    function toggleMobileMenu(e) {
+      e.stopPropagation();
+      var drawer = document.getElementById('mobileNavDrawer');
+      var btn = document.getElementById('navHamburger');
+      var isOpen = drawer.classList.contains('open');
+      if (isOpen) closeMobileMenu();
+      else {
+        drawer.classList.add('open');
+        drawer.setAttribute('aria-hidden', 'false');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.classList.add('open');
+      }
+    }
+
+    function closeMobileMenu() {
+      var drawer = document.getElementById('mobileNavDrawer');
+      var btn = document.getElementById('navHamburger');
+      if (drawer) {
+        drawer.classList.remove('open');
+        drawer.setAttribute('aria-hidden', 'true');
+      }
+      if (btn) {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.classList.remove('open');
+      }
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', function(){
+      var initialId = getPackageIdFromUrl();
+      switchPackage(initialId);
+    });
+  </script>
+
+  <!-- ============================================================
+       FLOATING WHATSAPP CHAT WIDGET (+92 314 3110259)
+       ============================================================ -->
+  <div class="kinetix-wa-widget" id="kinetixWaWidget">
+    <!-- Interactive Prompt Card / Speech Bubble -->
+    <div class="kinetix-wa-card" id="kinetixWaCard" role="dialog" aria-label="WhatsApp Chat Support">
+      <div class="kinetix-wa-header">
+        <div class="kinetix-wa-avatar-group">
+          <div class="kinetix-wa-avatar">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff" aria-hidden="true">
+              <path d="M12.031 0C5.394 0 .01 5.385.01 12.023c0 2.12.553 4.186 1.605 6.012L0 24l6.143-1.613a11.96 11.96 0 0 0 5.888 1.54h.005c6.634 0 12.02-5.385 12.02-12.023 0-3.212-1.25-6.23-3.52-8.503C18.266 1.25 15.246 0 12.031 0zm-.005 21.99a9.96 9.96 0 0 1-5.074-1.39l-.364-.216-3.77.99.99-3.673-.238-.378a9.96 9.96 0 0 1-1.528-5.3c0-5.503 4.478-9.98 9.984-9.98 2.665 0 5.172 1.038 7.058 2.924a9.94 9.94 0 0 1 2.92 7.056c0 5.503-4.478 9.98-9.978 9.98zm5.468-7.464c-.3-.15-1.776-.876-2.052-.976-.275-.1-.475-.15-.675.15-.2.3-.775.976-.95 1.176-.175.2-.35.225-.65.075-.3-.15-1.267-.467-2.413-1.49-.892-.796-1.493-1.78-1.668-2.08-.175-.3-.018-.462.132-.611.135-.134.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525s-.675-1.625-.925-2.225c-.244-.585-.493-.505-.675-.515-.175-.008-.375-.01-.575-.01s-.525.075-.8.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.115 3.23 5.125 4.53.716.31 1.275.495 1.71.634.72.228 1.375.196 1.892.119.578-.086 1.776-.726 2.026-1.426.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z"/>
+            </svg>
+            <span class="kinetix-wa-online-dot"></span>
+          </div>
+          <div class="kinetix-wa-title-area">
+            <div class="kinetix-wa-name">KINETIX Studio</div>
+            <div class="kinetix-wa-status">
+              <span class="kinetix-wa-status-beacon"></span>
+              Online &bull; Instant Reply
+            </div>
+          </div>
+        </div>
+        <button type="button" class="kinetix-wa-close" id="kinetixWaClose" aria-label="Close message preview" onclick="closeKinetixWa(event)">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="kinetix-wa-body">
+        <p class="kinetix-wa-msg">
+          Hi there! 👋 Need a custom motion graphic, 3D animation, or explainer video? Chat directly with our studio team.
+        </p>
+        <a href="https://wa.me/923143110259?text=Hello%20KINETIX%20team%2C%20I%20would%20like%20to%20inquire%20about%20a%20motion%20project." target="_blank" rel="noopener noreferrer" class="kinetix-wa-cta-btn">
+          <span>Start Conversation</span>
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Floating Action Button (Redirects to WhatsApp) -->
+    <a href="https://wa.me/923143110259?text=Hello%20KINETIX%20team%2C%20I%20would%20like%20to%20inquire%20about%20a%20motion%20project." target="_blank" rel="noopener noreferrer" class="kinetix-wa-btn" id="kinetixWaBtn" aria-label="Chat with KINETIX on WhatsApp">
+      <div class="kinetix-wa-pulse-rings" aria-hidden="true">
+        <span class="pulse-ring"></span>
+        <span class="pulse-ring delay"></span>
+      </div>
+      <div class="kinetix-wa-btn-icon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff" aria-hidden="true">
+          <path d="M12.031 0C5.394 0 .01 5.385.01 12.023c0 2.12.553 4.186 1.605 6.012L0 24l6.143-1.613a11.96 11.96 0 0 0 5.888 1.54h.005c6.634 0 12.02-5.385 12.02-12.023 0-3.212-1.25-6.23-3.52-8.503C18.266 1.25 15.246 0 12.031 0zm-.005 21.99a9.96 9.96 0 0 1-5.074-1.39l-.364-.216-3.77.99.99-3.673-.238-.378a9.96 9.96 0 0 1-1.528-5.3c0-5.503 4.478-9.98 9.984-9.98 2.665 0 5.172 1.038 7.058 2.924a9.94 9.94 0 0 1 2.92 7.056c0 5.503-4.478 9.98-9.978 9.98zm5.468-7.464c-.3-.15-1.776-.876-2.052-.976-.275-.1-.475-.15-.675.15-.2.3-.775.976-.95 1.176-.175.2-.35.225-.65.075-.3-.15-1.267-.467-2.413-1.49-.892-.796-1.493-1.78-1.668-2.08-.175-.3-.018-.462.132-.611.135-.134.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525s-.675-1.625-.925-2.225c-.244-.585-.493-.505-.675-.515-.175-.008-.375-.01-.575-.01s-.525.075-.8.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.115 3.23 5.125 4.53.716.31 1.275.495 1.71.634.72.228 1.375.196 1.892.119.578-.086 1.776-.726 2.026-1.426.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z"/>
+        </svg>
+        <span class="kinetix-wa-badge-dot"></span>
+      </div>
+      <span class="kinetix-wa-btn-label">Chat with us</span>
+    </a>
+  </div>
+
+  <script src="js/whatsapp-widget.js" defer></script>
+</body>
+</html>
