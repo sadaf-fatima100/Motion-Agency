@@ -7249,29 +7249,29 @@ h1.hero-title .accent {
   pointer-events: auto;
   display: inline-flex;
   align-items: center;
-  gap: 11px;
-  padding: 11px 22px 11px 16px;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  padding: 0;
   background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-  border-radius: 100px;
+  border-radius: 50%;
   color: #ffffff !important;
   text-decoration: none;
-  font-size: 14.5px;
-  font-weight: 750;
-  letter-spacing: 0.01em;
   box-shadow: 0 10px 28px -4px rgba(37, 211, 102, 0.48), 0 2px 10px rgba(0, 0, 0, 0.12);
   border: 1.5px solid rgba(255, 255, 255, 0.28);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+  flex-shrink: 0;
 }
 
 .kinetix-wa-btn:hover {
-  transform: translateY(-4px) scale(1.03);
+  transform: translateY(-4px) scale(1.05);
   box-shadow: 0 16px 36px -4px rgba(37, 211, 102, 0.58), 0 6px 16px rgba(0, 0, 0, 0.15);
   filter: brightness(1.06);
 }
 
 .kinetix-wa-btn:active {
-  transform: translateY(-1px) scale(0.98);
+  transform: translateY(-1px) scale(0.96);
 }
 
 .kinetix-wa-btn-icon {
@@ -7304,14 +7304,14 @@ h1.hero-title .accent {
 }
 
 .kinetix-wa-btn-label {
-  white-space: nowrap;
+  display: none !important;
 }
 
 /* Subtle Pulsing Rings Behind Button */
 .kinetix-wa-pulse-rings {
   position: absolute;
   inset: -6px;
-  border-radius: 100px;
+  border-radius: 50%;
   pointer-events: none;
   z-index: -1;
 }
@@ -7319,7 +7319,7 @@ h1.hero-title .accent {
 .kinetix-wa-pulse-rings .pulse-ring {
   position: absolute;
   inset: 0;
-  border-radius: 100px;
+  border-radius: 50%;
   border: 2px solid #25D366;
   opacity: 0;
   animation: waPulseRing 2.6s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -7386,13 +7386,13 @@ h1.hero-title .accent {
     margin-bottom: 10px;
   }
   .kinetix-wa-btn {
-    padding: 10px 18px 10px 14px;
-    font-size: 13.5px;
-    gap: 9px;
+    width: 52px;
+    height: 52px;
+    padding: 0;
   }
   .kinetix-wa-btn-icon svg {
-    width: 24px;
-    height: 24px;
+    width: 25px;
+    height: 25px;
   }
 }
 

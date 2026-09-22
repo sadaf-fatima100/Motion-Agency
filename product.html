@@ -160,18 +160,6 @@
               </div>
             </div>
 
-            <!-- Thumbnail Switcher Strip -->
-            <div class="product-gallery-strip">
-              <div class="gallery-thumb-item active" id="thumb-1" onclick="switchGalleryImage(1)">
-                <img src="assets/pricing-whiteboard.jpg" alt="Preview Frame 1" id="thumbImg1" />
-              </div>
-              <div class="gallery-thumb-item" id="thumb-2" onclick="switchGalleryImage(2)">
-                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=200&auto=format&fit=crop&q=80" alt="Production Board" />
-              </div>
-              <div class="gallery-thumb-item" id="thumb-3" onclick="switchGalleryImage(3)">
-                <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=200&auto=format&fit=crop&q=80" alt="Art Direction Detail" />
-              </div>
-            </div>
           </div>
 
           <!-- Right Column: Interactive Package Customizer -->
@@ -525,13 +513,15 @@
     <div class="reel-backdrop-close" onclick="closeReel()"></div>
     <div class="reel-box">
       <div class="reel-modal-header">
-        <div class="reel-title-group">
-          <span class="reel-badge" id="reelBadge">Sample Showcase</span>
+        <div class="reel-modal-info">
+          <span class="reel-modal-cat" id="reelBadge">Sample Showcase</span>
           <h4 class="reel-modal-title" id="reelTitle">Commercial Video Showcase</h4>
         </div>
-        <button type="button" class="reel-modal-close" onclick="closeReel()" aria-label="Close video player">&times;</button>
+        <button type="button" class="reel-close" onclick="closeReel()" aria-label="Close video player">
+          <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
       </div>
-      <div class="reel-iframe-holder">
+      <div class="reel-frame-wrap">
         <iframe id="reelIframe" src="" title="Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
@@ -781,15 +771,15 @@
 
     function playSelectedSampleVideo() {
       var pkg = PACKAGES[currentPackageId];
-      if (window.openReel) {
-        window.openReel('T_qT_NWyPEU', pkg.name + ' Production Reel', 'KINETIX Studio');
-      } else {
-        var modal = document.getElementById('reelModal');
-        var iframe = document.getElementById('reelIframe');
-        iframe.src = pkg.videoUrl;
-        modal.classList.add('open');
-        modal.setAttribute('aria-hidden', 'false');
-      }
+      var modal = document.getElementById('reelModal');
+      var iframe = document.getElementById('reelIframe');
+      var badge = document.getElementById('reelBadge');
+      var title = document.getElementById('reelTitle');
+      if (badge) badge.textContent = pkg.category;
+      if (title) title.textContent = pkg.name + ' • Commercial Showcase';
+      iframe.src = pkg.videoUrl;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
     }
 
     function closeReel() {
@@ -921,7 +911,6 @@
         </svg>
         <span class="kinetix-wa-badge-dot"></span>
       </div>
-      <span class="kinetix-wa-btn-label">Chat with us</span>
     </a>
   </div>
 
