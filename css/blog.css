@@ -28,10 +28,12 @@
 .blog-breadcrumb {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   font-size: 13.5px;
   color: var(--ink-2, #9d96b0);
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .blog-breadcrumb a {
@@ -54,26 +56,30 @@
   font-weight: 600;
 }
 
-/* Article Hero Header - Left-aligned to navbar and container grid */
+/* Article Hero Header - Centered Layout */
 .article-header {
   padding: 10px 0 32px 0;
   position: relative;
   z-index: 2;
+  text-align: center;
 }
 
 .article-header-wrap {
   max-width: 980px;
-  margin: 0 !important;
-  text-align: left !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .article-meta-top {
   display: inline-flex;
   align-items: center;
+  justify-content: center !important;
   gap: 14px;
-  margin-bottom: 22px;
+  margin: 0 auto 22px auto !important;
   flex-wrap: wrap;
-  justify-content: flex-start;
 }
 
 .article-category-pill {
@@ -107,10 +113,10 @@
   line-height: 1.14 !important;
   letter-spacing: -0.03em !important;
   color: var(--ink-0, #0e0b1a) !important;
-  margin: 0 0 20px 0 !important;
+  margin: 0 auto 20px auto !important;
   max-width: 960px;
   text-wrap: balance;
-  text-align: left !important;
+  text-align: center !important;
 }
 
 .article-subtitle {
@@ -118,16 +124,16 @@
   line-height: 1.6;
   color: var(--ink-1, #5c5572);
   max-width: 840px;
-  margin: 0 0 30px 0;
+  margin: 0 auto 30px auto !important;
   text-wrap: balance;
-  text-align: left !important;
+  text-align: center !important;
 }
 
-/* Featured Media Showcase - Aligns full-width with container grid */
+/* Featured Media Showcase - Centered Layout */
 .article-featured-media {
   width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 0 54px 0 !important;
+  max-width: 1240px !important;
+  margin: 0 auto 54px auto !important;
   border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 20px 60px -15px rgba(100, 60, 200, 0.22);
@@ -156,14 +162,14 @@
   align-items: center;
 }
 
-/* Two-Column Article Layout - Aligns edge-to-edge with wrap container */
+/* Two-Column Article Layout - Centered Container */
 .article-main-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 340px;
   gap: 60px;
   width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 0 90px 0 !important;
+  max-width: 1240px !important;
+  margin: 0 auto 90px auto !important;
   align-items: start;
 }
 
@@ -598,9 +604,17 @@
 }
 
 .related-posts-head {
-  text-align: left !important;
+  text-align: center !important;
   max-width: 720px;
-  margin: 0 0 42px 0 !important;
+  margin: 0 auto 42px auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.related-posts-head .eyebrow {
+  margin: 0 auto 14px auto !important;
+  align-self: center !important;
 }
 
 .related-posts-head h2 {
@@ -609,6 +623,11 @@
   font-weight: 450 !important;
   color: var(--ink-0, #0e0b1a);
   margin-bottom: 8px;
+  text-align: center !important;
+}
+
+.related-posts-head p {
+  text-align: center !important;
 }
 
 .related-posts-grid {
@@ -616,8 +635,8 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
+  max-width: 1240px !important;
+  margin: 0 auto !important;
 }
 
 /* DARK THEME ADAPTATIONS */
@@ -836,20 +855,20 @@
     padding: 6px 0 28px 0 !important;
   }
   .article-header-wrap {
-    margin: 0 !important;
-    text-align: left !important;
+    margin: 0 auto !important;
+    text-align: center !important;
   }
   .article-title {
     font-size: clamp(24px, 6.4vw, 34px) !important;
     line-height: 1.22 !important;
     margin-bottom: 16px !important;
-    text-align: left !important;
+    text-align: center !important;
   }
   .article-subtitle {
     font-size: 15px !important;
     line-height: 1.6 !important;
     margin-bottom: 24px !important;
-    text-align: left !important;
+    text-align: center !important;
   }
   .takeaway-grid {
     grid-template-columns: 1fr;
@@ -954,12 +973,12 @@
   .article-title {
     font-size: clamp(21px, 6.8vw, 26px) !important;
     line-height: 1.25 !important;
-    text-align: left !important;
+    text-align: center !important;
   }
   .article-subtitle {
     font-size: 14px !important;
     line-height: 1.55 !important;
-    text-align: left !important;
+    text-align: center !important;
   }
   .takeaway-card {
     padding: 16px 14px;
