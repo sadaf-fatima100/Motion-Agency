@@ -2297,3 +2297,439 @@
 [data-theme="dark"] .blog-read-btn:hover {
   box-shadow: 0 8px 28px rgba(124, 92, 255, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.6) inset !important;
 }
+
+/* 17. SINGLE PRODUCT & CUSTOMIZATION PAGE (DARK THEME) */
+[data-theme="dark"] .product-page-body {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .product-breadcrumb a {
+  color: #b8b1d0 !important;
+}
+[data-theme="dark"] .product-breadcrumb a:hover {
+  color: #8b6dff !important;
+}
+[data-theme="dark"] .product-breadcrumb-sep {
+  color: #6b6282 !important;
+}
+[data-theme="dark"] .product-breadcrumb-current {
+  color: #c4b0ff !important;
+}
+
+/* Package Switcher Pills */
+[data-theme="dark"] .package-switch-btn {
+  background: #130e24 !important;
+  border-color: rgba(139, 109, 255, 0.3) !important;
+  color: #dcd4f5 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6) !important;
+}
+[data-theme="dark"] .package-switch-btn:hover {
+  border-color: #8b6dff !important;
+  color: #ffffff !important;
+  background: rgba(139, 109, 255, 0.15) !important;
+}
+[data-theme="dark"] .package-switch-btn.active {
+  background: linear-gradient(120deg, #7c5cff 0%, #9d6ef8 50%, #ff8fce 100%) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  box-shadow: 0 6px 20px rgba(124, 92, 255, 0.5) !important;
+}
+
+/* Media Card (Left Sticky Stage) */
+[data-theme="dark"] .product-media-card {
+  background: #110d22 !important;
+  border: 1.5px solid rgba(139, 109, 255, 0.32) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95), 0 0 30px rgba(124, 92, 255, 0.18) !important;
+}
+[data-theme="dark"] .product-gallery-strip {
+  background: #0c0818 !important;
+  border-top-color: rgba(139, 109, 255, 0.2) !important;
+}
+[data-theme="dark"] .gallery-thumb-item {
+  border-color: rgba(139, 109, 255, 0.25) !important;
+}
+[data-theme="dark"] .gallery-thumb-item.active {
+  border-color: #8b6dff !important;
+  box-shadow: 0 0 14px rgba(124, 92, 255, 0.6) !important;
+}
+[data-theme="dark"] .media-tag-pill {
+  background: rgba(12, 8, 24, 0.85) !important;
+  border-color: rgba(139, 109, 255, 0.35) !important;
+  color: #ffffff !important;
+}
+
+/* Titles & Form Controls */
+[data-theme="dark"] .product-title {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .product-rating-text {
+  color: #b8b1d0 !important;
+}
+[data-theme="dark"] .config-label {
+  color: #f1edff !important;
+}
+[data-theme="dark"] .config-label-hint {
+  color: #c4b0ff !important;
+}
+[data-theme="dark"] .product-category-eyebrow {
+  color: #a98cff !important;
+}
+
+/* Price Box */
+[data-theme="dark"] .product-price-box {
+  background: linear-gradient(135deg, rgba(20, 14, 38, 0.95) 0%, rgba(13, 9, 26, 0.98) 100%) !important;
+  border-color: rgba(139, 109, 255, 0.35) !important;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+[data-theme="dark"] .price-range-label {
+  color: #b8b1d0 !important;
+}
+[data-theme="dark"] .price-savings-badge {
+  background: rgba(16, 185, 129, 0.18) !important;
+  color: #34d399 !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+}
+
+/* Duration & Aspect Ratio Pills */
+[data-theme="dark"] .duration-pill-btn {
+  background: #130e24 !important;
+  border-color: rgba(139, 109, 255, 0.25) !important;
+}
+[data-theme="dark"] .duration-pill-btn:hover {
+  border-color: #8b6dff !important;
+  background: #1a1232 !important;
+}
+[data-theme="dark"] .duration-pill-btn.active {
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.22) 0%, rgba(255, 143, 206, 0.18) 100%) !important;
+  border-color: #a888ff !important;
+  box-shadow: 0 0 16px rgba(124, 92, 255, 0.35) !important;
+}
+[data-theme="dark"] .duration-time {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .duration-cost {
+  color: #ffa0d8 !important;
+}
+[data-theme="dark"] .aspect-option-pill {
+  background: #130e24 !important;
+  border-color: rgba(139, 109, 255, 0.25) !important;
+  color: #dcd4f5 !important;
+}
+[data-theme="dark"] .aspect-option-pill:hover {
+  border-color: #8b6dff !important;
+  color: #ffffff !important;
+}
+[data-theme="dark"] .aspect-option-pill.active {
+  background: rgba(124, 92, 255, 0.2) !important;
+  border-color: #a888ff !important;
+  color: #ffffff !important;
+}
+[data-theme="dark"] .btn-inquire-ghost {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #ffffff !important;
+  border-color: rgba(139, 109, 255, 0.35) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6) !important;
+}
+[data-theme="dark"] .btn-inquire-ghost:hover {
+  background: rgba(139, 109, 255, 0.15) !important;
+  border-color: #ffa0d8 !important;
+  color: #ffffff !important;
+}
+[data-theme="dark"] .product-perks-row {
+  border-color: rgba(139, 109, 255, 0.2) !important;
+}
+[data-theme="dark"] .perk-item {
+  color: #dcd4f5 !important;
+}
+[data-theme="dark"] .product-meta-specs {
+  color: #b8b1d0 !important;
+}
+[data-theme="dark"] .product-meta-specs span b {
+  color: #ffffff !important;
+}
+
+/* Tabs & Deliverables */
+[data-theme="dark"] .tabs-nav-bar {
+  border-bottom-color: rgba(139, 109, 255, 0.25) !important;
+}
+[data-theme="dark"] .tab-btn {
+  color: #b8b1d0 !important;
+}
+[data-theme="dark"] .tab-btn:hover {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .tab-btn.active {
+  color: #c4b0ff !important;
+  border-bottom-color: #8b6dff !important;
+}
+[data-theme="dark"] .tab-panel-box {
+  background: #110d22 !important;
+  border-color: rgba(139, 109, 255, 0.3) !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.9) !important;
+}
+[data-theme="dark"] .tab-panel h3 {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .tab-panel p {
+  color: #c8c0df !important;
+}
+[data-theme="dark"] .deliverable-text b {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .deliverable-text span {
+  color: #b8b1d0 !important;
+}
+[data-theme="dark"] .deliverable-check {
+  background: rgba(139, 109, 255, 0.2) !important;
+  color: #c4b0ff !important;
+}
+[data-theme="dark"] .specs-table tr {
+  border-bottom-color: rgba(139, 109, 255, 0.18) !important;
+}
+[data-theme="dark"] .specs-table td:first-child {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .specs-table td:last-child {
+  color: #c8c0df !important;
+}
+
+/* Product Client Reviews */
+[data-theme="dark"] .product-reviews-grid .testi-card-box {
+  background: linear-gradient(155deg, #16102a 0%, #0e0a1e 100%) !important;
+  border-color: rgba(139, 109, 255, 0.35) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8) !important;
+}
+[data-theme="dark"] .testi-card-quote {
+  color: #dcd4f5 !important;
+}
+[data-theme="dark"] .testi-card-name {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .testi-card-role {
+  color: #b8b1d0 !important;
+}
+[data-theme="dark"] .testi-card-footer {
+  border-top-color: rgba(139, 109, 255, 0.2) !important;
+}
+
+/* Related Products Cards */
+[data-theme="dark"] .related-head h2 {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .related-card {
+  background: #110d22 !important;
+  border-color: rgba(139, 109, 255, 0.3) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.85) !important;
+}
+[data-theme="dark"] .related-card:hover {
+  border-color: rgba(188, 166, 255, 0.6) !important;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.95), 0 0 25px rgba(124, 92, 255, 0.3) !important;
+}
+[data-theme="dark"] .related-card-title {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .related-card-desc {
+  color: #b8b1d0 !important;
+}
+[data-theme="dark"] .related-card-bottom {
+  border-top-color: rgba(139, 109, 255, 0.2) !important;
+}
+[data-theme="dark"] .related-price {
+  color: #ffa0d8 !important;
+}
+[data-theme="dark"] .related-btn-pill {
+  background: rgba(139, 109, 255, 0.2) !important;
+  color: #c4b0ff !important;
+}
+[data-theme="dark"] .related-card:hover .related-btn-pill {
+  background: #7c5cff !important;
+  color: #ffffff !important;
+}
+
+/* Order Modal */
+[data-theme="dark"] .order-modal-box {
+  background: #110d22 !important;
+  border-color: rgba(139, 109, 255, 0.45) !important;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 35px rgba(124, 92, 255, 0.25) !important;
+}
+[data-theme="dark"] .order-modal-header {
+  background: #160f2e !important;
+  border-bottom-color: rgba(139, 109, 255, 0.25) !important;
+}
+[data-theme="dark"] .order-modal-title {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .order-modal-close {
+  background: #1e153a !important;
+  border-color: rgba(139, 109, 255, 0.3) !important;
+  color: #dcd4f5 !important;
+}
+[data-theme="dark"] .order-modal-close:hover {
+  background: #7c5cff !important;
+  color: #ffffff !important;
+}
+[data-theme="dark"] .modal-summary-box {
+  background: #181132 !important;
+  border-color: rgba(139, 109, 255, 0.2) !important;
+  color: #dcd4f5 !important;
+}
+[data-theme="dark"] .modal-form-label {
+  color: #f1edff !important;
+}
+[data-theme="dark"] .modal-form-input,
+[data-theme="dark"] .modal-form-textarea {
+  background: #0c0818 !important;
+  border-color: rgba(139, 109, 255, 0.3) !important;
+  color: #ffffff !important;
+}
+[data-theme="dark"] .modal-form-input:focus,
+[data-theme="dark"] .modal-form-textarea:focus {
+  border-color: #8b6dff !important;
+  box-shadow: 0 0 12px rgba(124, 92, 255, 0.4) !important;
+}
+
+/* 18. EDITORIAL BLOG ARTICLE PAGE (DARK THEME) */
+[data-theme="dark"] .blog-article-page {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .blog-breadcrumb a {
+  color: #b8b1d0 !important;
+}
+[data-theme="dark"] .blog-breadcrumb a:hover {
+  color: #8b6dff !important;
+}
+[data-theme="dark"] .blog-breadcrumb-sep {
+  color: #6b6282 !important;
+}
+[data-theme="dark"] .blog-breadcrumb-current {
+  color: #c4b0ff !important;
+}
+
+[data-theme="dark"] .article-title {
+  color: #ffffff !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8) !important;
+}
+[data-theme="dark"] .article-subtitle {
+  color: #b8b1d0 !important;
+}
+[data-theme="dark"] .article-category-pill {
+  background: rgba(139, 109, 255, 0.15) !important;
+  border-color: rgba(139, 109, 255, 0.4) !important;
+  color: #c4b0ff !important;
+}
+[data-theme="dark"] .article-read-time,
+[data-theme="dark"] .article-date {
+  color: #a79fc0 !important;
+}
+[data-theme="dark"] .article-featured-media {
+  border-color: rgba(139, 109, 255, 0.35) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95), 0 0 30px rgba(124, 92, 255, 0.2) !important;
+}
+
+/* Article Body Typography */
+[data-theme="dark"] .article-content {
+  color: #c8c0df !important;
+}
+[data-theme="dark"] .article-content p {
+  color: #c8c0df !important;
+}
+[data-theme="dark"] .article-content p.lead-paragraph {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .article-content h2 {
+  color: #ffffff !important;
+  border-top-color: rgba(139, 109, 255, 0.25) !important;
+}
+[data-theme="dark"] .article-content h3 {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .article-content blockquote {
+  background: #120d24 !important;
+  border-left: 3.5px solid #8b6dff !important;
+  color: #f1edff !important;
+}
+
+/* Takeaways */
+[data-theme="dark"] .takeaway-card {
+  background: #110d22 !important;
+  border-color: rgba(139, 109, 255, 0.35) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+}
+[data-theme="dark"] .takeaway-label {
+  color: #b8b1d0 !important;
+}
+
+/* Author Box */
+[data-theme="dark"] .author-bio-box {
+  background: #110d22 !important;
+  border-color: rgba(139, 109, 255, 0.3) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8) !important;
+}
+[data-theme="dark"] .author-name {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .author-bio {
+  color: #b8b1d0 !important;
+}
+
+/* Sidebar Widgets */
+[data-theme="dark"] .widget-card {
+  background: #110d22 !important;
+  border-color: rgba(139, 109, 255, 0.3) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8) !important;
+}
+[data-theme="dark"] .widget-title {
+  color: #ffffff !important;
+  border-bottom-color: rgba(139, 109, 255, 0.2) !important;
+}
+[data-theme="dark"] .widget-toc a {
+  color: #b8b1d0 !important;
+}
+[data-theme="dark"] .widget-toc a:hover,
+[data-theme="dark"] .widget-toc a.active {
+  color: #c4b0ff !important;
+}
+
+/* Related Articles */
+[data-theme="dark"] .related-article-card {
+  background: #110d22 !important;
+  border-color: rgba(139, 109, 255, 0.3) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8) !important;
+}
+[data-theme="dark"] .related-article-card:hover {
+  border-color: rgba(188, 166, 255, 0.6) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.95), 0 0 25px rgba(124, 92, 255, 0.25) !important;
+}
+[data-theme="dark"] .related-title {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .related-desc {
+  color: #b8b1d0 !important;
+}
+
+/* Share Buttons & Tables */
+[data-theme="dark"] .share-btn {
+  background: #140e28 !important;
+  border-color: rgba(139, 109, 255, 0.3) !important;
+  color: #c4b0ff !important;
+}
+[data-theme="dark"] .share-btn:hover {
+  background: #8b6dff !important;
+  color: #ffffff !important;
+}
+[data-theme="dark"] .table-wrap table {
+  border-color: rgba(139, 109, 255, 0.2) !important;
+}
+[data-theme="dark"] .table-wrap th {
+  background: #150f2c !important;
+  color: #ffffff !important;
+  border-color: rgba(139, 109, 255, 0.2) !important;
+}
+[data-theme="dark"] .table-wrap td {
+  border-color: rgba(139, 109, 255, 0.15) !important;
+  color: #c8c0df !important;
+}
+

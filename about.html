@@ -14,17 +14,7 @@
 <link rel="stylesheet" href="css/style.css?v=5.3">
 <link rel="stylesheet" href="css/about.css?v=5.2">
 <link rel="stylesheet" href="css/dark-theme.css?v=5.3">
-<script>
-  (function(){
-    try {
-      var saved = localStorage.getItem('kinetix_theme');
-      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (saved === 'dark' || (!saved && prefersDark)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-    } catch(e){}
-  })();
-</script>
+<script src="js/theme.js"></script>
 </head>
 <body>
 
@@ -60,7 +50,7 @@
       </button>
 
       <!-- Dark / Light Theme Toggle -->
-      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <button type="button" class="theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode" onclick="toggleKinetixTheme()">
         <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
