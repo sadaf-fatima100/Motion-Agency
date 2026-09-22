@@ -647,9 +647,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--v1);outline-offset:
   align-content: center;
   min-height: 100vh;
   min-height: 100dvh;
-  /* Fixed navbar height is 76px; equal 40px visible buffer at top (under navbar) and at bottom */
+  /* Fixed navbar height is 76px; equal 40px visible buffer at top (under navbar); bottom needs extra room for metrics dock labels */
   padding-top: calc(76px + 40px);
-  padding-bottom: 40px;
+  padding-bottom: 72px;
   padding-left: 36px;
   padding-right: 36px;
   row-gap: 32px;
@@ -1300,7 +1300,7 @@ h1.hero-title .accent {
   .hero {
     min-height: auto !important;
     padding-top: calc(76px + 20px) !important;
-    padding-bottom: 32px !important;
+    padding-bottom: 56px !important;
     column-gap: 32px !important;
     row-gap: 24px !important;
   }
@@ -1543,7 +1543,7 @@ h1.hero-title .accent {
   grid-column: 1 / -1;
   width: 100%;
   box-sizing: border-box;
-  margin: 16px 0 0 0;
+  margin: 28px 0 0 0;
   position: relative;
   display: flex;
   align-items: center;
@@ -5166,6 +5166,7 @@ h1.hero-title .accent {
 .blog-section {
   padding: 100px 0 110px 0;
   position: relative;
+  scroll-margin-top: 90px;
   background: 
     radial-gradient(ellipse 65% 50% at 20% 25%, rgba(255, 143, 206, 0.05) 0%, transparent 70%),
     radial-gradient(ellipse 70% 55% at 80% 75%, rgba(124, 92, 255, 0.06) 0%, transparent 70%);
@@ -5465,7 +5466,7 @@ h1.hero-title .accent {
   .hero {
     min-height: auto !important;
     padding-top: calc(76px + 20px) !important;
-    padding-bottom: 28px !important;
+    padding-bottom: 52px !important;
     padding-left: 24px !important;
     padding-right: 24px !important;
     column-gap: 24px !important;
@@ -7074,37 +7075,12 @@ h1.hero-title .accent {
   box-sizing: border-box;
 }
 
-/* Floating Prompt Card / Chatty Preview */
+/* Floating Prompt Card / Chatty Preview (Disabled per user request) */
 .kinetix-wa-card {
-  pointer-events: auto;
-  width: 320px;
-  max-width: calc(100vw - 36px);
-  margin-bottom: 14px;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1.5px solid rgba(124, 92, 255, 0.18);
-  border-radius: 20px;
-  box-shadow: 0 20px 50px -10px rgba(70, 30, 150, 0.22), 0 4px 18px rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(20px) saturate(1.4);
-  -webkit-backdrop-filter: blur(20px) saturate(1.4);
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(16px) scale(0.96);
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
-  visibility: hidden;
-  position: relative;
-}
-
-.kinetix-wa-card.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  visibility: visible;
-}
-
-.kinetix-wa-card.hidden {
+  display: none !important;
   opacity: 0 !important;
-  transform: translateY(16px) scale(0.96) !important;
-  pointer-events: none !important;
   visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 /* Card Header */
@@ -7291,16 +7267,34 @@ h1.hero-title .accent {
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
 }
 
-.kinetix-wa-badge-dot {
+.kinetix-wa-badge-dot,
+.kinetix-wa-badge {
   position: absolute;
-  top: -2px;
-  right: -2px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #ffffff;
-  border: 2px solid #25D366;
-  box-shadow: 0 0 6px #ffffff;
+  top: -8px;
+  right: -8px;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 5px;
+  border-radius: 100px;
+  background: #ff334b;
+  background: linear-gradient(135deg, #ff3b30 0%, #e11d48 100%);
+  color: #ffffff !important;
+  font-family: var(--font, "Urbanist", -apple-system, sans-serif) !important;
+  font-size: 11.5px !important;
+  font-weight: 850 !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  box-shadow: 0 3px 10px rgba(225, 29, 72, 0.55);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.kinetix-wa-badge-dot:empty::before,
+.kinetix-wa-badge:empty::before {
+  content: "3";
 }
 
 .kinetix-wa-btn-label {
