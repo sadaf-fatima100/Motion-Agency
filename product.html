@@ -15,7 +15,7 @@
   
   <link rel="stylesheet" href="css/style.css?v=5.3" />
   <link rel="stylesheet" href="css/dark-theme.css?v=5.4" />
-  <link rel="stylesheet" href="css/product.css?v=2.0" />
+  <link rel="stylesheet" href="css/product.css?v=1.4" />
   <script src="js/theme.js"></script>
 </head>
 <body class="product-page-body">
@@ -904,18 +904,31 @@
       // Scroll-triggered slide-up for right config panel
       var configCol = document.querySelector('.product-config-col');
       if (configCol) {
+        // Add hidden state via JS only (CSS fallback = always visible)
+        configCol.classList.add('anim-hidden');
+
+        var revealed = false;
+        function revealCol() {
+          if (revealed) return;
+          revealed = true;
+          configCol.classList.remove('anim-hidden');
+          configCol.classList.add('is-visible');
+        }
+
+        // Use IntersectionObserver with rootMargin so it fires even if already in view
         var observer = new IntersectionObserver(function(entries) {
           entries.forEach(function(entry) {
             if (entry.isIntersecting) {
-              // Small delay for a natural feel
-              setTimeout(function() {
-                configCol.classList.add('is-visible');
-              }, 120);
-              observer.disconnect(); // fire once only
+              setTimeout(revealCol, 100);
+              observer.disconnect();
             }
           });
-        }, { threshold: 0.08 });
+        }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+
         observer.observe(configCol);
+
+        // Hard fallback: always show after 600ms regardless
+        setTimeout(revealCol, 600);
       }
     });
   </script>

@@ -126,12 +126,16 @@
   align-self: start;
 }
 
-/* Right column: scroll-triggered slide-up */
+/* Right column: scroll-triggered slide-up (initial state set by JS) */
 .product-config-col {
-  opacity: 0;
-  transform: translateY(60px);
   transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
               transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* JS adds .anim-hidden to set initial state, then .is-visible to reveal */
+.product-config-col.anim-hidden {
+  opacity: 0;
+  transform: translateY(50px);
 }
 
 .product-config-col.is-visible {
