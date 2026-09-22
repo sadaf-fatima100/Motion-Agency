@@ -20,7 +20,7 @@
 
 /* Breadcrumb Bar - Generous breathing room under fixed navbar */
 .blog-breadcrumb-section {
-  padding: calc(84px + 120px) 0 24px 0;
+  padding: calc(76px + 24px) 0 24px 0;
   position: relative;
   z-index: 2;
 }
