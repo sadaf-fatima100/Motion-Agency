@@ -14,8 +14,8 @@
   min-height: 100vh;
   background: var(--bg, #f5f3fb);
   color: var(--ink-0, #0e0b1a);
-  font-family: var(--font, "Urbanist", sans-serif);
-  overflow-x: hidden;
+  overflow-x: clip !important;
+  overflow-y: visible !important;
 }
 
 /* Breadcrumb Bar - Generous breathing room under fixed navbar */
@@ -435,40 +435,25 @@
 
 /* Sticky Sidebar & Pinned Column Physics */
 .article-sidebar {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 96px;
-  align-self: start;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  max-height: calc(100vh - 116px);
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(124, 92, 255, 0.22) transparent;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 96px !important;
+  align-self: start !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 18px !important;
+  width: 100% !important;
+  max-width: 340px !important;
+  height: fit-content !important;
   will-change: transform;
-}
-
-.article-sidebar::-webkit-scrollbar {
-  width: 4px;
-}
-
-.article-sidebar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.article-sidebar::-webkit-scrollbar-thumb {
-  background: rgba(124, 92, 255, 0.22);
-  border-radius: 4px;
+  z-index: 10;
 }
 
 .sidebar-widget {
   background: rgba(255, 255, 255, 0.95);
   border: 1.5px solid rgba(124, 92, 255, 0.16);
-  border-radius: 24px;
-  padding: 24px 20px;
+  border-radius: 20px;
+  padding: 20px 18px;
   box-shadow: 0 10px 30px -10px rgba(100, 60, 200, 0.08);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
   position: relative;
@@ -637,7 +622,8 @@
   background: linear-gradient(135deg, #7c5cff 0%, #6841ea 60%, #a98cff 100%);
   color: #ffffff;
   border: none;
-  padding: 30px 24px;
+  border-radius: 20px;
+  padding: 24px 20px;
   text-align: center;
   box-shadow: 0 16px 40px -10px rgba(124, 92, 255, 0.5);
   position: relative;

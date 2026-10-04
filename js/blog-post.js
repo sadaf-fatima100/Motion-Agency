@@ -91,6 +91,27 @@
         setActiveLink(currentSection);
       }
 
+      // 3. Fallback Sticky Enforcer (guarantees pinned sidebar even if browser CSS sticky is hindered)
+      if (window.innerWidth > 1140 && sidebar) {
+        const grid = document.querySelector('.article-main-grid');
+        if (grid) {
+          const gridRect = grid.getBoundingClientRect();
+          const topThreshold = 96;
+          if (gridRect.top <= topThreshold) {
+            const sidebarRect = sidebar.getBoundingClientRect();
+            if (sidebarRect.top < topThreshold - 8) {
+              const maxTranslate = Math.max(0, grid.offsetHeight - sidebar.offsetHeight);
+              const desiredTranslate = Math.min(maxTranslate, Math.max(0, topThreshold - gridRect.top));
+              sidebar.style.transform = `translate3d(0, ${desiredTranslate}px, 0)`;
+            } else if (sidebarRect.top >= topThreshold && sidebar.style.transform) {
+              sidebar.style.transform = '';
+            }
+          } else if (sidebar.style.transform) {
+            sidebar.style.transform = '';
+          }
+        }
+      }
+
       isTicking = false;
     }
 
