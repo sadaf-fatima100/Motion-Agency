@@ -433,60 +433,203 @@
   font-weight: 800;
 }
 
-/* Sticky Sidebar */
+/* Sticky Sidebar & Pinned Column Physics */
 .article-sidebar {
+  position: -webkit-sticky;
   position: sticky;
-  top: 110px;
+  top: 96px;
+  align-self: start;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  max-height: calc(100vh - 116px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(124, 92, 255, 0.22) transparent;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.article-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.article-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.article-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(124, 92, 255, 0.22);
+  border-radius: 4px;
 }
 
 .sidebar-widget {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   border: 1.5px solid rgba(124, 92, 255, 0.16);
   border-radius: 24px;
-  padding: 26px 22px;
+  padding: 24px 20px;
   box-shadow: 0 10px 30px -10px rgba(100, 60, 200, 0.08);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.sidebar-widget:hover {
+  border-color: rgba(124, 92, 255, 0.32);
+  box-shadow: 0 14px 36px -8px rgba(100, 60, 200, 0.12);
+}
+
+/* Sidebar Widget Header Row with Live Progress Pill */
+.sidebar-widget-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
 .sidebar-widget-title {
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #7c5cff;
-  margin-bottom: 16px;
   display: flex;
   align-items: center;
   gap: 8px;
+  margin: 0;
 }
 
-/* Table of Contents */
+.toc-progress-pill {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #7c5cff;
+  background: rgba(124, 92, 255, 0.1);
+  border: 1px solid rgba(124, 92, 255, 0.22);
+  padding: 3px 9px;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.toc-progress-pill.is-completed {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+/* Table of Contents Mini Progress Line */
+.toc-progress-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(124, 92, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.toc-progress-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #7c5cff 0%, #ff8fce 100%);
+  border-radius: 10px;
+  transition: width 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 8px rgba(124, 92, 255, 0.5);
+}
+
+/* Table of Contents List & ScrollSpy Link States */
 .toc-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
+  position: relative;
 }
 
 .toc-link {
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--ink-1, #5c5572);
   text-decoration: none;
   line-height: 1.45;
-  transition: all 0.2s ease;
-  display: block;
-  padding: 6px 10px;
-  border-radius: 8px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  position: relative;
+  border: 1px solid transparent;
+}
+
+.toc-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink-2, #9d96b0);
+  opacity: 0.45;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.toc-text {
+  flex: 1;
+  transition: color 0.2s ease;
 }
 
 .toc-link:hover {
   color: #7c5cff;
-  background: rgba(124, 92, 255, 0.08);
+  background: rgba(124, 92, 255, 0.06);
   transform: translateX(4px);
+  border-color: rgba(124, 92, 255, 0.12);
+}
+
+.toc-link:hover .toc-bullet {
+  background: #7c5cff;
+  opacity: 0.8;
+  transform: scale(1.3);
+}
+
+/* Active Section (ScrollSpy State) */
+.toc-link.is-active {
+  color: #7c5cff;
+  font-weight: 700;
+  background: rgba(124, 92, 255, 0.1);
+  border-color: rgba(124, 92, 255, 0.24);
+  box-shadow: 0 4px 14px -4px rgba(124, 92, 255, 0.2);
+  transform: translateX(4px);
+}
+
+.toc-link.is-active .toc-bullet {
+  background: #7c5cff;
+  opacity: 1;
+  transform: scale(1.5);
+  box-shadow: 0 0 10px rgba(124, 92, 255, 0.8);
+}
+
+/* Heading Accent Flash Animation (when jumping via TOC) */
+@keyframes headingGlowPulse {
+  0% {
+    text-shadow: 0 0 0 rgba(124, 92, 255, 0);
+    transform: translateX(0);
+  }
+  30% {
+    text-shadow: 0 0 18px rgba(124, 92, 255, 0.6), 0 0 8px rgba(255, 160, 216, 0.6);
+    transform: translateX(6px);
+  }
+  100% {
+    text-shadow: 0 0 0 rgba(124, 92, 255, 0);
+    transform: translateX(0);
+  }
+}
+
+.article-content h2.heading-flash-active {
+  animation: headingGlowPulse 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Sidebar CTA Widget */
@@ -697,6 +840,33 @@
 [data-theme="dark"] .sidebar-widget {
   background: #0d081b;
   border-color: rgba(169, 140, 255, 0.25);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8), 0 0 20px rgba(124, 92, 255, 0.08);
+}
+
+[data-theme="dark"] .sidebar-widget:hover {
+  border-color: rgba(188, 166, 255, 0.45);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.95), 0 0 24px rgba(124, 92, 255, 0.16);
+}
+
+[data-theme="dark"] .toc-progress-pill {
+  color: #ffa0d8;
+  background: rgba(255, 160, 216, 0.12);
+  border-color: rgba(255, 160, 216, 0.3);
+}
+
+[data-theme="dark"] .toc-progress-pill.is-completed {
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.15);
+  border-color: rgba(52, 211, 153, 0.35);
+}
+
+[data-theme="dark"] .toc-progress-track {
+  background: rgba(124, 92, 255, 0.15);
+}
+
+[data-theme="dark"] .toc-progress-fill {
+  background: linear-gradient(90deg, #8b6dff 0%, #ffa0d8 100%);
+  box-shadow: 0 0 12px rgba(255, 160, 216, 0.7);
 }
 
 [data-theme="dark"] .toc-link {
@@ -705,7 +875,28 @@
 
 [data-theme="dark"] .toc-link:hover {
   color: #ffffff;
+  background: rgba(124, 92, 255, 0.18);
+  border-color: rgba(169, 140, 255, 0.3);
+}
+
+[data-theme="dark"] .toc-bullet {
+  background: #7a7099;
+}
+
+[data-theme="dark"] .toc-link:hover .toc-bullet {
+  background: #ffa0d8;
+}
+
+[data-theme="dark"] .toc-link.is-active {
+  color: #ffffff;
   background: rgba(124, 92, 255, 0.22);
+  border-color: rgba(188, 166, 255, 0.5);
+  box-shadow: 0 0 18px rgba(124, 92, 255, 0.35);
+}
+
+[data-theme="dark"] .toc-link.is-active .toc-bullet {
+  background: #ffa0d8;
+  box-shadow: 0 0 12px rgba(255, 160, 216, 0.9);
 }
 
 [data-theme="dark"] .related-posts-section {
