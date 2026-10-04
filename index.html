@@ -11,8 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<link rel="stylesheet" href="css/style.css?v=5.8">
-<link rel="stylesheet" href="css/dark-theme.css?v=5.4">
+<link rel="stylesheet" href="css/style.css?v=6.1">
+<link rel="stylesheet" href="css/dark-theme.css?v=5.6">
 <script src="js/theme.js"></script>
 </head>
 <body>
@@ -1855,90 +1855,45 @@
   </div>
   </section>
 
-  <!-- CTA SECTION -->
+  <!-- CTA SECTION (MATCHES REFERENCE WITH KINETIX SIGNATURE BRANDING & RIPPLE WAVES) -->
   <section class="cta-section" id="contact">
     <div class="wrap">
       <div class="cta-band">
-
-        <!-- LEFT: Heading + copy + CTAs -->
-        <div class="cta-left">
-          <div class="cta-eyebrow">
-            <span class="cta-eyebrow-dot"></span>
-            <span>Let's Build Something</span>
-          </div>
-          <h2>Ready to bring your <span class="accent-purple">vision to the</span> <span class="accent-pink">screen</span> with our studio?</h2>
-          <p>Tell us what you are building and our directors will prepare a bespoke cinematic treatment within three business days.</p>
-          <div class="cta-actions">
-            <a href="#contact" class="cta-primary-btn">Book a Consultation &nbsp;→</a>
-            <a href="#work" class="cta-ghost-btn">View Our Work →</a>
-          </div>
-          <div class="cta-trust-row">
-            <div class="cta-trust-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>No setup fees</span>
-            </div>
-            <div class="cta-trust-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>3-day response guarantee</span>
-            </div>
-            <div class="cta-trust-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Full commercial rights</span>
-            </div>
-          </div>
+        <!-- Concentric Circular Ripple Rings radiating from the right edge -->
+        <div class="cta-ripple-waves" aria-hidden="true">
+          <svg viewBox="0 0 600 600" class="cta-ripple-svg" preserveAspectRatio="xMaxYMid meet">
+            <circle cx="600" cy="300" r="540" class="cta-ripple-ring ring-6" />
+            <circle cx="600" cy="300" r="440" class="cta-ripple-ring ring-5" />
+            <circle cx="600" cy="300" r="340" class="cta-ripple-ring ring-4" />
+            <circle cx="600" cy="300" r="250" class="cta-ripple-ring ring-3" />
+            <circle cx="600" cy="300" r="160" class="cta-ripple-ring ring-2" />
+            <circle cx="600" cy="300" r="80"  class="cta-ripple-ring ring-1" />
+          </svg>
         </div>
 
-        <!-- RIGHT: Animated visual composition -->
-        <div class="cta-right">
-          <div class="cta-visual-stage">
-
-            <!-- Central glowing orb — Play button icon (video agency) -->
-            <div class="cta-orb-wrap">
-              <div class="cta-orb">
-                <div class="cta-orb-inner">
-                  <!-- Play triangle — universally recognized for video -->
-                  <svg width="38" height="38" viewBox="0 0 24 24" fill="rgba(255,255,255,0.95)" stroke="none"><polygon points="6 3 20 12 6 21 6 3"/></svg>
-                </div>
-                <div class="cta-orb-ring ring-1"></div>
-                <div class="cta-orb-ring ring-2"></div>
-                <div class="cta-orb-ring ring-3"></div>
-              </div>
-            </div>
-
-            <!-- Floating service chips with relatable icons -->
-            <div class="cta-float-chip chip-1">
-              <!-- Film camera — 3D CGI -->
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 10l4.553-2.07A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.89L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
-              <span>3D CGI</span>
-            </div>
-            <div class="cta-float-chip chip-2">
-              <!-- Presentation / Explainer -->
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-              <span>Explainer</span>
-            </div>
-            <div class="cta-float-chip chip-3">
-              <!-- Megaphone — Commercial -->
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
-              <span>Commercial</span>
-            </div>
-            <div class="cta-float-chip chip-4">
-              <!-- Pen tool — Whiteboard / Animation -->
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-              <span>Whiteboard</span>
-            </div>
-
-            <!-- Status pill -->
-            <div class="cta-live-pill">
-              <span class="cta-live-dot"></span>
-              <span>Studio is Open — 3 slots left</span>
-            </div>
-
+        <!-- Left Content: Headline + Subtitle + Capsule Action Buttons -->
+        <div class="cta-content-area">
+          <h2 class="cta-banner-title">Let's Get In Touch.</h2>
+          <p class="cta-banner-desc">Tell us what you are building. Our directors will prepare a bespoke cinematic treatment with guaranteed 4K 60FPS delivery tailored to your timeline.</p>
+          <div class="cta-capsules-group">
+            <a href="product.html?id=explainer" class="cta-capsule-btn primary-capsule">
+              <span class="capsule-label">Book a discovery call</span>
+              <span class="capsule-orb">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </span>
+            </a>
+            <a href="#pricing" class="cta-capsule-btn secondary-capsule">
+              <span class="capsule-label">Explore Packages</span>
+              <span class="capsule-orb">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </span>
+            </a>
           </div>
         </div>
-
-          </div>
-        </div>
-
       </div>
     </div>
   </section>

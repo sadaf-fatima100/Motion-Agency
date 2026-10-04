@@ -1626,7 +1626,7 @@ h1.hero-title .accent {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  align-items: start;
+  align-items: stretch;
 }
 .anim-solution-card {
   position: relative;
@@ -1637,6 +1637,8 @@ h1.hero-title .accent {
   padding: 32px 24px 26px;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.4s ease;
   overflow: hidden;
 }
@@ -1745,6 +1747,10 @@ h1.hero-title .accent {
   line-height: 1.68;
   margin-bottom: 22px;
   flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .anim-card-features {
   display: flex;
@@ -5690,18 +5696,27 @@ h1.hero-title .accent {
   /* Hero Layout */
   .hero {
     min-height: auto !important;
-    padding-top: calc(76px + 20px) !important;
-    padding-bottom: 52px !important;
+    padding-top: calc(76px + 32px) !important;
+    padding-bottom: 38px !important;
     padding-left: 24px !important;
     padding-right: 24px !important;
-    column-gap: 24px !important;
+    column-gap: 32px !important;
     row-gap: 24px !important;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr) !important;
+    align-items: center !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
-  .hero-copy,
+  .hero-copy {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
   .hero-stage {
     min-width: 0 !important;
     width: 100% !important;
@@ -5803,40 +5818,78 @@ h1.hero-title .accent {
   .trust-row {
     margin-top: 16px !important;
   }
+  /* Single-row sleek metrics dock below video (No awkward 2-row wrap) */
   .hero-metrics-card {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px 14px !important;
-    padding: 12px 14px !important;
-    min-height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+    padding: 10px 14px !important;
+    min-height: 52px !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    margin-top: 14px !important;
   }
   .hero-metrics-card .metric-sep {
-    display: none !important;
+    display: block !important;
+    width: 1px !important;
+    height: 22px !important;
+    background: rgba(124, 92, 255, 0.16) !important;
+    flex-shrink: 0 !important;
+    margin: 0 2px !important;
   }
   .hero-metrics-card .metric-cell {
-    width: 100% !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: auto !important;
     justify-content: flex-start !important;
     gap: 8px !important;
   }
   .hero-metrics-card .metric-icon {
-    width: 32px !important;
-    height: 32px !important;
-    min-width: 32px !important;
-    min-height: 32px !important;
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
     border-radius: 50% !important;
+    flex-shrink: 0 !important;
   }
   .hero-metrics-card .metric-icon svg {
-    width: 15px !important;
-    height: 15px !important;
+    width: 14px !important;
+    height: 14px !important;
   }
   .hero-metrics-card .metric-val {
-    font-size: 16px !important;
+    font-size: 15px !important;
+    line-height: 1.1 !important;
   }
   .hero-metrics-card .metric-lbl {
-    font-size: 11px !important;
+    font-size: 10.5px !important;
     white-space: nowrap !important;
+    line-height: 1.2 !important;
+  }
+  /* Balanced Stats Bar on 1024px Laptop */
+  .stats-bar {
+    margin-top: 24px !important;
+    height: 60px !important;
+    padding: 0 28px !important;
+  }
+  .stats-left {
+    gap: 20px !important;
+  }
+  .stat-num {
+    font-size: 20px !important;
+  }
+  .stat-lbl {
+    font-size: 10px !important;
+  }
+  .stats-badge {
+    width: 68px !important;
+    height: 68px !important;
+  }
+  .stats-right {
+    font-size: 12px !important;
+    max-width: 320px !important;
+    white-space: normal !important;
+    line-height: 1.3 !important;
   }
 
   /* Core Capabilities (Animation Solutions) */
@@ -6003,23 +6056,28 @@ h1.hero-title .accent {
   }
 
   /* Hero: 1-Column Balanced Flow */
+  .hero-section {
+    scroll-margin-top: 90px !important;
+  }
   .hero {
     grid-template-columns: 1fr !important;
     gap: 28px !important;
-    padding: calc(76px + 20px) 20px 32px !important;
+    padding: calc(76px + 36px) 24px 36px !important;
     min-height: auto !important;
   }
   .hero-copy {
     padding: 0 !important;
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: 720px !important;
+    margin: 0 auto !important;
+    text-align: left !important;
   }
   h1.hero-title br {
     display: none !important;
   }
   /* Typographic Hierarchy (H1 > H2 > H3 > H4) */
   h1, .hero-title, h1.hero-title, .about-hero-title {
-    font-size: clamp(40px, 5.0vw, 46px) !important;
+    font-size: clamp(38px, 4.8vw, 46px) !important;
     line-height: 1.22 !important;
     text-wrap: balance !important;
     max-width: 100% !important;
@@ -6048,20 +6106,55 @@ h1.hero-title .accent {
   }
   .hero-stage {
     width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
+    max-width: 720px !important;
+    margin: 0 auto !important;
   }
   .hero-video-card {
     min-height: auto !important;
     aspect-ratio: 16 / 9 !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 0 !important;
+    margin: 0 auto !important;
   }
   .hero-metrics-card {
     width: 100% !important;
     max-width: 100% !important;
-    margin: 16px 0 0 0 !important;
+    margin: 16px auto 0 auto !important;
+  }
+  /* Stats Bar: Balanced Flow on Tablet Landscape (960px - 769px) */
+  .stats-bar {
+    height: auto !important;
+    padding: 18px 24px !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 14px !important;
+    border-radius: 24px !important;
+    margin-top: 24px !important;
+    max-width: 720px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+  .stats-left {
+    gap: 20px !important;
+  }
+  .stats-badge-anchor {
+    position: static !important;
+    transform: none !important;
+    order: 2;
+  }
+  .stats-badge {
+    width: 64px !important;
+    height: 64px !important;
+  }
+  .stats-right {
+    width: 100% !important;
+    white-space: normal !important;
+    text-align: center !important;
+    font-size: 13px !important;
+    order: 3;
   }
 
   /* Core Capabilities: 1-Column Clean Cards aligned to section */
@@ -6276,6 +6369,127 @@ h1.hero-title .accent {
   .pricing-grid {
     grid-template-columns: 1fr !important;
     gap: 24px !important;
+  }
+
+  /* Why Us Bento Grid: Clean 1-Column Responsive Stack (Fixes 706px squished letter bug) */
+  .why-us-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 18px !important;
+  }
+  .why-us-pills {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+  .why-pill {
+    transform: none !important;
+    margin: 0 !important;
+    white-space: normal !important;
+  }
+  .why-pill-satisfaction {
+    transform: none !important;
+    margin: 0 !important;
+  }
+  .why-bento-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+    width: 100% !important;
+  }
+  .why-card,
+  .why-card-tall,
+  .why-card-wide,
+  .why-card-mid,
+  .why-card-banner {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    padding: 26px 22px !important;
+  }
+  .why-card-tall .why-tools-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+  .why-card-wide {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+  }
+  .why-card-wide .why-phones-visual {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 12px auto 0 auto !important;
+    height: 180px !important;
+    transform: scale(0.95) !important;
+    transform-origin: center center !important;
+  }
+  .banner-tag-container.why-banner-tags {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  /* Core Capabilities: 1-Column */
+  .anim-solutions-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .anim-solution-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Work Portfolio: Responsive Fluid Grid */
+  .work-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  /* Testimonials: 1-Card Full Width Slide */
+  .testi-card-box {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Universal Form Input Auto-Zoom Prevention */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  /* Universal Touch Target Safety (Min 44x44px hit-box) */
+  .nav-hamburger,
+  .theme-toggle-btn {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    touch-action: manipulation !important;
+  }
+
+  /* Scroll Margin Anchor Clearance */
+  .hero-section,
+  #top,
+  #work,
+  #why-us,
+  #capabilities,
+  #pricing,
+  #blog,
+  #contact {
+    scroll-margin-top: 90px !important;
   }
 
   /* About Agency Sculpted Grid */
