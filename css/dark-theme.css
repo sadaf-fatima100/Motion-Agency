@@ -2141,9 +2141,8 @@
 
 [data-theme="dark"] .portfolio-section {
   background: 
-    radial-gradient(ellipse 95% 55% at 50% 100%, rgba(139, 109, 255, 0.25) 0%, rgba(255, 160, 216, 0.13) 45%, transparent 75%),
-    radial-gradient(ellipse 65% 50% at 50% 25%, rgba(139, 109, 255, 0.16) 0%, rgba(255, 160, 216, 0.08) 45%, transparent 70%),
-    #000000 !important;
+    radial-gradient(ellipse 70% 45% at 50% 50%, rgba(139, 109, 255, 0.06) 0%, transparent 70%),
+    #05030a !important;
 }
 
 [data-theme="dark"] .manifesto-section {
