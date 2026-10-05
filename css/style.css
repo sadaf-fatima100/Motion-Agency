@@ -697,7 +697,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--v1);outline-offset:
   margin-top: 0;
 }
 .hero-copy .trust-row {
-  margin-top: 36px;
+  margin-top: 48px;
+  margin-bottom: 0;
   padding-top: 0;
 }
 
@@ -877,10 +878,11 @@ h1.hero-title .accent {
 
 /* TRUST ROW & AVATAR STACK */
 .trust-row {
-  margin-top: 36px;
+  margin-top: 48px;
+  margin-bottom: 0;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 .av-stack {
   display: flex;
@@ -889,8 +891,8 @@ h1.hero-title .accent {
 .av-stack .av-img,
 .av-stack img,
 .av-stack span {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   border: 2.5px solid #ffffff;
   margin-left: -10px;
@@ -909,9 +911,10 @@ h1.hero-title .accent {
 .av-2 { background: linear-gradient(135deg, #ff8fce, #d15fb0); }
 .av-3 { background: linear-gradient(135deg, #7fe7c4, #35a888); }
 .trust-text {
-  font-size: 13.5px;
+  font-size: 15.5px;
   color: var(--ink-1);
-  line-height: 1.4;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
 }
 .trust-text b {
   color: var(--ink-0);
@@ -1336,7 +1339,8 @@ h1.hero-title .accent {
     margin-left: 8px !important;
   }
   .trust-row {
-    margin-top: 18px !important;
+    margin-top: 36px !important;
+    margin-bottom: 0 !important;
   }
   .hero-metrics-card {
     padding: 10px 12px !important;
@@ -1540,7 +1544,7 @@ h1.hero-title .accent {
   grid-column: 1 / -1;
   width: 100%;
   box-sizing: border-box;
-  margin: 28px 0 0 0;
+  margin: 16px 0 0 0;
   position: relative;
   display: flex;
   align-items: center;
@@ -5930,7 +5934,8 @@ h1.hero-title .accent {
     margin-left: 8px !important;
   }
   .trust-row {
-    margin-top: 16px !important;
+    margin-top: 36px !important;
+    margin-bottom: 0 !important;
   }
   /* Single-row sleek metrics dock below video (No awkward 2-row wrap) */
   .hero-metrics-card {
