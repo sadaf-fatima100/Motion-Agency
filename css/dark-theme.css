@@ -1341,15 +1341,17 @@
   transform: translateY(-8px) !important;
 }
 
-/* Tier Icon */
 [data-theme="dark"] .pricing-tier-icon {
-  background: rgba(124, 92, 255, 0.18) !important;
-  color: #a78bfa !important;
-  border: 1px solid rgba(167, 139, 250, 0.25) !important;
+  background: rgba(124, 92, 255, 0.25) !important;
+  color: #c4b0ff !important;
+  border: 1px solid rgba(167, 139, 250, 0.35) !important;
 }
 
 /* Title & Badge */
-[data-theme="dark"] .pricing-card-title {
+[data-theme="dark"] .pricing-card-title,
+[data-theme="dark"] .pricing-card h3.pricing-card-title,
+[data-theme="dark"] .pricing-card .pricing-card-title,
+[data-theme="dark"] h3.pricing-card-title {
   color: #ffffff !important;
 }
 
@@ -1360,8 +1362,11 @@
 }
 
 /* Subtitle / Intro */
-[data-theme="dark"] .pricing-intro {
-  color: #9d94b4 !important;
+[data-theme="dark"] .pricing-intro,
+[data-theme="dark"] .pricing-card .pricing-intro,
+[data-theme="dark"] .pricing-card p.pricing-intro,
+[data-theme="dark"] p.pricing-intro {
+  color: #d1c9e8 !important;
 }
 
 /* Price */

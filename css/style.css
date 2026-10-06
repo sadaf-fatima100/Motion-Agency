@@ -1680,9 +1680,10 @@ h1.hero-title .accent {
   filter: blur(34px);
   transition: opacity 0.4s ease;
 }
-.card-3d .anim-card-glow { background: #7c5cff; }
 .card-whiteboard .anim-card-glow { background: #ff8fce; }
 .card-explainer .anim-card-glow { background: #4f46e5; }
+.card-premium .anim-card-glow,
+.card-3d .anim-card-glow { background: #7c5cff; }
 .anim-solution-card:hover .anim-card-glow { opacity: 0.38; }
 
 .anim-card-top {
@@ -2508,7 +2509,7 @@ h1.hero-title .accent {
   font-size: clamp(21px, 1.7vw, 24px) !important;
   font-weight: 750 !important;
   letter-spacing: -0.025em !important;
-  color: #0e0a1f !important;
+  color: #0e0a1f;
   margin: 0 !important;
   line-height: 1.24 !important;
 }
