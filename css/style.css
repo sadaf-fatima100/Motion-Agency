@@ -2745,6 +2745,20 @@ h1.hero-title .accent {
   display: block;
 }
 
+.pricing-check-icon.icon-cross {
+  color: #ef4444;
+}
+
+.pricing-features li.feature-disabled {
+  opacity: 0.58;
+}
+
+.pricing-features li.feature-disabled span:not(.pricing-check-icon) {
+  text-decoration: line-through;
+  text-decoration-color: #ef4444;
+  color: #6a6180;
+}
+
 @media (max-width: 1024px) {
   .pricing-grid {
     grid-template-columns: 1fr;

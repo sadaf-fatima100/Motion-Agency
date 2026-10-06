@@ -1446,6 +1446,20 @@
   color: #8b6eff !important;
 }
 
+[data-theme="dark"] .pricing-check-icon.icon-cross {
+  color: #f87171 !important;
+}
+
+[data-theme="dark"] .pricing-features li.feature-disabled {
+  opacity: 0.52 !important;
+}
+
+[data-theme="dark"] .pricing-features li.feature-disabled span:not(.pricing-check-icon) {
+  color: #9d94b4 !important;
+  text-decoration: line-through !important;
+  text-decoration-color: #f87171 !important;
+}
+
 /* 10. CLIENT TESTIMONIALS MULTI-CARD SLIDER (DARK THEME) */
 [data-theme="dark"] .testi-head .eyebrow {
   background: rgba(139, 109, 255, 0.12) !important;
