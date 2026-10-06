@@ -110,6 +110,8 @@
             sidebar.style.transform = '';
           }
         }
+      } else if (sidebar && sidebar.style.transform) {
+        sidebar.style.transform = '';
       }
 
       isTicking = false;

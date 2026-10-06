@@ -180,6 +180,10 @@
   color: var(--ink-1, #5c5572);
   max-width: 820px;
   width: 100%;
+  min-width: 0 !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  box-sizing: border-box;
 }
 
 .article-content p {
@@ -901,20 +905,27 @@
 /* RESPONSIVE MEDIA QUERIES */
 @media (max-width: 1140px) {
   .article-main-grid {
-    grid-template-columns: 1fr;
-    gap: 50px;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 40px !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .article-content {
-    max-width: 100%;
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
   }
   .article-sidebar {
-    position: static;
-    max-width: 100%;
-    margin: 0;
-    width: 100%;
+    position: static !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    transform: none !important;
   }
   .related-posts-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
   }
 }
 
@@ -1025,105 +1036,199 @@
 
 @media (max-width: 768px) {
   .blog-breadcrumb-section {
-    padding-top: calc(76px + 80px) !important;
-    padding-bottom: 16px !important;
+    padding-top: calc(76px + 24px) !important;
+    padding-bottom: 14px !important;
+    width: 100% !important;
+  }
+  .blog-breadcrumb {
+    font-size: 13px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    line-height: 1.4 !important;
+    gap: 8px !important;
   }
   .article-header {
-    padding: 10px 0 32px 0 !important;
+    padding: 10px 0 28px 0 !important;
+    width: 100% !important;
   }
   .article-header-wrap {
     margin: 0 auto !important;
     text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .article-title {
     font-size: clamp(24px, 6.4vw, 34px) !important;
     line-height: 1.22 !important;
     margin-bottom: 16px !important;
     text-align: center !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
   }
   .article-subtitle {
     font-size: 15px !important;
     line-height: 1.6 !important;
     margin-bottom: 24px !important;
     text-align: center !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
   }
-  .takeaway-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .takeaway-card {
-    padding: 18px 16px;
-  }
-  .takeaway-stat {
-    font-size: 28px;
-  }
-  .article-featured-media {
-    border-radius: 18px;
-    margin-bottom: 35px;
-  }
-  .article-featured-caption {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    font-size: 11.5px;
-    padding: 20px 16px 14px 16px;
+  .article-main-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 36px !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .article-content {
-    font-size: 15.5px;
-    line-height: 1.7;
+    font-size: 15.5px !important;
+    line-height: 1.7 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
   }
   .article-content p {
-    font-size: 15.5px;
-    margin-bottom: 20px;
+    font-size: 15.5px !important;
+    margin-bottom: 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    box-sizing: border-box !important;
   }
   .article-content p.lead-paragraph {
-    font-size: 17.5px;
-    line-height: 1.62;
+    font-size: 17.5px !important;
+    line-height: 1.62 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    box-sizing: border-box !important;
   }
   .article-content h2 {
     font-size: clamp(22px, 5.5vw, 26px) !important;
     margin: 36px 0 16px 0 !important;
-    padding-top: 16px;
+    padding-top: 16px !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
   }
   .article-content h3 {
     font-size: 19px !important;
     margin: 28px 0 12px 0 !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+  .article-featured-media {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 18px !important;
+    margin-bottom: 35px !important;
+  }
+  .article-featured-media img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    object-fit: cover !important;
+  }
+  .article-featured-caption {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    font-size: 11.5px !important;
+    padding: 20px 16px 14px 16px !important;
+  }
+  .takeaway-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  .takeaway-card {
+    padding: 18px 16px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .takeaway-stat {
+    font-size: 28px !important;
+  }
+  .takeaway-label {
+    font-size: 13px !important;
   }
   .article-pullquote {
-    padding: 20px 18px;
-    font-size: 17px;
-    border-radius: 18px;
-    margin: 30px 0;
+    padding: 20px 18px !important;
+    font-size: 17px !important;
+    border-radius: 18px !important;
+    margin: 30px 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   .article-callout {
-    padding: 20px 18px;
-    border-radius: 0 16px 16px 0;
-    margin: 28px 0;
+    padding: 20px 18px !important;
+    border-radius: 0 16px 16px 0 !important;
+    margin: 28px 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .article-table-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    margin: 28px 0 !important;
+  }
+  .article-table {
+    min-width: 500px !important;
+    width: 100% !important;
+  }
+  .article-checklist {
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   .article-checklist li {
-    font-size: 14.5px;
-    padding-left: 32px;
-    margin-bottom: 14px;
+    font-size: 14.5px !important;
+    padding-left: 32px !important;
+    margin-bottom: 14px !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
   }
   .article-checklist-icon {
-    width: 20px;
-    height: 20px;
-    font-size: 11px;
+    width: 20px !important;
+    height: 20px !important;
+    font-size: 11px !important;
   }
   .article-share-bar {
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 30px;
-    padding-top: 20px;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin-top: 30px !important;
+    padding-top: 20px !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .article-sidebar {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    transform: none !important;
+    margin: 0 !important;
   }
   .sidebar-widget {
-    padding: 20px 18px;
-    border-radius: 20px;
+    padding: 20px 18px !important;
+    border-radius: 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
   }
   .cta-band-actions {
-    flex-direction: column;
-    width: 100%;
-    gap: 12px;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
   }
   .cta-band-actions .btn-primary,
   .btn-ghost-cta {
@@ -1134,79 +1239,154 @@
 
 @media (max-width: 480px) {
   .blog-breadcrumb-section {
-    padding-top: calc(76px + 64px) !important;
+    padding-top: calc(64px + 18px) !important;
     padding-bottom: 12px !important;
+    width: 100% !important;
   }
   .blog-breadcrumb {
-    font-size: 12px;
+    font-size: 11.5px !important;
+    gap: 6px !important;
+    line-height: 1.4 !important;
+  }
+  .article-header {
+    padding: 6px 0 20px 0 !important;
   }
   .article-meta-top {
-    gap: 8px 10px;
+    gap: 8px 10px !important;
+    margin-bottom: 16px !important;
   }
   .article-category-pill {
-    font-size: 10.5px;
-    padding: 4px 10px;
+    font-size: 10.5px !important;
+    padding: 4px 10px !important;
   }
   .article-read-time,
   .article-date {
-    font-size: 12px;
+    font-size: 11.5px !important;
   }
   .article-title {
     font-size: clamp(21px, 6.8vw, 26px) !important;
     line-height: 1.25 !important;
     text-align: center !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
   }
   .article-subtitle {
     font-size: 14px !important;
     line-height: 1.55 !important;
     text-align: center !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
   }
-  .takeaway-card {
-    padding: 16px 14px;
-    border-radius: 16px;
+  .article-main-grid {
+    gap: 28px !important;
   }
-  .takeaway-stat {
-    font-size: 26px;
+  .article-content {
+    font-size: 14.5px !important;
+    line-height: 1.68 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
   }
-  .takeaway-label {
-    font-size: 12.5px;
+  .article-content p {
+    font-size: 14.5px !important;
+    margin-bottom: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+  .article-content p.lead-paragraph {
+    font-size: 16px !important;
+    line-height: 1.58 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+  .article-content h2 {
+    font-size: clamp(19px, 5.2vw, 22px) !important;
+    margin: 28px 0 12px 0 !important;
+    padding-top: 12px !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+  .article-content h3 {
+    font-size: 17px !important;
+    margin: 22px 0 10px 0 !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+  .article-featured-media {
+    border-radius: 16px !important;
+    margin-bottom: 24px !important;
   }
   .article-featured-media img {
-    height: clamp(200px, 48vw, 260px);
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .article-featured-caption {
+    font-size: 10.5px !important;
+    padding: 14px 12px 10px 12px !important;
+    gap: 4px !important;
+  }
+  .takeaway-card {
+    padding: 16px 14px !important;
+    border-radius: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .takeaway-stat {
+    font-size: 26px !important;
+  }
+  .takeaway-label {
+    font-size: 12.5px !important;
   }
   .article-table-wrap {
-    border-radius: 14px;
-    margin: 24px 0 30px 0;
+    border-radius: 14px !important;
+    margin: 20px 0 26px 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: block !important;
   }
   .article-table {
-    font-size: 13px;
-    min-width: 520px;
+    font-size: 12px !important;
+    min-width: 460px !important;
   }
   .article-table th {
-    padding: 12px 12px;
-    font-size: 12.5px;
+    padding: 10px 10px !important;
+    font-size: 11.5px !important;
   }
   .article-table td {
-    padding: 12px 12px;
-    font-size: 12.5px;
+    padding: 10px 10px !important;
+    font-size: 11.5px !important;
   }
   .sidebar-cta-widget {
-    padding: 24px 16px;
-    border-radius: 18px;
+    padding: 22px 16px !important;
+    border-radius: 18px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   .sidebar-cta-title {
-    font-size: 18.5px;
+    font-size: 17.5px !important;
   }
   .sidebar-cta-desc {
-    font-size: 12.5px;
+    font-size: 12.5px !important;
   }
   .related-posts-section {
-    padding: 50px 0 70px 0;
+    padding: 40px 0 50px 0 !important;
   }
   .related-posts-head h2 {
-    font-size: 24px !important;
+    font-size: 22px !important;
   }
   .related-posts-head p {
-    font-size: 13.5px !important;
+    font-size: 13px !important;
+  }
+  .related-posts-grid {
+    gap: 16px !important;
   }
 }

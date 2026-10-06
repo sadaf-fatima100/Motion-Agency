@@ -1394,17 +1394,56 @@ h1.hero-title .accent {
     border-radius: 19px;
   }
   .hero-metrics-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px 10px;
-    padding: 14px;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 4px !important;
+    padding: 8px 6px !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   .metric-cell {
-    width: 100%;
-    justify-content: flex-start;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+  .metric-icon {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+    flex-shrink: 0 !important;
+  }
+  .metric-icon svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+  .metric-data {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  .metric-val {
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+  }
+  .metric-lbl {
+    font-size: 8.5px !important;
+    font-weight: 600 !important;
+    line-height: 1.15 !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+    opacity: 0.8 !important;
   }
   .metric-sep {
-    display: none;
+    display: none !important;
   }
   .hero-card-brand-title span {
     font-size: 17px;
@@ -1437,16 +1476,37 @@ h1.hero-title .accent {
     margin-top: 14px !important;
   }
   .hero-actions {
+    display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
-    gap: 10px !important;
+    gap: 12px !important;
     margin-top: 22px !important;
   }
   .hero-actions .btn-primary,
   .hero-actions .btn-ghost {
     width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    max-height: 52px !important;
+    display: flex !important;
+    align-items: center !important;
     justify-content: center !important;
-    padding: 12px 20px !important;
+    gap: 12px !important;
+    padding: 0 20px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    box-sizing: border-box !important;
+  }
+  .hero-actions .btn-primary .ic,
+  .hero-actions .btn-ghost .pc {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    min-height: 34px !important;
+    margin-left: 0 !important;
+    flex-shrink: 0 !important;
   }
   .trust-row {
     margin-top: 20px !important;
@@ -1475,14 +1535,28 @@ h1.hero-title .accent {
     font-size: clamp(21px, 7.2vw, 26px) !important;
   }
   .hero-metrics-card {
-    gap: 10px 6px !important;
-    padding: 10px 8px !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 3px !important;
+    padding: 6px 4px !important;
+  }
+  .metric-cell {
+    gap: 4px !important;
+  }
+  .metric-icon {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
+  }
+  .metric-icon svg {
+    width: 11px !important;
+    height: 11px !important;
   }
   .metric-val {
-    font-size: 16px !important;
+    font-size: 11.5px !important;
   }
   .metric-lbl {
-    font-size: 12px !important;
+    font-size: 8px !important;
   }
 }
 @media(max-width: 300px) {
@@ -4162,9 +4236,19 @@ h1.hero-title .accent {
     font-size: 22px;
   }
   .about-open-actions {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    gap: 14px !important;
+  }
+  .about-open-trust {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
   }
 }
 
@@ -6802,8 +6886,18 @@ h1.hero-title .accent {
   }
   .why-cta-btn {
     width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
     justify-content: center !important;
-    padding: 12px 18px !important;
+    gap: 12px !important;
+    padding: 13px 20px !important;
+    box-sizing: border-box !important;
+  }
+  .why-cta-arrow {
+    flex-shrink: 0 !important;
+    margin: 0 !important;
   }
 
   /* Process Pipeline Cards */
@@ -6887,6 +6981,8 @@ h1.hero-title .accent {
   }
   .about-open-actions {
     flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
     width: 100% !important;
     gap: 12px !important;
   }
@@ -6894,6 +6990,14 @@ h1.hero-title .accent {
     width: 100% !important;
     justify-content: center !important;
     padding: 12px 20px !important;
+  }
+  .about-open-trust {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
   }
 
   /* Testimonials Slider */
